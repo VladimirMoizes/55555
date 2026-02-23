@@ -1,0 +1,14 @@
+:root {
+  /* Цвета */
+  --color-primary: #fdbd6e;
+  --color-text: #fff;
+  --color-dark: #000;
+  --color-text-second: #727272;
+  --color-text-third: #636363;
+  --color-decorative: #262626;
+  --color-decorative-second: #cdcdcd;
+
+  /*Шрифты */
+  --font-primary: 'Benzin-Regular', Arial, sans-serif;
+  --font-secondary: 'Manrope', Arial, sans-serif;
+}
