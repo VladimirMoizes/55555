@@ -1,0 +1,47 @@
+---
+import styles from './Footer.module.css';
+import Icon from '../icons/Icon.astro';
+---
+
+<footer class={styles.footer}>
+  <div class={styles.main}>
+    <div class={styles.blockLeft}>
+      <p class={styles.blockLeftName}>CityLoveStudio</p>
+      <p class={styles.blockLeftOldName}>ранее Битмодерн</p>
+    </div>
+    <div class={styles.contacts}>
+      <a href="tel:+79265210268" class={styles.phone}>
+        <Icon name="phone" color="var(--color-primary)" />
+        <span>+7 926 521 02 68</span>
+      </a>
+      <a href="mailto:sizubin@bitmodern.ru" class={styles.email}>
+        <Icon name="email" color="var(--color-primary)" />
+        <span>sizubin@bitmodern.ru</span>
+      </a>
+      <a
+        href="https://maps.yandex.ru/?text=Москва, ул. Ак. Арцимовича д.3 кор.2"
+        class={styles.address}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="location" color="var(--color-primary)" />
+        <span>Москва, ул. Ак. Арцимовича д.3 кор.2</span>
+      </a>
+    </div>
+    <div class={styles.buttonListMessenger}>
+      <button class={styles.button}>
+        <Icon name="whatsapp" color="var(--color-primary)" />
+      </button>
+      <button class={styles.button}>
+        <Icon name="telegram" color="var(--color-primary)" />
+      </button>
+      <button class={styles.button}>
+        <Icon name="max" color="var(--color-primary)" />
+      </button>
+    </div>
+  </div>
+  <div class={styles.bottom}>
+    <p class={styles.bottomStart}>2016-2025 Все права защищены</p>
+    <a>Политика конфиденциальности</a>
+  </div>
+</footer>

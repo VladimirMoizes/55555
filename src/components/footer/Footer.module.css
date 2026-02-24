@@ -1,0 +1,64 @@
+@import '../../styles/variables.css';
+
+.footer {
+  /* block-size: 123px; */
+  border-block-start: 1px solid var(--color-decorative-second);
+  padding: 29px 131px 2px 62px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 22px;
+}
+
+.blockLeftName {
+  font-size: 28px;
+  font-family: var(--font-primary);
+  margin-block-end: 15px;
+}
+
+.blockLeftOldName {
+  font-weight: 500;
+  color: var(--color-text-second);
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  gap: 80px;
+}
+
+.contacts a {
+  font-size: 20px;
+  color: var(--color-text-second);
+  display: flex;
+  gap: 12px;
+}
+
+.buttonListMessenger {
+  display: flex;
+  gap: 32px;
+}
+
+.button {
+  border: 1px solid var(--color-primary);
+  inline-size: 40px;
+  block-size: 40px;
+}
+
+.bottom {
+  color: var(--color-text-third);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 20px;
+}
+
+.bottomStart {
+  font-size: 12px;
+  font-weight: 500;
+}
