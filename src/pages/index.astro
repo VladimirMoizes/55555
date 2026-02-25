@@ -10,12 +10,39 @@ import MainLayout from '../layouts/MainLayout.astro';
       class="car-image"
       id="movingCar"
     />
+    <img
+      src="/assets/images/houses_go.png"
+      alt="houses"
+      class="houses"
+      role="presentation"
+    />
+    <img
+      src="/assets/images/bush_go.png"
+      alt="bush"
+      class="bush"
+      role="presentation"
+    />
+    <img
+      src="/assets/images/bush_go.png"
+      alt="bush"
+      class="bush"
+      role="presentation"
+    />
     <hr class="solid-line" />
     <img
       src="/assets/images/line_dashed.svg"
       alt="Dashed line"
       class="line-image"
     />
+    <div class="pointer-wrapper">
+      <img
+        src="/assets/images/pointer.png"
+        class="pointer-image"
+        alt="pointer"
+      />
+      <p class="pointer-text">CityLove</p>
+    </div>
+    <img src="/assets/images/tree_go.png" class="tree" alt="tree" />
   </div>
 </MainLayout>
 
@@ -30,13 +57,36 @@ import MainLayout from '../layouts/MainLayout.astro';
 
   .car-image {
     position: absolute;
-    bottom: 136px;
+    bottom: 128px;
     left: 0;
     width: 678px;
     height: auto;
     z-index: 3;
     cursor: pointer;
     transition: transform 2s ease-in-out;
+  }
+
+  .houses {
+    position: absolute;
+    width: 897;
+    height: 436;
+    bottom: 183px;
+    /* left: -31px; */
+  }
+
+  .bush {
+    inline-size: 287px;
+    block-size: 137px;
+    position: absolute;
+    bottom: 240px;
+  }
+
+  .bush:nth-child(3) {
+    left: 830px;
+  }
+
+  .bush:nth-child(4) {
+    left: 1099px;
   }
 
   .car-image.moving {
@@ -62,20 +112,68 @@ import MainLayout from '../layouts/MainLayout.astro';
     height: auto;
     z-index: 2;
   }
+
+  .pointer-wrapper {
+    position: absolute;
+    width: 222px;
+    height: 228px;
+    left: 1375px;
+    bottom: 228px;
+  }
+
+  .pointer-wrapper:hover {
+    cursor: pointer;
+  }
+
+  .pointer-image {
+    inline-size: 100%;
+  }
+
+  .pointer-text {
+    position: absolute;
+    top: 52px;
+    left: 60px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .tree {
+    position: absolute;
+    bottom: 197px;
+    left: 1693px;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const car = document.getElementById('movingCar');
+    const pointer = document.querySelector('.pointer-wrapper');
+
+    let isAnimating = false;
+
+    function startCarAnimation() {
+      if (isAnimating || !car) return;
+
+      isAnimating = true;
+      car.classList.add('moving');
+      setTimeout(() => {
+        isAnimating = false;
+      }, 2000);
+    }
 
     if (car) {
-      car.addEventListener('click', function () {
-        this.classList.add('moving');
-
-        setTimeout(() => {
-          this.classList.remove('moving');
-        }, 3000);
-      });
+      car.addEventListener('click', startCarAnimation);
     }
+
+    if (pointer) {
+      pointer.addEventListener('click', startCarAnimation);
+    }
+
+    const autoTimer = setTimeout(startCarAnimation, 10000);
+
+    window.addEventListener('beforeunload', () => {
+      if (autoTimer) clearTimeout(autoTimer);
+    });
   });
 </script>
