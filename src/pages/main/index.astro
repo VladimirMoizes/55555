@@ -1,0 +1,26 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './index.module.css';
+import { housesMap } from '../../data/mainHousesData';
+---
+
+<MainLayout>
+  <div class={styles.container}>
+    <img class={styles.car} src="/assets/images/main/car_small.png" />
+    <img class={styles.map} src="/assets/images/main/map.svg" />
+    <div class={styles.containerHouses}>
+      <!-- <img class={styles.houseMap} src="/assets/images/main/housesMap/12 1.png" /> -->
+      {
+        housesMap.map((item) => {
+          return (
+            <img
+              class={styles.houseMap}
+              src={item.image}
+              style={`top: ${item.position.top}px; left: ${item.position.left}px; width: ${item.width}px; height: ${item.height}px`}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</MainLayout>

@@ -11,7 +11,8 @@ export interface Props {
     | 'sound'
     | 'arrow-left'
     | 'arrow-right'
-    | 'plus';
+    | 'plus'
+    | 'cross';
   size?: number;
   color?: string;
   className?: string;
@@ -286,6 +287,39 @@ const { name, size = 24, color = 'currentColor', className = '' } = Astro.props;
         stroke-linejoin="round"
         stroke-width="2"
         d="M12.531 1v23.063M1 12.531h23.063"
+      />
+    </svg>
+  )
+}
+
+{
+  name === 'cross' && (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      style={{ color }}
+    >
+      <line
+        x1="6"
+        y1="6"
+        x2="18"
+        y2="18"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+      <line
+        x1="6"
+        y1="18"
+        x2="18"
+        y2="6"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
       />
     </svg>
   )

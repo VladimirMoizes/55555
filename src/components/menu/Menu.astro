@@ -1,0 +1,14 @@
+---
+import Icon from '../icons/Icon.astro';
+import styles from './Menu.module.css';
+import { menu } from '../../data/menuData.ts';
+---
+
+<div class={styles.menu} id="menu">
+  <Icon name="cross" color="var(--color-text)" />
+  <nav class={styles.nav}>
+    <ul>
+      {menu.map((item) => <li>{item.name}</li>)}
+    </ul>
+  </nav>
+</div>

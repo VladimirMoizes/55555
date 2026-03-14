@@ -1,12 +1,19 @@
 @import '../../styles/variables.css';
 
 .header {
-  padding: 0 60px 0;
+  padding: 0 60px;
   block-size: 87px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-block-end: 1px solid var(--color-decorative);
+}
+
+.slash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .textLeft {
@@ -21,9 +28,9 @@
 }
 
 .blockRight {
-    display: flex;
-    gap: 42px;
-    align-items: center;
+  display: flex;
+  gap: 42px;
+  align-items: center;
 }
 
 .phoneLink {
@@ -32,3 +39,12 @@
   border: 1px solid var(--color-primary);
   padding: 11px 28px;
 }
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+
