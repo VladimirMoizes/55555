@@ -1,25 +1,52 @@
 .container {
-    position: relative;
+  position: relative;
+  inline-size: 100%;
 }
 
 .car {
-    position: absolute;
-    top: 250px;
-    left: 0;
+  position: absolute;
+  top: 250px;
+  left: 0;
 }
 
 .map {
-    position: absolute;
-    top: 272px;
-    left: 129px;
+  position: absolute;
+  top: 272px;
+  left: 129px;
 }
 
-.containerHouses {
-    position: absolute;
-    top: 187px;
-    left: 129px;
+.containerMapHouses {
+  position: absolute;
+  top: 187px;
+  left: 129px;
 }
 
 .houseMap {
-    position: absolute;
+  position: absolute;
+}
+
+.containerBuildings {
+  position: absolute;
+}
+
+.building {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.textBuilding {
+  letter-spacing: 0%;
+    font-size: 14px;
 }

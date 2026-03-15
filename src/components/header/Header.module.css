@@ -1,8 +1,8 @@
 @import '../../styles/variables.css';
 
 .header {
-  padding: 0 60px;
-  block-size: 87px;
+  padding: 20px 60px;
+  /* block-size: 87px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
