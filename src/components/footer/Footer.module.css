@@ -1,9 +1,17 @@
 @import '../../styles/variables.css';
 
 .footer {
-  /* block-size: 123px; */
+  position: relative;
   border-block-start: 1px solid var(--color-decorative-second);
   padding: 29px 131px 2px 62px;
+}
+
+.slash {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .main {

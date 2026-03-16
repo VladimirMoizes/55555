@@ -1,16 +1,23 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './index.module.css';
-import { buildings, housesMap } from '../../data/mainData';
+import { buildings, housesMap, tags } from '../../data/mainData';
 
 const lowestPoint = Math.max(
-  ...housesMap.map((item) => item.position.top + item.height + 900),
+  ...housesMap.map((item) => item.position.top + item.height + 300),
   800
 );
 ---
 
 <MainLayout>
   <div class={styles.container} style={`min-height: ${lowestPoint}px`}>
+    <div class={styles.sound}>
+      <img
+        src="/assets/images/sound.svg"
+        alt="sound icon"
+        class={styles.soundIcon}
+      />
+    </div>
     <img class={styles.car} src="/assets/images/main/car_small.png" />
     <img class={styles.map} src="/assets/images/main/map.svg" />
     <div class={styles.containerMapHouses}>
@@ -47,6 +54,17 @@ const lowestPoint = Math.max(
           );
         })
       }
+    </div>
+    <div class={styles.line}></div>
+    <div class={styles.tags}>
+      <span style="margin-inline-end: 8px;">Теги:</span>
+      <ul class={styles.tagsList}>
+        {
+          tags.map((item) => {
+            return <li class={styles.tagsName}>#{item}</li>;
+          })
+        }
+      </ul>
     </div>
   </div>
 </MainLayout>

@@ -1,6 +1,17 @@
 .container {
   position: relative;
   inline-size: 100%;
+  display: flex;
+}
+
+.sound {
+  border: 1px solid var(--color-text);
+  padding: 10px 15px 7px;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-35%);
+  top: 60px;
 }
 
 .car {
@@ -41,12 +52,35 @@
   flex-direction: column;
   font-weight: 500;
 
-  line-height: 140%;
+  line-height: 130%;
   text-align: center;
   text-transform: uppercase;
 }
 
 .textBuilding {
-  letter-spacing: 0%;
-    font-size: 14px;
+  letter-spacing: -0.05em;
+  font-size: 14px;
+}
+
+.line {
+  block-size: 1px;
+  inline-size: 100%;
+  background: linear-gradient(90deg, #000000 0%, #ababab 50.48%, #000000 100%);
+  position: absolute;
+  top: 1760px;
+  left: 0;
+}
+
+.tags {
+  color: var(--color-tags);
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  margin: 1789px auto 30px;
+  letter-spacing: -0.04em;
+}
+
+.tagsList {
+  display: flex;
+  gap: 10px;
 }
