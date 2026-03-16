@@ -5,10 +5,19 @@ import { menu } from '../../data/menuData.ts';
 ---
 
 <div class={styles.menu} id="menu">
-  <Icon name="cross" color="var(--color-text)" />
+  <Icon name="cross" color="var(--color-text)" size={32} className={styles.icon} />
   <nav class={styles.nav}>
-    <ul>
-      {menu.map((item) => <li>{item.name}</li>)}
+    <ul class={styles.navMenu}>
+      {menu.map((item) => <li class={styles.menuItem}>{item.name}</li>)}
     </ul>
   </nav>
+  <div class={styles.buttonListMessenger}>
+      <button class={styles.button}>
+        <Icon name="telegram" color="var(--color-primary)" />
+      </button>
+      <button class={styles.button}>
+        <Icon name="max" color="var(--color-primary)" />
+      </button>
+    </div>
+  </div>
 </div>

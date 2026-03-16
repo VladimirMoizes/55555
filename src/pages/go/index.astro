@@ -146,20 +146,33 @@ import MainLayout from '../../layouts/MainLayout.astro';
 </style>
 
 <script>
+  import { navigate } from 'astro:transitions/client';
+
   document.addEventListener('DOMContentLoaded', () => {
     const car = document.getElementById('movingCar');
     const pointer = document.querySelector('.pointer-wrapper');
 
     let isAnimating = false;
+    let autoTimer;
+
+    function redirectToMain() {
+      navigate('/main');
+    }
 
     function startCarAnimation() {
       if (isAnimating || !car) return;
 
       isAnimating = true;
       car.classList.add('moving');
-      setTimeout(() => {
-        isAnimating = false;
-      }, 2000);
+
+      car.addEventListener(
+        'transitionend',
+        function onTransitionEnd() {
+          car.removeEventListener('transitionend', onTransitionEnd);
+          redirectToMain();
+        },
+        { once: true }
+      );
     }
 
     if (car) {
@@ -170,7 +183,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
       pointer.addEventListener('click', startCarAnimation);
     }
 
-    const autoTimer = setTimeout(startCarAnimation, 10000);
+    autoTimer = setTimeout(startCarAnimation, 10000);
 
     window.addEventListener('beforeunload', () => {
       if (autoTimer) clearTimeout(autoTimer);
