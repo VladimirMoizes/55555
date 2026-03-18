@@ -21,17 +21,22 @@
 
 .navMenu {
   line-height: 140%;
-  letter-spacing: 0%;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
   gap: 22.5px;
-  margin-block-end: 80px;
+  margin-block-end: 85px;
 }
 
 .menuItem {
   font-weight: 400;
   font-size: 18px;
+}
+
+.menuItem[data-active='true'],
+.subMenuItem[data-active='true'] {
+  color: var(--color-primary);
 }
 
 .buttonListMessenger {
@@ -40,7 +45,15 @@
 }
 
 .button {
-   border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   inline-size: 40px;
   block-size: 40px;
+}
+
+.subMenu {
+  padding: 20px 0 0;
+  margin-inline-start: 29px;
+  display: flex;
+  flex-direction: column;
+  gap: 22.5px;
 }

@@ -29,7 +29,43 @@ import Menu from '../menu/Menu.astro';
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', (): void => {
+  function setupMenu() {
+    const button = document.querySelector('#button-menu');
+    const menu = document.querySelector('#menu') as HTMLDivElement;
+
+    if (!button || !menu) return;
+
+    // Удаляем все старые обработчики через замену элемента
+    const newButton = button.cloneNode(true);
+    button.parentNode?.replaceChild(newButton, button);
+
+    // Навешиваем обработчики заново
+    newButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.style.transform === 'translateX(0px)';
+      menu.style.transform = isOpen ? 'translateX(100%)' : 'translateX(0px)';
+    });
+
+    // Обработчик документа (только один)
+    document.addEventListener('click', function onClick(e) {
+      if (
+        menu.style.transform === 'translateX(0px)' &&
+        e.target instanceof Node &&
+        !menu.contains(e.target) &&
+        e.target !== newButton
+      ) {
+        menu.style.transform = 'translateX(100%)';
+      }
+    });
+  }
+
+  // Запускаем при загрузке и SPA переходах
+  document.addEventListener('DOMContentLoaded', setupMenu);
+  document.addEventListener('astro:page-load', setupMenu);
+</script>
+
+<!-- <script>
+  document.addEventListener('astro:page-load', (): void => {
     const buttonMenu = document.querySelector(
       '#button-menu'
     ) as HTMLButtonElement;
@@ -62,4 +98,4 @@ import Menu from '../menu/Menu.astro';
       });
     }
   });
-</script>
+</script> -->

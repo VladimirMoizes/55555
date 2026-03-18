@@ -1,6 +1,17 @@
+export const menuWebDevelopment = [
+  { id: 30, name: 'разработка сайтов', url: '/website-development' },
+  { id: 31, name: 'модернизация сайтов', url: '/website-modermization' },
+  { id: 32, name: 'редизайн сайтов', url: '/website-redisign' },
+];
+
 export const menu = [
   { id: 1, name: 'главная', url: '/main' },
-  { id: 2, name: 'веб-разработка', url: '/web-development' },
+  {
+    id: 2,
+    name: 'веб-разработка',
+    url: '/web-development',
+    subMenu: menuWebDevelopment,
+  },
   { id: 3, name: 'продвижение сайтов', url: '/website-promotion' },
   { id: 4, name: 'портфолио', url: '/portfolio' },
   { id: 5, name: 'цены', url: '/prices' },
@@ -12,10 +23,4 @@ export const menu = [
   { id: 11, name: 'космопорт', url: '/cosmoport' },
   { id: 12, name: 'о нас', url: '/about' },
   { id: 13, name: 'ресепшн', url: '/reception' },
-];
-
-export const menuWebDevelopment = [
-  { id: 30, name: 'разработка сайтов', url: '/website-development' },
-  { id: 31, name: 'модернизация сайтов', url: '/website-modermization' },
-  { id: 32, name: 'редизайн сайтов', url: '/website-redisign' },
 ];
