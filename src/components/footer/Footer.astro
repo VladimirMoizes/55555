@@ -4,7 +4,7 @@ import Icon from '../icons/Icon.astro';
 ---
 
 <footer class={styles.footer}>
-  <img
+  <!-- <img
     class={styles.slash}
     src="/assets/images/slash_3.svg"
     role="presentation"
@@ -15,7 +15,7 @@ import Icon from '../icons/Icon.astro';
     src="/assets/images/slash_4.svg"
     role="presentation"
     alt="slash"
-  />
+  /> -->
   <div class={styles.main}>
     <div class={styles.blockLeft}>
       <p class={styles.blockLeftName}>CityLoveStudio</p>
@@ -41,13 +41,13 @@ import Icon from '../icons/Icon.astro';
       </a>
     </div>
     <div class={styles.buttonListMessenger}>
-      <button class={styles.button}>
+      <button class={styles.button} aria-label="Открыть whatsapp">
         <Icon name="whatsapp" color="var(--color-primary)" />
       </button>
-      <button class={styles.button}>
+      <button class={styles.button} aria-label="Открыть Telegram">
         <Icon name="telegram" color="var(--color-primary)" />
       </button>
-      <button class={styles.button}>
+      <button class={styles.button} aria-label="Открыть max">
         <Icon name="max" color="var(--color-primary)" />
       </button>
     </div>
@@ -56,5 +56,4 @@ import Icon from '../icons/Icon.astro';
     <p class={styles.bottomStart}>2016-2025 Все права защищены</p>
     <a>Политика конфиденциальности</a>
   </div>
-  
 </footer>

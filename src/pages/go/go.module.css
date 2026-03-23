@@ -1,0 +1,90 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carImage {
+  position: absolute;
+  bottom: 128px;
+  left: 0;
+  width: 678px;
+  height: auto;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 2s ease-in-out;
+}
+
+.carImage[data-moving="true"] {
+  transform: translateX(100vw);
+}
+
+.houses {
+  position: absolute;
+  bottom: 183px;
+}
+
+.bush {
+  width: 287px;
+  height: 137px;
+  position: absolute;
+  bottom: 240px;
+}
+
+.bush:nth-of-type(3) {
+  left: 831px;
+}
+
+.bush:nth-of-type(4) {
+  left: 1100px;
+}
+
+.solidLine {
+  position: absolute;
+  bottom: 240px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  border: none;
+  z-index: 2;
+}
+
+.lineImage {
+  position: absolute;
+  bottom: 131px;
+  right: 20px;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.pointerWrapper {
+  position: absolute;
+  width: 222px;
+  height: 228px;
+  left: 1375px;
+  bottom: 228px;
+  cursor: pointer;
+}
+
+.pointerImage {
+  width: 100%;
+}
+
+.pointerText {
+  position: absolute;
+  top: 52px;
+  left: 60px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.tree {
+  position: absolute;
+  bottom: 197px;
+  left: 1693px;
+}

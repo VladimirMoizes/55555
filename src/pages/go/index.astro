@@ -1,52 +1,107 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './go.module.css';
 ---
 
 <MainLayout>
+  <div class={styles.imageContainer} data-container>
+    <img
+      src="/assets/images/go/car_big.png"
+      alt="Big car"
+      class={styles.carImage}
+      data-car
+    />
+
+    <img
+      src="/assets/images/go/houses_go.png"
+      alt=""
+      class={styles.houses}
+      role="presentation"
+      aria-hidden="true"
+    />
+
+    <img
+      src="/assets/images/go/bush_go.png"
+      alt=""
+      class={styles.bush}
+      aria-hidden="true"
+    />
+    <img
+      src="/assets/images/go/bush_go.png"
+      alt=""
+      class={styles.bush}
+      aria-hidden="true"
+    />
+
+    <hr class={styles.solidLine} />
+
+    <img
+      src="/assets/images/go/line_dashed.svg"
+      alt=""
+      class={styles.lineImage}
+      aria-hidden="true"
+    />
+
+    <div class={styles.pointerWrapper} data-pointer>
+      <img
+        src="/assets/images/go/pointer.png"
+        class={styles.pointerImage}
+        alt="pointer"
+      />
+      <p class={styles.pointerText}>CityLove</p>
+    </div>
+
+    <img src="/assets/images/go/tree_go.png" class={styles.tree} alt="tree" />
+  </div>
+</MainLayout>
+
+<script src="./go.ts"></script>
+
+<!-- <MainLayout>
   <div class="image-container">
     <img
       src="/assets/images/go/car_big.png"
       alt="Big car"
-      class="car-image"
+      class={styles.carImage}
       id="movingCar"
     />
     <img
       src="/assets/images/go/houses_go.png"
       alt="houses"
-      class="houses"
+      class={styles.houses}
       role="presentation"
     />
     <img
       src="/assets/images/go/bush_go.png"
       alt="bush"
-      class="bush"
+      class={styles.bush}
       role="presentation"
     />
     <img
       src="/assets/images/go/bush_go.png"
       alt="bush"
-      class="bush"
+      class={styles.bush}
       role="presentation"
     />
     <hr class="solid-line" />
     <img
       src="/assets/images/go/line_dashed.svg"
       alt="Dashed line"
-      class="line-image"
+      class={styles.lineImage}
     />
     <div class="pointer-wrapper">
       <img
         src="/assets/images/go/pointer.png"
-        class="pointer-image"
+        class={styles.pointerImage}
         alt="pointer"
       />
-      <p class="pointer-text">CityLove</p>
+      <p class={styles.pointerText}>CityLove</p>
     </div>
-    <img src="/assets/images/go/tree_go.png" class="tree" alt="tree" />
+    <img src="/assets/images/go/tree_go.png" class={styles.tree} alt="tree" />
   </div>
-</MainLayout>
+</MainLayout> -->
 
-<style>
+<!-- <style>
   .image-container {
     position: relative;
     width: 100%;
@@ -143,50 +198,4 @@ import MainLayout from '../../layouts/MainLayout.astro';
     bottom: 197px;
     left: 1693px;
   }
-</style>
-
-<script>
-  import { navigate } from 'astro:transitions/client';
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const car = document.getElementById('movingCar');
-    const pointer = document.querySelector('.pointer-wrapper');
-
-    let isAnimating = false;
-    let autoTimer;
-
-    function redirectToMain() {
-      navigate('/main');
-    }
-
-    function startCarAnimation() {
-      if (isAnimating || !car) return;
-
-      isAnimating = true;
-      car.classList.add('moving');
-
-      car.addEventListener(
-        'transitionend',
-        function onTransitionEnd() {
-          car.removeEventListener('transitionend', onTransitionEnd);
-          redirectToMain();
-        },
-        { once: true }
-      );
-    }
-
-    if (car) {
-      car.addEventListener('click', startCarAnimation);
-    }
-
-    if (pointer) {
-      pointer.addEventListener('click', startCarAnimation);
-    }
-
-    autoTimer = setTimeout(startCarAnimation, 10000);
-
-    window.addEventListener('beforeunload', () => {
-      if (autoTimer) clearTimeout(autoTimer);
-    });
-  });
-</script>
+</style> -->

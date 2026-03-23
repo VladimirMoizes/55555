@@ -1,7 +1,7 @@
 export const menuWebDevelopment = [
-  { id: 30, name: 'разработка сайтов', url: '/website-development' },
-  { id: 31, name: 'модернизация сайтов', url: '/website-modermization' },
-  { id: 32, name: 'редизайн сайтов', url: '/website-redisign' },
+  { id: 20, name: 'разработка сайтов', url: '/website-development' },
+  { id: 21, name: 'модернизация сайтов', url: '/website-modermization' },
+  { id: 22, name: 'редизайн сайтов', url: '/website-redisign' },
 ];
 
 export const menu = [

@@ -9,93 +9,25 @@ import Menu from '../menu/Menu.astro';
     class={styles.slash}
     src="/assets/images/slash_1.svg"
     role="presentation"
-    alt="slash"
+    alt=""
+    aria-hidden="true"
   />
   <img
     class={styles.slash}
     src="/assets/images/slash_2.svg"
     role="presentation"
-    alt="slash"
+    alt=""
+    aria-hidden="true"
   />
   <p class={styles.textLeft}>CityLoveStudio</p>
   <p class={styles.textCenter}>Разработка NEтривиальных сайтов</p>
   <div class={styles.blockRight}>
     <a class={styles.phoneLink} href="tel:+79265210268">+7 926 521 02 68</a>
-    <button id="button-menu">
+    <button id="button-menu" aria-label="Открыть меню">
       <Icon name="burger" color="var(--color-text)" />
     </button>
     <Menu />
   </div>
 </header>
 
-<script>
-  function setupMenu() {
-    const button = document.querySelector('#button-menu');
-    const menu = document.querySelector('#menu') as HTMLDivElement;
-
-    if (!button || !menu) return;
-
-    // Удаляем все старые обработчики через замену элемента
-    const newButton = button.cloneNode(true);
-    button.parentNode?.replaceChild(newButton, button);
-
-    // Навешиваем обработчики заново
-    newButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = menu.style.transform === 'translateX(0px)';
-      menu.style.transform = isOpen ? 'translateX(100%)' : 'translateX(0px)';
-    });
-
-    // Обработчик документа (только один)
-    document.addEventListener('click', function onClick(e) {
-      if (
-        menu.style.transform === 'translateX(0px)' &&
-        e.target instanceof Node &&
-        !menu.contains(e.target) &&
-        e.target !== newButton
-      ) {
-        menu.style.transform = 'translateX(100%)';
-      }
-    });
-  }
-
-  // Запускаем при загрузке и SPA переходах
-  document.addEventListener('DOMContentLoaded', setupMenu);
-  document.addEventListener('astro:page-load', setupMenu);
-</script>
-
-<!-- <script>
-  document.addEventListener('astro:page-load', (): void => {
-    const buttonMenu = document.querySelector(
-      '#button-menu'
-    ) as HTMLButtonElement;
-    const menu = document.querySelector('#menu') as HTMLDivElement;
-
-    if (buttonMenu && menu) {
-      buttonMenu.addEventListener('click', (): void => {
-        const currentTransform = menu.style.transform;
-
-        if (
-          currentTransform === 'translateX(0px)' ||
-          currentTransform === 'translateX(0)'
-        ) {
-          menu.style.transform = 'translateX(100%)';
-        } else {
-          menu.style.transform = 'translateX(0px)';
-        }
-      });
-
-      document.addEventListener('click', (e: MouseEvent): void => {
-        if (e.target instanceof Node) {
-          if (
-            menu.style.transform === 'translateX(0px)' &&
-            !menu.contains(e.target) &&
-            !buttonMenu.contains(e.target)
-          ) {
-            menu.style.transform = 'translateX(100%)';
-          }
-        }
-      });
-    }
-  });
-</script> -->
+<script src="./header.ts"></script>

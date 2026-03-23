@@ -12,24 +12,39 @@ const currentPath = Astro.url.pathname;
     size={32}
     className={styles.icon}
   />
+
   <nav class={styles.nav}>
     <ul class={styles.navMenu}>
       {
         menu.map((item) => (
-          <li class={styles.menuItem} data-active={currentPath === item.url}>
+          <li
+            class={styles.menuItem}
+            data-active={currentPath === item.url}
+            data-open="false"
+          >
             <a href={item.url}>{item.name}</a>
 
             {item.subMenu && item.subMenu.length > 0 && (
-              <ul class={styles.subMenu}>
-                {item.subMenu.map((subItem) => (
-                  <li
-                    class={styles.subMenuItem}
-                    data-active={currentPath === subItem.url}
-                  >
-                    <a href={subItem.url}>{subItem.name}</a>
-                  </li>
-                ))}
-              </ul>
+              <>
+                <img
+                  src="/assets/images/menu/menu_arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class={styles.arrow}
+                  data-arrow
+                />
+
+                <ul class={styles.subMenu} data-submenu>
+                  {item.subMenu.map((subItem) => (
+                    <li
+                      class={styles.subMenuItem}
+                      data-active={currentPath === subItem.url}
+                    >
+                      <a href={subItem.url}>{subItem.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
           </li>
         ))
@@ -38,11 +53,13 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <div class={styles.buttonListMessenger}>
-    <button class={styles.button}>
+    <button class={styles.button} aria-label="Telegram">
       <Icon name="telegram" color="var(--color-primary)" />
     </button>
-    <button class={styles.button}>
+    <button class={styles.button} aria-label="Max">
       <Icon name="max" color="var(--color-primary)" />
     </button>
   </div>
 </div>
+
+<script src="./menu.ts"></script>
