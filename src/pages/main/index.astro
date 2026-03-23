@@ -2,6 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './index.module.css';
 import { buildings, housesMap, tags } from '../../data/mainData';
+import Icon from '../../components/icons/Icon.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 
 const lowestPoint = Math.max(
   ...housesMap.map((item) => item.position.top + item.height + 300),
@@ -11,14 +13,9 @@ const lowestPoint = Math.max(
 
 <MainLayout>
   <div class={styles.container} style={`min-height: ${lowestPoint}px`}>
-    <div class={styles.sound}>
-      <img
-        src="/assets/images/sound.svg"
-        alt="sound icon"
-        class={styles.soundIcon}
-      />
-    </div>
-    <img class={styles.car} src="/assets/images/main/car_small.png" />
+    <SoundButton class={styles.sound} />
+
+    <img class={styles.car} data-car src="/assets/images/main/car_small.png" />
     <img class={styles.map} src="/assets/images/main/map.svg" />
     <div class={styles.containerMapHouses}>
       {
@@ -66,5 +63,19 @@ const lowestPoint = Math.max(
         }
       </ul>
     </div>
+    <img
+      class={styles.slash}
+      src="/assets/images/slash_3.svg"
+      role="presentation"
+      alt="slash"
+    />
+    <img
+      class={styles.slash}
+      src="/assets/images/slash_4.svg"
+      role="presentation"
+      alt="slash"
+    />
   </div>
 </MainLayout>
+
+<script src="./main.ts"></script>

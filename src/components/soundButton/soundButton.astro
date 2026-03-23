@@ -1,0 +1,56 @@
+---
+import Icon from '../icons/Icon.astro';
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`sound-button ${className}`} data-sound>
+  <div data-icon-on>
+    <Icon name="soundOn" size={26} />
+  </div>
+  <div data-icon-off style="display: none;">
+    <Icon name="soundOff" size={26} />
+  </div>
+</div>
+
+<style>
+  .sound-button {
+    border: 1px solid var(--color-text);
+    padding: 12px 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 0;
+    color: var(--color-primary);
+  }
+
+  .sound-button svg {
+    transition: color 0.2s ease;
+  }
+
+  .sound-button:hover svg {
+    color: white;
+  }
+</style>
+
+<script>
+  const button = document.querySelector('[data-sound]');
+  const iconOn = button?.querySelector('[data-icon-on]') as HTMLElement;
+  const iconOff = button?.querySelector('[data-icon-off]') as HTMLElement;
+  let isSoundOn = true;
+
+  button?.addEventListener('click', () => {
+    isSoundOn = !isSoundOn;
+
+    if (isSoundOn) {
+      iconOn.style.display = 'flex';
+      iconOff.style.display = 'none';
+    } else {
+      iconOn.style.display = 'none';
+      iconOff.style.display = 'flex';
+    }
+  });
+</script>

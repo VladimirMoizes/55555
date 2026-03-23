@@ -4,20 +4,39 @@
   display: flex;
 }
 
+.slash {
+  position: absolute;
+  bottom: -157px;
+  right: -20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .sound {
-  border: 1px solid var(--color-text);
-  padding: 10px 15px 7px;
-  border-radius: 5px;
   position: absolute;
   left: 50%;
   transform: translateX(-35%);
   top: 60px;
 }
 
+.sound svg {
+  transition: color 0.3s ease;
+}
+
+.sound:hover svg {
+  color: var(--color-text);
+}
+
 .car {
   position: absolute;
   top: 250px;
-  left: 0;
+  left: -200px;
+  transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.car[data-moving='true'] {
+  transform: translateX(450px);
 }
 
 .map {
@@ -45,6 +64,15 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.imageBuilding {
+  transition: scale 0.3s ease;
+}
+
+.imageBuilding:hover {
+  scale: 1.08;
+  cursor: pointer;
 }
 
 .textBlock {
