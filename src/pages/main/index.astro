@@ -2,11 +2,11 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './index.module.css';
 import { buildings, housesMap, tags } from '../../data/mainData';
-import Icon from '../../components/icons/Icon.astro';
 import SoundButton from '../../components/soundButton/soundButton.astro';
+import Tags from '../../components/tags/Tags.astro';
 
 const lowestPoint = Math.max(
-  ...housesMap.map((item) => item.position.top + item.height + 300),
+  ...housesMap.map((item) => item.position.top + item.height + 370),
   800
 );
 ---
@@ -37,12 +37,14 @@ const lowestPoint = Math.max(
               class={styles.building}
               style={`top: ${item.position.top}px; left: ${item.position.left}px;`}
             >
+              <a href={`/building/${item.id}`}>
               <img
                 class={styles.imageBuilding}
                 src={item.image}
                 alt={item.title}
                 style={`width: ${item.width}px; height: ${item.height}px;`}
               />
+              </a>
               <div class={styles.textBlock}>
                 <span class={styles.textBuilding}>{item.title}</span>
                 <span class={styles.textBuilding}>{item.subtitle}</span>
@@ -51,17 +53,6 @@ const lowestPoint = Math.max(
           );
         })
       }
-    </div>
-    <div class={styles.line}></div>
-    <div class={styles.tags}>
-      <span style="margin-inline-end: 8px;">Теги:</span>
-      <ul class={styles.tagsList}>
-        {
-          tags.map((item) => {
-            return <li class={styles.tagsName}>#{item}</li>;
-          })
-        }
-      </ul>
     </div>
     <img
       class={styles.slash}
@@ -76,6 +67,7 @@ const lowestPoint = Math.max(
       alt="slash"
     />
   </div>
+  <Tags class={styles.tags} />
 </MainLayout>
 
 <script src="./main.ts"></script>

@@ -1,0 +1,62 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './[id].module.css';
+import Icon from '../../components/icons/Icon.astro';
+import { buildings } from '../../data/mainData';
+import SoundButton from '../../components/soundButton/soundButton.astro';
+import Tags from '../../components/tags/Tags.astro';
+
+export async function getStaticPaths() {
+  return buildings.map((b) => ({
+    params: { id: b.id },
+  }));
+}
+
+const { id } = Astro.params;
+
+const building = buildings.find((b) => b.id === id);
+
+if (!building) {
+  throw new Error('Building not found');
+}
+---
+
+<MainLayout>
+  <div class={styles.container}>
+    <div class={styles.content}>
+      <h1>{building.title}</h1>
+      <h2 class={styles.subTitle}>{building.subtitle}</h2>
+
+      <blockquote class={styles.quote}>
+        {building.description}
+      </blockquote>
+
+      <Icon
+        name="decorativeArrow"
+        color="var(--color-primary)"
+        size={155}
+        className={styles.icon}
+      />
+    </div>
+
+    <div class={styles.mapLayer}>
+      <img
+        class={styles.car}
+        src="/assets/images/main/car_small.png"
+        alt="car"
+      />
+
+      <img class={styles.road} src="/assets/images/road.svg" alt="" />
+
+      <img
+        class={styles.mainBuilding}
+        src={building.image}
+        alt={building.title}
+      />
+    </div>
+
+    <SoundButton class={styles.sound} />
+  </div>
+
+  <Tags class={styles.tags} />
+</MainLayout>

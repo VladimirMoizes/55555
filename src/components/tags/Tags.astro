@@ -1,0 +1,69 @@
+---
+import { tags } from '../../data/mainData';
+---
+
+<div class="tags-wrapper">
+  <div class="line"></div>
+  <div class="tags">
+    <span class="tagsLabel">Теги:</span>
+    <ul class="tagsList">
+      {tags.map((tag) => <li class="tagsName">#{tag}</li>)}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .tags-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .line {
+    /* position: absolute; */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      #000000 0%,
+      #ababab 50.48%,
+      #000000 100%
+    );
+    top: 0;
+    margin-block-end: 25px;
+  }
+
+  .tags {
+    color: var(--color-tags, #666);
+    font-weight: 400;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.04em;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* ← центрируем теги */
+  }
+
+  .tagsLabel {
+    margin-right: 8px;
+    white-space: nowrap;
+  }
+
+  .tagsList {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tagsName {
+    list-style: none;
+    white-space: nowrap;
+  }
+</style>
