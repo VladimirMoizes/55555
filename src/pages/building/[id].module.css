@@ -1,4 +1,4 @@
-.container {
+/* .container {
   position: relative;
   min-height: 760px;
   width: 100%;
@@ -9,7 +9,6 @@
 }
 
 .content {
-  /* position: relative; */
   z-index: 2;
   padding: 126px 0 0 164px;
 }
@@ -124,6 +123,224 @@
 
 .sound {
   position: absolute;
+  top: 380px;
+  right: 0;
+  z-index: 2;
+}
+
+.sound svg {
+  transition: color 0.3s ease;
+}
+
+.sound:hover svg {
+  color: var(--color-text);
+} */
+
+.containerSimple {
+  min-height: 700px;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: 530px 1fr auto;
+  margin-inline-end: 180px;
+}
+
+.titleListSimple {
+  padding: 126px 0 0 164px;
+}
+
+.mainBuildingSimple {
+  inline-size: 100%;
+  align-self: end;
+  margin-block-start: 145px;
+}
+
+.descriptionSimple {
+  align-self: end;
+  margin-block-end: 220px;
+  font-weight: 500;
+  font-style: Italic;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  text-align: right;
+  max-width: 360px;
+}
+
+.container {
+  min-height: 700px;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: 568px 667px 1fr;
+  grid-template-rows: 360px 285px 115px;
+  grid-template-areas:
+    'titleList . mainBuilding'
+    '. description mainBuilding'
+    'mapLayer mapLayer mainBuilding';
+  align-content: start;
+}
+
+.titleList {
+  padding: 126px 0 0 164px;
+  grid-area: titleList;
+}
+
+/* .subTitle {
+  margin-bottom: 130px;
+} */
+
+.description {
+  grid-area: description;
+  display: flex;
+  align-items: center;
+  gap: 128px;
+  justify-self: start;
+  align-self: start;
+}
+
+.quote {
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  max-width: 270px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-inline-start: 60px;
+  /* margin-block-start: 70px; */
+  /* padding: 0 20px;
+  margin-left: 445px; */
+}
+
+.quote::before {
+  content: '“';
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 48px;
+  position: absolute;
+  left: -40px;
+  top: -5px;
+}
+
+.quote::after {
+  content: '“';
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 48px;
+  position: absolute;
+  right: -25px;
+  bottom: -5px;
+}
+
+.icon {
+  max-height: 40px;
+  margin-block-start: 30px;
+}
+
+/* .icon {
+  margin-left: 110px;
+  margin-bottom: -12px;
+} */
+
+.decorations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slash {
+  position: absolute;
+  top: 350px;
+  right: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slash:first-child {
+  top: 250px;
+}
+
+.mapLayer {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  grid-area: mapLayer;
+  display: inline-block;
+}
+.car {
+  /* top: 642px;
+  left: 5px; */
+  width: 166px;
+  height: auto;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 2s ease-in-out;
+  z-index: 10;
+  margin-inline-start: 10px;
+}
+
+.car[data-moving='true'] {
+  transform: translateX(100vw);
+}
+
+.road {
+  /* position: absolute; */
+  top: 666px;
+  left: 166px;
+  width: 1024px;
+  height: auto;
+  z-index: 5;
+}
+
+.mainBuilding {
+  width: 586px;
+  height: auto;
+  /* position: absolute; */
+  top: -120px;
+  left: 1120px;
+  z-index: 5;
+  grid-area: mainBuilding;
+  align-self: end;
+  /* margin-block-end: 80px; */
+  margin-inline-start: -80px;
+}
+
+.pointerWrapper {
+  position: relative;
+  bottom: 180px;
+  left: 770px;
+  width: 250px;
+  height: 140px;
+  overflow-y: hidden;
+}
+
+.pointerImage {
+  width: 100%;
+}
+
+.pointerText {
+  position: absolute;
+  top: 52px;
+  left: 60px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.sound {
+  position: fixed;
   top: 380px;
   right: 0;
   z-index: 2;

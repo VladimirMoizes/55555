@@ -21,6 +21,29 @@ if (!building) {
 }
 ---
 
+<!-- ---
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './[id].module.css';
+import Icon from '../../components/icons/Icon.astro';
+import { buildings } from '../../data/mainData';
+import SoundButton from '../../components/soundButton/soundButton.astro';
+import Tags from '../../components/tags/Tags.astro';
+
+export async function getStaticPaths() {
+  return buildings.map((b) => ({
+    params: { id: b.id },
+  }));
+}
+
+const { id } = Astro.params;
+
+const building = buildings.find((b) => b.id === id);
+
+if (!building) {
+  throw new Error('Building not found');
+}
+---
+
 <MainLayout>
   <div class={styles.container}>
     <div class={styles.content}>
@@ -58,5 +81,72 @@ if (!building) {
     <SoundButton class={styles.sound} />
   </div>
 
+  <Tags class={styles.tags} />
+</MainLayout> -->
+<MainLayout>
+  {
+    id === 'bank' ||
+    id === 'kotoTilda' ||
+    id === 'university' ||
+    id === 'park' ? (
+      <section class={styles.containerSimple}>
+        <div class={styles.titleListSimple}>
+          <h1>{building.title}</h1>
+          <h2 class={styles.subTitle}>{building.subtitle}</h2>
+        </div>
+        <img
+          style={`width: ${building.separatePage?.width}px; height: ${building.separatePage?.height}px;`}
+          class={styles.mainBuildingSimple}
+          src={building.image}
+          alt={building.title}
+        />
+        <p class={styles.descriptionSimple}>{building.description}</p>
+      </section>
+    ) : (
+      <section class={styles.container}>
+        <div class={styles.titleList}>
+          <h1>{building.title}</h1>
+          <h2 class={styles.subTitle}>{building.subtitle}</h2>
+        </div>
+
+        <div class={styles.description}>
+          <blockquote class={styles.quote}>{building.description}</blockquote>
+
+          <Icon
+            name="decorativeArrow"
+            color="var(--color-primary)"
+            size={155}
+            className={styles.icon}
+          />
+        </div>
+
+        <div class={styles.mapLayer}>
+          <img
+            class={styles.car}
+            src="/assets/images/main/car_small.png"
+            alt="car"
+          />
+          <img class={styles.road} src="/assets/images/road.svg" alt="" />
+          {id === 'museum' && (
+            <div class={styles.pointerWrapper} data-pointer>
+              <img
+                src="/assets/images/go/pointer.png"
+                class={styles.pointerImage}
+                alt="pointer"
+              />
+              <p class={styles.pointerText}>Мало ярославец</p>
+            </div>
+          )}
+        </div>
+
+        <img
+          class={styles.mainBuilding}
+          src={building.image}
+          alt={building.title}
+        />
+      </section>
+    )
+  }
+  <SoundButton class={styles.sound} />
   <Tags class={styles.tags} />
 </MainLayout>
