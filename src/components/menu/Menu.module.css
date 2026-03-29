@@ -16,6 +16,7 @@
 .icon {
   align-self: end;
   margin-block-end: 29px;
+  cursor: pointer;
 }
 
 .navMenu {

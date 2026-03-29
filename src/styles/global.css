@@ -26,6 +26,7 @@ body {
   letter-spacing: 0%;
   background-color: var(--color-dark);
   overflow-x: hidden;
+  overflow-y: overlay;
   min-height: 100vh;
   color: var(--color-text);
   display: flex;
@@ -86,4 +87,10 @@ main {
 footer {
   flex-shrink: 0;
   width: 100%;
+}
+
+::view-transition-old(sound-button),
+::view-transition-new(sound-button) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

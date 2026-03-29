@@ -4,7 +4,12 @@ import Icon from '../icons/Icon.astro';
 const { class: className = '' } = Astro.props;
 ---
 
-<div class={`sound-button ${className}`} data-sound>
+<div
+  transition:persist
+  class={`sound-button ${className}`}
+  data-sound
+  style="view-transition-name: sound-button;"
+>
   <div data-icon-on>
     <Icon name="soundOn" size={26} />
   </div>
@@ -25,6 +30,7 @@ const { class: className = '' } = Astro.props;
     transition: all 0.2s ease;
     line-height: 0;
     color: var(--color-primary);
+    view-transition-name: sound-button;
   }
 
   .sound-button svg {
@@ -37,13 +43,14 @@ const { class: className = '' } = Astro.props;
 </style>
 
 <script>
-  const button = document.querySelector('[data-sound]');
-  const iconOn = button?.querySelector('[data-icon-on]') as HTMLElement;
-  const iconOff = button?.querySelector('[data-icon-off]') as HTMLElement;
-  let isSoundOn = true;
+  let isSoundOn = localStorage.getItem('soundState') !== 'false';
 
-  button?.addEventListener('click', () => {
-    isSoundOn = !isSoundOn;
+  function updateSoundButton() {
+    const button = document.querySelector('[data-sound]');
+    if (!button) return;
+
+    const iconOn = button.querySelector('[data-icon-on]') as HTMLElement;
+    const iconOff = button.querySelector('[data-icon-off]') as HTMLElement;
 
     if (isSoundOn) {
       iconOn.style.display = 'flex';
@@ -52,5 +59,22 @@ const { class: className = '' } = Astro.props;
       iconOn.style.display = 'none';
       iconOff.style.display = 'flex';
     }
+  }
+
+  updateSoundButton();
+
+  document.body.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const button = target.closest('[data-sound]');
+    if (button) {
+      isSoundOn = !isSoundOn;
+      localStorage.setItem('soundState', String(isSoundOn));
+      updateSoundButton();
+    }
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    isSoundOn = localStorage.getItem('soundState') !== 'false';
+    updateSoundButton();
   });
 </script>

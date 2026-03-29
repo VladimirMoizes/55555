@@ -21,7 +21,13 @@ export interface Props {
   className?: string;
 }
 
-const { name, size = 24, color = 'currentColor', className = '' } = Astro.props;
+const {
+  name,
+  size = 24,
+  color = 'currentColor',
+  className = '',
+  ...rest
+} = Astro.props;
 ---
 
 {
@@ -377,6 +383,7 @@ const { name, size = 24, color = 'currentColor', className = '' } = Astro.props;
       xmlns="http://www.w3.org/2000/svg"
       class={className}
       style={{ color }}
+      {...rest}
     >
       <line
         x1="6"
