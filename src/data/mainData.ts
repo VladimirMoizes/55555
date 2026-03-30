@@ -186,13 +186,13 @@ export const buildings = [
     subtitle: 'ЦЕН',
     image: '/assets/images/main/buildings/банк.png',
     description: 'наши цены реальны',
-    position: { top: 620, left: 240 },
+    position: { top: 610, left: 240 },
     link: '/bank',
     width: 151,
-    height: 115,
+    height: 125,
     separatePage: {
-      width: 870,
-      height: 650,
+      width: 865,
+      height: 700,
     },
   },
   {
