@@ -167,6 +167,8 @@ export const buildings = [
     link: '/workshop',
     width: 234,
     height: 351,
+    videoMp4: '/assets/videos/go3 mp4.mp4',
+    videoWebm: '/assets/videos/go3 webm.webm',
   },
   {
     id: 'tv-studio',
@@ -179,6 +181,8 @@ export const buildings = [
     link: '/tv-studio',
     width: 177,
     height: 178,
+    videoMp4: '/assets/videos/go4 mp4.mp4',
+    videoWebm: '/assets/videos/go4 webm.webm',
   },
   {
     id: 'bank',
@@ -194,6 +198,8 @@ export const buildings = [
       width: 865,
       height: 700,
     },
+    videoMp4: '/assets/videos/go6 mp4.mp4',
+    videoWebm: '/assets/videos/go6 webm.webm',
   },
   {
     id: 'exhibition',
@@ -205,6 +211,8 @@ export const buildings = [
     link: '/exhibition',
     width: 215,
     height: 115,
+    videoMp4: '/assets/videos/go5 mp4.mp4',
+    videoWebm: '/assets/videos/go5 webm.webm',
   },
   {
     id: 'park',
@@ -222,6 +230,8 @@ export const buildings = [
       width: 780,
       height: 650,
     },
+    videoMp4: '/assets/videos/go4 mp4.mp4',
+    videoWebm: '/assets/videos/go4 webm.webm',
   },
   {
     id: 'kotoTilda',
@@ -239,6 +249,8 @@ export const buildings = [
       width: 780,
       height: 650,
     },
+    videoMp4: '/assets/videos/go5 mp4.mp4',
+    videoWebm: '/assets/videos/go5 webm.webm',
   },
   {
     id: 'university',
@@ -256,6 +268,8 @@ export const buildings = [
       width: 870,
       height: 550,
     },
+    videoMp4: '/assets/videos/go3 mp4.mp4',
+    videoWebm: '/assets/videos/go3 webm.webm',
   },
   {
     id: 'museum',
@@ -268,6 +282,8 @@ export const buildings = [
     link: '/museum',
     width: 140,
     height: 180,
+    videoMp4: '/assets/videos/go3 mp4.mp4',
+    videoWebm: '/assets/videos/go3 webm.webm',
   },
   {
     id: 'garage',
@@ -280,6 +296,8 @@ export const buildings = [
     link: '/garage',
     width: 155,
     height: 105,
+    videoMp4: '/assets/videos/go5 mp4.mp4',
+    videoWebm: '/assets/videos/go5 webm.webm',
   },
   {
     id: 'honorBoard',
@@ -295,15 +313,17 @@ export const buildings = [
   },
   {
     id: 'reception',
-    title: 'РЕСЕПШН',
+    title: 'РЕСЕПШЕН',
     subtitle: 'ФРОНТ-ОФИС',
-    image: '/assets/images/main/buildings/ресепшн.png',
+    image: '/assets/images/main/buildings/ресепшен.png',
     pageImage: '/assets/images/main/buildings/мастерская.png',
     description: 'Я был отличен от всех и это нравилось тебе',
     position: { top: 1391, left: 770 },
     link: '/reception',
     width: 216,
     height: 194,
+    videoMp4: '/assets/videos/go4 mp4.mp4',
+    videoWebm: '/assets/videos/go4 webm.webm',
   },
   {
     id: 'cosmoport',
@@ -316,6 +336,8 @@ export const buildings = [
     link: '/cosmoport',
     width: 278,
     height: 259,
+    videoMp4: '/assets/videos/go6 mp4.mp4',
+    videoWebm: '/assets/videos/go6 webm.webm',
   },
 ];
 

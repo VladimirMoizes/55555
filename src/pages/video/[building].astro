@@ -1,0 +1,90 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { buildings } from '../../data/mainData';
+
+export async function getStaticPaths() {
+  return buildings
+    .filter((b) => b.videoMp4 || b.videoWebm)
+    .map((b) => ({
+      params: { building: b.id },
+    }));
+}
+
+const { building } = Astro.params;
+
+const buildingData = buildings.find((b) => b.id === building);
+
+if (!buildingData) {
+  return Astro.redirect('/');
+}
+
+const redirectUrl = `/building/${buildingData.id}`;
+---
+
+<MainLayout>
+  <div class="video-container">
+    <video
+      id="buildingVideo"
+      autoplay
+      muted
+      playsinline
+      class="video"
+      onended="console.log('ended сработал через атрибут')"
+    >
+      {
+        buildingData.videoWebm && (
+          <source src={buildingData.videoWebm} type="video/webm" />
+        )
+      }
+      {
+        buildingData.videoMp4 && (
+          <source src={buildingData.videoMp4} type="video/mp4" />
+        )
+      }
+    </video>
+  </div>
+</MainLayout>
+
+<style>
+  .video-container {
+    width: 100%;
+    height: auto;
+    background: black;
+    margin: 0;
+    padding: 0;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+
+<script define:vars={{ redirectUrl }}>
+  const video = document.getElementById('buildingVideo');
+  let redirected = false;
+  let videoEnded = false;
+
+  function redirectToBuilding() {
+    if (redirected) return;
+    redirected = true;
+    window.location.href = redirectUrl;
+  }
+
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      if (video.currentTime >= video.duration - 0.1) {
+        videoEnded = true;
+        redirectToBuilding();
+      }
+    });
+
+    video.addEventListener('ended', () => {
+      if (!videoEnded) {
+        videoEnded = true;
+        redirectToBuilding();
+      }
+    });
+  }
+</script>
