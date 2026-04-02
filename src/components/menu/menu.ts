@@ -31,8 +31,6 @@ function initMenu() {
   initCloseButton();
   document.body.removeEventListener('click', handleArrowClick);
   document.body.addEventListener('click', handleArrowClick);
-  console.log('Крестик:', document.querySelector('[data-close]'));
-  console.log('Меню:', document.querySelector('#menu'));
 }
 
 initMenu();

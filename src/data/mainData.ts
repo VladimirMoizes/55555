@@ -169,6 +169,7 @@ export const buildings = [
     height: 351,
     videoMp4: '/assets/videos/go3 mp4.mp4',
     videoWebm: '/assets/videos/go3 webm.webm',
+    mask: '/assets/images/mask_car.png',
   },
   {
     id: 'tv-studio',
@@ -241,7 +242,6 @@ export const buildings = [
     description:
       'При нажатии на здание вы попадете на наш сайт разработанный на конструкторе Тильда с невысокими ценами и быстрыми сроками ',
     position: { top: 935, left: 163 },
-    // position: { top: 931, left: 163 },
     link: '/kotoTilda',
     width: 120,
     height: 100,
@@ -260,7 +260,6 @@ export const buildings = [
     pageImage: '/assets/images/main/buildings/мастерская.png',
     description: 'При нажатии на здание вы попадете на наш старый сайт',
     position: { top: 975, left: 730 },
-    // position: { top: 979, left: 730 },
     link: '/university',
     width: 150,
     height: 105,
@@ -270,6 +269,7 @@ export const buildings = [
     },
     videoMp4: '/assets/videos/go3 mp4.mp4',
     videoWebm: '/assets/videos/go3 webm.webm',
+    mask: '/assets/images/mask_car.png',
   },
   {
     id: 'museum',
@@ -284,6 +284,7 @@ export const buildings = [
     height: 180,
     videoMp4: '/assets/videos/go3 mp4.mp4',
     videoWebm: '/assets/videos/go3 webm.webm',
+    mask: '/assets/images/mask_car.png',
   },
   {
     id: 'garage',

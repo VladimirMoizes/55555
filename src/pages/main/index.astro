@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './index.module.css';
-import { buildings, housesMap, tags } from '../../data/mainData';
+import { buildings, housesMap } from '../../data/mainData';
 import SoundButton from '../../components/soundButton/soundButton.astro';
 import Tags from '../../components/tags/Tags.astro';
 
@@ -36,15 +36,14 @@ const lowestPoint = Math.max(
             <div
               class={styles.building}
               style={`top: ${item.position.top}px; left: ${item.position.left}px;`}
+              data-building-id={item.id}
             >
-              <a href={`/video/${item.id}`}>
               <img
                 class={styles.imageBuilding}
                 src={item.image}
                 alt={item.title}
                 style={`width: ${item.width}px; height: ${item.height}px;`}
               />
-              </a>
               <div class={styles.textBlock}>
                 <span class={styles.textBuilding}>{item.title}</span>
                 <span class={styles.textBuilding}>{item.subtitle}</span>
