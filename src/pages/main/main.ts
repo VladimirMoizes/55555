@@ -3,6 +3,7 @@ let isAnimating = false;
 
 function isCarVisible() {
   const car = document.querySelector('[data-car]') as HTMLElement;
+  if (typeof window === 'undefined') return false;
   if (!car) return false;
 
   const rect = car.getBoundingClientRect();
@@ -64,12 +65,14 @@ function initBuildingHandlers() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  carAnimation();
-  initBuildingHandlers();
-});
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    carAnimation();
+    initBuildingHandlers();
+  });
 
-document.addEventListener('astro:page-load', () => {
-  carAnimation();
-  initBuildingHandlers();
-});
+  document.addEventListener('astro:page-load', () => {
+    carAnimation();
+    initBuildingHandlers();
+  });
+}
