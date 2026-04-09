@@ -5,6 +5,7 @@ export const menuWebDevelopment = [
 ];
 
 export const menu = [
+  { id: 0, name: 'Поехали!', url: '/go' },
   { id: 1, name: 'главная', url: '/main' },
   {
     id: 2,

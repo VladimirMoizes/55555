@@ -44,6 +44,10 @@
   aspect-ratio: 1/1;
 }
 
+.inscription {
+  cursor: pointer;
+}
+
 .button[data-active='true']::after {
   content: '';
   position: absolute;

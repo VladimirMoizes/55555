@@ -82,54 +82,70 @@ const buttonsLift = [
 <script>
   function initButtons() {
     const buttons = document.querySelectorAll('[data-button-id]');
+    const inscriptions = document.querySelectorAll('[class*="inscription"]');
     const floor = document.querySelector('[data-floor]');
+
     if (floor) {
       floor.textContent = '1';
     }
 
-    buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const floorNumber = btn.getAttribute('data-floor-number');
+    function handleButtonClick(btn: any) {
+      const floorNumber = btn.getAttribute('data-floor-number');
 
-        buttons.forEach((b) => {
-          b.setAttribute('data-active', 'false');
-        });
+      buttons.forEach((b) => {
+        b.setAttribute('data-active', 'false');
+      });
 
-        btn.setAttribute('data-active', 'true');
+      btn.setAttribute('data-active', 'true');
 
-        if (floor && floorNumber) {
-          const targetFloor = Number(floorNumber);
-          let currentFloor = Number(floor.textContent) || 1;
+      if (floor && floorNumber) {
+        const targetFloor = Number(floorNumber);
+        let currentFloor = Number(floor.textContent) || 1;
 
-          if (currentFloor === targetFloor) return;
+        if (currentFloor === targetFloor) return;
 
-          const totalSteps = Math.abs(targetFloor - currentFloor);
-          let step = 0;
-          const direction = targetFloor > currentFloor ? 1 : -1;
+        const totalSteps = Math.abs(targetFloor - currentFloor);
+        let step = 0;
+        const direction = targetFloor > currentFloor ? 1 : -1;
 
-          function nextStep() {
-            if (step < totalSteps) {
-              const progress = step / totalSteps;
-              let delay;
+        function nextStep() {
+          if (step < totalSteps) {
+            const progress = step / totalSteps;
+            let delay;
 
-              if (progress < 0.2) delay = 300;
-              else if (progress < 0.35) delay = 120;
-              else if (progress < 0.5) delay = 60;
-              else if (progress < 0.65) delay = 80;
-              else if (progress < 0.8) delay = 150;
-              else delay = 250;
+            if (progress < 0.2) delay = 300;
+            else if (progress < 0.35) delay = 120;
+            else if (progress < 0.5) delay = 60;
+            else if (progress < 0.65) delay = 80;
+            else if (progress < 0.8) delay = 150;
+            else delay = 250;
 
-              currentFloor += direction;
-              if (floor) {
-                floor.textContent = currentFloor.toString();
-              }
-              step++;
-
-              setTimeout(nextStep, delay);
+            currentFloor += direction;
+            if (floor) {
+              floor.textContent = currentFloor.toString();
             }
-          }
+            step++;
 
-          nextStep();
+            setTimeout(nextStep, delay);
+          } else {
+            window.location.href = '/sites';
+          }
+        }
+
+        nextStep();
+      }
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => handleButtonClick(btn));
+    });
+
+    inscriptions.forEach((inscription) => {
+      inscription.addEventListener('click', () => {
+        const parentLi = inscription.closest('[class*="listItem"]');
+        const btn = parentLi?.querySelector('[data-button-id]');
+        if (btn) {
+          handleButtonClick(btn);
         }
       });
     });
