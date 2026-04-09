@@ -1,0 +1,140 @@
+---
+import styles from './lift.module.css';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const buttonsLift = [
+  {
+    id: 50,
+    ordinary: '/assets/images/lift/lift50.png',
+    active: '/assets/images/lift/lift50_light.png',
+    content: 'РАЗРАБОТКА САЙТОВ',
+  },
+  {
+    id: 49,
+    ordinary: '/assets/images/lift/lift49.png',
+    active: '/assets/images/lift/lift49_light.png',
+    content: 'МОДЕРНИЗАЦИЯ САЙТОВ',
+  },
+  {
+    id: 48,
+    ordinary: '/assets/images/lift/lift48.png',
+    active: '/assets/images/lift/lift48_light.png',
+    content: 'РЕДИЗАЙН САЙТОВ',
+  },
+  {
+    id: 1,
+    ordinary: '/assets/images/lift/lift1.png',
+    active: '/assets/images/lift/lift1_light.png',
+  },
+];
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>веб-Разработка</h1>
+    <div class={styles.blockLift}>
+      <div class={styles.tableLift}>
+        <p class={styles.floorCurrentNumber} data-floor></p>
+      </div>
+      <ul class={styles.buttonsLift}>
+        {
+          buttonsLift.map((item) => {
+            if (item.id !== 1)
+              return (
+                <li class={styles.listItem}>
+                  <button
+                    class={styles.button}
+                    data-button-id={item.id}
+                    data-floor-number={item.id}
+                  >
+                    <img
+                      class={styles.buttonImage}
+                      src={item.ordinary}
+                      alt={`lift button ${item.id}`}
+                      data-default={item.ordinary}
+                      data-active-img={item.active}
+                    />
+                  </button>
+                  <span class={styles.inscription}>{item.content}</span>
+                </li>
+              );
+          })
+        }
+      </ul>
+      <button
+        class={`${styles.button} ${styles.buttonOne}`}
+        data-button-id={buttonsLift[3].id}
+        data-active="true"
+        data-floor-number={buttonsLift[3].id}
+      >
+        <img
+          class={styles.buttonImage}
+          src={buttonsLift[3].ordinary}
+          alt="lift button 1"
+          data-default={buttonsLift[3].ordinary}
+          data-active-img={buttonsLift[3].active}
+        />
+      </button>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  function initButtons() {
+    const buttons = document.querySelectorAll('[data-button-id]');
+    const floor = document.querySelector('[data-floor]');
+    if (floor) {
+      floor.textContent = '1';
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const floorNumber = btn.getAttribute('data-floor-number');
+
+        buttons.forEach((b) => {
+          b.setAttribute('data-active', 'false');
+        });
+
+        btn.setAttribute('data-active', 'true');
+
+        if (floor && floorNumber) {
+          const targetFloor = Number(floorNumber);
+          let currentFloor = Number(floor.textContent) || 1;
+
+          if (currentFloor === targetFloor) return;
+
+          const totalSteps = Math.abs(targetFloor - currentFloor);
+          let step = 0;
+          const direction = targetFloor > currentFloor ? 1 : -1;
+
+          function nextStep() {
+            if (step < totalSteps) {
+              const progress = step / totalSteps;
+              let delay;
+
+              if (progress < 0.2) delay = 300;
+              else if (progress < 0.35) delay = 120;
+              else if (progress < 0.5) delay = 60;
+              else if (progress < 0.65) delay = 80;
+              else if (progress < 0.8) delay = 150;
+              else delay = 250;
+
+              currentFloor += direction;
+              if (floor) {
+                floor.textContent = currentFloor.toString();
+              }
+              step++;
+
+              setTimeout(nextStep, delay);
+            }
+          }
+
+          nextStep();
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initButtons);
+  document.addEventListener('astro:page-load', initButtons);
+</script>

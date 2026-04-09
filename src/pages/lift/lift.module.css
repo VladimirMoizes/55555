@@ -1,0 +1,105 @@
+.container {
+  text-align: center;
+  margin: 14px 0 87px;
+}
+
+.title {
+  margin-block-end: 53px;
+}
+
+.blockLift {
+  margin: 0 auto;
+  inline-size: 1249px;
+  block-size: 697px;
+  background-image: url('/assets/images/lift/лифт.png');
+  position: relative;
+}
+
+.tableLift {
+  inline-size: 180px;
+  block-size: 62px;
+  text-align: center;
+  position: absolute;
+  right: 196px;
+  top: 65px;
+  overflow: hidden;
+}
+
+.floorCurrentNumber {
+  font-weight: 700;
+  font-size: 48px;
+  color: #ff0000;
+  margin-block-start: 20px;
+}
+
+.buttonsLift {
+  position: absolute;
+  right: 61px;
+  top: 207px;
+}
+
+.button {
+  position: relative;
+  inline-size: 45px;
+  aspect-ratio: 1/1;
+}
+
+.button[data-active='true']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 73%;
+  height: 73%;
+  background: rgba(249, 243, 170, 0.2);
+  border: 4px solid white;
+  pointer-events: none;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(248, 234, 172, 0.9);
+}
+
+.button[data-button-id='50'][data-active='true']::after {
+  top: 2px;
+  left: 1.3px;
+}
+
+.button[data-button-id='49'][data-active='true']::after {
+  top: 1.8px;
+  left: 0.9px;
+}
+
+.button[data-button-id='48'][data-active='true']::after {
+  top: 2.4px;
+  left: 0.5px;
+}
+
+.button[data-button-id='1'][data-active='true']::after {
+  top: 1.7px;
+  left: 1.5px;
+}
+
+.buttonImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.inscription {
+  font-size: 21px;
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+  font-weight: 400;
+}
+
+.buttonOne {
+  position: absolute;
+  top: 520px;
+  right: 455px;
+}

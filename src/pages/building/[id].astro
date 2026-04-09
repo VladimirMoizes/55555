@@ -32,12 +32,14 @@ if (!building) {
           <h1>{building.title}</h1>
           <h2 class={styles.subTitle}>{building.subtitle}</h2>
         </div>
-        <img
-          style={`width: ${building.separatePage?.width}px; height: ${building.separatePage?.height}px;`}
-          class={styles.mainBuildingSimple}
-          src={building.image}
-          alt={building.title}
-        />
+        <a class={styles.linkBuildingSimple}>
+          <img
+            style={`width: ${building.separatePage?.width}px; height: ${building.separatePage?.height}px;`}
+            class={styles.mainBuildingSimple}
+            src={building.image}
+            alt={building.title}
+          />
+        </a>
         <p class={styles.descriptionSimple}>{building.description}</p>
       </section>
     ) : (
@@ -77,12 +79,14 @@ if (!building) {
             </div>
           )}
         </div>
-
-        <img
-          class={styles.mainBuilding}
-          src={building.image}
-          alt={building.title}
-        />
+        <a class={styles.linkBuilding} data-link>
+          <img
+            class={styles.mainBuilding}
+            src={building.image}
+            alt={building.title}
+            data-building
+          />
+        </a>
       </section>
     )
   }

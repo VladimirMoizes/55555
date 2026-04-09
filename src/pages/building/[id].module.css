@@ -10,10 +10,13 @@
   padding: 126px 0 0 164px;
 }
 
-.mainBuildingSimple {
-  inline-size: 100%;
+.linkBuildingSimple {
   align-self: end;
   margin-block-start: 80px;
+}
+
+.mainBuildingSimple {
+  inline-size: 100%;
 }
 
 .descriptionSimple {
@@ -154,15 +157,18 @@
   z-index: 5;
 }
 
+.linkBuilding {
+  z-index: 1;
+  grid-area: mainBuilding;
+  align-self: end;
+  margin-inline-start: -50px;
+  position: relative;
+  top: 10px;
+}
+
 .mainBuilding {
   width: 586px;
   height: auto;
-  top: -120px;
-  left: 1120px;
-  z-index: 5;
-  grid-area: mainBuilding;
-  align-self: end;
-  margin-inline-start: -80px;
 }
 
 .pointerWrapper {
