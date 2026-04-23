@@ -1,6 +1,8 @@
 ---
+import { sites } from '../../data/sitesData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './sites.module.css';
+import Icon from '../../components/icons/Icon.astro';
 ---
 
 <MainLayout>
@@ -35,5 +37,150 @@ import styles from './sites.module.css';
         </p>
       </div>
     </div>
+
+    <div class={styles.dev}>
+      <h2 class={styles.secondTitle}>
+        Разработка сайта, его модернизация или редизайн?
+      </h2>
+      <ul class={styles.cardList}>
+        <li class={styles.cardListItem}>
+          <article class={styles.card}>
+            <div class={styles.cardHeader}>
+              <img
+                class={styles.cardIcon}
+                src="/assets/images/sites/redesign_icon.svg"
+                alt="redesign icon"
+              />
+              <h4 class={styles.cardHeaderTitle}>редизайн</h4>
+            </div>
+            <p class={styles.cardText}>
+              Замена визуальных элементов сайта (фон, шрифты, картинки, иконки и
+              пр.) на новые. При этом структура и весь функционал сайта остается
+              прежним. <br /><br /> На нашем слэнге это звучит как "перетянуть шкурку".
+              Это дешевле, но возможно только на популярных CMS.
+            </p>
+          </article>
+        </li>
+        <li class={styles.cardListItem}>
+          <article class={styles.card}>
+            <div class={styles.cardHeader}>
+              <img
+                class={styles.cardIcon}
+                src="/assets/images/sites/modern_icon.svg"
+                alt="modern icon"
+              />
+              <h4 class={styles.cardHeaderTitle}>Модернизация</h4>
+            </div>
+            <p class={styles.cardText}>
+              По сути, это <span class={styles.cardTextBold}
+                >разработка нового сайта,</span
+              >
+              включая новую структуру, дизайн, функционал и т.п. <br /><br /> Отличием
+              модернизации сайта от его разработки является необходимость переноса
+              контента со старого сайта на новый.
+            </p>
+          </article>
+        </li>
+        <li class={styles.cardListItem}>
+          <article class={styles.card}>
+            <p class={styles.cardText}>
+              По опыту, компании, которые начинают с редизайна, в итоге,
+              заказывают модернизацию, так как появляется много дополнительных
+              пожеланий к будущему сайту.
+            </p>
+          </article>
+        </li>
+      </ul>
+    </div>
+
+    <div class={styles.design}>
+      <div class={styles.buttons}>
+        <button class={styles.button} data-button>
+          <Icon name="arrow-left" />
+        </button>
+        <button class={styles.button} data-button>
+          <Icon name="arrow-right" />
+        </button>
+      </div>
+      <h2 class={styles.secondTitle}>Эксклюзивный дизайн</h2>
+      <p class={styles.subTitle}>
+        Предлагаем Вашему вниманию примеры наиболее интересных наших
+        дизайн-макетов
+      </p>
+      <ul class={styles.cardList} data-cardList>
+        {
+          sites.map((item) => {
+            return (
+              <li class={styles.cardListItem}>
+                <article
+                  class={styles.card}
+                  style={`background-image: url("${item.image}")`}
+                >
+                  <h4 class={styles.cardTitle}>{item.title}</h4>
+                  <div class={styles.overlay} />
+                </article>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <p class={styles.text}>
+        Вы можете выбрать и <span class={styles.textBold}> заказать</span> понравившийся
+        Вам дизайн-макет. Мы перерисуем его под Вас и натянем на нужный движок. <br
+        /><br />Если у вас уже есть свои программисты, сделаем только
+        дизайн-макет и/или верстку, что сохранит Вам соответствующую часть
+        бюджета
+      </p>
+    </div>
+    <div class={styles.usability}>
+      <div class={styles.start}>
+        <h2 class={styles.title}>
+          Юзабилити - удобство пользователя или дизайн?
+        </h2>
+        <p class={styles.text}>
+          Неоторые говорят - "сайт не должен быть красивым, но должен быть
+          продающим", то есть быть удобным и достаточным для совершения нужных
+          его владельцу действий. <br /><br /> Мы уверены, что при должном умении,
+          одно не противоречит, а, наоборот, дополняет другое. И синергия этих принципов 
+          дает самый лучший результат: сайт становится гораздо более запоминающимся,
+          имиджевым, лучше передает успешность компании и обеспечивает доверие к ней.
+          И в итоге, сайт еще лучше продает (если это его цель). <br /><br /> Что
+          бы этого достичь, сначала (в специальной программе), мы обязательно делаем
+          прототип будущего сайта в который закладываем все самое нужное: структура,
+          страницы сайта, красивые заголовки, вводные тексты, функционал,  перелинковка,
+          выделение акцентов и т.д и т.п.. Таким образом получается "стальной" каркас
+          будущего сайта целиком. <br /><br />
+          И только после его утверждения клиентом, отдаем прототип дизайнеру, который
+          этот прототип "раскрасит", то есть сделает дизайн-макеты. Ниже можно перейти
+          на примеры таких, пока "нераскрашеных", прототипов:
+        </p>
+      </div>
+    </div>
   </section>
 </MainLayout>
+
+<script>
+  function initSlider() {
+    const cardList = document.querySelector('[data-cardList]');
+    const buttons = document.querySelectorAll('[data-button]');
+
+    if (!cardList || buttons.length < 2) return;
+
+    const leftBtn = buttons[0];
+    const rightBtn = buttons[1];
+    const scrollAmount = 600;
+
+    leftBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      cardList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      cardList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initSlider);
+  document.addEventListener('astro:page-load', initSlider);
+</script>

@@ -87,3 +87,191 @@
   opacity: 0.7;
   border-radius: 20px;
 }
+
+.dev {
+  background-color: #fff;
+  padding: 136px 46px 85px 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+
+.secondTitle {
+  color: var(--color-dark);
+  font-family: var(--font-primary);
+  font-size: 44px;
+  letter-spacing: 0;
+}
+
+.dev .secondTitle {
+  max-inline-size: 1174px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dev .cardList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dev .card {
+  background-color: var(--color-card);
+  padding: 40px 45px 46px 41px;
+  color: var(--color-dark);
+  max-inline-size: 550px;
+  min-block-size: 440px;
+  border-radius: 10px;
+}
+
+.dev .card .cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-block-end: 30px;
+}
+
+.dev .card .cardIcon {
+  inline-size: 80px;
+}
+
+.dev .card .cardText {
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: -0.035em;
+}
+
+.dev .card .cardTextBold {
+  font-weight: 700;
+}
+
+.dev .cardListItem:last-of-type .card {
+  background-image: url('/assets/images/sites/sphere.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding: 65px 59px 0 65px;
+}
+
+.dev .cardListItem:last-of-type .cardText {
+  font-size: 18px;
+  letter-spacing: -0.038em;
+}
+
+.design {
+  display: flex;
+  flex-direction: column;
+  background-color: #282828;
+  padding: 75px 0 58px 59px;
+  align-items: center;
+  position: relative;
+
+  .buttons {
+    position: absolute;
+    right: 36px;
+    top: 175px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .button {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 12px;
+  }
+
+  .secondTitle {
+    color: var(--color-text);
+    margin-block-end: 15px;
+  }
+
+  .subTitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-block-end: 98px;
+  }
+
+  .cardList {
+    display: flex;
+    align-self: start;
+    gap: 45px;
+    margin-block-end: 57px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    .cardListItem {
+      inline-size: 548px;
+      block-size: 436px;
+      flex-shrink: 0;
+
+      .card {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        block-size: 100%;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            #000000 100%
+          );
+        }
+
+        .cardTitle {
+          inline-size: 326px;
+          font-size: 20px;
+          text-align: start;
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+          z-index: 1;
+        }
+      }
+    }
+
+    .cardListItem:last-child {
+      margin-inline-end: 59px;
+    }
+  }
+
+  .text {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: -0.04em;
+    line-height: 140%;
+  }
+
+  .textBold {
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
+.usability {
+  background-image: url('/assets/images/sites/orange_circle.png');
+  background-repeat: no-repeat;
+  background-color: var(--color-text);
+  color: var(--color-dark);
+  padding: 112px 94px 101px 55px;
+
+  .start {
+    display: grid;
+    grid-template-columns: 811px 1fr;
+    gap: 66px;
+
+    .title {
+      font-family: var(--font-primary);
+      font-size: 44px;
+    }
+  }
+}
