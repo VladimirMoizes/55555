@@ -1,0 +1,160 @@
+---
+import Icon from '../../components/icons/Icon.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './promote.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Продвижение сайтов</h1>
+
+    <div class={styles.mainBlock}>
+      <div class={styles.accordionBlock}>
+        <div class={styles.accordion} data-accordion>
+          <div class={styles.accordionHeader}>
+            <p class={styles.accordionTitle}>
+              КАКИЕ ВИДЫ ПРОДВИЖЕНИЯ КОМПАНИИ ВЫ ПРЕДЛАГАЕТЕ?
+            </p>
+            <button class={styles.accordionButton} data-accordion-btn>
+              <Icon name="plus" size={24} color="var(--color-primary)" />
+            </button>
+          </div>
+          <div class={styles.accordionContent} data-accordion-content>
+            <p class={styles.accordionText}>
+              Самостоятельно мы осуществляем рекламу в Яндекс Директ и SEO -
+              оптимизацию сайта (первичную), но можем осуществить и другие виды
+              продвижения в качестве подрядчика. А именно: <br /><br /> SEO - продвижение,
+              реклама в соцсетях, в мессенджерах и т.п. Такой вид продвижения может
+              быть актуальным для тех компаний, кому нужно, что бы все делала одна
+              вэбстудия. Обычно, мы продвигаем сайты, которые сами и сделали.
+            </p>
+          </div>
+        </div>
+
+        <div class={styles.accordion} data-accordion>
+          <div class={styles.accordionHeader}>
+            <p class={styles.accordionTitle}>
+              Пару слов о Яндекс Директ. Есть ли у вас какая-то своя специфика и
+              какой уровень цен?
+            </p>
+            <button class={styles.accordionButton} data-accordion-btn>
+              <Icon name="plus" size={24} color="var(--color-primary)" />
+            </button>
+          </div>
+          <div class={styles.accordionContent} data-accordion-content>
+            <p class={styles.accordionText}>
+              Основными задачами продвижения в Яндексе считаем ширину охвата
+              рынка и минимизацию цены за клик. <br /><br />Первое осуществляем
+              за счет максимизации релевантных фраз, но без "мусорных" запросов.<br
+              /><br /> Второе осуществляем за счет постановки минимальных цен за клик
+              и постепенного их поднятия до уровня, когда показы нашего объявления
+              идут, но платим мы за него меньше конкурентов.<br /><br /> Плюс к этому,
+              мы делаем тексты объявлений яркими и максимально актуальными для потенциальных
+              клиентов.<br /><br /> В то же время неинтересных компании клиентов мы
+              отсекаем тем же текстом. Вот примеры подобной отсечки: "Строим бетонные
+              площадки от 1000 кв.м." "Бумажные пакеты с логотипом на заказ от 80
+              р./шт." <br /><br />Таким образом, неактуальные клиенты не кликают
+              наше объявление и мы сохраняем ваш бюджет.<br /><br />
+              Такой, "осторожный" подход к продвижению не всегда любит Яндекс, стремящийся
+              к максимизации дохода, но уважают наши клиенты. <br /><br />Цена
+              на продвижение в Директе составляет от 30 т.р. за запуск кампании
+              и от 10 т.р. ежемесячно, в зависимости от вашего бюджета на клики.
+            </p>
+          </div>
+        </div>
+
+        <div class={styles.accordion} data-accordion>
+          <div class={styles.accordionHeader}>
+            <p class={styles.accordionTitle}>
+              Теперь, прокомментируйте пожалуйста понятия: первичная SEO -
+              оптимизация сайта и SEO - продвижение. Что тут к чему и сколько
+              стоит?
+            </p>
+            <button class={styles.accordionButton} data-accordion-btn>
+              <Icon name="plus" size={24} color="var(--color-primary)" />
+            </button>
+          </div>
+          <div class={styles.accordionContent} data-accordion-content>
+            <div class={styles.accordionText}>
+              Первичная SEO - оптимизация у нас включает (частично или
+              полностью) следующие виды единоразовых работ:
+              <ul class={styles.textList}>
+                <li class={styles.textListItem}>
+                 <p> сбор, кластеризация и чистка семантического ядра;</p>
+                </li><li class={styles.textListItem}>
+                  разработка структуры сайта, максимально релевантной запросам
+                  потенциальных клиентов;
+                </li><li class={styles.textListItem}>
+                  написание и внедрение метатегов;
+                </li><li class={styles.textListItem}>
+                  проектирование и закладка поведенческих факторов,
+                  увеличивающих время нахождения на сайте и взаимодействия с
+                  ним;
+                </li><li class={styles.textListItem}>
+                  вставка ключевых запросов в тексты на сайте;
+                </li><li class={styles.textListItem}>
+                  перелинковка внутренних страниц; внедрение поисковых запросов
+                  в активные элементы сайта;
+                </li><li class={styles.textListItem}>
+                  установка Яндекс Метрики на сайт и Яндекс Вэбмастер;
+                </li><li class={styles.textListItem}>
+                  обеспечение максимальной скорости загрузки сайта.
+                </li>
+              </ul>
+
+              Цена на базовую SEO - оптимизацию сайта 50-100 т.р. (и более) -
+              единоразово. <br /><br /> SEO - продвижение это комплекс постоянных
+              работ, включающих, кроме вышеописанных: <ul class={styles.textList}>
+                <li class={styles.textListItem}>
+                  написание статей по тематике вашего бизнеса и размещение их на
+                  сайте и на сторонних ресурсах со ссылками на ваш сайт;
+                </li><li class={styles.textListItem}>
+                  покупка ссылок с популярных ресурсов,
+                </li><li class={styles.textListItem}>
+                  аналитика позиций и многое другое...
+                </li>
+              </ul>Подробнее, готовы выслать предложение по запросу. Этот тип
+              работ мы выполняем с помощью частных мастеров - субподрядчиков.
+              Сегодня, такое продвижение особенно актуально для сервиса Gogle,
+              так как иные способы рекламы недоступны в нем для российских
+              пользователей. Цена на SEO - продвижение от 50 т.р. в месяц +
+              бюджет на размещение внешних ссылок и статей.
+            </div>
+          </div>
+        </div>
+
+        <div class={styles.accordion} data-accordion>
+          <div class={styles.accordionHeader}>
+            <p class={styles.accordionTitle}>
+              Другие методы продвижения: соцсети, SMM, мессенджеры?
+            </p>
+            <button class={styles.accordionButton} data-accordion-btn>
+              <Icon name="plus" size={24} color="var(--color-primary)" />
+            </button>
+          </div>
+          <div class={styles.accordionContent} data-accordion-content>
+            <p class={styles.accordionText}>
+              Информация по запросу. По стоимости, примерно как Директ.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="/assets/images/promote/businessman.png"
+        alt="businessman"
+        class={styles.image}
+      />
+    </div>
+    <div class={styles.buttonList}>
+      <button class={styles.carBlockButton} data-button-continue
+        >Продолжить путешествие</button
+      >
+      <button class={styles.carBlockButton} data-button-reception
+        >Перейти к заказу на Рецепшн</button
+      >
+    </div>
+  </section>
+</MainLayout>
+
+<script src="./promote.ts"></script>

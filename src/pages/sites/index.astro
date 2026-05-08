@@ -1,5 +1,5 @@
 ---
-import { sites } from '../../data/sitesData';
+import { sites, functional, stages } from '../../data/sitesData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './sites.module.css';
 import Icon from '../../components/icons/Icon.astro';
@@ -7,7 +7,7 @@ import Icon from '../../components/icons/Icon.astro';
 
 <MainLayout>
   <section class={styles.container}>
-    <h1 class={styles.title}>Разработка сайтов</h1>
+    <h1 class={styles.mainTitle}>Разработка сайтов</h1>
     <div class={styles.mainBlock}>
       <div class={styles.mainBlockTextStart}>
         <div class={styles.overlay}></div>
@@ -132,29 +132,331 @@ import Icon from '../../components/icons/Icon.astro';
         бюджета
       </p>
     </div>
-    <div class={styles.usability}>
-      <div class={styles.start}>
-        <h2 class={styles.title}>
-          Юзабилити - удобство пользователя или дизайн?
-        </h2>
-        <p class={styles.text}>
-          Неоторые говорят - "сайт не должен быть красивым, но должен быть
-          продающим", то есть быть удобным и достаточным для совершения нужных
-          его владельцу действий. <br /><br /> Мы уверены, что при должном умении,
-          одно не противоречит, а, наоборот, дополняет другое. И синергия этих принципов 
-          дает самый лучший результат: сайт становится гораздо более запоминающимся,
-          имиджевым, лучше передает успешность компании и обеспечивает доверие к ней.
-          И в итоге, сайт еще лучше продает (если это его цель). <br /><br /> Что
-          бы этого достичь, сначала (в специальной программе), мы обязательно делаем
-          прототип будущего сайта в который закладываем все самое нужное: структура,
-          страницы сайта, красивые заголовки, вводные тексты, функционал,  перелинковка,
-          выделение акцентов и т.д и т.п.. Таким образом получается "стальной" каркас
-          будущего сайта целиком. <br /><br />
-          И только после его утверждения клиентом, отдаем прототип дизайнеру, который
-          этот прототип "раскрасит", то есть сделает дизайн-макеты. Ниже можно перейти
-          на примеры таких, пока "нераскрашеных", прототипов:
-        </p>
+
+    <div class={styles.bigBlock}>
+      <div class={styles.usability}>
+        <div class={styles.start}>
+          <h2 class={styles.title}>
+            Юзабилити - удобство пользователя или дизайн?
+          </h2>
+          <p class={styles.text}>
+            <span class={styles.textPart}>
+              Неоторые говорят - "сайт не должен быть красивым, но должен быть
+              продающим", то есть быть удобным и достаточным для совершения
+              нужных его владельцу действий.
+            </span><span class={styles.textPart}>
+              Мы уверены, что при должном умении, одно не противоречит, а,
+              наоборот, дополняет другое. И синергия этих принципов  дает
+              самый лучший результат: сайт становится гораздо более
+              запоминающимся, имиджевым, лучше передает успешность компании и
+              обеспечивает доверие к ней. И в итоге, сайт еще лучше продает
+              (если это его цель).
+            </span>
+            <span class={styles.textPart}
+              >Что бы этого достичь, сначала (в специальной программе), мы
+              обязательно делаем прототип будущего сайта в который закладываем
+              все самое нужное: структура, страницы сайта, красивые заголовки,
+              вводные тексты, функционал,  перелинковка, выделение акцентов и
+              т.д и т.п.. Таким образом получается "стальной" каркас будущего
+              сайта целиком.
+            </span>
+            <span class={styles.textPart}>
+              И только после его утверждения клиентом, отдаем прототип
+              дизайнеру, который этот прототип "раскрасит", то есть сделает
+              дизайн-макеты. Ниже можно перейти на примеры таких, пока
+              "нераскрашеных", прототипов:
+            </span>
+          </p>
+        </div>
+        <div class={styles.buttons}>
+          <button class={styles.button} data-button>
+            <Icon name="arrow-left" />
+          </button>
+          <button class={styles.button} data-button>
+            <Icon name="arrow-right" />
+          </button>
+        </div>
+        <ul class={styles.list}>
+          <li class={styles.item}>
+            <img
+              class={styles.image}
+              src="/assets/images/sites/usability1.png"
+              alt="usability image"
+            />
+          </li>
+          <li class={styles.item}>
+            <img
+              class={styles.image}
+              src="/assets/images/sites/usability2.png"
+              alt="usability image"
+            />
+          </li>
+          <li class={styles.item}>
+            <img
+              class={styles.image}
+              src="/assets/images/sites/usability3.png"
+              alt="usability image"
+            />
+          </li>
+        </ul>
       </div>
+
+      <div class={styles.plan}>
+        <img
+          src="/assets/images/sites/plan.png"
+          alt="plan image"
+          class={styles.image}
+        />
+        <div class={styles.areaText}>
+          <h2 class={styles.planTitle}>Замысел, маркетинг, концепция</h2>
+          <div class={styles.textBlock}>
+            <div class={styles.textBlockPart}>
+              <h5 class={styles.subTitle}>
+                Замысел (или концепция) это всегда ответ на вопрос:
+              </h5>
+              <p class={styles.text}>
+                Что мы хотим сказать нашим текущим и потенциальным клиентам и
+                как это сделать? Если нет Замысла, то сайт будет безликим, одним
+                из множества похожих, особого успеха он врядли достигнет. <br
+                /><br />
+                Замысел отвечает на вопрос, чем мы отличаемся от конкурентов, чем
+                наш продукт лучше для потребителя, для какого сегмента наш продукт
+                и т.д.
+              </p>
+            </div>
+            <div class={styles.textBlockPart}>
+              <h5 class={styles.subTitle}>Задача</h5>
+              <p class={styles.text}>
+                В нем раскрываются ожидания, боли и опасения клиентов будущего
+                сайта. Задача концепции ответить на эти вызовы. <br /><br /> В общем,
+                это ряд маркетинговых вопросов, которые нуждаются в ответах. <br
+                /><br />Замысел нашей студии СитиЛав - делать сайты, которые не
+                делают другие студии вэбдизайна, или делают это очень и очень
+                дорого. Подробнее в разделе Гараж (О нас)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class={styles.specialization}>
+        <h2 class={styles.specializationTitle}>Рынок и наша специализация</h2>
+        <p class={styles.specializationSubTitle}>
+          Если рассмотреть весь рынок разработки сайтов, то можно выделить
+          следующие сегменты:
+        </p>
+        <div class={styles.diagram}>
+          <img
+            src="/assets/images/sites/Диаграмма.svg"
+            alt="Диаграмма"
+            class={styles.imageDiagram}
+          />
+          <span
+            class={`${styles.textDiagram} ${styles.nonTrivialSites}`}
+            id="nonTrivialSites">Нетривиальные сайты</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.saleSites}`}
+            id="saleSites">Продажа готовых сайтов</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.constructs}`}
+            id="constructs">Быстро и недорого, конструкторы</span
+          >
+          <span class={`${styles.textDiagram} ${styles.ratings}`} id="ratings"
+            >Сайты "для рейтингов"</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.complexFunctionality}`}
+            id="complexFunctionality">Сложный функционал</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.onlineStores}`}
+            id="onlineStores">Интернет-магазины</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.sellingWebsites}`}
+            id="sellingWebsites">"Продающие" сайты</span
+          >
+          <span
+            class={`${styles.textDiagram} ${styles.corporateWebsites}`}
+            id="corporateWebsites">Корпоративные сайты</span
+          >
+        </div>
+        <ul class={styles.cardList}>
+          <li class={styles.listItem}>
+            <article class={styles.card}>
+              <p class={styles.cardText}>
+                У нас есть опыт работы во всех сегментах (кроме готовых сайтов),
+                но сейчас ориентируемся на три из них: корпоративные,
+                конструкторы (Тильда) и рынок нетривиальных проектов.
+              </p>
+            </article>
+          </li>
+          <li class={styles.listItem}>
+            <article class={styles.card}>
+              <p class={styles.cardText}>
+                Под этим понятием мы понимем сайты, которые вообще не будут
+                похожи на то, что уже есть на рынке или его сегменте. Первое
+                такое решение уже есть в нашем портфолио. Эфффект достигается
+                благодаря сложной анимации и отрисовке ключевых элементов сайта
+                художником вручную.
+              </p>
+            </article>
+          </li>
+          <li class={styles.listItem}>
+            <article class={styles.card}>
+              <p class={styles.cardText}>
+                И, конечно же, этот наш новый сайт, на котором вы находитесь,
+                является своеобразной выставкой, витриной того, что можно
+                сделать при наличии достаточных ресурсов.
+              </p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class={styles.projects}>
+      <h2 class={styles.projectsTitle}>Нетривиальные проекты</h2>
+      <p class={styles.projectText}>
+        Бывает, стоит задача сделать нечто совсем уникальное, реализовать такое,
+        чего нет у других, то есть нетривиальный сайт. Мы с удовольствием
+        возьмемся за такой проект. <br />
+        <br />Например, можно сделать сайт-путешествие по Вашей компании,
+        который мы сделали для нашей студии СитиЛав. <br />
+        <br />Прогуляйтесь по всем разделам нашего вебресурса и сравните нас с
+        другими студиями России в Рейтинге Рунета и Вы сами увидите
+        оригинальность нашего проекта и его Замысла. <br />
+        <br />Что-то подобное или совсем другое мы можем сделать и для Вас.
+      </p>
+    </div>
+
+    <div class={styles.functional}>
+      <h2 class={styles.functionalTitle}>Функционал сайтов</h2>
+      <p class={styles.functionalSubTitle}>
+        Функционал сайтов постоянно развивается. Ниже мы представляем наиболее
+        частые его варианты:
+      </p>
+      <ul class={styles.functionalList}>
+        {
+          functional.map((item) => {
+            return (
+              <li class={styles.listItem}>
+                <article class={styles.card}>
+                  <button class={styles.cardButtonIcon}>
+                    <img
+                      class={styles.cardButtonImage}
+                      src={item.icon}
+                      alt={`icon ${item.title}`}
+                    />
+                  </button>
+                  <div class={styles.blockText}>
+                    <h4 class={styles.cardTitle}>{item.title}</h4>
+                    <p class={styles.cardText}>{item.text}</p>
+                  </div>
+                  <button class={styles.cardButtonLook}>
+                    <span class={styles.cardButtonLookText}>
+                      Посмотреть пример
+                    </span>
+                  </button>
+                </article>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+
+    <div class={styles.stages}>
+      <h2 class={styles.stagesTitle}>Этапы разработки сайта</h2>
+      <ul class={styles.stagesList} data-stages-list>
+        {
+          stages.map((item) => {
+            return (
+              <li class={styles.stagesListItem}>
+                <article class={styles.card}>
+                  <div class={styles.cardNumber}>{item.number}</div>
+                  <p class={styles.cardText}>{item.text}</p>
+                  <img
+                    class={styles.rightBorder}
+                    src="/assets/images/sites/right_border.svg"
+                    alt=""
+                  />
+                </article>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <p class={styles.stagesText}>
+        Для нетривиальных проектов добавляется этапы 2.2 создание сложных
+        визуальных элементов художником и 2.3 и/или 3.3 моушн-дизайн (анимация)
+      </p>
+    </div>
+
+    <div class={styles.cost}>
+      <h2 class={styles.costTitle}>Стоимость и сроки разработки сайта</h2>
+      <ul class={styles.costList}>
+        <li class={styles.costListItem}>
+          <article class={styles.card}>
+            <p class={styles.cardText}>
+              На небольшой сайт с эксклюзивным дизайном на Битрикс или Вордпресс
+              (отрисовывается 5-7 базовых страниц) цена стартует от 250 т.р.,
+              срок от 2 месяцев
+            </p>
+          </article>
+        </li>
+        <li class={styles.costListItem}>
+          <article class={styles.card}>
+            <p class={styles.cardText}>
+              Его продвижение и SEO - оптимизация оплачивается отдельно.
+              Подробнее тут
+            </p>
+          </article>
+        </li>
+        <li class={styles.costListItem}>
+          <article class={styles.card}>
+            <p class={styles.cardText}>
+              Нетривиальные проекты в 2 и более раз дороже, там цена зависит от
+              сложности принятых решений. Срок от 4х месяцев.
+            </p>
+          </article>
+        </li>
+        <li class={styles.costListItem}>
+          <article class={styles.card}>
+            <p class={styles.cardText}>
+              Сайты на конструкторе Тильда с маркетинговой проработкой от 50
+              т.р., интернет-магазины от 80 т.р. Срок от 1 недели. Подробнее,
+              стоимость смотрите на странице Банк (цен)
+            </p>
+          </article>
+        </li>
+      </ul>
+      <p class={styles.welcomeText}>Добро пожаловать в CityLoveStudio!</p>
+    </div>
+
+    <div class={styles.carBlock}>
+      <div class={styles.buttonList}>
+        <button class={styles.carBlockButton} data-button-continue
+          >Продолжить путешествие</button
+        >
+        <button class={styles.carBlockButton} data-button-reception
+          >Перейти к заказу на Рецепшн</button
+        >
+      </div>
+      <img
+        data-car
+        class={styles.carImage}
+        src="/assets/images/go/car_big.png"
+        alt="car"
+      />
+      <hr class={styles.solidLine} />
+      <img
+        src="/assets/images/go/line_dashed.svg"
+        alt=""
+        class={styles.lineImage}
+        aria-hidden="true"
+      />
     </div>
   </section>
 </MainLayout>
@@ -181,6 +483,50 @@ import Icon from '../../components/icons/Icon.astro';
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initSlider);
-  document.addEventListener('astro:page-load', initSlider);
+  function initStages() {
+    const stagesList = document.querySelector('[data-stages-list]');
+    const stagesListItems = stagesList ? Array.from(stagesList.children) : [];
+
+    stagesListItems.forEach((item, i) => {
+      const htmlItem = item;
+      (htmlItem as HTMLElement).style.zIndex = String(
+        stagesListItems.length - i
+      );
+    });
+  }
+
+  function initCar() {
+    const car = document.querySelector('[data-car]') as HTMLElement;
+    const continueBtn = document.querySelector(
+      '[data-button-continue]'
+    ) as HTMLButtonElement;
+    const receptionBtn = document.querySelector(
+      '[data-button-reception]'
+    ) as HTMLButtonElement;
+
+    if (!car) return;
+
+    let isAnimating = false;
+
+    function startAnimation() {
+      if (isAnimating) return;
+      isAnimating = true;
+      car.setAttribute('data-moving', 'true');
+    }
+
+    car.addEventListener('click', startAnimation);
+    if (continueBtn) continueBtn.addEventListener('click', startAnimation);
+    if (receptionBtn) receptionBtn.addEventListener('click', startAnimation);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initSlider();
+    initStages();
+    initCar();
+  });
+  document.addEventListener('astro:page-load', () => {
+    initSlider();
+    initStages();
+    initCar();
+  });
 </script>

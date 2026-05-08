@@ -1,0 +1,111 @@
+.container {
+  padding: 30px 60px 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 49px;
+  text-align: center;
+}
+
+.mainBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 80px;
+}
+
+.accordionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accordion {
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  margin-bottom: 0;
+  max-inline-size: 843px;
+  padding: 30px 40px 30px 30px;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordionTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.accordionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordionButton[data-open='true'] {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordionText {
+  margin: 0;
+  padding-block-start: 17px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.textList {
+  margin-inline-start: 20px;
+}
+
+.textListItem {
+  position: relative;
+}
+
+.textListItem::before {
+  content: '•';
+  position: absolute;
+  left: -24px;
+  top: -7px;
+  color: var(--color-light);
+  font-size: 24px;
+}
+
+.image {
+  inline-size: 899px;
+  block-size: 600px;
+}
+
+.buttonList {
+  display: flex;
+  gap: 45px;
+  margin: 0 auto 124px;
+}
+
+.carBlockButton {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  inline-size: 302px;
+  block-size: 52px;
+}
