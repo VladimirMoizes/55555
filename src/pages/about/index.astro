@@ -1,19 +1,25 @@
 ---
 import Icon from '../../components/icons/Icon.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
-import styles from './promote.module.css';
+import styles from './about.module.css';
 ---
 
 <MainLayout>
   <section class={styles.container}>
-    <h1 class={styles.title}>Продвижение сайтов</h1>
-
+    <h1 class={styles.title}>о нас</h1>
+    <img
+      class={styles.imageQuote}
+      src="/assets/images/about/quote.png"
+      alt="quote"
+    />
     <div class={styles.mainBlock}>
       <div class={styles.accordionBlock}>
         <div class={styles.accordion} data-accordion>
           <div class={styles.accordionHeader}>
             <p class={styles.accordionTitle}>
-              КАКИЕ ВИДЫ ПРОДВИЖЕНИЯ КОМПАНИИ ВЫ ПРЕДЛАГАЕТЕ?
+              Наша вэбстудия была основана в 2016 году преподавателем по
+              маркетингу РЭУ им. Плеханова, тьютором Нидерландского института
+              маркетинга (NIMA) Зубиным Сергеем. Дадим ему слово:
             </p>
             <button class={styles.accordionButton} data-accordion-btn>
               <Icon name="plus" size={24} color="var(--color-primary)" />
@@ -21,22 +27,32 @@ import styles from './promote.module.css';
           </div>
           <div class={styles.accordionContent} data-accordion-content>
             <p class={styles.accordionText}>
-              Самостоятельно мы осуществляем рекламу в Яндекс Директ и SEO -
-              оптимизацию сайта (первичную), но можем осуществить и другие виды
-              продвижения в качестве подрядчика. А именно: <br /><br /> SEO - продвижение,
-              реклама в соцсетях, в мессенджерах и т.п. Такой вид продвижения может
-              быть актуальным для тех компаний, кому нужно, что бы все делала одна
-              вэбстудия. Обычно, мы продвигаем сайты, которые сами и сделали.
+              Первоначально, мы назывались студия Битмодерн. В 2025 году мы
+              переименовали нашу студию на SityLoveStudio и разработали этот
+              вэбресурс. Хотелось бы поделиться историей его создания.<br />
+              <br />
+              Путешествуя по сети и просматривая сайты конкурентов, я понимал, что
+              нужно чем-то выделиться, иначе мы потеряемся среди сотен других разработчиков.<br
+              />
+              <br /> Было понимание, что надо сделать сайт, которого ни у кого больше
+              нет. Приходили разные идеи, но все время что-то не устраивало. <br
+              />
+              <br />Замысел этого сайта родился летним утром 2024 года. Видимо
+              из Ноосферы пришла идея сделать сайт-путешествие, пришло понимание
+              какие будут основные разделы и как их технически можно
+              реализовать.<br />
+              <br /> В течении месяца, я разрабатывал прототип сайта, домысливая многочисленные
+              детали. В этой работе я основывался на своем 8-ми летнем опыте создания
+              сайтов нашим клиентам (более 40 индивидуальных проектов) и на предыдущем
+              10-ти летнем опыте работы в маркетинге. <br />
+              <br />Работы по сайту продолжались более полугода.
             </p>
           </div>
         </div>
 
         <div class={styles.accordion} data-accordion>
           <div class={styles.accordionHeader}>
-            <p class={styles.accordionTitle}>
-              Пару слов о Яндекс Директ. Есть ли у вас какая-то своя специфика и
-              какой уровень цен?
-            </p>
+            <p class={styles.accordionTitle}>Что было самое сложное?</p>
             <button class={styles.accordionButton} data-accordion-btn>
               <Icon name="plus" size={24} color="var(--color-primary)" />
             </button>
@@ -44,20 +60,25 @@ import styles from './promote.module.css';
           <div class={styles.accordionContent} data-accordion-content>
             <p class={styles.accordionText}>
               Основными задачами продвижения в Яндексе считаем ширину охвата
-              рынка и минимизацию цены за клик. <br /><br />Первое осуществляем
-              за счет максимизации релевантных фраз, но без "мусорных" запросов.<br
-              /><br /> Второе осуществляем за счет постановки минимальных цен за клик
+              рынка и минимизацию цены за клик.<br />
+              <br /> Первое осуществляем за счет максимизации релевантных фраз, но
+              без "мусорных" запросов.<br />
+              <br /> Второе осуществляем за счет постановки минимальных цен за клик
               и постепенного их поднятия до уровня, когда показы нашего объявления
-              идут, но платим мы за него меньше конкурентов.<br /><br /> Плюс к этому,
-              мы делаем тексты объявлений яркими и максимально актуальными для потенциальных
-              клиентов.<br /><br /> В то же время неинтересных компании клиентов мы
-              отсекаем тем же текстом. Вот примеры подобной отсечки: "Строим бетонные
-              площадки от 1000 кв.м." "Бумажные пакеты с логотипом на заказ от 80
-              р./шт." <br /><br />Таким образом, неактуальные клиенты не кликают
-              наше объявление и мы сохраняем ваш бюджет.<br /><br />
+              идут, но платим мы за него меньше конкурентов.<br />
+              <br /> Плюс к этому, мы делаем тексты объявлений яркими и максимально
+              актуальными для потенциальных клиентов. <br />
+              <br />В то же время неинтересных компании клиентов мы отсекаем тем
+              же текстом. Вот примеры подобной отсечки: "Строим бетонные
+              площадки от 1000 кв.м." "Бумажные пакеты с логотипом на заказ от
+              80 р./шт." <br />
+              <br />Таким образом, неактуальные клиенты не кликают наше
+              объявление и мы сохраняем ваш бюджет.<br />
+              <br />
               Такой, "осторожный" подход к продвижению не всегда любит Яндекс, стремящийся
-              к максимизации дохода, но уважают наши клиенты. <br /><br />Цена
-              на продвижение в Директе составляет от 30 т.р. за запуск кампании
+              к максимизации дохода, но уважают наши клиенты.<br />
+              <br />
+              Цена на продвижение в Директе составляет от 30 т.р. за запуск кампании
               и от 10 т.р. ежемесячно, в зависимости от вашего бюджета на клики.
             </p>
           </div>
@@ -66,9 +87,8 @@ import styles from './promote.module.css';
         <div class={styles.accordion} data-accordion>
           <div class={styles.accordionHeader}>
             <p class={styles.accordionTitle}>
-              Теперь, прокомментируйте пожалуйста понятия: первичная SEO -
-              оптимизация сайта и SEO - продвижение. Что тут к чему и сколько
-              стоит?
+              Эксклюзивный сайт, это всегда совместная работа нескольких
+              специалистов. Скажите пару слов о вашей команде.
             </p>
             <button class={styles.accordionButton} data-accordion-btn>
               <Icon name="plus" size={24} color="var(--color-primary)" />
@@ -119,32 +139,21 @@ import styles from './promote.module.css';
               работ мы выполняем с помощью частных мастеров - субподрядчиков.
               Сегодня, такое продвижение особенно актуально для сервиса Gogle,
               так как иные способы рекламы недоступны в нем для российских
-              пользователей. Цена на SEO - продвижение от 50 т.р. в месяц +
-              бюджет на размещение внешних ссылок и статей.
+              пользователей. <br />
+              <br />Цена на SEO - продвижение от 50 т.р. в месяц + бюджет на
+              размещение внешних ссылок и статей.<br />
+              <br /> - Другие методы продвижения: соцсети, SMM, мессенджеры?
+              <br />- Информация по запросу. По стоимости, примерно как Директ. <br
+              />
+              <br />Добро пожаловать в CityLoveStudio!
             </div>
-          </div>
-        </div>
-
-        <div class={styles.accordion} data-accordion>
-          <div class={styles.accordionHeader}>
-            <p class={styles.accordionTitle}>
-              Другие методы продвижения: соцсети, SMM, мессенджеры?
-            </p>
-            <button class={styles.accordionButton} data-accordion-btn>
-              <Icon name="plus" size={24} color="var(--color-primary)" />
-            </button>
-          </div>
-          <div class={styles.accordionContent} data-accordion-content>
-            <p class={styles.accordionText}>
-              Информация по запросу. По стоимости, примерно как Директ.
-            </p>
           </div>
         </div>
       </div>
 
       <img
-        src="/assets/images/promote/businessman.png"
-        alt="businessman"
+        src="/assets/images/about/cars.jpg"
+        alt="cars"
         class={styles.image}
       />
     </div>
@@ -159,4 +168,8 @@ import styles from './promote.module.css';
   </section>
 </MainLayout>
 
-<script src="./promote.ts"></script>
+<script>
+  import { initAccordions } from '../promote/promote';
+  document.addEventListener('DOMContentLoaded', initAccordions);
+  document.addEventListener('astro:page-load', initAccordions);
+</script>

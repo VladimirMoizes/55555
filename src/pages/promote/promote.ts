@@ -1,4 +1,4 @@
-function initAccordions() {
+export function initAccordions() {
   const accordionItems = document.querySelectorAll('[data-accordion]');
 
   accordionItems.forEach((accordionItem) => {

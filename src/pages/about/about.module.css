@@ -2,11 +2,20 @@
   padding: 30px 60px 70px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .title {
-  margin-bottom: 49px;
+  margin-bottom: 120px;
   text-align: center;
+}
+
+.imageQuote {
+  inline-size: 555px;
+  block-size: 220px;
+  top: -10px;
+  left: 1318px;
+  position: absolute;
 }
 
 .mainBlock {
@@ -42,6 +51,7 @@
   font-weight: 500;
   margin: 0;
   padding-right: 20px;
+  text-transform: uppercase;
 }
 
 .accordionButton {
@@ -88,7 +98,7 @@
 }
 
 .image {
-  inline-size: 899px;
+  inline-size: 800px;
   block-size: 600px;
 }
 
