@@ -1,0 +1,39 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './cosmoport.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <div class={styles.mainBlock}>
+      <video class={styles.videoCosmo} autoplay loop muted playsinline>
+        <source src="/assets/videos/cosmo2 webm.webm" type="video/webm" />
+        <source src="/assets/videos/cosmo2 mp4.mp4" type="video/mp4" />
+      </video>
+      <img
+        class={styles.imageOverlay}
+        src="/assets/images/cosmoport/spacecraft.png"
+        alt="overlay"
+      />
+      <div class={styles.content}>
+        <h1 class={styles.title}>До прибытия на Плеяды осталось</h1>
+        <div class={styles.timer}>
+          <p class={styles.timeTimer}>22 : 11 : 10</p>
+          <div class={styles.textTimerBlock}>
+            <span>часов</span>
+            <span>минут</span>
+            <span>секунд</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class={styles.buttonList}>
+      <button class={styles.carBlockButton} data-button-continue
+        >Продолжить путешествие</button
+      >
+      <button class={styles.carBlockButton} data-button-reception
+        >Перейти к заказу на Рецепшн</button
+      >
+    </div>
+  </section>
+</MainLayout>
