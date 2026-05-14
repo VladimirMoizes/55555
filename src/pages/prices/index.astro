@@ -1,0 +1,64 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './prices.module.css';
+import { prices } from '../../data/pricesData';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Цены</h1>
+
+    <div class={styles.mainBlock}>
+      <table class={styles.table}>
+        <tr class={`${styles.tableRow} ${styles.tableRowTitle}`}>
+          <td></td>
+          <td class={`${styles.mainCell} ${styles.mainTitle}`}
+            ><span>Стартовые цены на создание и модернизацию сайтов.</span></td
+          >
+          <td><span>стоимость в тыс.руб.</span></td>
+        </tr>
+        {
+          prices.slice(0, 4).map((item) => {
+            return (
+              <tr class={styles.tableRow}>
+                <td class={styles.number}>{item.id}</td>
+                <td class={styles.mainCell}>
+                  <span>{item.description}</span>
+                </td>
+                <td class={styles.price}>{item.price}</td>
+              </tr>
+            );
+          })
+        }
+        <tr class={`${styles.tableRow} ${styles.tableRowTitle}`}>
+          <td></td>
+          <td class={`${styles.mainCell} ${styles.mainTitle}`}
+            ><span>Стартовые цены на продвижение и 3D туры</span></td
+          >
+          <td></td>
+        </tr>
+        {
+          prices.slice(4).map((item) => {
+            return (
+              <tr class={styles.tableRow}>
+                <td class={styles.number}>{item.id}</td>
+                <td class={styles.mainCell}>
+                  <span>{item.description}</span>
+                </td>
+                <td class={styles.price}>{item.price}</td>
+              </tr>
+            );
+          })
+        }
+      </table>
+    </div>
+    <div class={styles.buttonList}>
+      <button class={styles.carBlockButton} data-button-continue
+        >Продолжить путешествие</button
+      >
+      <button class={styles.carBlockButton} data-button-reception
+        >Перейти к заказу на Рецепшн</button
+      >
+    </div>
+  </section></MainLayout
+>
