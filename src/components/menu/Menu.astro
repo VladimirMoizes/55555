@@ -20,7 +20,10 @@ const currentPath = Astro.url.pathname;
         menu.map((item) => (
           <li
             class={styles.menuItem}
-            data-active={currentPath === item.url}
+            data-active={
+              currentPath === item.url ||
+              (item.subMenu && currentPath.startsWith('/websites/'))
+            }
             data-open="false"
           >
             <a href={item.url}>{item.name}</a>

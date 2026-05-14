@@ -1,7 +1,7 @@
 export const menuWebDevelopment = [
-  { id: 20, name: 'разработка сайтов', url: '/website-development' },
-  { id: 21, name: 'модернизация сайтов', url: '/website-modermization' },
-  { id: 22, name: 'редизайн сайтов', url: '/website-redisign' },
+  { id: 20, name: 'разработка сайтов', url: '/websites/development' },
+  { id: 21, name: 'модернизация сайтов', url: '/websites/modernization' },
+  { id: 22, name: 'редизайн сайтов', url: '/websites/redesign' },
 ];
 
 export const menu = [
@@ -10,10 +10,9 @@ export const menu = [
   {
     id: 2,
     name: 'веб-разработка',
-    url: '/web-development',
     subMenu: menuWebDevelopment,
   },
-  { id: 3, name: 'продвижение сайтов', url: '/website-promotion' },
+  { id: 3, name: 'продвижение сайтов', url: '/promote' },
   { id: 4, name: 'портфолио', url: '/portfolio' },
   { id: 5, name: 'цены', url: '/prices' },
   { id: 6, name: 'вдохновение', url: '/inspiration' },
@@ -23,5 +22,5 @@ export const menu = [
   { id: 10, name: 'доска почета', url: '/honor-board' },
   { id: 11, name: 'космопорт', url: '/cosmoport' },
   { id: 12, name: 'о нас', url: '/about' },
-  { id: 13, name: 'ресепшн', url: '/reception' },
+  { id: 13, name: 'ресепшен', url: '/reception' },
 ];

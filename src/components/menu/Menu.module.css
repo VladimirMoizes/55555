@@ -34,7 +34,14 @@
   font-size: 18px;
 }
 
-.menuItem[data-active='true'],
+.menuItem[data-active='true'] {
+  color: var(--color-primary);
+}
+
+.subMenuItem {
+  color: var(--color-text);
+}
+
 .subMenuItem[data-active='true'] {
   color: var(--color-primary);
 }
