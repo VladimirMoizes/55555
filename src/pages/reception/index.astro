@@ -1,0 +1,375 @@
+---
+import Icon from '../../components/icons/Icon.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './reception.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Ресепшен</h1>
+    <ul class={styles.cardList}>
+      <li class={styles.cardListItem}>
+        <article class={styles.card}>
+          <div class={styles.cardTextBlock}>
+            <span class={styles.number}>01</span>
+            <span class={styles.text}
+              >Реализуем любые Ваши фантазии в области веб-дизайна</span
+            >
+          </div>
+          <img src="/assets/images/reception/girl1.png" alt="girl" />
+        </article>
+      </li>
+      <li class={styles.cardListItem}>
+        <article class={styles.card}>
+          <div class={styles.cardTextBlock}>
+            <span class={styles.number}>02</span>
+            <span class={styles.text}
+              >С удовольствием проконсультируем Вас и примем заказ на разработку
+              сайта</span
+            >
+          </div>
+          <img src="/assets/images/reception/girl2.png" alt="girl" />
+        </article>
+      </li>
+      <li class={styles.cardListItem}>
+        <article class={styles.card}>
+          <div class={styles.cardTextBlock}>
+            <span class={styles.number}>03</span>
+            <span class={styles.text}
+              >Сами создадим концепцию сайта, которого нет ни у кого на вашем
+              рынке и воплотим его в жизнь</span
+            >
+          </div>
+          <img src="/assets/images/reception/girl3.png" alt="girl" />
+        </article>
+      </li>
+    </ul>
+    <div class={styles.formBlock}>
+      <form class={`${styles.form} ${styles.formFirst}`}>
+        <h2 class={styles.formTitle}>Представьтесь, пожалуйста!</h2>
+        <div class={styles.subTitleBlock}>
+          <p class={styles.subTitle}>
+            Заполните и выберите актуальные поля, или напишите нам в
+            мессенджеры:
+          </p>
+          <div class={styles.buttons}>
+            <button class={styles.buttonIcon} type="button"
+              ><Icon
+                name="whatsapp"
+                size={27}
+                color="var(--color-primary)"
+              /></button
+            >
+            <button class={styles.buttonIcon} type="button"
+              ><Icon
+                name="telegram"
+                size={27}
+                color="var(--color-primary)"
+              /></button
+            >
+          </div>
+        </div>
+        <div class={styles.inputList}>
+          <input
+            class={styles.input}
+            type="text"
+            required
+            placeholder="Ваше имя*"
+            name="name"
+          />
+          <input
+            class={styles.input}
+            type="tel"
+            required
+            placeholder="Телефон*"
+            name="phone"
+          />
+          <input
+            class={styles.input}
+            type="email"
+            required
+            placeholder="Email"
+          />
+          <input
+            class={styles.input}
+            type="url"
+            required
+            placeholder="Адрес текущего сайта"
+            name="website"
+          />
+          <input
+            class={styles.input}
+            type="number"
+            required
+            placeholder="Бюджет проекта**"
+            name="budget"
+          />
+
+          <label class={styles.labelFirst} for="websiteType"
+            ><span class={styles.labelTextFirst}>Выберите тип сайта:</span>
+            <select class={styles.select} name="websiteType" id="websiteType">
+              <option class={styles.option} value="Эксклюзивный дизайн сайта"
+                >Эксклюзивный дизайн сайта</option
+              >
+              <option class={styles.option} value="Эксклюзивный дизайн сайта1"
+                >Эксклюзивный дизайн сайта 1</option
+              >
+              <option class={styles.option} value="Эксклюзивный дизайн сайта2"
+                >Эксклюзивный дизайн сайта 2</option
+              >
+              <option class={styles.option} value="Эксклюзивный дизайн сайта 3"
+                >Эксклюзивный дизайн сайта 3</option
+              >
+            </select>
+          </label>
+          <textarea
+            class={styles.textarea}
+            placeholder="Что бы Вы хотели, заказать разработку сайта, получить консультацию, пригласить на переговоры и т.д.? 
+По возможности, подробно опишите задачу, пожелания, особенности выполнения или заполните бриф онлайн.
+Бриф (и/или техзадание)также можно скачать и прикрепить к заявке."
+          ></textarea>
+        </div>
+        <span class={styles.addText}
+          >* обязательные поля <br /> ** знание вашего бюджета позволит нам сразу
+          сделать максимально интересное для вас предложение</span
+        >
+        <div class={styles.footerForm}>
+          <button class={styles.brifButton} type="button"
+            >Заполнить бриф онлайн</button
+          >
+          <div class={styles.linkBrifList}>
+            <a href="##" class={styles.linkBrif}>
+              <img
+                class={styles.linkIcon}
+                src="/assets/images/reception/download.svg"
+                alt="download icon"
+              />
+              <span class={styles.linkText}>Скачать бриф</span>
+            </a>
+            <a href="##" class={styles.linkBrif}
+              ><img
+                class={styles.linkIcon}
+                src="/assets/images/reception/attach.svg"
+                alt="download icon"
+              />
+              <span class={styles.linkText}>Прикрепить ТЗ, бриф</span></a
+            >
+          </div>
+          <button class={styles.formButton} type="submit">Отправить нам</button>
+        </div>
+        <p class={styles.agreement}>
+          Нажимая кнопку, я подтверждаю своё согласие на обработку персональных
+          данных
+        </p>
+      </form>
+
+      <form class={`${styles.form} ${styles.formSecond}`}>
+        <p class={styles.subTitle}>
+          Заполните пожалуйста поля, которые сочтете актуальными!
+        </p>
+        <div class={styles.inputListSecond}>
+          <div class={styles.inputListSecondStart}>
+            <label class={styles.labelStart} for="nameCo">
+              <span>Наименование компании</span>
+              <input
+                class={styles.input}
+                id="nameCo"
+                name="nameCo"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.labelStart} for="deadlines">
+              <span>Сроки проекта</span>
+              <input
+                class={styles.input}
+                id="deadlines"
+                name="deadlines"
+                type="text"
+              />
+            </label>
+          </div>
+
+          <label class={styles.label} for="product">
+            <span
+              >Опишите бренд / продукт / услугу, для которой создается сайт, его
+              географию</span
+            >
+            <input
+              class={styles.input}
+              id="product"
+              name="product"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="advantages">
+            <span
+              >Уникальные преимущества компании / продукта / услуги, для которой
+              создается сайт. Чем вы отличаетесь от конкурентов, что вы делаете
+              лучше всего?</span
+            >
+            <input
+              class={styles.input}
+              id="advantages"
+              name="advantages"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="targets">
+            <span
+              >Какие маркетинговые и имиджевые цели стоят перед разрабатываемым
+              сайтом?</span
+            >
+            <input
+              class={styles.input}
+              id="targets"
+              name="targets"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="problems">
+            <span>Опишите проблемы существующего сайта, требующие решения</span>
+            <input
+              class={styles.input}
+              id="problems"
+              name="problems"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="audience">
+            <span
+              >Какая целевая аудитория сайта? Какие есть группы посетителей?</span
+            >
+            <input
+              class={styles.input}
+              id="audience"
+              name="audience"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="competitors">
+            <span
+              >Перечислите сайты ваших прямых и косвенных конкурентов. Отметьте
+              их положительные и отрицательные стороны.</span
+            >
+            <textarea
+              class={styles.textarea}
+              id="competitors"
+              name="competitors"></textarea>
+          </label>
+
+          <label class={styles.label} for="navMenu">
+            <span
+              >Перечислите основные пункты навигационного меню сайта
+              (предварительная структура)</span
+            >
+            <input
+              class={styles.input}
+              id="navMenu"
+              name="navMenu"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="services">
+            <span
+              >Опишите ключевые сервисы сайта: каталоги, карточки продукции,
+              калькуляторы, 3d туры, новостные ленты, формы заявок и прочее</span
+            >
+            <input
+              class={styles.input}
+              id="services"
+              name="services"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="degree">
+            <span
+              >Оцените текущую степень готовности информации. Есть ли
+              необходимость в съемке материалов, в редактуре и написании текстов
+              и т.п.?</span
+            >
+            <input class={styles.input} id="degree" name="degree" type="text" />
+          </label>
+
+          <label class={styles.label} for="engine">
+            <span
+              >Есть ли предпочтение по движку сайта? Вордпресс, Битрикс, Тильда,
+              без CMS?</span
+            >
+            <input class={styles.input} id="engine" name="engine" type="text" />
+          </label>
+
+          <label class={styles.label} for="websites">
+            <span
+              >Перечислите несколько сайтов, которые вам нравятся (в вашей и/или
+              иной сфере деятельности). Чем они вас привлекают?</span
+            >
+            <textarea class={styles.textarea} id="websites" name="websites"
+            ></textarea>
+          </label>
+
+          <label class={styles.label} for="adjectives">
+            <span
+              >Опишите будущий сайт нескольким прилагательными (например,
+              современный, удобный). Также укажите, каким он не должен быть
+              (например, ярким, пафосным).</span
+            >
+            <input
+              class={styles.input}
+              id="adjectives"
+              name="adjectives"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="promote">
+            <span
+              >Планируется ли дальнейшее продвижение сайта? Какими способами и
+              чьими силами?</span
+            >
+            <input
+              class={styles.input}
+              id="promote"
+              name="promote"
+              type="text"
+            />
+          </label>
+
+          <label class={styles.label} for="additional">
+            <span
+              >Укажите все то, что, с вашей точки зрения, может дополнительно
+              уточнить задачу по разработке сайта.</span
+            >
+            <input
+              class={styles.input}
+              id="additional"
+              name="additional"
+              type="text"
+            />
+          </label>
+        </div>
+
+        <div class={styles.formFooterSecond}>
+          <span class={styles.formText}>Спасибо за проделанную работу!</span>
+          <div class={styles.agreeAndButton}>
+            <span class={styles.agreement}
+              >Нажимая кнопку, я подтверждаю своё согласие на обработку
+              персональных данных</span
+            >
+            <button class={styles.formButton} type="submit"
+              >Отправить нам</button
+            >
+          </div>
+        </div>
+        <button class={styles.hide} type="button">Скрыть бриф</button>
+      </form>
+    </div>
+  </section>
+</MainLayout>
