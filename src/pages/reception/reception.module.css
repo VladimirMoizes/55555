@@ -319,3 +319,50 @@
   inline-size: 405px;
   height: 65px;
 }
+
+.documentsBlock {
+  margin-block-end: 60px;
+
+  .documentTitle {
+    margin-block-end: 45px;
+  }
+
+  .documentList {
+    display: flex;
+    justify-content: space-between;
+
+    .card {
+      inline-size: 267px;
+      block-size: 418px;
+      border: 1px solid var(--color-primary);
+    }
+  }
+}
+
+.details {
+  margin: 0 auto;
+  padding: 34px 45px;
+  border: 1px solid var(--color-primary);
+  inline-size: 706px;
+  background-color: #282828;
+
+  .title {
+    margin-block-end: 29px;
+    font-size: 30px;
+  }
+
+  .detailsPart {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+    .detailsTitle {
+      font-weight: 600;
+    }
+  }
+
+  .detailsPart:last-child {
+    margin-block-start: 20px;
+  }
+}

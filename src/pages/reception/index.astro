@@ -1,5 +1,6 @@
 ---
 import Icon from '../../components/icons/Icon.astro';
+import { reception } from '../../data/reception';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './reception.module.css';
 ---
@@ -370,6 +371,44 @@ import styles from './reception.module.css';
         </div>
         <button class={styles.hide} type="button">Скрыть бриф</button>
       </form>
+    </div>
+
+    <div class={styles.documentsBlock}>
+      <h2 class={styles.documentTitle}>Документы</h2>
+      <ul class={styles.documentList}>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+        <li class={styles.documentListItem}>
+          <article class={styles.card}></article>
+        </li>
+      </ul>
+    </div>
+
+    <div class={styles.details}>
+      <h2 class={styles.title}>реквизиты</h2>
+      {
+        reception.map((item) => {
+          return (
+            <div class={styles.detailsPart}>
+              <span class={styles.detailsTitle}>{item.title}</span>
+              <span class={styles.description}>{item.description}</span>
+            </div>
+          );
+        })
+      }
     </div>
   </section>
 </MainLayout>
