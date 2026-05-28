@@ -170,6 +170,8 @@ import styles from './about.module.css';
 
 <script>
   import { initAccordions } from '../promote/promote';
-  document.addEventListener('DOMContentLoaded', initAccordions);
-  document.addEventListener('astro:page-load', initAccordions);
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', initAccordions);
+    document.addEventListener('astro:page-load', initAccordions);
+  }
 </script>

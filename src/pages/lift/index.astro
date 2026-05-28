@@ -187,6 +187,8 @@ const buttonsLift = [
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initButtons);
-  document.addEventListener('astro:page-load', initButtons);
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', initButtons);
+    document.addEventListener('astro:page-load', initButtons);
+  }
 </script>

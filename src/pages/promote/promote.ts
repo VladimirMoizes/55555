@@ -23,5 +23,7 @@ export function initAccordions() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initAccordions);
-document.addEventListener('astro:page-load', initAccordions);
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', initAccordions);
+  document.addEventListener('astro:page-load', initAccordions);
+}

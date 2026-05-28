@@ -53,13 +53,15 @@ function initCar() {
   if (receptionBtn) receptionBtn.addEventListener('click', startAnimation);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initSlider();
-  initStages();
-  initCar();
-});
-document.addEventListener('astro:page-load', () => {
-  initSlider();
-  initStages();
-  initCar();
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initSlider();
+    initStages();
+    initCar();
+  });
+  document.addEventListener('astro:page-load', () => {
+    initSlider();
+    initStages();
+    initCar();
+  });
+}

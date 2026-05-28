@@ -85,23 +85,17 @@ import styles from './reception.module.css';
             placeholder="Телефон*"
             name="phone"
           />
-          <input
-            class={styles.input}
-            type="email"
-            required
-            placeholder="Email"
-          />
+          <input class={styles.input} type="email" placeholder="Email" />
           <input
             class={styles.input}
             type="url"
-            required
             placeholder="Адрес текущего сайта"
             name="website"
+            autocomplete="off"
           />
           <input
             class={styles.input}
             type="number"
-            required
             placeholder="Бюджет проекта**"
             name="budget"
           />
@@ -112,14 +106,14 @@ import styles from './reception.module.css';
               <option class={styles.option} value="Эксклюзивный дизайн сайта"
                 >Эксклюзивный дизайн сайта</option
               >
-              <option class={styles.option} value="Эксклюзивный дизайн сайта1"
-                >Эксклюзивный дизайн сайта 1</option
+              <option class={styles.option} value="Нетривиальный сайт">
+                Нетривиальный сайт</option
               >
-              <option class={styles.option} value="Эксклюзивный дизайн сайта2"
-                >Эксклюзивный дизайн сайта 2</option
+              <option class={styles.option} value="Сайт на Тильде"
+                >Сайт на Тильде</option
               >
-              <option class={styles.option} value="Эксклюзивный дизайн сайта 3"
-                >Эксклюзивный дизайн сайта 3</option
+              <option class={styles.option} value="Сайт на ИИ"
+                >Сайт на ИИ</option
               >
             </select>
           </label>
@@ -138,8 +132,9 @@ import styles from './reception.module.css';
           <button class={styles.brifButton} type="button"
             >Заполнить бриф онлайн</button
           >
+
           <div class={styles.linkBrifList}>
-            <a href="##" class={styles.linkBrif}>
+            <a href="/assets/files/brief.docx" class={styles.linkBrif} download>
               <img
                 class={styles.linkIcon}
                 src="/assets/images/reception/download.svg"
@@ -147,15 +142,29 @@ import styles from './reception.module.css';
               />
               <span class={styles.linkText}>Скачать бриф</span>
             </a>
-            <a href="##" class={styles.linkBrif}
-              ><img
+            <label class={styles.linkBrif}>
+              <img
                 class={styles.linkIcon}
                 src="/assets/images/reception/attach.svg"
-                alt="download icon"
+                alt="attach icon"
               />
-              <span class={styles.linkText}>Прикрепить ТЗ, бриф</span></a
-            >
+              <span class={styles.linkText}>Прикрепить ТЗ, бриф</span>
+              <input
+                type="file"
+                class={styles.fileInput}
+                id="briefFile"
+                accept=".doc,.docx,.pdf,.txt,.zip"
+              />
+              <span class={styles.fileName} id="fileName"></span>
+              <button
+                type="button"
+                class={styles.removeFileBtn}
+                id="removeFileBtn"
+                style="display: none;">✕</button
+              >
+            </label>
           </div>
+
           <button class={styles.formButton} type="submit">Отправить нам</button>
         </div>
         <p class={styles.agreement}>
@@ -166,210 +175,226 @@ import styles from './reception.module.css';
 
       <form class={`${styles.form} ${styles.formSecond}`}>
         <p class={styles.subTitle}>
-          Заполните пожалуйста поля, которые сочтете актуальными!
+          Заполните, пожалуйста, поля, которые сочтете актуальными!
         </p>
-        <div class={styles.inputListSecond}>
-          <div class={styles.inputListSecondStart}>
-            <label class={styles.labelStart} for="nameCo">
-              <span>Наименование компании</span>
+        <div class={styles.briefContent} id="briefContent">
+          <div class={styles.inputListSecond}>
+            <div class={styles.inputListSecondStart}>
+              <label class={styles.labelStart} for="nameCo">
+                <span>Наименование компании</span>
+                <input
+                  class={styles.input}
+                  id="nameCo"
+                  name="nameCo"
+                  type="text"
+                />
+              </label>
+
+              <label class={styles.labelStart} for="deadlines">
+                <span>Сроки проекта</span>
+                <input
+                  class={styles.input}
+                  id="deadlines"
+                  name="deadlines"
+                  type="text"
+                />
+              </label>
+            </div>
+
+            <label class={styles.label} for="product">
+              <span
+                >Опишите бренд / продукт / услугу, для которой создается сайт,
+                его географию</span
+              >
               <input
                 class={styles.input}
-                id="nameCo"
-                name="nameCo"
+                id="product"
+                name="product"
                 type="text"
               />
             </label>
 
-            <label class={styles.labelStart} for="deadlines">
-              <span>Сроки проекта</span>
+            <label class={styles.label} for="advantages">
+              <span
+                >Уникальные преимущества компании / продукта / услуги, для
+                которой создается сайт. Чем вы отличаетесь от конкурентов, что
+                вы делаете лучше всего?</span
+              >
               <input
                 class={styles.input}
-                id="deadlines"
-                name="deadlines"
+                id="advantages"
+                name="advantages"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="targets">
+              <span
+                >Какие маркетинговые и имиджевые цели стоят перед
+                разрабатываемым сайтом?</span
+              >
+              <input
+                class={styles.input}
+                id="targets"
+                name="targets"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="problems">
+              <span
+                >Опишите проблемы существующего сайта, требующие решения</span
+              >
+              <input
+                class={styles.input}
+                id="problems"
+                name="problems"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="audience">
+              <span
+                >Какая целевая аудитория сайта? Какие есть группы посетителей?</span
+              >
+              <input
+                class={styles.input}
+                id="audience"
+                name="audience"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="competitors">
+              <span
+                >Перечислите сайты ваших прямых и косвенных конкурентов.
+                Отметьте их положительные и отрицательные стороны.</span
+              >
+              <textarea
+                class={styles.textarea}
+                id="competitors"
+                name="competitors"></textarea>
+            </label>
+
+            <label class={styles.label} for="navMenu">
+              <span
+                >Перечислите основные пункты навигационного меню сайта
+                (предварительная структура)</span
+              >
+              <input
+                class={styles.input}
+                id="navMenu"
+                name="navMenu"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="services">
+              <span
+                >Опишите ключевые сервисы сайта: каталоги, карточки продукции,
+                калькуляторы, 3d туры, новостные ленты, формы заявок и прочее</span
+              >
+              <input
+                class={styles.input}
+                id="services"
+                name="services"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="degree">
+              <span
+                >Оцените текущую степень готовности информации. Есть ли
+                необходимость в съемке материалов, в редактуре и написании
+                текстов и т.п.?</span
+              >
+              <input
+                class={styles.input}
+                id="degree"
+                name="degree"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="engine">
+              <span
+                >Есть ли предпочтение по движку сайта? Вордпресс, Битрикс,
+                Тильда, без CMS?</span
+              >
+              <input
+                class={styles.input}
+                id="engine"
+                name="engine"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="websites">
+              <span
+                >Перечислите несколько сайтов, которые вам нравятся (в вашей
+                и/или иной сфере деятельности). Чем они вас привлекают?</span
+              >
+              <textarea class={styles.textarea} id="websites" name="websites"
+              ></textarea>
+            </label>
+
+            <label class={styles.label} for="adjectives">
+              <span
+                >Опишите будущий сайт нескольким прилагательными (например,
+                современный, удобный). Также укажите, каким он не должен быть
+                (например, ярким, пафосным).</span
+              >
+              <input
+                class={styles.input}
+                id="adjectives"
+                name="adjectives"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="promote">
+              <span
+                >Планируется ли дальнейшее продвижение сайта? Какими способами и
+                чьими силами?</span
+              >
+              <input
+                class={styles.input}
+                id="promote"
+                name="promote"
+                type="text"
+              />
+            </label>
+
+            <label class={styles.label} for="additional">
+              <span
+                >Укажите все то, что, с вашей точки зрения, может дополнительно
+                уточнить задачу по разработке сайта.</span
+              >
+              <input
+                class={styles.input}
+                id="additional"
+                name="additional"
                 type="text"
               />
             </label>
           </div>
 
-          <label class={styles.label} for="product">
-            <span
-              >Опишите бренд / продукт / услугу, для которой создается сайт, его
-              географию</span
-            >
-            <input
-              class={styles.input}
-              id="product"
-              name="product"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="advantages">
-            <span
-              >Уникальные преимущества компании / продукта / услуги, для которой
-              создается сайт. Чем вы отличаетесь от конкурентов, что вы делаете
-              лучше всего?</span
-            >
-            <input
-              class={styles.input}
-              id="advantages"
-              name="advantages"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="targets">
-            <span
-              >Какие маркетинговые и имиджевые цели стоят перед разрабатываемым
-              сайтом?</span
-            >
-            <input
-              class={styles.input}
-              id="targets"
-              name="targets"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="problems">
-            <span>Опишите проблемы существующего сайта, требующие решения</span>
-            <input
-              class={styles.input}
-              id="problems"
-              name="problems"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="audience">
-            <span
-              >Какая целевая аудитория сайта? Какие есть группы посетителей?</span
-            >
-            <input
-              class={styles.input}
-              id="audience"
-              name="audience"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="competitors">
-            <span
-              >Перечислите сайты ваших прямых и косвенных конкурентов. Отметьте
-              их положительные и отрицательные стороны.</span
-            >
-            <textarea
-              class={styles.textarea}
-              id="competitors"
-              name="competitors"></textarea>
-          </label>
-
-          <label class={styles.label} for="navMenu">
-            <span
-              >Перечислите основные пункты навигационного меню сайта
-              (предварительная структура)</span
-            >
-            <input
-              class={styles.input}
-              id="navMenu"
-              name="navMenu"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="services">
-            <span
-              >Опишите ключевые сервисы сайта: каталоги, карточки продукции,
-              калькуляторы, 3d туры, новостные ленты, формы заявок и прочее</span
-            >
-            <input
-              class={styles.input}
-              id="services"
-              name="services"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="degree">
-            <span
-              >Оцените текущую степень готовности информации. Есть ли
-              необходимость в съемке материалов, в редактуре и написании текстов
-              и т.п.?</span
-            >
-            <input class={styles.input} id="degree" name="degree" type="text" />
-          </label>
-
-          <label class={styles.label} for="engine">
-            <span
-              >Есть ли предпочтение по движку сайта? Вордпресс, Битрикс, Тильда,
-              без CMS?</span
-            >
-            <input class={styles.input} id="engine" name="engine" type="text" />
-          </label>
-
-          <label class={styles.label} for="websites">
-            <span
-              >Перечислите несколько сайтов, которые вам нравятся (в вашей и/или
-              иной сфере деятельности). Чем они вас привлекают?</span
-            >
-            <textarea class={styles.textarea} id="websites" name="websites"
-            ></textarea>
-          </label>
-
-          <label class={styles.label} for="adjectives">
-            <span
-              >Опишите будущий сайт нескольким прилагательными (например,
-              современный, удобный). Также укажите, каким он не должен быть
-              (например, ярким, пафосным).</span
-            >
-            <input
-              class={styles.input}
-              id="adjectives"
-              name="adjectives"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="promote">
-            <span
-              >Планируется ли дальнейшее продвижение сайта? Какими способами и
-              чьими силами?</span
-            >
-            <input
-              class={styles.input}
-              id="promote"
-              name="promote"
-              type="text"
-            />
-          </label>
-
-          <label class={styles.label} for="additional">
-            <span
-              >Укажите все то, что, с вашей точки зрения, может дополнительно
-              уточнить задачу по разработке сайта.</span
-            >
-            <input
-              class={styles.input}
-              id="additional"
-              name="additional"
-              type="text"
-            />
-          </label>
-        </div>
-
-        <div class={styles.formFooterSecond}>
-          <span class={styles.formText}>Спасибо за проделанную работу!</span>
-          <div class={styles.agreeAndButton}>
-            <span class={styles.agreement}
-              >Нажимая кнопку, я подтверждаю своё согласие на обработку
-              персональных данных</span
-            >
-            <button class={styles.formButton} type="submit"
-              >Отправить нам</button
-            >
+          <div class={styles.formFooterSecond}>
+            <span class={styles.formText}>Спасибо за проделанную работу!</span>
+            <div class={styles.agreeAndButton}>
+              <span class={styles.agreement}
+                >Нажимая кнопку, я подтверждаю своё согласие на обработку
+                персональных данных</span
+              >
+              <button class={styles.formButton} type="submit"
+                >Отправить нам</button
+              >
+            </div>
           </div>
         </div>
-        <button class={styles.hide} type="button">Скрыть бриф</button>
+        <button class={styles.hide} type="button" id="toggleBriefBtn"
+          >Показать бриф</button
+        >
       </form>
     </div>
 
@@ -412,3 +437,65 @@ import styles from './reception.module.css';
     </div>
   </section>
 </MainLayout>
+
+<script>
+  function initBriefToggle(): void {
+    const briefContent = document.getElementById('briefContent');
+    const toggleBtn = document.getElementById('toggleBriefBtn');
+
+    if (!briefContent || !toggleBtn) return;
+
+    briefContent.setAttribute('data-hidden', 'true');
+    toggleBtn.textContent = 'Показать бриф';
+
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = briefContent.getAttribute('data-hidden') === 'true';
+
+      if (isHidden) {
+        briefContent.setAttribute('data-hidden', 'false');
+        toggleBtn.textContent = 'Скрыть бриф';
+      } else {
+        briefContent.setAttribute('data-hidden', 'true');
+        toggleBtn.textContent = 'Показать бриф';
+      }
+    });
+
+    const fileInput = document.getElementById(
+      'briefFile'
+    ) as HTMLInputElement | null;
+    const fileNameSpan = document.getElementById(
+      'fileName'
+    ) as HTMLElement | null;
+    const removeBtn = document.getElementById(
+      'removeFileBtn'
+    ) as HTMLButtonElement | null;
+
+    fileInput?.addEventListener('change', (event: Event) => {
+      const target = event.target as HTMLInputElement;
+      const files = target.files;
+
+      if (files && files.length > 0 && fileNameSpan) {
+        fileNameSpan.textContent = files[0].name;
+        if (removeBtn) removeBtn.style.display = 'inline-block';
+        fileInput.disabled = true;
+      } else if (fileNameSpan) {
+        fileNameSpan.textContent = '';
+        if (removeBtn) removeBtn.style.display = 'none';
+        fileInput.disabled = false;
+      }
+    });
+
+    removeBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (fileInput) {
+        fileInput.value = '';
+        fileInput.disabled = false;
+        if (fileNameSpan) fileNameSpan.textContent = '';
+        if (removeBtn) removeBtn.style.display = 'none';
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initBriefToggle);
+  document.addEventListener('astro:page-load', initBriefToggle);
+</script>
