@@ -286,6 +286,7 @@
       letter-spacing: 0;
       line-height: 140%;
       margin-block-start: 5px;
+      display: block;
     }
   }
 }
