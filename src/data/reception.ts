@@ -40,3 +40,48 @@ export const reception = [
     description: '4276 1609 5501 5384 (Сергей Игоревич З.)',
   },
 ];
+
+export const documents = [
+  {
+    type: 'image',
+    image: '/assets/images/reception/svidetelstvo_ip.jpg',
+    title: 'Свидетельство о регистрации ИП',
+    alt: 'Свидетельство',
+    fileUrl: '/assets/images/reception/svidetelstvo_ip.jpg',
+  },
+  {
+    type: 'image',
+    image: '/assets/images/reception/uvedomlenie_ip.jpg',
+    title: 'Уведомление о постановке на учет в налоговом органе',
+    alt: 'Уведомление',
+    fileUrl: '/assets/images/reception/uvedomlenie_ip.jpg',
+  },
+  {
+    type: 'file',
+    image: '/assets/images/reception/выписка_из_ЕГРИП.jpg',
+    title: 'Выписка из ЕГРИП',
+    alt: 'Выписка',
+    fileUrl: '/assets/files/list_zapisi.pdf',
+  },
+  {
+    type: 'download',
+    image: '/assets/images/reception/договор.jpg',
+    title: 'Скачать образец договора',
+    alt: 'Договор',
+    fileUrl: '/assets/files/bitmodern_ru_-_dogovor.doc',
+  },
+  {
+    type: 'download',
+    image: '/assets/images/reception/бриф.jpg',
+    title: 'Скачать брифинг',
+    alt: 'Брифинг',
+    fileUrl: '/assets/files/bitmodern_ru_-_brief.docx',
+  },
+  {
+    type: 'file',
+    image: '/assets/images/reception/презентация.jpg',
+    title: 'Скачать презентацию',
+    alt: 'Презентация',
+    fileUrl: '/assets/files/bitmodern_presentation.pdf',
+  },
+];

@@ -1,13 +1,49 @@
 function initBriefToggle(): void {
   const briefContent = document.getElementById('briefContent');
   const toggleBtn = document.getElementById('toggleBriefBtn');
-  const form = document.querySelectorAll('#form');
-  const modal = document.querySelector('[data-modal]');
+  const forms = document.querySelectorAll('#form');
+  const documents = document.querySelectorAll('[data-type]');
 
-  form.forEach((item) => {
-    item.addEventListener('submit', (e) => {
+  forms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const modalContent = document.querySelector('#modalContent');
+      if (modalContent) {
+        modalContent.innerHTML =
+          '<h2>Спасибо за обращение!</h2><p>Мы скоро с Вами свяжемся.</p>';
+      }
+
       if ((window as any).openModal) (window as any).openModal();
+    });
+  });
+
+  documents.forEach((doc) => {
+    doc.addEventListener('click', () => {
+      const type = doc.getAttribute('data-type');
+      const fileUrl = doc.getAttribute('data-file-url');
+      const imageUrl = doc.getAttribute('data-image-url');
+
+      if (type === 'image') {
+        const modalContent = document.querySelector('#modalContent');
+        if (modalContent) {
+          modalContent.innerHTML = `<img src="${imageUrl}" style="max-width: 100%; max-height: 80vh; display: block; margin: 10px auto 0;" />`;
+        }
+        if ((window as any).openModal) (window as any).openModal();
+      } else if (type === 'file') {
+        if (fileUrl) {
+          window.open(fileUrl, '_blank');
+        }
+      } else if (type === 'download') {
+        if (fileUrl) {
+          const link = document.createElement('a');
+          link.href = fileUrl;
+          link.download = fileUrl.split('/').pop() || 'download';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      }
     });
   });
 
@@ -18,7 +54,6 @@ function initBriefToggle(): void {
 
   toggleBtn.addEventListener('click', () => {
     const isHidden = briefContent.getAttribute('data-hidden') === 'true';
-
     if (isHidden) {
       briefContent.setAttribute('data-hidden', 'false');
       toggleBtn.textContent = 'Скрыть бриф';

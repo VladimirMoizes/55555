@@ -1,7 +1,7 @@
 ---
 import Icon from '../../components/icons/Icon.astro';
 import Modal from '../../components/modal/modal.astro';
-import { reception } from '../../data/reception';
+import { documents, reception } from '../../data/reception';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './reception.module.css';
 ---
@@ -402,24 +402,24 @@ import styles from './reception.module.css';
     <div class={styles.documentsBlock}>
       <h2 class={styles.documentTitle}>Документы</h2>
       <ul class={styles.documentList}>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
-        <li class={styles.documentListItem}>
-          <article class={styles.card}></article>
-        </li>
+        {
+          documents.map((item, index) => (
+            <li class={styles.documentListItem}>
+              <article
+                class={styles.card}
+                data-type={item.type}
+                data-file-url={item.fileUrl}
+                data-image-url={item.image}
+                data-doc-id={index}
+              >
+                <div class={styles.cardImage}>
+                  <img class={styles.image} src={item.image} alt={item.alt} />
+                </div>
+                <p class={styles.cardDescription}>{item.title}</p>
+              </article>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
