@@ -1,0 +1,128 @@
+---
+import { roadMapItems } from '../../data/portfolioData';
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './portfolio.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Портфолио</h1>
+    <h3 class={styles.subTitle}>20 избранных работ</h3>
+    <div class={styles.roadMap}>
+      <div class={styles.grid}>
+        {
+          roadMapItems.map((item) => (
+            <div class={styles.card}>
+              <a href="##">
+                <img class={styles.image} src={item.image} alt={item.name} />
+              </a>
+
+              <h3 class={styles.cardTitle}>{item.name}</h3>
+              <div class={styles.blockFencing}>
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          ))
+        }
+
+        <!-- Горизонтальная дорога -->
+        <div class={styles.roadHorizontalCenter}></div>
+        <div class={styles.roadHorizontalBottom}></div>
+
+        <!-- Вертикальная дорога -->
+        <div class={styles.roadVertical}></div>
+      </div>
+      <div class={styles.grid}>
+        {
+          roadMapItems.map((item) => (
+            <div class={styles.card}>
+              <a href="##">
+                <img class={styles.image} src={item.image} alt={item.name} />
+              </a>
+
+              <h3 class={styles.cardTitle}>{item.name}</h3>
+              <div class={styles.blockFencing}>
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+                <img
+                  class={styles.fencing}
+                  src="/assets/images/portfolio/fencing.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          ))
+        }
+
+        <!-- Горизонтальная дорога -->
+        <div class={styles.roadHorizontalCenter}></div>
+        <div class={styles.roadHorizontalBottom}></div>
+
+        <!-- Вертикальная дорога -->
+        <div class={styles.roadVertical}></div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

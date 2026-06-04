@@ -1,0 +1,143 @@
+.container {
+  text-align: center;
+  padding: 35px 60px 49px;
+}
+
+.title {
+  margin-block-end: 12px;
+}
+
+.subTitle {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  margin-block-end: 11px;
+}
+
+.roadMap {
+  position: relative;
+  margin-block-end: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 110px 42px;
+  position: relative;
+}
+
+.card {
+  background-image: url('/assets/images/portfolio/spotlights.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding: 99px 35px 12px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  block-size: 547px;
+  inline-size: 875px;
+
+  .image {
+    inline-size: 100%;
+    block-size: 436px;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid var(--color-primary);
+  }
+
+  .cardTitle {
+    border: 5px solid #9c9c9c;
+    background-color: #232323;
+    border-radius: 5px;
+    padding: 12px 35px;
+    inline-size: fit-content;
+    max-width: 100%;
+    position: absolute;
+    bottom: 60px;
+    right: 15px;
+  }
+
+  .blockFencing {
+    display: flex;
+    gap: 34px;
+    position: absolute;
+    bottom: -25px;
+
+    .fencing {
+      max-inline-size: 86px;
+      max-block-size: 50px;
+    }
+  }
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.roadHorizontalCenter {
+  position: absolute;
+  top: 53%;
+  left: calc(50% + 10px);
+  width: 97%;
+  height: 40px;
+  background: url('/assets/images/portfolio/horizontal_road.png') repeat-x
+    center;
+  background-size: auto 40px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.roadHorizontalBottom {
+  position: absolute;
+  bottom: -117px;
+  left: calc(50% + 10px);
+  width: 97%;
+  height: 40px;
+  background: url('/assets/images/portfolio/horizontal_road.png') repeat-x
+    center;
+  background-size: auto 40px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.roadVertical {
+  position: absolute;
+  top: 97px;
+  left: 50%;
+  width: 40px;
+  height: 100%;
+  background: url('/assets/images/portfolio/vertical_road.png') repeat-y center;
+  background-size: 40px auto;
+  transform: translateX(-37%);
+  z-index: 2;
+  pointer-events: none;
+  background-blend-mode: normal;
+  mix-blend-mode: normal;
+}
+
+.roadHorizontalCenter,
+.roadHorizontalBottom,
+.roadVertical {
+  filter: brightness(1.4) saturate(1.2);
+  background-blend-mode: lighten;
+}
