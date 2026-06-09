@@ -13,48 +13,28 @@ import styles from './portfolio.module.css';
         {
           roadMapItems.map((item) => (
             <div class={styles.card}>
-              <a href="##">
+              <a href={`/portfolio/${item.id}`}>
                 <img class={styles.image} src={item.image} alt={item.name} />
               </a>
 
               <h3 class={styles.cardTitle}>{item.name}</h3>
               <div class={styles.blockFencing}>
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
+                {[...Array(7)].map((_, i) => (
+                  <img
+                    class={styles.fencing}
+                    src="/assets/images/portfolio/fencing.png"
+                    alt=""
+                  />
+                ))}
               </div>
+              {Object.entries(item.people || {}).map(([src, position]) => (
+                <img
+                  src={src}
+                  alt="people"
+                  class={styles.people}
+                  style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
+                />
+              ))}
             </div>
           ))
         }
@@ -70,48 +50,28 @@ import styles from './portfolio.module.css';
         {
           roadMapItems.map((item) => (
             <div class={styles.card}>
-              <a href="##">
+              <a href={`/portfolio/${item.id}`}>
                 <img class={styles.image} src={item.image} alt={item.name} />
               </a>
 
               <h3 class={styles.cardTitle}>{item.name}</h3>
               <div class={styles.blockFencing}>
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
-                <img
-                  class={styles.fencing}
-                  src="/assets/images/portfolio/fencing.png"
-                  alt=""
-                />
+                {[...Array(7)].map((_, i) => (
+                  <img
+                    class={styles.fencing}
+                    src="/assets/images/portfolio/fencing.png"
+                    alt=""
+                  />
+                ))}
               </div>
+              {Object.entries(item.people || {}).map(([src, position]) => (
+                <img
+                  src={src}
+                  alt="people"
+                  class={styles.people}
+                  style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
+                />
+              ))}
             </div>
           ))
         }
