@@ -1,0 +1,90 @@
+---
+import { roadSites } from '../../data/parkData';
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './park.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Парк "вдохновение"</h1>
+    <h3 class={styles.subTitle}>
+      Здесь мы собрали 30 самых интересных работы со всего мира. <br /> Возможно,
+      вам понравятся какие-то из них, а мы реализуем ваш проект в выбранном стиле.
+    </h3>
+    <img
+      class={styles.titleImage}
+      alt="park"
+      src="/assets/images/main/buildings/парк.png"
+    />
+    <div class={styles.mainBlock}>
+      <ul class={styles.sites}>
+        {
+          roadSites.map((item, index) => (
+            <li class={styles.sitesItem}>
+              <img class={styles.sitesImage} alt={item.name} src={item.image} />
+              {index < roadSites.length - 3 && (
+                <img
+                  class={styles.verticalRoad}
+                  alt=""
+                  src="/assets/images/park/roads/vertical_road.png"
+                />
+              )}
+              {(index === 0 || index === 3) && (
+                <img
+                  class={styles.horizontalRoadStart}
+                  alt=""
+                  src="/assets/images/park/roads/horizontal_road_start.png"
+                />
+              )}
+              {(index === 2 || index === 5) && (
+                <img
+                  class={styles.horizontalRoadEnd}
+                  alt=""
+                  src="/assets/images/park/roads/horizontal_road_end.png"
+                />
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <ul class={styles.sites}>
+        {
+          roadSites.map((item, index) => (
+            <li class={styles.sitesItem}>
+              <img class={styles.sitesImage} alt={item.name} src={item.image} />
+              {index < roadSites.length - 3 && (
+                <img
+                  class={styles.verticalRoad}
+                  alt=""
+                  src="/assets/images/park/roads/vertical_road.png"
+                />
+              )}
+              {(index === 0 || index === 3) && (
+                <img
+                  class={styles.horizontalRoadStart}
+                  alt=""
+                  src="/assets/images/park/roads/horizontal_road_start.png"
+                />
+              )}
+              {(index === 2 || index === 5) && (
+                <img
+                  class={styles.horizontalRoadEnd}
+                  alt=""
+                  src="/assets/images/park/roads/horizontal_road_end.png"
+                />
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class={styles.buttonList}>
+      <button class={styles.carBlockButton} data-button-continue
+        >Продолжить путешествие</button
+      >
+      <button class={styles.carBlockButton} data-button-reception
+        >Перейти к заказу на Ресепшен</button
+      >
+    </div>
+  </section>
+</MainLayout>

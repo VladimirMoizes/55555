@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 60px 0;
+  align-items: center;
+}
+
+.title {
+  margin-block-end: 35px;
+}
+
+.subTitle {
+  max-inline-size: 1195px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-block-end: 35px;
+}
+
+.titleImage {
+  inline-size: 586px;
+  margin-block-end: 55px;
+}
+
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  margin-block-end: 160px;
+}
+
+.sites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-content: space-between;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.sitesItem {
+  position: relative;
+}
+
+.verticalRoad {
+  position: absolute;
+  right: -95px;
+  top: 0;
+}
+
+.horizontalRoadStart {
+  position: absolute;
+  bottom: -83px;
+  left: 0;
+}
+
+.horizontalRoadEnd {
+  position: absolute;
+  bottom: -83px;
+  right: 0;
+}
+
+.buttonList {
+  display: flex;
+  gap: 45px;
+  margin: 0 auto 70px;
+}
+
+.carBlockButton {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  inline-size: 302px;
+  block-size: 52px;
+}
