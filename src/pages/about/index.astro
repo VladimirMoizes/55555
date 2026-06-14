@@ -1,4 +1,5 @@
 ---
+import Buttons from '../../components/buttons/buttons.astro';
 import Icon from '../../components/icons/Icon.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './about.module.css';
@@ -157,14 +158,7 @@ import styles from './about.module.css';
         class={styles.image}
       />
     </div>
-    <div class={styles.buttonList}>
-      <button class={styles.carBlockButton} data-button-continue
-        >Продолжить путешествие</button
-      >
-      <button class={styles.carBlockButton} data-button-reception
-        >Перейти к заказу на Ресепшен</button
-      >
-    </div>
+    <Buttons />
   </section>
 </MainLayout>
 

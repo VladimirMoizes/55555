@@ -1,0 +1,25 @@
+---
+import Buttons from '../../components/buttons/buttons.astro';
+import { board } from '../../data/boardData';
+import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './board.module.css';
+---
+
+<MainLayout>
+  <section class={styles.container}>
+    <h1 class={styles.title}>Доска почета</h1>
+    <ul class={styles.listBoard}>
+      {
+        board.map((item) => {
+          return (
+            <li class={styles.listBoardItem}>
+              <img class={styles.image} src={item.image} alt={item.name} />
+              <p class={styles.name}>{item.name}</p>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <Buttons />
+  </section>
+</MainLayout>

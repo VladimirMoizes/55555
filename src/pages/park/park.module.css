@@ -62,22 +62,3 @@
   bottom: -83px;
   right: 0;
 }
-
-.buttonList {
-  display: flex;
-  gap: 45px;
-  margin: 0 auto 70px;
-}
-
-.carBlockButton {
-  background-color: var(--color-primary);
-  border-radius: 5px;
-  font-family: var(--font-secondary);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 120%;
-  letter-spacing: 0%;
-  text-align: center;
-  inline-size: 302px;
-  block-size: 52px;
-}

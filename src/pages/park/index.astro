@@ -1,4 +1,5 @@
 ---
+import Buttons from '../../components/buttons/buttons.astro';
 import { roadSites } from '../../data/parkData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './park.module.css';
@@ -21,7 +22,13 @@ import styles from './park.module.css';
         {
           roadSites.map((item, index) => (
             <li class={styles.sitesItem}>
-              <img class={styles.sitesImage} alt={item.name} src={item.image} />
+              <a href={item.site} target="_blank" rel="noopener noreferrer">
+                <img
+                  class={styles.sitesImage}
+                  alt={item.name}
+                  src={item.image}
+                />
+              </a>
               {index < roadSites.length - 3 && (
                 <img
                   class={styles.verticalRoad}
@@ -51,7 +58,13 @@ import styles from './park.module.css';
         {
           roadSites.map((item, index) => (
             <li class={styles.sitesItem}>
-              <img class={styles.sitesImage} alt={item.name} src={item.image} />
+              <a href={item.site} target="_blank" rel="noopener noreferrer">
+                <img
+                  class={styles.sitesImage}
+                  alt={item.name}
+                  src={item.image}
+                />
+              </a>
               {index < roadSites.length - 3 && (
                 <img
                   class={styles.verticalRoad}
@@ -78,13 +91,6 @@ import styles from './park.module.css';
         }
       </ul>
     </div>
-    <div class={styles.buttonList}>
-      <button class={styles.carBlockButton} data-button-continue
-        >Продолжить путешествие</button
-      >
-      <button class={styles.carBlockButton} data-button-reception
-        >Перейти к заказу на Ресепшен</button
-      >
-    </div>
+    <Buttons />
   </section>
 </MainLayout>

@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './prices.module.css';
 import { prices } from '../../data/pricesData';
+import Buttons from '../../components/buttons/buttons.astro';
 ---
 
 <MainLayout>
@@ -52,13 +53,6 @@ import { prices } from '../../data/pricesData';
         }
       </table>
     </div>
-    <div class={styles.buttonList}>
-      <button class={styles.carBlockButton} data-button-continue
-        >Продолжить путешествие</button
-      >
-      <button class={styles.carBlockButton} data-button-reception
-        >Перейти к заказу на Ресепшен</button
-      >
-    </div>
+    <Buttons />
   </section></MainLayout
 >

@@ -1,0 +1,27 @@
+.buttonList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(20px, 4vw, 45px);
+  margin: 0 auto;
+}
+
+.button {
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  inline-size: clamp(250px, 20vw, 302px);
+  block-size: clamp(45px, 4vw, 52px);
+}
+
+@media (max-width: 768px) {
+  .buttonList {
+    flex-direction: column;
+    align-items: center;
+  }
+}
