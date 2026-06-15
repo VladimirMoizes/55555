@@ -2,11 +2,11 @@
 
 .header {
   padding: 20px 60px;
-  /* block-size: 87px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-block-end: 1px solid var(--color-decorative);
+  z-index: 10;
 }
 
 .slash {

@@ -153,6 +153,10 @@
   transform: translateX(300px);
 }
 
+.car[data-moving-second='true'] {
+  transform: translateX(1000px);
+}
+
 .road {
   top: 666px;
   left: 166px;

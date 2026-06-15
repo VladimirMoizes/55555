@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 30px 60px 0;
+  padding: 30px 60px 52px;
   align-items: center;
 }
 

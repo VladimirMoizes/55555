@@ -1,4 +1,5 @@
 ---
+import Buttons from '../../components/buttons/Buttons.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './cosmoport.module.css';
 ---
@@ -18,7 +19,7 @@ import styles from './cosmoport.module.css';
       <div class={styles.content}>
         <h1 class={styles.title}>До прибытия на Плеяды осталось</h1>
         <div class={styles.timer}>
-          <p class={styles.timeTimer}>22 : 11 : 10</p>
+          <p class={styles.timeTimer} id="timer">22 : 11 : 10</p>
           <div class={styles.textTimerBlock}>
             <span>часов</span>
             <span>минут</span>
@@ -27,5 +28,8 @@ import styles from './cosmoport.module.css';
         </div>
       </div>
     </div>
+    <Buttons />
   </section>
 </MainLayout>
+
+<script src="./cosmoport.ts"></script>
