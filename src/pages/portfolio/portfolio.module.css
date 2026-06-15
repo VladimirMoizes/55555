@@ -8,17 +8,12 @@
 }
 
 .subTitle {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 140%;
-  letter-spacing: 0%;
-  text-transform: uppercase;
   margin-block-end: 11px;
 }
 
 .roadMap {
   position: relative;
-  margin-block-end: 80px;
+  margin-block-end: 160px;
   display: flex;
   flex-direction: column;
   gap: 90px;

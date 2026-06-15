@@ -1,0 +1,25 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+  <section class="container">
+    <iframe class="iframe" src="http://zubin.su/3d/Museum/index.htm"></iframe>
+  </section>
+</MainLayout>
+
+<style>
+  .container {
+    padding: 47px 50px 42px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .iframe {
+    inline-size: 100%;
+    flex: 1;
+    border: none;
+  }
+</style>

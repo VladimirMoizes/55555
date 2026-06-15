@@ -10,6 +10,10 @@
   padding: 126px 0 0 164px;
 }
 
+.subTitle {
+  text-align: left;
+}
+
 .linkBuildingSimple {
   align-self: end;
   margin-block-start: 80px;

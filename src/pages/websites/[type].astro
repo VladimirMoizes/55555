@@ -3,6 +3,7 @@ import { sites, functional, stages } from '../../data/websitesData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './websites.module.css';
 import Icon from '../../components/icons/Icon.astro';
+import Buttons from '../../components/buttons/Buttons.astro';
 
 export async function getStaticPaths() {
   return [
@@ -454,14 +455,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
     </div>
 
     <div class={styles.carBlock}>
-      <div class={styles.buttonList}>
-        <button class={styles.carBlockButton} data-button-continue
-          >Продолжить путешествие</button
-        >
-        <button class={styles.carBlockButton} data-button-reception
-          >Перейти к заказу на Ресепшен</button
-        >
-      </div>
+      <Buttons />
       <img
         data-car
         class={styles.carImage}

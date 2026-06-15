@@ -90,9 +90,6 @@
 
 .secondTitle {
   color: var(--color-dark);
-  font-family: var(--font-primary);
-  font-size: 44px;
-  letter-spacing: 0;
 }
 
 .dev {
@@ -274,8 +271,6 @@
       margin-block-end: 30px;
 
       .title {
-        font-family: var(--font-primary);
-        font-size: 44px;
         letter-spacing: 0.002em;
         text-align: start;
       }
@@ -323,9 +318,6 @@
     }
 
     .planTitle {
-      font-size: 44px;
-      font-family: var(--font-primary);
-      /* margin-block-end: 5px; */
       letter-spacing: 0.002em;
     }
 
@@ -682,13 +674,7 @@
   }
 
   .welcomeText {
-    font-family: var(--font-primary);
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 140%;
     letter-spacing: -0.05em;
-    text-align: center;
-    text-transform: uppercase;
   }
 }
 
@@ -699,31 +685,13 @@
   flex-direction: column;
   position: relative;
 
-  .buttonList {
-    display: flex;
-    gap: 45px;
-    margin: 0 auto 124px;
-  }
-
-  .carBlockButton {
-    background-color: var(--color-primary);
-    border-radius: 5px;
-    font-family: var(--font-secondary);
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 120%;
-    letter-spacing: 0%;
-    text-align: center;
-    inline-size: 302px;
-    block-size: 52px;
-  }
-
   .carImage {
     inline-size: 678px;
     z-index: 2;
     transition: transform 2s ease-in-out;
     transform: translateX(0);
     cursor: pointer;
+    margin-block-start: 124px;
   }
 
   .carImage[data-moving='true'] {
@@ -740,4 +708,12 @@
     border: none;
     z-index: 1;
   }
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 140%;
 }

@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { roadMapItems } from '../../data/portfolioData';
 import styles from './portfolioId.module.css';
+import Buttons from '../../components/buttons/Buttons.astro';
 
 export async function getStaticPaths() {
   return roadMapItems.map((item) => ({
@@ -45,5 +46,6 @@ if (!item) {
       </div>
     </div>
     <img class={styles.pageImage} src={item.imageId} alt={item.name} />
+    <Buttons />
   </section>
 </MainLayout>

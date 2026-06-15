@@ -26,7 +26,15 @@ const currentPath = Astro.url.pathname;
             }
             data-open="false"
           >
-            <a href={item.url}>{item.name}</a>
+            <a
+              href={item.url}
+              target={item.url?.startsWith('http') ? '_blank' : undefined}
+              rel={
+                item.url?.startsWith('http') ? 'noopener noreferrer' : undefined
+              }
+            >
+              {item.name}
+            </a>
 
             {item.subMenu && item.subMenu.length > 0 && (
               <>
@@ -44,7 +52,19 @@ const currentPath = Astro.url.pathname;
                       class={styles.subMenuItem}
                       data-active={currentPath === subItem.url}
                     >
-                      <a href={subItem.url}>{subItem.name}</a>
+                      <a
+                        href={subItem.url}
+                        target={
+                          subItem.url.startsWith('http') ? '_blank' : undefined
+                        }
+                        rel={
+                          subItem.url.startsWith('http')
+                            ? 'noopener noreferrer'
+                            : undefined
+                        }
+                      >
+                        {subItem.name}
+                      </a>
                     </li>
                   ))}
                 </ul>

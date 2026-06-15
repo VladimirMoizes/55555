@@ -1,13 +1,14 @@
 .pageContainer {
   display: flex;
   flex-direction: column;
+  padding-block-end: 52px;
 }
 
 .description {
   display: flex;
   justify-content: space-around;
   gap: 89px;
-  margin: 31px 0 97px;
+  margin: 31px 120px 97px 80px;
 
   .text {
     max-inline-size: 833px;

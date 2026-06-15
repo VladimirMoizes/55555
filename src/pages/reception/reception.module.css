@@ -489,3 +489,11 @@
     margin-block-start: 20px;
   }
 }
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 140%;
+}

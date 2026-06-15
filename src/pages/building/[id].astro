@@ -32,7 +32,7 @@ if (!building) {
           <h1>{building.title}</h1>
           <h2 class={styles.subTitle}>{building.subtitle}</h2>
         </div>
-        <a class={styles.linkBuildingSimple}>
+        <a class={styles.linkBuildingSimple} data-link>
           <img
             style={`width: ${building.separatePage?.width}px; height: ${building.separatePage?.height}px;`}
             class={styles.mainBuildingSimple}
@@ -97,6 +97,7 @@ if (!building) {
 <script>
   function movingCar() {
     if (typeof window === 'undefined') return;
+    const link = document.querySelector('[data-link]');
 
     const car = document.querySelector('[data-car]') as HTMLElement;
     const building = document.querySelector(
@@ -110,7 +111,6 @@ if (!building) {
     }
 
     if (building && window.location.pathname.includes('workshop')) {
-      const link = document.querySelector('[data-link]');
       link?.setAttribute('href', '/lift');
     }
 
@@ -118,12 +118,52 @@ if (!building) {
       building.style.position = 'relative';
       building.style.top = '-30px';
       building.style.left = '30px';
+      link?.setAttribute('href', '/portfolio');
     }
 
     if (building && window.location.pathname.includes('cosmoport')) {
       building.style.position = 'relative';
       building.style.top = '-10px';
       building.style.left = '20px';
+      link?.setAttribute('href', '/cosmoport');
+    }
+
+    if (building && window.location.pathname.includes('tv-studio')) {
+      link?.setAttribute('href', '/promote');
+    }
+
+    if (building && window.location.pathname.includes('bank')) {
+      link?.setAttribute('href', '/prices');
+    }
+
+    if (building && window.location.pathname.includes('park')) {
+      link?.setAttribute('href', '/park');
+    }
+
+    if (building && window.location.pathname.includes('kotoTilda')) {
+      link?.setAttribute('href', 'https://koto-tiilda.ru/');
+      link?.setAttribute('target', '_blank');
+    }
+
+    if (building && window.location.pathname.includes('university')) {
+      link?.setAttribute('href', 'https://bitmodern.ru/blog/');
+      link?.setAttribute('target', '_blank');
+    }
+
+    if (building && window.location.pathname.includes('museum')) {
+      link?.setAttribute('href', '/museum');
+    }
+
+    if (building && window.location.pathname.includes('garage')) {
+      link?.setAttribute('href', '/about');
+    }
+
+    if (building && window.location.pathname.includes('honorBoard')) {
+      link?.setAttribute('href', '/board');
+    }
+
+    if (building && window.location.pathname.includes('reception')) {
+      link?.setAttribute('href', '/reception');
     }
   }
 
