@@ -55,6 +55,12 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           формы заявок и прочее.
         </p>
       </div>
+      <button
+        onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
+        class={styles.buttonArrow}
+      >
+        <Icon name="arrow-down" size={50} color="var(--color-text)" />
+      </button>
     </div>
 
     <div class={styles.dev}>

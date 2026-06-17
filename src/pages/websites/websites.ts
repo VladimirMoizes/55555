@@ -1,4 +1,13 @@
 function initSlider() {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      window.scrollBy({
+        top: 80,
+        behavior: 'smooth',
+      });
+    }, 300);
+  });
+
   const cardList = document.querySelector('[data-cardList]');
   const buttons = document.querySelectorAll('[data-button]');
 
