@@ -333,10 +333,10 @@ export const buildings = [
     image: '/assets/images/main/buildings/космопорт.png',
     description:
       'Ракета к зведному скоплению Плеяды отправляется, просьба занять свои места.',
-    position: { top: 1308, left: 1568 },
+    position: { top: 1295, left: 1568 },
     link: '/cosmoport',
-    width: 278,
-    height: 259,
+    width: 280,
+    height: 295,
     videoMp4: '/assets/videos/go6 mp4.mp4',
     videoWebm: '/assets/videos/go6 webm.webm',
   },

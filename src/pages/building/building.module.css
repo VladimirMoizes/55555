@@ -215,3 +215,15 @@
 .sound:hover svg {
   color: var(--color-text);
 }
+
+[data-rocket='true'] {
+  height: auto;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 1;
+  transition: transform 3s ease-in;
+}
+
+[data-rocket-launch='true'] {
+  transform: translateY(-200vh);
+}
