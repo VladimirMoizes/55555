@@ -26,44 +26,57 @@ const currentTitle = titles[type] || 'Разработка сайтов';
 
 <MainLayout>
   <section class={styles.container}>
-    <h1 class={styles.mainTitle}>{currentTitle}</h1>
-    <div class={styles.mainBlock}>
-      <div class={styles.mainBlockTextStart}>
-        <div class={styles.overlay}></div>
-        <p class={styles.text}>
-          Предлагаем услуги по разработке <span class={styles.textBold}
-            >нетривиальных сайтов</span
-          > и сайтов <span class={styles.textBold}
-            >с эксклюзивным дизайном под ключ.
-          </span> Работаем в Москве. <br /><br /> Наши сайты будут отвечать <span
-            class={styles.textBold}
-            >Вашим целям.
-          </span> Вы получите баланс: индивидуальности, красоты и удобства, скорости
-          загрузки и функционала, информации о продукте и о компании. <br /><br
-          /><span class={styles.textBold}>10 лет мы делаем сайты, </span> которые
-          вызываают доверие к компании, цепляют посетителя, подготавливают и стимулируют
-          его к <span class={styles.textBold}
-            >приобретению ваших товаров или услуг.
-          </span>
-        </p>
+    <h1 class={styles.mainTitle} id="mainTitle">{currentTitle}</h1>
+    <div class={styles.mainBlock} id="mainBlock">
+      <div class={styles.contentWrapper} id="contentWrapper">
+        <img
+          class={styles.imageGirl}
+          id="imageGirl"
+          src="/assets/images/sites/девушка.png"
+          alt="girl"
+        />
+        <div class={styles.mainBlockTextStart}>
+          <div class={styles.overlay}></div>
+          <p class={styles.text}>
+            Предлагаем услуги по разработке <span class={styles.textBold}
+              >нетривиальных сайтов</span
+            > и сайтов <span class={styles.textBold}
+              >с эксклюзивным дизайном под ключ.
+            </span> Работаем в Москве. <br /><br /> Наши сайты будут отвечать <span
+              class={styles.textBold}
+              >Вашим целям.
+            </span> Вы получите баланс: индивидуальности, красоты и удобства, скорости
+            загрузки и функционала, информации о продукте и о компании. <br
+            /><br /><span class={styles.textBold}
+              >10 лет мы делаем сайты,
+            </span> которые вызывают доверие к компании, цепляют посетителя, подготавливают
+            и стимулируют его к <span class={styles.textBold}
+              >приобретению ваших товаров или услуг.
+            </span>
+          </p>
+        </div>
+        <div class={styles.mainBlockTextEnd}>
+          <div class={styles.overlay}></div>
+          <p class={styles.text}>
+            <span class={styles.textBold}>Функционал может содержать:</span> каталоги,
+            карточки продукции, калькуляторы, 3d туры, интеграция с 1С, новостные
+            ленты, формы заявок и прочее.
+          </p>
+        </div>
+        <button id="buttonArrow" class={styles.buttonArrow}>
+          <Icon name="arrow-down" size={50} color="var(--color-text)" />
+        </button>
       </div>
-      <div class={styles.mainBlockTextEnd}>
-        <div class={styles.overlay}></div>
-        <p class={styles.text}>
-          <span class={styles.textBold}>Функционал может содержать:</span> каталоги,
-          карточки продукции, калькуляторы, 3d туры, интеграция с 1С, новостные ленты,
-          формы заявок и прочее.
-        </p>
+
+      <div class={styles.videoContainer} id="videoContainer">
+        <video id="introVideo" muted playsinline>
+          <source src="/assets/videos/website_intro.mp4" type="video/mp4" />
+          <source src="/assets/videos/website_intro.webm" type="video/webm" />
+        </video>
       </div>
-      <button
-        onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
-        class={styles.buttonArrow}
-      >
-        <Icon name="arrow-down" size={50} color="var(--color-text)" />
-      </button>
     </div>
 
-    <div class={styles.dev}>
+    <div class={styles.dev} id="dev">
       <h2 class={styles.secondTitle}>
         Разработка сайта, его модернизация или редизайн?
       </h2>

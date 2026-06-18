@@ -6,7 +6,9 @@ const redirectPages = [
 ];
 
 if (redirectPages.some((p) => path.includes(p))) {
-  const links = document.querySelectorAll('a');
+  const buttonList = document.querySelector('[data-button-list]');
+  const links = buttonList?.querySelectorAll('a') || [];
+
   links.forEach((link) => {
     const href = link.getAttribute('href');
     link.addEventListener('click', (e) => {

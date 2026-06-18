@@ -1,12 +1,53 @@
 function initSlider() {
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      window.scrollBy({
-        top: 80,
-        behavior: 'smooth',
-      });
-    }, 300);
+  const imageGirl = document.getElementById('imageGirl');
+  const contentWrapper = document.getElementById(
+    'contentWrapper'
+  ) as HTMLElement;
+  const videoContainer = document.getElementById(
+    'videoContainer'
+  ) as HTMLElement;
+  const video = document.getElementById('introVideo') as HTMLVideoElement;
+
+  let isVideoPlaying = false;
+
+  imageGirl?.addEventListener('click', () => {
+    if (isVideoPlaying) return;
+    isVideoPlaying = true;
+
+    videoContainer.setAttribute('data-active', 'true');
+    contentWrapper.setAttribute('data-hidden', 'true');
+
+    video.play();
+
+    video.addEventListener('ended', () => {
+      videoContainer.setAttribute('data-active', 'false');
+      contentWrapper.setAttribute('data-hidden', 'false');
+      isVideoPlaying = false;
+    });
   });
+  window.addEventListener('load', () => {
+    const element = document.querySelector('#mainTitle');
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  });
+
+  const buttonArrow = document.querySelector('#buttonArrow');
+  const dev = document.querySelector('#dev');
+
+  if (buttonArrow) {
+    buttonArrow.addEventListener('click', () => {
+      if (dev) {
+        dev.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    });
+  }
 
   const cardList = document.querySelector('[data-cardList]');
   const buttons = document.querySelectorAll('[data-button]');
