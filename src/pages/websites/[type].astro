@@ -163,11 +163,12 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         }
       </ul>
       <p class={styles.text}>
-        Вы можете выбрать и <span class={styles.textBold}> заказать</span> понравившийся
-        Вам дизайн-макет. Мы перерисуем его под Вас и натянем на нужный движок. <br
-        /><br />Если у вас уже есть свои программисты, сделаем только
-        дизайн-макет и/или верстку, что сохранит Вам соответствующую часть
-        бюджета
+        Вы можете выбрать и <a href="/reception"
+          ><span class={styles.textLink}> заказать</span>
+        </a>понравившийся Вам дизайн-макет. Мы перерисуем его под Вас и натянем
+        на нужный движок. <br /><br />Если у вас уже есть свои программисты,
+        сделаем только дизайн-макет и/или верстку, что сохранит Вам
+        соответствующую часть бюджета
       </p>
     </div>
 
@@ -333,20 +334,26 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           <li class={styles.listItem}>
             <article class={styles.card}>
               <p class={styles.cardText}>
-                Под этим понятием мы понимем сайты, которые вообще не будут
-                похожи на то, что уже есть на рынке или его сегменте. Первое
-                такое решение уже есть в нашем портфолио. Эфффект достигается
-                благодаря сложной анимации и отрисовке ключевых элементов сайта
-                художником вручную.
+                Под этим понятием мы понимем сайты, которые вообще <span
+                  class={styles.textBold}>не будут похожи</span
+                > на то, что <span class={styles.textBold}>уже есть</span> на рынке
+                или его сегменте. Первое такое решение уже есть в нашем <a
+                  href="/portfolio"
+                >
+                  <span class={styles.textLink}> портфолио.</span></a
+                >
+                Эфффект достигается благодаря сложной анимации и отрисовке ключевых
+                элементов сайта художником вручную.
               </p>
             </article>
           </li>
           <li class={styles.listItem}>
             <article class={styles.card}>
               <p class={styles.cardText}>
-                И, конечно же, этот наш новый сайт, на котором вы находитесь,
-                является своеобразной выставкой, витриной того, что можно
-                сделать при наличии достаточных ресурсов.
+                И, конечно же,<span class={styles.textBold}> этот</span> наш новый
+                сайт, на котором вы находитесь, является своеобразной <span
+                  class={styles.textBold}>выставкой, витриной</span
+                > того, что можно сделать при наличии достаточных ресурсов.
               </p>
             </article>
           </li>
@@ -360,12 +367,19 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         Бывает, стоит задача сделать нечто совсем уникальное, реализовать такое,
         чего нет у других, то есть нетривиальный сайт. Мы с удовольствием
         возьмемся за такой проект. <br />
-        <br />Например, можно сделать сайт-путешествие по Вашей компании,
-        который мы сделали для нашей студии СитиЛав. <br />
+        <br />Например, можно сделать <span class={styles.textBold}
+          >сайт-путешествие</span
+        > по Вашей компании, который мы сделали для нашей студии СитиЛав. <br />
         <br />Прогуляйтесь по всем разделам нашего вебресурса и сравните нас с
-        другими студиями России в Рейтинге Рунета и Вы сами увидите
-        оригинальность нашего проекта и его Замысла. <br />
-        <br />Что-то подобное или совсем другое мы можем сделать и для Вас.
+        другими студиями России в <a
+          href="https://ratingruneta.ru/"
+          target="_blank"
+        >
+          <span class={styles.textLink}>Рейтинге Рунета </span></a
+        >и Вы сами увидите оригинальность нашего проекта и его Замысла. <br />
+        <br />Что-то подобное <span class={styles.textBold}
+          >или совсем другое</span
+        > мы можем сделать и для Вас.
       </p>
     </div>
 
@@ -409,17 +423,20 @@ const currentTitle = titles[type] || 'Разработка сайтов';
       <h2 class={styles.stagesTitle}>Этапы разработки сайта</h2>
       <ul class={styles.stagesList} data-stages-list>
         {
-          stages.map((item) => {
+          stages.map((item, index) => {
+            const isLast = index === stages.length - 1;
             return (
               <li class={styles.stagesListItem}>
                 <article class={styles.card}>
                   <div class={styles.cardNumber}>{item.number}</div>
                   <p class={styles.cardText}>{item.text}</p>
-                  <img
-                    class={styles.rightBorder}
-                    src="/assets/images/sites/right_border.svg"
-                    alt=""
-                  />
+                  {!isLast && (
+                    <img
+                      class={styles.rightBorder}
+                      src="/assets/images/sites/right_border.svg"
+                      alt=""
+                    />
+                  )}
                 </article>
               </li>
             );
@@ -438,9 +455,12 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         <li class={styles.costListItem}>
           <article class={styles.card}>
             <p class={styles.cardText}>
-              На небольшой сайт с эксклюзивным дизайном на Битрикс или Вордпресс
-              (отрисовывается 5-7 базовых страниц) цена стартует от 250 т.р.,
-              срок от 2 месяцев
+              На небольшой сайт с эксклюзивным дизайном на <span
+                class={styles.textBold}
+                >Битрикс
+              </span>или <span class={styles.textBold}>Вордпресс </span>
+              (отрисовывается 5-7 базовых страниц) цена стартует от 250 т.р., срок
+              от 2 месяцев
             </p>
           </article>
         </li>
@@ -448,24 +468,31 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           <article class={styles.card}>
             <p class={styles.cardText}>
               Его продвижение и SEO - оптимизация оплачивается отдельно.
-              Подробнее тут
+              <a href="/prices"
+                ><span class={styles.textLink}> Подробнее тут</span></a
+              >
             </p>
           </article>
         </li>
         <li class={styles.costListItem}>
           <article class={styles.card}>
             <p class={styles.cardText}>
-              Нетривиальные проекты в 2 и более раз дороже, там цена зависит от
-              сложности принятых решений. Срок от 4х месяцев.
+              <span class={styles.textBold}>Нетривиальные проекты</span> в 2 и более
+              раз дороже, там цена зависит от сложности принятых решений. Срок от
+              4х месяцев.
             </p>
           </article>
         </li>
         <li class={styles.costListItem}>
           <article class={styles.card}>
             <p class={styles.cardText}>
-              Сайты на конструкторе Тильда с маркетинговой проработкой от 50
-              т.р., интернет-магазины от 80 т.р. Срок от 1 недели. Подробнее,
-              стоимость смотрите на странице Банк (цен)
+              Сайты на конструкторе <span class={styles.textBold}
+                >Тильда
+              </span>с маркетинговой проработкой от 50 т.р., интернет-магазины
+              от 80 т.р. Срок от 1 недели. Подробнее, стоимость смотрите на
+              странице <a href="/prices"
+                ><span class={styles.textLink}>Банк (цен)</span></a
+              >
             </p>
           </article>
         </li>

@@ -1,22 +1,103 @@
+// const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoQZHc8aiCDBzAWxo3Cbnx3BN9ZbeAVKLNNrhmqXC-txm4w6L0ecnxGj-Jt1c6aA8i/exec';
+
 function initBriefToggle(): void {
   const briefContent = document.getElementById('briefContent');
   const toggleBtn = document.getElementById('toggleBriefBtn');
-  const forms = document.querySelectorAll('#form');
+  const formFirst = document.getElementById(
+    'formFirst'
+  ) as HTMLFormElement | null;
+  const formSecond = document.getElementById(
+    'formSecond'
+  ) as HTMLFormElement | null;
   const documents = document.querySelectorAll('[data-type]');
 
-  forms.forEach((form) => {
+  const lastSubmitTime = {
+    formFirst: 0,
+    formSecond: 0,
+  };
+
+  function sendFormData(data: any): Promise<void> {
+    const SCRIPT_URL =
+      'https://script.google.com/macros/s/AKfycbwoQZHc8aiCDBzAWxo3Cbnx3BN9ZbeAVKLNNrhmqXC-txm4w6L0ecnxGj-Jt1c6aA8i/exec';
+
+    return fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(() => {})
+      .catch((error) => {
+        console.error('Ошибка отправки:', error);
+      });
+  }
+
+  function canSubmit(formId: 'formFirst' | 'formSecond'): boolean {
+    const now = Date.now();
+    const lastSubmit = lastSubmitTime[formId];
+    const fiveMinutes = 5 * 60 * 1000; // 5 минут в миллисекундах
+
+    if (now - lastSubmit < fiveMinutes) {
+      const remaining = Math.ceil((fiveMinutes - (now - lastSubmit)) / 1000);
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+      alert(
+        `Пожалуйста, подождите ${minutes} мин ${seconds} сек перед повторной отправкой.`
+      );
+      return false;
+    }
+
+    lastSubmitTime[formId] = now;
+    return true;
+  }
+
+  function setupFormHandler(
+    form: HTMLFormElement,
+    formId: 'formFirst' | 'formSecond'
+  ) {
+    let isSubmitting = false;
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Проверяем время
+      if (!canSubmit(formId)) return;
+
+      if (isSubmitting) return;
+      isSubmitting = true;
+
+      const submitBtn = form.querySelector(
+        'button[type="submit"]'
+      ) as HTMLButtonElement | null;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      sendFormData(data).finally(() => {
+        isSubmitting = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Отправить нам';
+        }
+      });
 
       const modalContent = document.querySelector('#modalContent');
       if (modalContent) {
         modalContent.innerHTML =
           '<h2>Спасибо за обращение!</h2><p>Мы скоро с Вами свяжемся.</p>';
       }
-
       if ((window as any).openModal) (window as any).openModal();
     });
-  });
+  }
+
+  if (formFirst) setupFormHandler(formFirst, 'formFirst');
+  if (formSecond) setupFormHandler(formSecond, 'formSecond');
 
   documents.forEach((doc) => {
     doc.addEventListener('click', () => {
@@ -47,6 +128,7 @@ function initBriefToggle(): void {
     });
   });
 
+  // Бриф
   if (!briefContent || !toggleBtn) return;
 
   briefContent.setAttribute('data-hidden', 'true');

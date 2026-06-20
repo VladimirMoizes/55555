@@ -8,6 +8,16 @@
   margin-inline: auto;
 }
 
+.textBold {
+  font-weight: 700;
+}
+
+.textLink {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 .mainBlock {
   block-size: 945px;
   background-image: url('/assets/images/sites/фон_без_девушки.png');
@@ -107,10 +117,6 @@
     position: relative;
   }
 
-  .mainBlockTextStart .text .textBold {
-    font-weight: 700;
-  }
-
   .mainBlockTextEnd {
     inline-size: 502px;
     block-size: 254px;
@@ -130,10 +136,6 @@
     text-transform: uppercase;
     position: relative;
     letter-spacing: -0.04em;
-  }
-
-  .mainBlockTextEnd .text .textBold {
-    font-weight: 700;
   }
 
   .mainBlockTextEnd .overlay {
@@ -316,12 +318,6 @@
     font-size: 18px;
     letter-spacing: -0.04em;
     line-height: 140%;
-  }
-
-  .textBold {
-    font-weight: 700;
-    color: var(--color-primary);
-    text-decoration: underline;
   }
 }
 
@@ -659,12 +655,17 @@
     margin-block-end: 59px;
   }
 
-  .card {
-    background-image: url('/assets/images/sites/stages_card.png');
-    block-size: 250px;
-    inline-size: 473px;
-    padding: 15px 0 0 120px;
+  .stagesListItem:not(:last-child) .card {
+    clip-path: polygon(0% 0%, 80.5% 0%, 100% 50%, 80.5% 100%, 0% 100%);
     margin-inline-end: -15px;
+    inline-size: 473px;
+  }
+
+  .card {
+    background: linear-gradient(270deg, #1f1f1f 1.69%, #060404 96.93%);
+    block-size: 250px;
+    inline-size: 400px;
+    padding: 15px 0 0 100px;
     position: relative;
 
     .cardNumber {
@@ -689,7 +690,7 @@
     .rightBorder {
       position: absolute;
       top: 0;
-      right: -5px;
+      right: 0;
     }
   }
 
