@@ -12,7 +12,7 @@ import styles from './portfolio.module.css';
     <div class={styles.roadMap}>
       <div class={styles.grid}>
         {
-          roadMapItems.map((item) => (
+          roadMapItems.map((item, index, array) => (
             <div class={styles.card}>
               <a href={`/portfolio/${item.id}`}>
                 <img class={styles.image} src={item.image} alt={item.name} />
@@ -36,20 +36,32 @@ import styles from './portfolio.module.css';
                   style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
                 />
               ))}
+              <img
+                class={styles.horizontalRoad}
+                alt=""
+                src="/assets/images/portfolio/horizontal_road.png"
+                data-index={index}
+              />
+              {index === 0 && (
+                <img
+                  class={styles.verticalRoad}
+                  alt=""
+                  src="/assets/images/portfolio/vertical_road.png"
+                />
+              )}
             </div>
           ))
         }
 
-        <!-- Горизонтальная дорога -->
-        <div class={styles.roadHorizontalCenter}></div>
+        <!-- <div class={styles.roadHorizontalCenter}></div>
         <div class={styles.roadHorizontalBottom}></div>
 
-        <!-- Вертикальная дорога -->
-        <div class={styles.roadVertical}></div>
+
+        <div class={styles.roadVertical}></div> -->
       </div>
       <div class={styles.grid}>
         {
-          roadMapItems.map((item) => (
+          roadMapItems.map((item, index) => (
             <div class={styles.card}>
               <a href={`/portfolio/${item.id}`}>
                 <img class={styles.image} src={item.image} alt={item.name} />
@@ -73,16 +85,22 @@ import styles from './portfolio.module.css';
                   style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
                 />
               ))}
+              <img
+                class={styles.horizontalRoad}
+                alt=""
+                src="/assets/images/portfolio/horizontal_road.png"
+                data-index={index}
+              />
+              {index === 0 && (
+                <img
+                  class={styles.verticalRoad}
+                  alt=""
+                  src="/assets/images/portfolio/vertical_road.png"
+                />
+              )}
             </div>
           ))
         }
-
-        <!-- Горизонтальная дорога -->
-        <div class={styles.roadHorizontalCenter}></div>
-        <div class={styles.roadHorizontalBottom}></div>
-
-        <!-- Вертикальная дорога -->
-        <div class={styles.roadVertical}></div>
       </div>
     </div>
     <Buttons />

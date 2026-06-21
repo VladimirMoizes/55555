@@ -43,7 +43,30 @@ const { class: className = '' } = Astro.props;
 </style>
 
 <script>
+  let audio: HTMLAudioElement | null = null;
   let isSoundOn = localStorage.getItem('soundState') !== 'false';
+
+  function initAudio() {
+    if (!audio) {
+      audio = new Audio('/assets/audio/music.mp3');
+      audio.loop = true;
+      audio.volume = 0.5;
+
+      if (isSoundOn) {
+        audio.play().catch(() => {});
+      }
+    }
+  }
+
+  function toggleAudio() {
+    if (!audio) return;
+
+    if (isSoundOn) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  }
 
   function updateSoundButton() {
     const button = document.querySelector('[data-sound]');
@@ -61,20 +84,34 @@ const { class: className = '' } = Astro.props;
     }
   }
 
-  updateSoundButton();
+  function init() {
+    initAudio();
+    updateSoundButton();
 
-  document.body.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const button = target.closest('[data-sound]');
-    if (button) {
-      isSoundOn = !isSoundOn;
-      localStorage.setItem('soundState', String(isSoundOn));
-      updateSoundButton();
-    }
-  });
+    document.body.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const button = target.closest('[data-sound]');
+      if (button) {
+        isSoundOn = !isSoundOn;
+        localStorage.setItem('soundState', String(isSoundOn));
+        toggleAudio();
+        updateSoundButton();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
   document.addEventListener('astro:after-swap', () => {
     isSoundOn = localStorage.getItem('soundState') !== 'false';
     updateSoundButton();
+
+    if (audio && isSoundOn && audio.paused) {
+      audio.play().catch(() => {});
+    }
   });
 </script>
