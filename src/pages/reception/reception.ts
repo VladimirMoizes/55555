@@ -18,7 +18,7 @@ function initBriefToggle(): void {
 
   function sendFormData(data: any): Promise<void> {
     const SCRIPT_URL =
-      'https://script.google.com/macros/s/AKfycbwoQZHc8aiCDBzAWxo3Cbnx3BN9ZbeAVKLNNrhmqXC-txm4w6L0ecnxGj-Jt1c6aA8i/exec';
+      'https://script.google.com/macros/s/AKfycbz8_r2xXAfI20pil8lLkNq1XzWb4i4K8J1qGwbmZuAchE3QVX8rV-D5TkcyBrnEgcZ5/exec';
 
     return fetch(SCRIPT_URL, {
       method: 'POST',
