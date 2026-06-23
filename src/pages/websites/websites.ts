@@ -1,32 +1,61 @@
-function initSlider() {
-  const imageGirl = document.getElementById('imageGirl');
-  const contentWrapper = document.getElementById(
-    'contentWrapper'
-  ) as HTMLElement;
+function initSlider(): void {
+  const mainBlock = document.getElementById('mainBlock') as HTMLElement | null;
+  const imageGirl = document.getElementById(
+    'imageGirl'
+  ) as HTMLImageElement | null;
   const videoContainer = document.getElementById(
     'videoContainer'
-  ) as HTMLElement;
-  const video = document.getElementById('introVideo') as HTMLVideoElement;
+  ) as HTMLElement | null;
+  const video = document.getElementById(
+    'introVideo'
+  ) as HTMLVideoElement | null;
+  const buttonArrow = document.getElementById(
+    'buttonArrow'
+  ) as HTMLButtonElement | null;
 
-  let isVideoPlaying = false;
+  let isVideoPlaying: boolean = false;
 
-  imageGirl?.addEventListener('click', () => {
+  mainBlock?.addEventListener('click', (): void => {
     if (isVideoPlaying) return;
+    if (!video) return;
+
     isVideoPlaying = true;
 
-    videoContainer.setAttribute('data-active', 'true');
-    contentWrapper.setAttribute('data-hidden', 'true');
+    if (videoContainer) {
+      videoContainer.setAttribute('data-active', 'true');
+    }
+    if (imageGirl) {
+      imageGirl.setAttribute('data-hidden', 'true');
+    }
+    if (buttonArrow) {
+      buttonArrow.setAttribute('data-hidden', 'true');
+    }
 
-    video.play();
+    video.play().catch((err: Error) => {
+      console.error('Ошибка воспроизведения видео:', err);
+    });
 
-    video.addEventListener('ended', () => {
-      videoContainer.setAttribute('data-active', 'false');
-      contentWrapper.setAttribute('data-hidden', 'false');
+    video.addEventListener('ended', (): void => {
+      if (videoContainer) {
+        videoContainer.setAttribute('data-active', 'false');
+      }
+      if (imageGirl) {
+        imageGirl.style.transition = 'none';
+        imageGirl.setAttribute('data-moved', 'true');
+        requestAnimationFrame(() => {
+          imageGirl.style.transition = 'opacity 0.5s ease';
+          imageGirl.removeAttribute('data-hidden');
+        });
+      }
+      if (buttonArrow) {
+        buttonArrow.removeAttribute('data-hidden');
+      }
       isVideoPlaying = false;
     });
   });
-  window.addEventListener('load', () => {
-    const element = document.querySelector('#mainTitle');
+
+  window.addEventListener('load', (): void => {
+    const element = document.querySelector('#mainTitle') as HTMLElement | null;
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
@@ -35,11 +64,14 @@ function initSlider() {
     }
   });
 
-  const buttonArrow = document.querySelector('#buttonArrow');
-  const dev = document.querySelector('#dev');
+  const buttonArrowScroll = document.querySelector(
+    '#buttonArrow'
+  ) as HTMLButtonElement | null;
+  const dev = document.querySelector('#dev') as HTMLElement | null;
 
-  if (buttonArrow) {
-    buttonArrow.addEventListener('click', () => {
+  if (buttonArrowScroll) {
+    buttonArrowScroll.addEventListener('click', (e): void => {
+      e.stopPropagation();
       if (dev) {
         dev.scrollIntoView({
           behavior: 'smooth',
@@ -49,53 +81,58 @@ function initSlider() {
     });
   }
 
-  const cardList = document.querySelector('[data-cardList]');
-  const buttons = document.querySelectorAll('[data-button]');
+  const cardList = document.querySelector(
+    '[data-cardList]'
+  ) as HTMLElement | null;
+  const buttons = document.querySelectorAll(
+    '[data-button]'
+  ) as NodeListOf<HTMLButtonElement>;
 
   if (!cardList || buttons.length < 2) return;
 
-  const leftBtn = buttons[0];
-  const rightBtn = buttons[1];
-  const scrollAmount = 600;
+  const leftBtn = buttons[0] as HTMLButtonElement;
+  const rightBtn = buttons[1] as HTMLButtonElement;
+  const scrollAmount: number = 600;
 
-  leftBtn.addEventListener('click', (e) => {
+  leftBtn.addEventListener('click', (e: MouseEvent): void => {
     e.preventDefault();
     cardList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   });
 
-  rightBtn.addEventListener('click', (e) => {
+  rightBtn.addEventListener('click', (e: MouseEvent): void => {
     e.preventDefault();
     cardList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
 }
 
-function initStages() {
-  const stagesList = document.querySelector('[data-stages-list]');
+function initStages(): void {
+  const stagesList = document.querySelector(
+    '[data-stages-list]'
+  ) as HTMLElement | null;
   const stagesListItems = stagesList ? Array.from(stagesList.children) : [];
 
-  stagesListItems.forEach((item, i) => {
-    const htmlItem = item;
-    (htmlItem as HTMLElement).style.zIndex = String(stagesListItems.length - i);
+  stagesListItems.forEach((item: Element, i: number): void => {
+    (item as HTMLElement).style.zIndex = String(stagesListItems.length - i);
   });
 }
 
-function initCar() {
-  const car = document.querySelector('[data-car]') as HTMLElement;
+function initCar(): void {
+  const car = document.querySelector('[data-car]') as HTMLElement | null;
   const continueBtn = document.querySelector(
     '[data-button-continue]'
-  ) as HTMLButtonElement;
+  ) as HTMLButtonElement | null;
   const receptionBtn = document.querySelector(
     '[data-button-reception]'
-  ) as HTMLButtonElement;
+  ) as HTMLButtonElement | null;
 
   if (!car) return;
 
-  let isAnimating = false;
+  let isAnimating: boolean = false;
 
-  function startAnimation() {
+  function startAnimation(): void {
     if (isAnimating) return;
     isAnimating = true;
-    car.setAttribute('data-moving', 'true');
+    car?.setAttribute('data-moving', 'true');
   }
 
   car.addEventListener('click', startAnimation);
@@ -104,12 +141,12 @@ function initCar() {
 }
 
 if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', (): void => {
     initSlider();
     initStages();
     initCar();
   });
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('astro:page-load', (): void => {
     initSlider();
     initStages();
     initCar();

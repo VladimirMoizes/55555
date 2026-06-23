@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+  .sound {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 2;
+  }
+
 .title {
   margin-block-end: 35px;
 }

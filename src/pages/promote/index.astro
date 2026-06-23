@@ -1,12 +1,14 @@
 ---
-import Buttons from '../../components/buttons/buttons.astro';
+import Buttons from '../../components/buttons/Buttons.astro';
 import Icon from '../../components/icons/Icon.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './promote.module.css';
 ---
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Продвижение сайтов</h1>
 
     <div class={styles.mainBlock}>

@@ -1,6 +1,6 @@
 ---
-
 import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import { roadSites } from '../../data/parkData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './park.module.css';
@@ -8,6 +8,7 @@ import styles from './park.module.css';
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Парк "вдохновение"</h1>
     <h3 class={styles.subTitle}>
       Здесь мы собрали 30 самых интересных работы со всего мира. <br /> Возможно,

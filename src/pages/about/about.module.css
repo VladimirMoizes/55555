@@ -5,6 +5,13 @@
   position: relative;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
 .title {
   margin-bottom: 120px;
   text-align: center;

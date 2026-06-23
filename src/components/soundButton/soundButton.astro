@@ -1,7 +1,10 @@
 ---
+// SoundButton.astro
 import Icon from '../icons/Icon.astro';
+import { getSoundState, toggleAudio } from '../header/header';
 
 const { class: className = '' } = Astro.props;
+const isSoundOn = getSoundState();
 ---
 
 <div
@@ -43,30 +46,7 @@ const { class: className = '' } = Astro.props;
 </style>
 
 <script>
-  let audio: HTMLAudioElement | null = null;
-  let isSoundOn = localStorage.getItem('soundState') !== 'false';
-
-  function initAudio() {
-    if (!audio) {
-      audio = new Audio('/assets/audio/music.mp3');
-      audio.loop = true;
-      audio.volume = 0.5;
-
-      if (isSoundOn) {
-        audio.play().catch(() => {});
-      }
-    }
-  }
-
-  function toggleAudio() {
-    if (!audio) return;
-
-    if (isSoundOn) {
-      audio.play().catch(() => {});
-    } else {
-      audio.pause();
-    }
-  }
+  import { toggleAudio, getSoundState } from '../header/header';
 
   function updateSoundButton() {
     const button = document.querySelector('[data-sound]');
@@ -74,6 +54,7 @@ const { class: className = '' } = Astro.props;
 
     const iconOn = button.querySelector('[data-icon-on]') as HTMLElement;
     const iconOff = button.querySelector('[data-icon-off]') as HTMLElement;
+    const isSoundOn = getSoundState();
 
     if (isSoundOn) {
       iconOn.style.display = 'flex';
@@ -84,34 +65,14 @@ const { class: className = '' } = Astro.props;
     }
   }
 
-  function init() {
-    initAudio();
-    updateSoundButton();
-
-    document.body.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
-      const button = target.closest('[data-sound]');
-      if (button) {
-        isSoundOn = !isSoundOn;
-        localStorage.setItem('soundState', String(isSoundOn));
-        toggleAudio();
-        updateSoundButton();
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  document.addEventListener('astro:after-swap', () => {
-    isSoundOn = localStorage.getItem('soundState') !== 'false';
-    updateSoundButton();
-
-    if (audio && isSoundOn && audio.paused) {
-      audio.play().catch(() => {});
+  document.body.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const button = target.closest('[data-sound]');
+    if (button) {
+      toggleAudio();
+      updateSoundButton();
     }
   });
+
+  updateSoundButton();
 </script>

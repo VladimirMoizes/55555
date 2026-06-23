@@ -1,0 +1,20 @@
+  .container {
+    padding: 47px 50px 42px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .iframe {
+    inline-size: 100%;
+    flex: 1;
+    border: none;
+  }
+
+  .sound {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 2;
+  }

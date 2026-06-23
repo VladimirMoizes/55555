@@ -4,6 +4,13 @@
   padding-block-end: 52px;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
 .description {
   display: flex;
   justify-content: space-around;

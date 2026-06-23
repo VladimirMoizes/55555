@@ -1,6 +1,7 @@
 ---
 import Icon from '../../components/icons/Icon.astro';
 import Modal from '../../components/modal/modal.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import { documents, reception } from '../../data/reception';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './reception.module.css';
@@ -8,6 +9,7 @@ import styles from './reception.module.css';
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Ресепшен</h1>
     <ul class={styles.cardList}>
       <li class={styles.cardListItem}>

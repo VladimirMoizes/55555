@@ -1,5 +1,6 @@
 ---
 import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import { board } from '../../data/boardData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './board.module.css';
@@ -7,6 +8,7 @@ import styles from './board.module.css';
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Доска почета</h1>
     <ul class={styles.listBoard}>
       {

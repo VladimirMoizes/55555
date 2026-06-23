@@ -3,6 +3,13 @@
   padding: 35px 60px 49px;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
 .title {
   margin-block-end: 12px;
 }
@@ -99,74 +106,23 @@
   top: 98px;
 }
 
-.horizontalRoad[data-index="0"] {
+.horizontalRoad[data-index='0'] {
   position: absolute;
   bottom: -112px;
   left: 32px;
 }
-.horizontalRoad[data-index="1"] {
+.horizontalRoad[data-index='1'] {
   position: absolute;
   bottom: -112px;
   left: 0;
 }
-.horizontalRoad[data-index="2"] {
+.horizontalRoad[data-index='2'] {
   position: absolute;
   bottom: -88px;
   left: 32px;
 }
-.horizontalRoad[data-index="3"] {
+.horizontalRoad[data-index='3'] {
   position: absolute;
   bottom: -88px;
   left: 0;
 }
-
-
-/* .roadHorizontalCenter {
-  position: absolute;
-  top: 53%;
-  left: calc(50% + 10px);
-  width: 97%;
-  height: 40px;
-  background: url('/assets/images/portfolio/horizontal_road.png') repeat-x
-    center;
-  background-size: auto 40px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.roadHorizontalBottom {
-  position: absolute;
-  bottom: -117px;
-  left: calc(50% + 10px);
-  width: 97%;
-  height: 40px;
-  background: url('/assets/images/portfolio/horizontal_road.png') repeat-x
-    center;
-  background-size: auto 40px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.roadVertical {
-  position: absolute;
-  top: 97px;
-  left: 50%;
-  width: 40px;
-  height: 100%;
-  background: url('/assets/images/portfolio/vertical_road.png') repeat-y center;
-  background-size: 40px auto;
-  transform: translateX(-37%);
-  z-index: 2;
-  pointer-events: none;
-  background-blend-mode: normal;
-  mix-blend-mode: normal;
-}
-
-.roadHorizontalCenter,
-.roadHorizontalBottom,
-.roadVertical {
-  filter: brightness(1.4) saturate(1.2);
-  background-blend-mode: lighten;
-} */

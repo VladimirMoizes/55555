@@ -2,11 +2,13 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './prices.module.css';
 import { prices } from '../../data/pricesData';
-import Buttons from '../../components/buttons/buttons.astro';
+import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 ---
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Цены</h1>
 
     <div class={styles.mainBlock}>

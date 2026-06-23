@@ -3,6 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { roadMapItems } from '../../data/portfolioData';
 import styles from './portfolioId.module.css';
 import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 
 export async function getStaticPaths() {
   return roadMapItems.map((item) => ({
@@ -20,6 +21,7 @@ if (!item) {
 
 <MainLayout>
   <section class={styles.pageContainer}>
+    <SoundButton class={styles.sound} />
     <div class={styles.description}>
       <h1 class={styles.pageTitle}>{item.name}</h1>
       <p class={styles.text}>

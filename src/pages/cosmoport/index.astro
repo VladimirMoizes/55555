@@ -1,11 +1,13 @@
 ---
 import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './cosmoport.module.css';
 ---
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <div class={styles.mainBlock}>
       <video class={styles.videoCosmo} autoplay loop muted playsinline>
         <source src="/assets/videos/cosmo2 webm.webm" type="video/webm" />

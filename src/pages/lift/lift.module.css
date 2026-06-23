@@ -3,6 +3,13 @@
   margin: 14px 0 87px;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 5;
+}
+
 .title {
   margin-block-end: 53px;
 }

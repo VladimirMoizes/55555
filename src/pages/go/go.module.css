@@ -6,6 +6,13 @@
   overflow: hidden;
 }
 
+  .sound {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 2;
+  }
+
 .carImage {
   position: absolute;
   bottom: 128px;

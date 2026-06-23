@@ -1,25 +1,13 @@
 ---
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
+import styles from './museum.module.css';
 ---
 
 <MainLayout>
-  <section class="container">
-    <iframe class="iframe" src="http://zubin.su/3d/Museum/index.htm"></iframe>
+  <section class={styles.container}>
+    <iframe class={styles.iframe} src="http://zubin.su/3d/Museum/index.htm"
+    ></iframe>
+    <SoundButton class={styles.sound} />
   </section>
 </MainLayout>
-
-<style>
-  .container {
-    padding: 47px 50px 42px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-
-  .iframe {
-    inline-size: 100%;
-    flex: 1;
-    border: none;
-  }
-</style>

@@ -9,6 +9,13 @@
   background-size: cover;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
 .title {
   margin-block-end: clamp(60px, 10vw, 165px);
   font-size: clamp(28px, 4vw, 44px);

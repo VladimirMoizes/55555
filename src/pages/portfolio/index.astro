@@ -1,5 +1,6 @@
 ---
 import Buttons from '../../components/buttons/Buttons.astro';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import { roadMapItems } from '../../data/portfolioData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './portfolio.module.css';
@@ -7,6 +8,7 @@ import styles from './portfolio.module.css';
 
 <MainLayout>
   <section class={styles.container}>
+    <SoundButton class={styles.sound} />
     <h1 class={styles.title}>Портфолио</h1>
     <h3 class={styles.subTitle}>20 избранных работ</h3>
     <div class={styles.roadMap}>

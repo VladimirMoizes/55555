@@ -1,9 +1,11 @@
 ---
+import SoundButton from '../../components/soundButton/soundButton.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './go.module.css';
 ---
 
 <MainLayout>
+  <SoundButton class={styles.sound} />
   <div class={styles.imageContainer} data-container>
     <img
       src="/assets/images/go/car_big.png"

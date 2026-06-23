@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 10;
+}
+
 .mainBlock {
   position: relative;
   overflow: hidden;
