@@ -301,7 +301,7 @@ export const buildings = [
     videoWebm: '/assets/videos/go5 webm.webm',
   },
   {
-    id: 'honorBoard',
+    id: 'board',
     title: 'ДОСКА ПОЧЕТА',
     subtitle: 'НАС ХВАЛЯТ',
     image: '/assets/images/main/buildings/доска почета.png',

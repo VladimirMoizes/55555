@@ -1,5 +1,5 @@
 ---
-import { sites, functional, stages } from '../../data/websitesData';
+import { sites, usability, functional, stages } from '../../data/websitesData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './websites.module.css';
 import Icon from '../../components/icons/Icon.astro';
@@ -75,88 +75,12 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         </p>
       </div>
 
-      <!-- Контент враппер (кликабельный) -->
       <div class={styles.contentWrapper} id="contentWrapper">
         <button id="buttonArrow" class={styles.buttonArrow}>
           <Icon name="arrow-down" size={50} color="var(--color-text)" />
         </button>
       </div>
     </div>
-    <!-- <div class={styles.mainBlock} id="mainBlock">
-      <div class={styles.mainBlockTextStart}>
-        <div class={styles.overlay}></div>
-        <p class={styles.text}>
-          Предлагаем услуги по разработке <span class={styles.textBold}
-            >нетривиальных сайтов</span
-          > и сайтов <span class={styles.textBold}
-            >с эксклюзивным дизайном под ключ.
-          </span> Работаем в Москве. <br /><br /> Наши сайты будут отвечать <span
-            class={styles.textBold}
-            >Вашим целям.
-          </span> Вы получите баланс: индивидуальности, красоты и удобства, скорости
-          загрузки и функционала, информации о продукте и о компании. <br /><br
-          /><span class={styles.textBold}>10 лет мы делаем сайты, </span> которые
-          вызывают доверие к компании, цепляют посетителя, подготавливают и стимулируют
-          его к <span class={styles.textBold}
-            >приобретению ваших товаров или услуг.
-          </span>
-        </p>
-      </div>
-      <div class={styles.mainBlockTextEnd}>
-        <div class={styles.overlay}></div>
-        <p class={styles.text}>
-          <span class={styles.textBold}>Функционал может содержать:</span> каталоги,
-          карточки продукции, калькуляторы, 3d туры, интеграция с 1С, новостные ленты,
-          формы заявок и прочее.
-        </p>
-      </div>
-      <div class={styles.contentWrapper} id="contentWrapper">
-        <img
-          class={styles.imageGirl}
-          id="imageGirl"
-          src="/assets/images/sites/девушка.png"
-          alt="girl"
-        />
-        <div class={styles.mainBlockTextStart}>
-          <div class={styles.overlay}></div>
-          <p class={styles.text}>
-            Предлагаем услуги по разработке <span class={styles.textBold}
-              >нетривиальных сайтов</span
-            > и сайтов <span class={styles.textBold}
-              >с эксклюзивным дизайном под ключ.
-            </span> Работаем в Москве. <br /><br /> Наши сайты будут отвечать <span
-              class={styles.textBold}
-              >Вашим целям.
-            </span> Вы получите баланс: индивидуальности, красоты и удобства, скорости
-            загрузки и функционала, информации о продукте и о компании. <br
-            /><br /><span class={styles.textBold}
-              >10 лет мы делаем сайты,
-            </span> которые вызывают доверие к компании, цепляют посетителя, подготавливают
-            и стимулируют его к <span class={styles.textBold}
-              >приобретению ваших товаров или услуг.
-            </span>
-          </p>
-        </div>
-        <div class={styles.mainBlockTextEnd}>
-          <div class={styles.overlay}></div>
-          <p class={styles.text}>
-            <span class={styles.textBold}>Функционал может содержать:</span> каталоги,
-            карточки продукции, калькуляторы, 3d туры, интеграция с 1С, новостные
-            ленты, формы заявок и прочее.
-          </p>
-        </div>
-        <button id="buttonArrow" class={styles.buttonArrow}>
-          <Icon name="arrow-down" size={50} color="var(--color-text)" />
-        </button>
-      </div>
-
-      <div class={styles.videoContainer} id="videoContainer">
-        <video id="introVideo" muted playsinline>
-          <source src="/assets/videos/website_intro.mp4" type="video/mp4" />
-          <source src="/assets/videos/website_intro.webm" type="video/webm" />
-        </video>
-      </div>
-    </div> -->
 
     <div class={styles.dev} id="dev">
       <h2 class={styles.secondTitle}>
@@ -215,10 +139,10 @@ const currentTitle = titles[type] || 'Разработка сайтов';
 
     <div class={styles.design}>
       <div class={styles.buttons}>
-        <button class={styles.button} data-button>
+        <button class={styles.button} data-button-design>
           <Icon name="arrow-left" />
         </button>
-        <button class={styles.button} data-button>
+        <button class={styles.button} data-button-design>
           <Icon name="arrow-right" />
         </button>
       </div>
@@ -227,11 +151,15 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         Предлагаем Вашему вниманию примеры наиболее интересных наших
         дизайн-макетов
       </p>
-      <ul class={styles.cardList} data-cardList>
+      <ul class={styles.cardList} data-cardList data-slider="design">
         {
           sites.map((item) => {
             return (
-              <li class={styles.cardListItem}>
+              <li
+                class={styles.cardListItem}
+                data-slide
+                data-image={item.image}
+              >
                 <article
                   class={styles.card}
                   style={`background-image: url("${item.image}")`}
@@ -290,35 +218,23 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           </p>
         </div>
         <div class={styles.buttons}>
-          <button class={styles.button} data-button>
+          <button class={styles.button} data-button-usability>
             <Icon name="arrow-left" />
           </button>
-          <button class={styles.button} data-button>
+          <button class={styles.button} data-button-usability>
             <Icon name="arrow-right" />
           </button>
         </div>
-        <ul class={styles.list}>
-          <li class={styles.item}>
-            <img
-              class={styles.image}
-              src="/assets/images/sites/usability1.png"
-              alt="usability image"
-            />
-          </li>
-          <li class={styles.item}>
-            <img
-              class={styles.image}
-              src="/assets/images/sites/usability2.png"
-              alt="usability image"
-            />
-          </li>
-          <li class={styles.item}>
-            <img
-              class={styles.image}
-              src="/assets/images/sites/usability3.png"
-              alt="usability image"
-            />
-          </li>
+        <ul class={styles.list} data-usability-list data-slider="usability">
+          {
+            usability.map((item) => {
+              return (
+                <li class={styles.item} data-slide>
+                  <img class={styles.image} src={item} alt="usability image" />
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
 
@@ -488,6 +404,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
                     <h4 class={styles.cardTitle}>{item.title}</h4>
                     <p class={styles.cardText}>{item.text}</p>
                   </div>
+
                   <button class={styles.cardButtonLook}>
                     <span class={styles.cardButtonLookText}>
                       Посмотреть пример
@@ -597,6 +514,47 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         class={styles.lineImage}
         aria-hidden="true"
       />
+    </div>
+    <!-- ====== СЛАЙДЕР ДЛЯ ДИЗАЙНА (sites) ====== -->
+    <div class={styles.sliderOverlay} id="sliderDesign">
+      <div class={styles.sliderContainer}>
+        <button class={styles.sliderClose} data-close="design">✕</button>
+        <div class={styles.sliderContent}>
+          <button class={styles.sliderArrow} data-prev="design">
+            <Icon name="arrow-left" size={32} />
+          </button>
+          <div class={styles.sliderImageWrapper}>
+            <img id="sliderDesignImage" src="" alt="slide" />
+            <div class={styles.sliderCounter} id="sliderDesignCounter">
+              1 / 10
+            </div>
+          </div>
+          <button class={styles.sliderArrow} data-next="design">
+            <Icon name="arrow-right" size={32} />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== СЛАЙДЕР ДЛЯ ЮЗАБИЛИТИ (usability) ====== -->
+    <div class={styles.sliderOverlay} id="sliderUsability">
+      <div class={styles.sliderContainer}>
+        <button class={styles.sliderClose} data-close="usability">✕</button>
+        <div class={styles.sliderContent}>
+          <button class={styles.sliderArrow} data-prev="usability">
+            <Icon name="arrow-left" size={32} />
+          </button>
+          <div class={styles.sliderImageWrapper}>
+            <img id="sliderUsabilityImage" src="" alt="slide" />
+            <div class={styles.sliderCounter} id="sliderUsabilityCounter">
+              1 / 10
+            </div>
+          </div>
+          <button class={styles.sliderArrow} data-next="usability">
+            <Icon name="arrow-right" size={32} />
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>

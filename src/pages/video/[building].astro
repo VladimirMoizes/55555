@@ -19,6 +19,7 @@ if (!buildingData) {
 }
 
 const redirectUrl = `/building/${buildingData.id}`;
+const directRedirectUrl = buildingData.link;
 ---
 
 <MainLayout>
@@ -32,17 +33,19 @@ const redirectUrl = `/building/${buildingData.id}`;
         class="video"
         onended="console.log('ended сработал через атрибут')"
       >
-        {buildingData.videoWebm && (
-          <source src={buildingData.videoWebm} type="video/webm" />
-        )}
-        {buildingData.videoMp4 && (
-          <source src={buildingData.videoMp4} type="video/mp4" />
-        )}
+        {
+          buildingData.videoWebm && (
+            <source src={buildingData.videoWebm} type="video/webm" />
+          )
+        }
+        {
+          buildingData.videoMp4 && (
+            <source src={buildingData.videoMp4} type="video/mp4" />
+          )
+        }
       </video>
     </div>
-    {buildingData.mask && (
-      <img class="mask" src={buildingData.mask} alt="" />
-    )}
+    {buildingData.mask && <img class="mask" src={buildingData.mask} alt="" />}
   </div>
 </MainLayout>
 
@@ -78,7 +81,7 @@ const redirectUrl = `/building/${buildingData.id}`;
   }
 </style>
 
-<script define:vars={{ redirectUrl }}>
+<script define:vars={{  redirectUrl, directRedirectUrl, buildingData  }}>
   const video = document.getElementById('buildingVideo');
   let redirected = false;
   let videoEnded = false;
@@ -86,7 +89,15 @@ const redirectUrl = `/building/${buildingData.id}`;
   function redirectToBuilding() {
     if (redirected) return;
     redirected = true;
-     window.location.replace(redirectUrl);
+    if (
+      buildingData.id === 'park' ||
+      buildingData.id === 'garage' ||
+      buildingData.id === 'reception'
+    ) {
+      window.location.replace(directRedirectUrl);
+    } else {
+      window.location.replace(redirectUrl);
+    }
   }
 
   if (video) {

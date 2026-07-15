@@ -33,6 +33,15 @@ export const sites = [
   },
 ];
 
+export const usability = [
+  '/assets/images/sites/usability1.png',
+  '/assets/images/sites/usability2.png',
+  '/assets/images/sites/usability1.png',
+  '/assets/images/sites/usability2.png',
+  '/assets/images/sites/usability1.png',
+  '/assets/images/sites/usability2.png',
+];
+
 export const functional = [
   {
     icon: '/assets/images/sites/icon_1.png',

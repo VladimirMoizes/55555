@@ -58,7 +58,13 @@ function initBuildingHandlers() {
       e.preventDefault();
 
       const buildingId = building.getAttribute('data-building-id');
-      const redirectUrl = `/video/${buildingId}`;
+      let redirectUrl = '';
+
+      if (buildingId === 'board') {
+        redirectUrl = buildingId;
+      } else {
+        redirectUrl = `/video/${buildingId}`;
+      }
 
       startCarAndRedirect(redirectUrl);
     });

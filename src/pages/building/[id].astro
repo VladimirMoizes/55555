@@ -1,4 +1,25 @@
 ---
+// import MainLayout from '../../layouts/MainLayout.astro';
+// import styles from './building.module.css';
+// import Icon from '../../components/icons/Icon.astro';
+// import { buildings } from '../../data/mainData';
+// import SoundButton from '../../components/soundButton/soundButton.astro';
+// import Tags from '../../components/tags/Tags.astro';
+
+// export async function getStaticPaths() {
+//   return buildings.map((b) => ({
+//     params: { id: b.id },
+//   }));
+// }
+
+// const { id } = Astro.params;
+
+// const building = buildings.find((b) => b.id === id);
+
+// if (!building) {
+//   throw new Error('Building not found');
+// }
+
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './building.module.css';
 import Icon from '../../components/icons/Icon.astro';
@@ -7,12 +28,25 @@ import SoundButton from '../../components/soundButton/soundButton.astro';
 import Tags from '../../components/tags/Tags.astro';
 
 export async function getStaticPaths() {
-  return buildings.map((b) => ({
-    params: { id: b.id },
-  }));
+  const excludedIds = ['park', 'garage', 'reception', 'board'];
+
+  return buildings
+    .filter((b) => !excludedIds.includes(b.id))
+    .map((b) => ({
+      params: { id: b.id },
+    }));
 }
 
 const { id } = Astro.params;
+
+const excludedIds = ['park', 'garage', 'reception', 'honorBoard'];
+if (excludedIds.includes(id)) {
+  const building = buildings.find((b) => b.id === id);
+  if (building) {
+    return Astro.redirect(building.link);
+  }
+  return Astro.redirect('/');
+}
 
 const building = buildings.find((b) => b.id === id);
 
@@ -23,10 +57,7 @@ if (!building) {
 
 <MainLayout>
   {
-    id === 'bank' ||
-    id === 'kotoTilda' ||
-    id === 'university' ||
-    id === 'park' ? (
+    id === 'bank' || id === 'kotoTilda' || id === 'university' ? (
       <section class={styles.containerSimple}>
         <div class={styles.titleListSimple}>
           <h1>{building.title}</h1>
@@ -56,18 +87,25 @@ if (!building) {
           <h1>{building.title}</h1>
           <h2 class={styles.subTitle}>{building.subtitle}</h2>
         </div>
-
-        <div class={styles.description}>
-          <blockquote class={styles.quote}>{building.description}</blockquote>
-
-          <Icon
-            name="decorativeArrow"
-            color="var(--color-primary)"
-            size={155}
-            className={styles.icon}
-          />
-        </div>
-
+        {id !== 'museum' && (
+          <div class={styles.description}>
+            <blockquote
+              class={`${styles.quote} ${id !== 'cosmoport' ? styles.hooks : ''}`}
+            >
+              {building.description}
+            </blockquote>
+            {id !== 'tv-studio' &&
+              id !== 'exhibition' &&
+              id !== 'cosmoport' && (
+                <Icon
+                  name="decorativeArrow"
+                  color="var(--color-primary)"
+                  size={155}
+                  className={styles.icon}
+                />
+              )}
+          </div>
+        )}
         <div class={styles.mapLayer}>
           <img
             class={styles.car}
