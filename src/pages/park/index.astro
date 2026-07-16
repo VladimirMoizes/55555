@@ -31,6 +31,38 @@ import styles from './park.module.css';
                   src={item.image}
                 />
               </a>
+              {item.people.map((human) => {
+                return (
+                  <img
+                    class={styles.humanImage}
+                    src={human.src}
+                    alt=""
+                    aria-hidden="true"
+                    style={{
+                      bottom: human.bottom + 'px',
+                      left: human.left + 'px',
+                      width: human.width + 'px',
+                      height: human.height + 'px',
+                    }}
+                  />
+                );
+              })}
+              {item.decorations.map((dec) => {
+                return (
+                  <img
+                    class={styles.decorImage}
+                    src={dec.src}
+                    alt=""
+                    aria-hidden="true"
+                    style={{
+                      bottom: dec.bottom + 'px',
+                      left: dec.left + 'px',
+                      width: dec.width + 'px',
+                      height: dec.height + 'px',
+                    }}
+                  />
+                );
+              })}
               {index < roadSites.length - 3 && (
                 <img
                   class={styles.verticalRoad}
@@ -67,6 +99,38 @@ import styles from './park.module.css';
                   src={item.image}
                 />
               </a>
+              {item.people.map((human) => {
+                return (
+                  <img
+                    class={styles.humanImage}
+                    src={human.src}
+                    alt=""
+                    aria-hidden="true"
+                    style={{
+                      bottom: human.bottom + 'px',
+                      left: human.left + 'px',
+                      width: human.width + 'px',
+                      height: human.height + 'px',
+                    }}
+                  />
+                );
+              })}
+              {item.decorations.map((dec) => {
+                return (
+                  <img
+                    class={styles.decorImage}
+                    src={dec.src}
+                    alt=""
+                    aria-hidden="true"
+                    style={{
+                      bottom: dec.bottom + 'px',
+                      left: dec.left + 'px',
+                      width: dec.width + 'px',
+                      height: dec.height + 'px',
+                    }}
+                  />
+                );
+              })}
               {index < roadSites.length - 3 && (
                 <img
                   class={styles.verticalRoad}

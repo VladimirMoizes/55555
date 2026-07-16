@@ -134,6 +134,7 @@
   z-index: 10;
   grid-area: mapLayer;
   display: inline-block;
+  position: relative;
 }
 
 .car {
@@ -174,6 +175,11 @@
   width: 1024px;
   height: auto;
   z-index: 5;
+}
+
+.houseImage {
+  position: absolute;
+  z-index: -1;
 }
 
 .linkBuilding {

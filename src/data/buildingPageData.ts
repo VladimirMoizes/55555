@@ -1,0 +1,205 @@
+export const housesData = {
+  workshop: [
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 380 },
+      width: 34,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: 0, left: 418 },
+      width: 44,
+      height: 21,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop3.png',
+      position: { top: -77, left: 428 },
+      width: 170,
+      height: 98,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 613 },
+      width: 34,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop5.png',
+      position: { top: -67, left: 653 },
+      width: 450,
+      height: 97,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: 0, left: 1120 },
+      width: 44,
+      height: 21,
+    },
+  ],
+  exhibition: [
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 345 },
+      width: 39,
+      height: 23,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: 0, left: 387 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop5.png',
+      position: { top: -69, left: 438 },
+      width: 466,
+      height: 100,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: 0, left: 900 },
+      width: 44,
+      height: 21,
+    },
+  ],
+  'tv-studio': [
+    {
+      src: '/assets/images/building_page/workshop/workshop5.png',
+      position: { top: -69, left: 357 },
+      width: 466,
+      height: 100,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 818 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: -2, left: 874 },
+      width: 39,
+      height: 23,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop3.png',
+      position: { top: -77, left: 881 },
+      width: 176,
+      height: 101,
+    },
+  ],
+  museum: [
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 347 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 387 },
+      width: 45,
+      height: 22,
+    },
+
+    {
+      src: '/assets/images/building_page/workshop/workshop3.png',
+      position: { top: -77, left: 401 },
+      width: 176,
+      height: 101,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: -2, left: 595 },
+      width: 39,
+      height: 23,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 646 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 687 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 744 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 785 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 1012 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 1053 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 1107 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 1148 },
+      width: 45,
+      height: 22,
+    },
+  ],
+  cosmoport: [
+    {
+      src: '/assets/images/building_page/cosmoport1.png',
+      position: { top: -69, left: 180 },
+      width: 246,
+      height: 100,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop1_4.png',
+      position: { top: 0, left: 416 },
+      width: 35,
+      height: 20,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 457 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/cosmoport4.png',
+      position: { top: -69, left: 502 },
+      width: 218,
+      height: 100,
+    },
+    {
+      src: '/assets/images/building_page/workshop/workshop2_6.png',
+      position: { top: -2, left: 713 },
+      width: 45,
+      height: 22,
+    },
+    {
+      src: '/assets/images/building_page/cosmoport6.png',
+      position: { top: -69, left: 758 },
+      width: 408,
+      height: 100,
+    },
+  ],
+};

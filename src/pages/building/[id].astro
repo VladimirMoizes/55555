@@ -26,6 +26,7 @@ import Icon from '../../components/icons/Icon.astro';
 import { buildings } from '../../data/mainData';
 import SoundButton from '../../components/soundButton/soundButton.astro';
 import Tags from '../../components/tags/Tags.astro';
+import { housesData } from '../../data/buildingPageData.ts';
 
 export async function getStaticPaths() {
   const excludedIds = ['park', 'garage', 'reception', 'board'];
@@ -38,6 +39,8 @@ export async function getStaticPaths() {
 }
 
 const { id } = Astro.params;
+
+const currentHouses = housesData[id as keyof typeof housesData] || [];
 
 const excludedIds = ['park', 'garage', 'reception', 'honorBoard'];
 if (excludedIds.includes(id)) {
@@ -114,6 +117,21 @@ if (!building) {
             data-car
           />
           <img class={styles.road} src="/assets/images/road.svg" alt="" />
+          {currentHouses.map((house) => (
+            <img
+              class={styles.houseImage}
+              src={house.src}
+              aria-hidden="true"
+              alt=""
+              style={{
+                top: house.position.top + 'px',
+                left: house.position.left + 'px',
+                width: house.width + 'px',
+                height: house.height + 'px',
+              }}
+            />
+          ))}
+
           {id === 'museum' && (
             <div class={styles.pointerWrapper} data-pointer>
               <img

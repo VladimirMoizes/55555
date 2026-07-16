@@ -57,20 +57,33 @@ import styles from './reception.module.css';
             мессенджеры:
           </p>
           <div class={styles.buttons}>
-            <button class={styles.buttonIcon} type="button"
+            <button
+              class={styles.buttonIcon}
+              type="button"
+              data-link="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
               ><Icon
                 name="whatsapp"
                 size={27}
                 color="var(--color-primary)"
               /></button
             >
-            <button class={styles.buttonIcon} type="button"
+            <button
+              class={styles.buttonIcon}
+              type="button"
+              data-link="https://t.me/fatboy200?text=Здравствуйте!%20Интересует%20разработка%20сайта."
               ><Icon
                 name="telegram"
                 size={27}
                 color="var(--color-primary)"
               /></button
             >
+            <button
+              class={styles.buttonIcon}
+              aria-label="Открыть max"
+              data-link="https://web.max.ru/"
+            >
+              <Icon name="max" color="var(--color-primary)" />
+            </button>
           </div>
         </div>
         <div class={styles.inputList}>

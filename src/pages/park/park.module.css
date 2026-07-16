@@ -5,12 +5,12 @@
   align-items: center;
 }
 
-  .sound {
-    position: fixed;
-    top: 120px;
-    right: 20px;
-    z-index: 2;
-  }
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
 
 .title {
   margin-block-end: 35px;
@@ -45,6 +45,16 @@
 
 .sitesItem {
   position: relative;
+}
+
+.humanImage {
+  position: absolute;
+  z-index: 3;
+}
+
+.decorImage {
+  position: absolute;
+  z-index: 2;
 }
 
 .verticalRoad {

@@ -41,13 +41,25 @@ import Icon from '../icons/Icon.astro';
       </a>
     </div>
     <div class={styles.buttonListMessenger}>
-      <button class={styles.button} aria-label="Открыть whatsapp">
+      <button
+        class={styles.button}
+        aria-label="Открыть whatsapp"
+        data-link="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
+      >
         <Icon name="whatsapp" color="var(--color-primary)" />
       </button>
-      <button class={styles.button} aria-label="Открыть Telegram">
+      <button
+        class={styles.button}
+        aria-label="Открыть Telegram"
+        data-link="https://t.me/fatboy200?text=Здравствуйте!%20Интересует%20разработка%20сайта."
+      >
         <Icon name="telegram" color="var(--color-primary)" />
       </button>
-      <button class={styles.button} aria-label="Открыть max">
+      <button
+        class={styles.button}
+        aria-label="Открыть max"
+        data-link="https://web.max.ru/"
+      >
         <Icon name="max" color="var(--color-primary)" />
       </button>
     </div>
@@ -57,3 +69,25 @@ import Icon from '../icons/Icon.astro';
     <a>Политика конфиденциальности</a>
   </div>
 </footer>
+
+<script>
+  function initSocialButtons(): void {
+    document.querySelectorAll('[data-link]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const link = btn.getAttribute('data-link');
+        if (link) {
+          window.open(link, '_blank');
+        }
+      });
+    });
+  }
+
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', (): void => {
+      initSocialButtons();
+    });
+    document.addEventListener('astro:page-load', (): void => {
+      initSocialButtons();
+    });
+  }
+</script>

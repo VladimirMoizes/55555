@@ -658,12 +658,13 @@
         }
       }
 
-
       .cardButtonLook {
         border-radius: 5px;
         background-color: var(--color-primary);
         padding-block: 12px;
         margin-top: auto;
+        display: flex;
+        inline-size: auto;
 
         .cardButtonLookText {
           font-weight: 600;
@@ -671,7 +672,21 @@
           line-height: 120%;
           letter-spacing: 0%;
           text-align: center;
+          margin: auto;
+          align-self: center;
+          justify-self: center;
         }
+      }
+      .cardButtonLook :hover {
+        cursor: pointer;
+      }
+
+      .cardButtonLook :active {
+        transform: translateY(1px);
+      }
+
+      .cardButtonLook :focus-visible {
+        outline: 2px solid var(--color-primary);
       }
     }
   }
@@ -781,6 +796,12 @@
 
   .welcomeText {
     letter-spacing: -0.05em;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
@@ -875,6 +896,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 
 .sliderArrow {
@@ -897,16 +919,20 @@ h2 {
 
 .sliderImageWrapper {
   position: relative;
-  max-width: 80vw;
-  max-height: 80vh;
+  width: 85vw;
+  max-width: 85vw;
+  max-height: 90vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sliderImageWrapper img {
-  max-width: 100%;
-  max-height: 80vh;
+  width: 100%;
+  height: auto;
+  max-height: none;
   object-fit: contain;
   display: block;
 }

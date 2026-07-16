@@ -405,11 +405,16 @@ const currentTitle = titles[type] || 'Разработка сайтов';
                     <p class={styles.cardText}>{item.text}</p>
                   </div>
 
-                  <button class={styles.cardButtonLook}>
+                  <a
+                    href="https://ru.wikipedia.org/wiki/Фронтенд_и_бэкенд"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class={styles.cardButtonLook}
+                  >
                     <span class={styles.cardButtonLookText}>
                       Посмотреть пример
                     </span>
-                  </button>
+                  </a>
                 </article>
               </li>
             );

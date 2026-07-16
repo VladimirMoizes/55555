@@ -33,5 +33,11 @@ function initMenu() {
   document.body.addEventListener('click', handleArrowClick);
 }
 
-initMenu();
-document.addEventListener('astro:page-load', initMenu);
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', (): void => {
+    initMenu();
+  });
+  document.addEventListener('astro:page-load', (): void => {
+    initMenu();
+  });
+}

@@ -77,10 +77,25 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <div class={styles.buttonListMessenger}>
-    <button class={styles.button} aria-label="Telegram">
+    <button
+      class={styles.button}
+      aria-label="Открыть whatsapp"
+      data-link="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
+    >
+      <Icon name="whatsapp" color="var(--color-primary)" />
+    </button>
+    <button
+      class={styles.button}
+      aria-label="Telegram"
+      data-link="https://t.me/fatboy200?text=Здравствуйте!%20Интересует%20разработка%20сайта."
+    >
       <Icon name="telegram" color="var(--color-primary)" />
     </button>
-    <button class={styles.button} aria-label="Max">
+    <button
+      class={styles.button}
+      aria-label="Max"
+      data-link="https://web.max.ru/"
+    >
       <Icon name="max" color="var(--color-primary)" />
     </button>
   </div>
