@@ -44,21 +44,21 @@ import Icon from '../icons/Icon.astro';
       <button
         class={styles.button}
         aria-label="Открыть whatsapp"
-        data-link="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
+        data-link-icon="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
       >
         <Icon name="whatsapp" color="var(--color-primary)" />
       </button>
       <button
         class={styles.button}
         aria-label="Открыть Telegram"
-        data-link="https://t.me/fatboy200?text=Здравствуйте!%20Интересует%20разработка%20сайта."
+        data-link-icon="https://t.me/fatboy200?text=Здравствуйте!%20Интересует%20разработка%20сайта."
       >
         <Icon name="telegram" color="var(--color-primary)" />
       </button>
       <button
         class={styles.button}
         aria-label="Открыть max"
-        data-link="https://web.max.ru/"
+        data-link-icon="https://web.max.ru/"
       >
         <Icon name="max" color="var(--color-primary)" />
       </button>
@@ -72,9 +72,9 @@ import Icon from '../icons/Icon.astro';
 
 <script>
   function initSocialButtons(): void {
-    document.querySelectorAll('[data-link]').forEach((btn) => {
+    document.querySelectorAll('[data-link-icon]').forEach((btn) => {
       btn.addEventListener('click', () => {
-        const link = btn.getAttribute('data-link');
+        const link = btn.getAttribute('data-link-icon');
         if (link) {
           window.open(link, '_blank');
         }

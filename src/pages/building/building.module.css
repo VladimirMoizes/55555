@@ -135,6 +135,7 @@
   grid-area: mapLayer;
   display: inline-block;
   position: relative;
+  /* overflow: visible; */
 }
 
 .car {
