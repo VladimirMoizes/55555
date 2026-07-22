@@ -20,7 +20,7 @@ export const menu = [
   { id: 8, name: 'сайты на тильде', url: '/building/kotoTilda' },
   { id: 9, name: 'делимся опытом', url: '/building/university' },
   { id: 10, name: 'доска почета', url: '/board' },
-  { id: 11, name: 'космопорт', url: '/cosmoport' },
+  { id: 11, name: 'космопорт', url: '/building/cosmoport' },
   { id: 12, name: 'о нас', url: '/about' },
   { id: 13, name: 'ресепшен', url: '/reception' },
 ];

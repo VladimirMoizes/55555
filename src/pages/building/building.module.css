@@ -164,18 +164,28 @@
 }
 
 .car[data-moving-exhibition='true'] {
-  transform: translateX(1430px);
+  transform: translateX(1330px);
 }
+
 .car[data-moving-museum='true'] {
   transform: translateX(1340px);
+}
+
+.car[data-moving-tv-studio='true'] {
+  transform: translateX(905px);
 }
 
 .road {
   top: 666px;
   left: 166px;
-  width: 1024px;
-  height: auto;
+  inline-size: 1024px;
+  block-size: auto;
   z-index: 5;
+}
+
+.roadExhibition {
+  inline-size: 900px;
+  block-size: 32px;
 }
 
 .houseImage {

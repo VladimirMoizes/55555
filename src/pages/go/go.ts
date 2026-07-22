@@ -34,7 +34,6 @@ function setupGoAnimation() {
   });
 }
 
-// Обёртка для серверного рендеринга
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', setupGoAnimation);
   document.addEventListener('astro:page-load', setupGoAnimation);

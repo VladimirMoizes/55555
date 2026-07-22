@@ -66,7 +66,7 @@ export const housesData = {
   'tv-studio': [
     {
       src: '/assets/images/building_page/workshop/workshop5.png',
-      position: { top: -69, left: 357 },
+      position: { top: -68, left: 357 },
       width: 466,
       height: 100,
     },
@@ -84,7 +84,7 @@ export const housesData = {
     },
     {
       src: '/assets/images/building_page/workshop/workshop3.png',
-      position: { top: -77, left: 881 },
+      position: { top: -76, left: 881 },
       width: 176,
       height: 101,
     },

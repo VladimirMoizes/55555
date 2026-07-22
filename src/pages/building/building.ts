@@ -3,8 +3,11 @@ function handleCarMoveAndRedirect() {
 
   const car = document.querySelector('[data-car]') as HTMLElement;
   const link = document.querySelector('[data-link]') as HTMLAnchorElement;
+  console.log(link);
+
   const pointer = document.querySelector('[data-pointer]') as HTMLElement;
   const buildingImg = link.querySelector('[data-building]') as HTMLImageElement;
+  console.log(buildingImg);
 
   if (!car || !link) return;
 
@@ -79,6 +82,8 @@ function handleCarMoveAndRedirect() {
         car.setAttribute('data-moving-exhibition', 'true');
       } else if (pathname.includes('museum')) {
         car.setAttribute('data-moving-museum', 'true');
+      } else if (pathname.includes('tv-studio')) {
+        car.setAttribute('data-moving-tv-studio', 'true');
       } else {
         car.setAttribute('data-moving-second', 'true');
       }
@@ -106,20 +111,20 @@ function handleCarMoveAndRedirect() {
   if (buildingImg && window.location.pathname.includes('exhibition')) {
     buildingImg.style.position = 'relative';
     buildingImg.style.top = '-30px';
-    buildingImg.style.left = '30px';
+    buildingImg.style.left = '-30px';
   }
 
   if (buildingImg && window.location.pathname.includes('tv-studio')) {
     buildingImg.style.position = 'relative';
     buildingImg.style.width = '700px';
     buildingImg.style.top = '-25px';
-    buildingImg.style.left = '-30px';
+    buildingImg.style.left = '-160px';
   }
   if (buildingImg && window.location.pathname.includes('exhibition')) {
     buildingImg.style.position = 'relative';
     buildingImg.style.width = '620px';
-    buildingImg.style.top = '-35px';
-    buildingImg.style.left = '30px';
+    buildingImg.style.top = '-40px';
+    buildingImg.style.left = '-80px';
   }
 }
 
