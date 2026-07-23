@@ -298,7 +298,7 @@
   }
 }
 
-.briefContent {
+/* .briefContent {
   transition: all 0.4s ease-in-out;
   opacity: 1;
   max-height: 5000px;
@@ -310,7 +310,7 @@
   max-height: 0;
   padding: 0;
   margin: 0;
-}
+} */
 
 .hide {
   border: none;
@@ -415,6 +415,20 @@
     font-weight: 600;
     font-size: 24px;
   }
+}
+
+.formSecond {
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  max-height: 5000px;
+  overflow: hidden;
+}
+
+.formSecond[data-hidden='true'] {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .formFirst .inputList .input {

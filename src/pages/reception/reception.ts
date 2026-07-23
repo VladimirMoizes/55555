@@ -2,6 +2,7 @@
 
 function initBriefToggle(): void {
   const briefContent = document.getElementById('briefContent');
+  const openBriefBtn = document.getElementById('openBriefBtn');
   const toggleBtn = document.getElementById('toggleBriefBtn');
   const formFirst = document.getElementById(
     'formFirst'
@@ -18,7 +19,7 @@ function initBriefToggle(): void {
 
   function sendFormData(data: any): Promise<void> {
     const SCRIPT_URL =
-      'https://script.google.com/macros/s/AKfycbzgMe3f1g9Fo8KSpsxajgWMXHR0MRMRym5UrXTwZOnPnFck7mSAYtKOQRmDLPZjVip9/exec';
+      'https://script.google.com/macros/s/AKfycbxtwLq6AUb0csAC9wyltw8XFKWOSFVVWpRmAQ4Ex1P2DTsRQUbOaMThf8eIVtgOoc1G/exec';
 
     return fetch(SCRIPT_URL, {
       method: 'POST',
@@ -62,8 +63,8 @@ function initBriefToggle(): void {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Проверяем время
-      if (!canSubmit(formId)) return;
+      // Проверяем время (по первой форме)
+      if (!canSubmit('formFirst')) return;
 
       if (isSubmitting) return;
       isSubmitting = true;
@@ -76,7 +77,32 @@ function initBriefToggle(): void {
         submitBtn.textContent = 'Отправка...';
       }
 
-      const formData = new FormData(form);
+      // Собираем данные из ОБЕИХ форм
+      const formFirstEl = document.getElementById(
+        'formFirst'
+      ) as HTMLFormElement;
+      const formSecondEl = document.getElementById(
+        'formSecond'
+      ) as HTMLFormElement;
+
+      const formData = new FormData();
+
+      // Добавляем данные из первой формы
+      if (formFirstEl) {
+        const firstData = new FormData(formFirstEl);
+        for (const [key, value] of firstData.entries()) {
+          formData.append(key, value);
+        }
+      }
+
+      // Добавляем данные из второй формы
+      if (formSecondEl) {
+        const secondData = new FormData(formSecondEl);
+        for (const [key, value] of secondData.entries()) {
+          formData.append(key, value);
+        }
+      }
+
       const data = Object.fromEntries(formData.entries());
 
       sendFormData(data).finally(() => {
@@ -95,6 +121,49 @@ function initBriefToggle(): void {
       if ((window as any).openModal) (window as any).openModal();
     });
   }
+
+  // function setupFormHandler(
+  //   form: HTMLFormElement,
+  //   formId: 'formFirst' | 'formSecond'
+  // ) {
+  //   let isSubmitting = false;
+
+  //   form.addEventListener('submit', (e) => {
+  //     e.preventDefault();
+
+  //     // Проверяем время
+  //     if (!canSubmit(formId)) return;
+
+  //     if (isSubmitting) return;
+  //     isSubmitting = true;
+
+  //     const submitBtn = form.querySelector(
+  //       'button[type="submit"]'
+  //     ) as HTMLButtonElement | null;
+  //     if (submitBtn) {
+  //       submitBtn.disabled = true;
+  //       submitBtn.textContent = 'Отправка...';
+  //     }
+
+  //     const formData = new FormData(form);
+  //     const data = Object.fromEntries(formData.entries());
+
+  //     sendFormData(data).finally(() => {
+  //       isSubmitting = false;
+  //       if (submitBtn) {
+  //         submitBtn.disabled = false;
+  //         submitBtn.textContent = 'Отправить нам';
+  //       }
+  //     });
+
+  //     const modalContent = document.querySelector('#modalContent');
+  //     if (modalContent) {
+  //       modalContent.innerHTML =
+  //         '<h2>Спасибо за обращение!</h2><p>Мы скоро с Вами свяжемся.</p>';
+  //     }
+  //     if ((window as any).openModal) (window as any).openModal();
+  //   });
+  // }
 
   if (formFirst) setupFormHandler(formFirst, 'formFirst');
   if (formSecond) setupFormHandler(formSecond, 'formSecond');
@@ -128,22 +197,40 @@ function initBriefToggle(): void {
     });
   });
 
-  // Бриф
-  if (!briefContent || !toggleBtn) return;
+  // Вторая форма
+  if (!formSecond || !toggleBtn) return;
 
-  briefContent.setAttribute('data-hidden', 'true');
-  toggleBtn.textContent = 'Показать бриф';
+  formSecond.setAttribute('data-hidden', 'true');
+
+  if (openBriefBtn) {
+    openBriefBtn.addEventListener('click', () => {
+      formSecond.setAttribute('data-hidden', 'false');
+    });
+  }
 
   toggleBtn.addEventListener('click', () => {
-    const isHidden = briefContent.getAttribute('data-hidden') === 'true';
-    if (isHidden) {
-      briefContent.setAttribute('data-hidden', 'false');
-      toggleBtn.textContent = 'Скрыть бриф';
-    } else {
-      briefContent.setAttribute('data-hidden', 'true');
-      toggleBtn.textContent = 'Показать бриф';
-    }
+    formSecond.setAttribute('data-hidden', 'true');
   });
+
+  // // Бриф
+  // if (!briefContent || !toggleBtn) return;
+
+  // if (openBriefBtn) {
+  //   openBriefBtn.addEventListener('click', () => {
+  //     briefContent.setAttribute('data-hidden', 'false');
+  //     toggleBtn.textContent = 'Скрыть бриф';
+  //   });
+  // }
+
+  // toggleBtn.addEventListener('click', () => {
+  //   const isHidden = briefContent.getAttribute('data-hidden') === 'true';
+  //   if (isHidden) {
+  //     briefContent.setAttribute('data-hidden', 'false');
+  //     toggleBtn.textContent = 'Скрыть бриф';
+  //   } else {
+  //     briefContent.setAttribute('data-hidden', 'true');
+  //   }
+  // });
 
   const fileInput = document.getElementById(
     'briefFile'

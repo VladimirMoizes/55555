@@ -148,7 +148,7 @@ import styles from './reception.module.css';
           сделать максимально интересное для вас предложение</span
         >
         <div class={styles.footerForm}>
-          <button class={styles.brifButton} type="button"
+          <button class={styles.brifButton} type="button" id="openBriefBtn"
             >Заполнить бриф онлайн</button
           >
 
@@ -192,7 +192,11 @@ import styles from './reception.module.css';
         </a>
       </form>
 
-      <form class={`${styles.form} ${styles.formSecond}`} id="formSecond">
+      <form
+        class={`${styles.form} ${styles.formSecond}`}
+        id="formSecond"
+        data-hidden="true"
+      >
         <p class={styles.subTitle}>
           Заполните, пожалуйста, поля, которые сочтете актуальными!
         </p>
@@ -412,7 +416,7 @@ import styles from './reception.module.css';
           </div>
         </div>
         <button class={styles.hide} type="button" id="toggleBriefBtn"
-          >Показать бриф</button
+          >Скрыть бриф</button
         >
       </form>
     </div>
