@@ -12,13 +12,13 @@ const isSoundOn = getSoundState();
   data-sound
   style="view-transition-name: sound-button;"
 >
+  <span class="textSoundButton">включить</span>
   <div data-icon-on>
     <Icon name="soundOn" size={20} />
   </div>
-  <div data-icon-off style="display: none;">
+  <!-- <div data-icon-off style="display: none;">
     <Icon name="soundOff" size={20} />
-  </div>
-  <span class="textSoundButton">включить</span>
+  </div> -->
 </div>
 
 <style>
@@ -62,11 +62,11 @@ const isSoundOn = getSoundState();
 
     if (isSoundOn) {
       iconOn.style.display = 'flex';
-      iconOff.style.display = 'none';
+      // iconOff.style.display = 'none';
       textSound.textContent = 'выключить';
     } else {
-      iconOn.style.display = 'none';
-      iconOff.style.display = 'flex';
+      // iconOn.style.display = 'none';
+      // iconOff.style.display = 'flex';
       textSound.textContent = 'включить';
     }
   }

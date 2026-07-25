@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { buildings } from '../../data/mainData';
+import SoundButton from '../../components/soundButton/soundButton.astro';
 
 export async function getStaticPaths() {
   return buildings
@@ -20,10 +21,16 @@ if (!buildingData) {
 
 const redirectUrl = `/building/${buildingData.id}`;
 const directRedirectUrl = buildingData.link;
+const { class: className = '', id = '' } = Astro.props;
 ---
 
 <MainLayout>
   <div class="wrapper">
+    <div
+      style="position: absolute; left: 50%; transform: translateX(-35%); top: 30px; z-index: 10;"
+    >
+      <SoundButton />
+    </div>
     <div class="video-container">
       <video
         id="buildingVideo"
@@ -81,7 +88,7 @@ const directRedirectUrl = buildingData.link;
   }
 </style>
 
-<script define:vars={{  redirectUrl, directRedirectUrl, buildingData  }}>
+<script define:vars={{ redirectUrl, directRedirectUrl, buildingData }}>
   const video = document.getElementById('buildingVideo');
   let redirected = false;
   let videoEnded = false;
