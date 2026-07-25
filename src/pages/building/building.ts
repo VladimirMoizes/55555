@@ -21,9 +21,47 @@ function handleCarMoveAndRedirect() {
 
   const pathname = window.location.pathname || '';
 
+  // if (pathname.includes('cosmoport')) {
+  //   setTimeout(() => {
+  //     car.setAttribute('data-moving-second', 'true');
+  //   }, 100);
+
+  //   link.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     if (isAnimating) return;
+  //     isAnimating = true;
+
+  //     if (buildingImg) {
+  //       buildingImg.src = '/assets/images/main/buildings/космопорт_здание.png';
+  //       buildingImg.style.position = 'relative';
+  //       buildingImg.style.width = '630px';
+  //       buildingImg.style.height = '375px';
+  //       buildingImg.style.top = '630px';
+  //       buildingImg.style.left = '-25px';
+
+  //       const rocketImg = document.createElement('img');
+  //       rocketImg.src = '/assets/images/main/buildings/космопорт_ракета.png';
+  //       rocketImg.style.position = 'relative';
+  //       rocketImg.style.width = '310px';
+  //       rocketImg.style.height = '610px';
+  //       rocketImg.style.top = '-55px';
+  //       rocketImg.style.left = '225px';
+  //       rocketImg.setAttribute('data-rocket', 'true');
+  //       link.appendChild(rocketImg);
+
+  //       requestAnimationFrame(() => {
+  //         rocketImg.setAttribute('data-rocket-launch', 'true');
+  //       });
+  //     }
+
+  //     setTimeout(() => {
+  //       window.location.href = originalHref;
+  //     }, 3000);
+  //   });
+  // }
   if (pathname.includes('cosmoport')) {
     setTimeout(() => {
-      car.setAttribute('data-moving-second', 'true');
+      car.setAttribute('data-moving', 'true');
     }, 100);
 
     link.addEventListener('click', (e) => {
@@ -31,13 +69,18 @@ function handleCarMoveAndRedirect() {
       if (isAnimating) return;
       isAnimating = true;
 
-      if (buildingImg) {
-        buildingImg.src = '/assets/images/main/buildings/космопорт_здание.png';
-        buildingImg.style.position = 'relative';
-        buildingImg.style.width = '630px';
-        buildingImg.style.height = '375px';
-        buildingImg.style.top = '630px';
-        buildingImg.style.left = '-25px';
+      car.setAttribute('data-moving-second', 'true');
+
+      setTimeout(() => {
+        if (buildingImg) {
+          buildingImg.src =
+            '/assets/images/main/buildings/космопорт_здание.png';
+          buildingImg.style.position = 'relative';
+          buildingImg.style.width = '630px';
+          buildingImg.style.height = '375px';
+          buildingImg.style.top = '630px';
+          buildingImg.style.left = '-25px';
+        }
 
         const rocketImg = document.createElement('img');
         rocketImg.src = '/assets/images/main/buildings/космопорт_ракета.png';
@@ -49,14 +92,14 @@ function handleCarMoveAndRedirect() {
         rocketImg.setAttribute('data-rocket', 'true');
         link.appendChild(rocketImg);
 
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           rocketImg.setAttribute('data-rocket-launch', 'true');
-        });
-      }
+        }, 100);
+      }, 2500);
 
       setTimeout(() => {
         window.location.href = originalHref;
-      }, 3000);
+      }, 5600);
     });
 
     if (pointer) {
@@ -92,7 +135,7 @@ function handleCarMoveAndRedirect() {
         if (originalHref) {
           window.location.href = originalHref;
         }
-      }, 2000);
+      }, 3000);
     }
 
     link.addEventListener('click', (e) => {

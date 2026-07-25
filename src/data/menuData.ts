@@ -10,6 +10,7 @@ export const menu = [
   {
     id: 2,
     name: 'веб-разработка',
+    url: '/lift',
     subMenu: menuWebDevelopment,
   },
   { id: 3, name: 'продвижение сайтов', url: '/promote' },

@@ -13,17 +13,18 @@ const isSoundOn = getSoundState();
   style="view-transition-name: sound-button;"
 >
   <div data-icon-on>
-    <Icon name="soundOn" size={26} />
+    <Icon name="soundOn" size={20} />
   </div>
   <div data-icon-off style="display: none;">
-    <Icon name="soundOff" size={26} />
+    <Icon name="soundOff" size={20} />
   </div>
+  <span class="textSoundButton">включить</span>
 </div>
 
 <style>
   .sound-button {
     border: 1px solid var(--color-text);
-    padding: 12px 14px;
+    padding: 10px 12px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -33,14 +34,17 @@ const isSoundOn = getSoundState();
     line-height: 0;
     color: var(--color-primary);
     view-transition-name: sound-button;
+    gap: 10px;
   }
 
-  .sound-button svg {
+  .sound-button svg,
+  .sound-button .textSoundButton {
     transition: color 0.2s ease;
   }
 
-  .sound-button:hover svg {
-    color: white;
+  .sound-button:hover svg,
+  .sound-button:hover .textSoundButton {
+    color: var(--color-text);
   }
 </style>
 
@@ -54,13 +58,16 @@ const isSoundOn = getSoundState();
     const iconOn = button.querySelector('[data-icon-on]') as HTMLElement;
     const iconOff = button.querySelector('[data-icon-off]') as HTMLElement;
     const isSoundOn = getSoundState();
+    const textSound = button.querySelector('.textSoundButton') as HTMLElement;
 
     if (isSoundOn) {
       iconOn.style.display = 'flex';
       iconOff.style.display = 'none';
+      textSound.textContent = 'выключить';
     } else {
       iconOn.style.display = 'none';
       iconOff.style.display = 'flex';
+      textSound.textContent = 'включить';
     }
   }
 

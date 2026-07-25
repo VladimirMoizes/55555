@@ -21,7 +21,9 @@ const currentPath = Astro.url.pathname;
           <li
             class={styles.menuItem}
             data-active={
-              currentPath === item.url ||
+              (item.url && currentPath === item.url) ||
+              (item.id === 2 &&
+                (currentPath === '/lift' || currentPath === '/lift/')) ||
               (item.subMenu && currentPath.startsWith('/websites/'))
             }
             data-open="false"

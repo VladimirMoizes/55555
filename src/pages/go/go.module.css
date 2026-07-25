@@ -5,13 +5,13 @@
   height: 100%;
   overflow: hidden;
 }
-
+/* 
 .sound {
   position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;
-}
+} */
 
 .carImage {
   position: absolute;
@@ -81,6 +81,21 @@
   width: 100%;
 }
 
+/* .pointerText {
+  position: absolute;
+  top: 52px;
+  left: 60px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 20px;
+} */
+
+.tree {
+  position: absolute;
+  bottom: 197px;
+  left: 1693px;
+}
+
 .pointerText {
   position: absolute;
   top: 52px;
@@ -88,10 +103,62 @@
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 20px;
+  animation: elegantPulse 3s ease-in-out infinite;
+  cursor: pointer;
 }
 
-.tree {
-  position: absolute;
-  bottom: 197px;
-  left: 1693px;
+@keyframes elegantPulse {
+  0%,
+  100% {
+    color: var(--color-text);
+    text-shadow: none;
+  }
+  20% {
+    color: #fdbd6e;
+    text-shadow: 0 0 20px rgba(253, 189, 110, 0.2);
+  }
+  40% {
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+  }
+  60% {
+    color: #a29bfe;
+    text-shadow: 0 0 20px rgba(162, 155, 254, 0.2);
+  }
+  80% {
+    color: #55efc4;
+    text-shadow: 0 0 20px rgba(85, 239, 196, 0.2);
+  }
 }
+
+/* .pointerText {
+  position: absolute;
+  top: 52px;
+  left: 60px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 20px;
+  animation: colorPulse 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes colorPulse {
+  0% {
+    color: var(--color-text);
+  }
+  20% {
+    color: var(--color-primary);
+  }
+  40% {
+    color: var(--color-text);
+  }
+  60% {
+    color: var(--color-primary);
+  }
+  80% {
+    color: var(--color-text);
+  }
+  100% {
+    color: var(--color-text);
+  }
+} */

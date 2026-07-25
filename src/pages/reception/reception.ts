@@ -198,18 +198,25 @@ function initBriefToggle(): void {
   });
 
   // Вторая форма
-  if (!formSecond || !toggleBtn) return;
+  if (!formSecond || !toggleBtn || !openBriefBtn) return;
 
   formSecond.setAttribute('data-hidden', 'true');
+  openBriefBtn.textContent = 'Заполнить бриф онлайн';
 
-  if (openBriefBtn) {
-    openBriefBtn.addEventListener('click', () => {
+  openBriefBtn.addEventListener('click', () => {
+    const isHidden = formSecond.getAttribute('data-hidden') === 'true';
+    if (isHidden) {
       formSecond.setAttribute('data-hidden', 'false');
-    });
-  }
+      openBriefBtn.textContent = 'Скрыть бриф';
+    } else {
+      formSecond.setAttribute('data-hidden', 'true');
+      openBriefBtn.textContent = 'Заполнить бриф онлайн';
+    }
+  });
 
   toggleBtn.addEventListener('click', () => {
     formSecond.setAttribute('data-hidden', 'true');
+    openBriefBtn.textContent = 'Заполнить бриф онлайн';
   });
 
   // // Бриф

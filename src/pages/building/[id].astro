@@ -116,7 +116,11 @@ if (!building) {
             alt="car"
             data-car
           />
-          <img class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`} src="/assets/images/road.svg" alt="" />
+          <img
+            class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`}
+            src="/assets/images/road.svg"
+            alt=""
+          />
           {currentHouses.map((house) => (
             <img
               class={styles.houseImage}
