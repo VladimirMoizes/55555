@@ -103,7 +103,7 @@
   font-family: var(--font-primary);
   font-weight: 400;
   font-size: 20px;
-  animation: elegantPulse 3s ease-in-out infinite;
+  animation: elegantPulse 3s 2.5s ease-in-out infinite;
   cursor: pointer;
 }
 

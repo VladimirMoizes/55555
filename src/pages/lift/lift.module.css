@@ -4,10 +4,10 @@
 }
 
 .sound {
-  position: fixed;
+  position: absolute;
   top: 120px;
   right: 20px;
-  z-index: 5;
+  z-index: 2;
 }
 
 .title {

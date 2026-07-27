@@ -231,9 +231,9 @@
 }
 
 .sound {
-  position: fixed;
-  top: 380px;
-  right: 0;
+  position: absolute;
+  top: 120px;
+  right: 20px;
   z-index: 2;
 }
 

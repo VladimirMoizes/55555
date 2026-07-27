@@ -207,8 +207,14 @@ function initSlider(): void {
       }
       if (buttonArrow) {
         buttonArrow.removeAttribute('data-hidden');
+        buttonArrow.setAttribute('data-animate', 'true');
       }
       isVideoPlaying = false;
+    });
+
+    // При клике на стрелку (скролл) можно убрать анимацию
+    buttonArrow?.addEventListener('click', () => {
+      buttonArrow.setAttribute('data-animate', 'false');
     });
   });
 

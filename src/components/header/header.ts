@@ -70,7 +70,7 @@ if (typeof window !== 'undefined') {
 
         this.audio = new Audio('/assets/audio/music.mp3');
         this.audio.loop = true;
-        this.audio.volume = 0.01;
+        this.audio.volume = 0.2;
 
         this.isSoundOn = this.getSoundStateFromStorage();
 
@@ -99,7 +99,7 @@ if (typeof window !== 'undefined') {
         this.setSoundStateToStorage(this.isSoundOn);
 
         if (this.isSoundOn) {
-          this.audio.volume = 0.01;
+          this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
         } else {
           this.audio.pause();
@@ -116,7 +116,7 @@ if (typeof window !== 'undefined') {
         this.isSoundOn = this.getSoundStateFromStorage();
 
         if (this.isSoundOn && this.audio.paused) {
-          this.audio.volume = 0.01; // ← добавил
+          this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
         } else if (!this.isSoundOn && !this.audio.paused) {
           this.audio.pause();
@@ -129,7 +129,7 @@ if (typeof window !== 'undefined') {
         this.isSoundOn = this.getSoundStateFromStorage();
 
         if (this.isSoundOn && this.audio.paused) {
-          this.audio.volume = 0.01;
+          this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
         }
       },

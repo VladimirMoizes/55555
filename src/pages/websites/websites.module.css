@@ -4,7 +4,7 @@
 }
 
 .sound {
-  position: fixed;
+  position: absolute;
   top: 120px;
   right: 20px;
   z-index: 2;
@@ -163,7 +163,14 @@
     border: none;
     cursor: pointer;
     z-index: 4;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    animation: none;
+  }
+
+  .buttonArrow[data-animate='true'] {
     animation: arrow 0.4s ease-in infinite alternate forwards;
+    opacity: 1;
   }
 
   .buttonArrow[data-hidden='true'] {
