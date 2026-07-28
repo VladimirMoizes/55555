@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding-block-end: 80px;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 5;
@@ -85,5 +85,234 @@
       gap: 83px;
       margin-block-end: 10px;
     }
+  }
+} */
+
+.container {
+  padding-block-end: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 5;
+}
+
+.mainBlock {
+  position: relative;
+  overflow: hidden;
+  min-block-size: 1080px;
+  block-size: calc(100vh - 86px);
+  margin-block-end: 55px;
+}
+
+.videoCosmo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  color: var(--color-text);
+  top: 303px;
+}
+
+.title {
+  margin-block-end: 15px;
+  letter-spacing: -0.01em;
+  font-size: 44px;
+}
+
+.timer {
+  border: 5px solid #a9a9a7;
+  border-radius: 5px;
+  max-inline-size: 385px;
+  margin: 0 auto;
+  background-color: var(--color-dark);
+  padding: 10px 0;
+}
+
+.timeTimer {
+  font-family: var(--font-timer);
+  font-weight: 400;
+  font-size: 64px;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 25px;
+}
+
+.textTimerBlock {
+  display: flex;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 140%;
+  text-transform: uppercase;
+  gap: 90px;
+  margin-inline-start: 50px;
+  margin-block-end: 10px;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1366px) {
+  .mainBlock {
+    min-block-size: 800px;
+    block-size: calc(100vh - 86px);
+  }
+
+  .content {
+    top: 200px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .timeTimer {
+    font-size: 52px;
+    margin: 20px;
+  }
+
+  .timer {
+    max-inline-size: 340px;
+  }
+
+  .textTimerBlock {
+    gap: 65px;
+    margin-inline-start: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-block-end: 60px;
+  }
+
+  .mainBlock {
+    min-block-size: 600px;
+    block-size: calc(100vh - 86px);
+  }
+
+  .content {
+    top: 150px;
+  }
+
+  .title {
+    font-size: 30px;
+    padding: 0 20px;
+  }
+
+  .timeTimer {
+    font-size: 44px;
+    margin: 16px;
+  }
+
+  .timer {
+    max-inline-size: 300px;
+  }
+
+  .textTimerBlock {
+    gap: 55px;
+    margin-inline-start: 45px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-block-end: 40px;
+  }
+
+  .mainBlock {
+    min-block-size: 500px;
+    block-size: calc(100vh - 86px);
+  }
+
+  .content {
+    top: 100px;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-block-end: 20px;
+  }
+
+  .timeTimer {
+    font-size: 32px;
+    margin: 12px;
+  }
+
+  .timer {
+    max-inline-size: 240px;
+    border-width: 3px;
+  }
+
+  .textTimerBlock {
+    gap: 32px;
+    margin-inline-start: 45px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-block-end: 30px;
+  }
+
+  .mainBlock {
+    min-block-size: 400px;
+    block-size: calc(100vh - 86px);
+  }
+
+  .content {
+    top: 60px;
+    padding: 0 12px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-block-end: 16px;
+  }
+
+  .timeTimer {
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .timer {
+    max-inline-size: 180px;
+    border-width: 2px;
+  }
+
+  .textTimerBlock {
+    gap: 24px;
+    margin-inline-start: 30px;
+    font-size: 7px;
   }
 }

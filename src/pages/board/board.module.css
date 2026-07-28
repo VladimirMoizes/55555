@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: clamp(20px, 4vw, 30px) clamp(15px, 5vw, 60px) clamp(30px, 5vw, 48px);
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;
@@ -62,5 +62,178 @@
 
   .listBoardItem {
     max-inline-size: 280px;
+  }
+} */
+
+.container {
+  padding: 30px 60px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(/assets/images/board/spotlights.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
+.title {
+  margin-block-end: 165px;
+  font-size: 44px;
+  text-align: center;
+}
+
+.listBoard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-block-end: 104px;
+}
+
+.listBoardItem {
+  max-inline-size: 336px;
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 549px;
+  object-fit: cover;
+  margin-block-end: 35px;
+  border-radius: 8px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1366px) {
+  .container {
+    padding: 30px 40px 40px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-block-end: 80px;
+  }
+
+  .listBoard {
+    gap: 24px;
+    margin-block-end: 60px;
+  }
+
+  .listBoardItem {
+    max-inline-size: 300px;
+    min-width: 240px;
+  }
+
+  .image {
+    block-size: 420px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 30px 30px 40px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-block-end: 60px;
+  }
+
+  .listBoard {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .listBoardItem {
+    max-inline-size: 400px;
+    flex: 0 0 auto;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .image {
+    block-size: 380px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-block-end: 40px;
+  }
+
+  .listBoard {
+    gap: 30px;
+    margin-block-end: 50px;
+  }
+
+  .listBoardItem {
+    max-inline-size: 340px;
+  }
+
+  .image {
+    block-size: 320px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-block-end: 30px;
+  }
+
+  .listBoardItem {
+    max-inline-size: 280px;
+  }
+
+  .image {
+    block-size: 240px;
+    margin-block-end: 16px;
+  }
+
+  .name {
+    font-size: 16px;
   }
 }

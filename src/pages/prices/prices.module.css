@@ -1,11 +1,11 @@
-.container {
+/* .container {
   padding: 30px 60px 70px;
   display: flex;
   flex-direction: column;
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;
@@ -78,4 +78,251 @@
   font-weight: 400;
   font-size: 28px;
   text-align: center;
+} */
+
+.container {
+  padding: 30px 60px 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
+.title {
+  margin-bottom: 45px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.mainBlock {
+  margin-block-end: 80px;
+  overflow-x: auto;
+}
+
+.table {
+  border: 1px solid var(--color-primary);
+  font-family: var(--font-secondary);
+  border-spacing: 0;
+  background-color: var(--color-table);
+  font-size: 24px;
+  line-height: 140%;
+  width: 100%;
+  min-width: 600px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 87px 1fr 450px;
+  align-items: center;
+}
+
+.tableRowTitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.tableRowTitle td {
+  padding: 30px;
+}
+
+.tableRowTitle:not(:first-child) .mainTitle {
+  padding: 48px;
+}
+
+.tableRow:nth-child(2n) {
+  background-color: var(--color-menu);
+}
+
+.number {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 140%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.mainCell {
+  border-inline: 1px solid var(--color-primary);
+  padding: 30px;
+  line-height: 1.4em;
+}
+
+.mainCell span {
+  letter-spacing: 0.009em;
+}
+
+.price {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1366px) {
+  .container {
+    padding: 30px 40px 50px;
+  }
+
+  .table {
+    font-size: 20px;
+    min-width: 500px;
+  }
+
+  .tableRow {
+    grid-template-columns: 70px 1fr 350px;
+  }
+
+  .number {
+    font-size: 30px;
+  }
+
+  .mainCell {
+    padding: 20px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .tableRowTitle td {
+    padding: 20px;
+  }
+
+  .tableRowTitle:not(:first-child) .mainTitle {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px 30px 40px;
+  }
+
+  .mainBlock {
+    margin-block-end: 50px;
+  }
+
+  .table {
+    font-size: 18px;
+    min-width: 450px;
+  }
+
+  .tableRow {
+    grid-template-columns: 60px 1fr 280px;
+  }
+
+  .number {
+    font-size: 26px;
+  }
+
+  .mainCell {
+    padding: 16px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .tableRowTitle td {
+    padding: 16px;
+  }
+
+  .tableRowTitle:not(:first-child) .mainTitle {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .mainBlock {
+    margin-block-end: 40px;
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 14px;
+    min-width: 380px;
+  }
+
+  .tableRow {
+    grid-template-columns: 40px 1fr 200px;
+  }
+
+  .number {
+    font-size: 20px;
+  }
+
+  .mainCell {
+    padding: 12px 10px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .tableRowTitle td {
+    padding: 12px 10px;
+  }
+
+  .tableRowTitle:not(:first-child) .mainTitle {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .table {
+    font-size: 12px;
+    min-width: 320px;
+  }
+
+  .tableRow {
+    grid-template-columns: 30px 1fr 140px;
+  }
+
+  .number {
+    font-size: 16px;
+  }
+
+  .mainCell {
+    padding: 8px 6px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .tableRowTitle td {
+    padding: 8px 6px;
+  }
+
+  .tableRowTitle:not(:first-child) .mainTitle {
+    padding: 12px 6px;
+  }
 }

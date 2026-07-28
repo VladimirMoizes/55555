@@ -6,7 +6,7 @@
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;

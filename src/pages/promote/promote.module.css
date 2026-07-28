@@ -1,11 +1,11 @@
-.container {
+/* .container {
   padding: 30px 60px 70px;
   display: flex;
   flex-direction: column;
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;
@@ -97,4 +97,267 @@
 .image {
   inline-size: 899px;
   block-size: 600px;
+} */
+
+.container {
+  padding: 30px 60px 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
+.title {
+  margin-bottom: 49px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.mainBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 80px;
+  gap: 30px;
+}
+
+.accordionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 60%;
+  max-width: 843px;
+}
+
+.accordion {
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  margin-bottom: 0;
+  padding: 30px 40px 30px 30px;
+  width: 100%;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.accordionTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.accordionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordionButton[data-open='true'] {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordionText {
+  margin: 0;
+  padding-block-start: 17px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.textList {
+  margin-inline-start: 20px;
+  padding-left: 0;
+}
+
+.textListItem {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.textListItem::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  top: -2px;
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.image {
+  inline-size: 899px;
+  block-size: 600px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1600px) {
+  .image {
+    inline-size: 700px;
+    block-size: 470px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    padding: 30px 40px 50px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .mainBlock {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .accordionBlock {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .image {
+    inline-size: 100%;
+    max-width: 600px;
+    block-size: auto;
+    aspect-ratio: 4/3;
+  }
+
+  .accordion {
+    padding: 24px 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px 30px 40px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .accordion {
+    padding: 20px 24px;
+  }
+
+  .accordionTitle {
+    font-size: 16px;
+  }
+
+  .accordionText {
+    font-size: 14px;
+  }
+
+  .image {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px 30px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .mainBlock {
+    gap: 30px;
+    margin-block-end: 50px;
+  }
+
+  .accordion {
+    padding: 16px 18px;
+  }
+
+  .accordionTitle {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+
+  .accordionText {
+    font-size: 13px;
+  }
+
+  .accordionHeader {
+    gap: 10px;
+  }
+
+  .textListItem {
+    font-size: 13px;
+    padding-left: 20px;
+  }
+
+  .textListItem::before {
+    font-size: 16px;
+    left: 0;
+  }
+
+  .image {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .accordion {
+    padding: 12px 14px;
+  }
+
+  .accordionTitle {
+    font-size: 12px;
+  }
+
+  .accordionText {
+    font-size: 12px;
+  }
+
+  .textListItem {
+    font-size: 12px;
+    padding-left: 16px;
+  }
+
+  .textListItem::before {
+    font-size: 14px;
+    left: -2px;
+  }
 }

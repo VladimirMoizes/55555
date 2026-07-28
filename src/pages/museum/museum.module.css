@@ -1,20 +1,20 @@
-  .container {
-    padding: 47px 50px 42px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
+.container {
+  padding: 47px 50px 42px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 
-  .iframe {
-    inline-size: 100%;
-    flex: 1;
-    border: none;
-  }
+.iframe {
+  inline-size: 100%;
+  flex: 1;
+  border: none;
+}
 
-  .sound {
-  position: absolute;
-    top: 90px;
-    right: 20px;
-    z-index: 2;
-  }
+.sound {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 2;
+}

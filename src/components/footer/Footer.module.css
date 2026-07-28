@@ -1,4 +1,4 @@
-@import '../../styles/variables.css';
+/* @import '../../styles/variables.css';
 
 .footer {
   position: relative;
@@ -69,4 +69,438 @@
 .bottomStart {
   font-size: 12px;
   font-weight: 500;
+} */
+
+/* @import '../../styles/variables.css';
+
+.footer {
+  position: relative;
+  border-block-start: 1px solid var(--color-decorative-second);
+  padding: 29px 131px 2px 62px;
+}
+
+.slash {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 22px;
+}
+
+.blockLeftName {
+  font-size: 28px;
+  font-family: var(--font-primary);
+  margin-block-end: 15px;
+}
+
+.blockLeftOldName {
+  font-weight: 500;
+  color: var(--color-text-second);
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  gap: 80px;
+  margin-inline: 30px;
+}
+
+.contacts a {
+  font-size: 20px;
+  color: var(--color-text-second);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.buttonListMessenger {
+  display: flex;
+  gap: 32px;
+}
+
+.button {
+  border: 1px solid var(--color-primary);
+  inline-size: 40px;
+  block-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--color-primary);
+}
+
+.button:hover svg {
+  color: var(--color-dark) !important;
+}
+
+.bottom {
+  color: var(--color-text-third);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 20px;
+}
+
+.bottomStart {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+@media (max-width: 1366px) {
+  .footer {
+    padding: 24px 40px 2px 30px;
+  }
+  
+  .contacts {
+    gap: 40px;
+  }
+  
+  .contacts a {
+    font-size: 18px;
+  }
+  
+  .blockLeftName {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 20px 30px 2px 20px;
+  }
+  
+  .main {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .contacts {
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contacts a {
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 4px 0;
+  }
+  
+  .blockLeftName {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .buttonListMessenger {
+    gap: 20px;
+  }
+  
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-inline-start: 0;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px 16px 2px;
+  }
+  
+  .main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .blockLeftName {
+    font-size: 20px;
+    text-align: center;
+    margin-block-end: 8px;
+  }
+  
+  .contacts {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 0 8px;
+  }
+  
+  .contacts a {
+    font-size: 14px;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 4px 0;
+  }
+  
+  .buttonListMessenger {
+    gap: 16px;
+  }
+  
+  .button {
+    inline-size: 36px;
+    block-size: 36px;
+  }
+  
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-inline-start: 0;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .bottomStart {
+    font-size: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px 12px 2px;
+  }
+  
+  .blockLeftName {
+    font-size: 18px;
+  }
+  
+  .contacts {
+    gap: 12px;
+    padding: 0 4px;
+  }
+  
+  .contacts a {
+    font-size: 12px;
+    gap: 6px;
+    padding: 3px 0;
+  }
+  
+  .button {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+  
+  .button svg {
+    width: 18px;
+    height: 18px;
+  }
+} */
+
+@import '../../styles/variables.css';
+
+.footer {
+  position: relative;
+  border-block-start: 1px solid var(--color-decorative-second);
+  padding: clamp(12px, 2vw, 29px) clamp(12px, 6vw, 131px) 2px
+    clamp(12px, 3vw, 62px);
+}
+
+.slash {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 22px;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.blockLeft {
+  flex: 0 0 auto;
+}
+
+.blockLeftName {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-family: var(--font-primary);
+  margin-block-end: clamp(8px, 1vw, 15px);
+}
+
+.blockLeftOldName {
+  font-weight: 500;
+  color: var(--color-text-second);
+  font-size: clamp(10px, 0.8vw, 12px);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  gap: clamp(16px, 4vw, 80px);
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.contacts a {
+  font-size: clamp(12px, 1.2vw, 20px);
+  color: var(--color-text-second);
+  display: flex;
+  gap: clamp(6px, 0.8vw, 12px);
+  align-items: center;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.buttonListMessenger {
+  display: flex;
+  gap: clamp(12px, 2vw, 32px);
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.button {
+  border: 1px solid var(--color-primary);
+  inline-size: clamp(32px, 3vw, 40px);
+  block-size: clamp(32px, 3vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--color-primary);
+}
+
+.button:hover svg {
+  color: var(--color-dark) !important;
+}
+
+.button svg {
+  width: clamp(16px, 1.5vw, 22px);
+  height: clamp(16px, 1.5vw, 22px);
+}
+
+.bottom {
+  color: var(--color-text-third);
+  font-size: clamp(10px, 0.7vw, 12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: clamp(0px, 1vw, 20px);
+  flex-wrap: wrap;
+  gap: clamp(4px, 1vw, 8px);
+}
+
+.bottomStart {
+  font-size: clamp(10px, 0.7vw, 12px);
+  font-weight: 500;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1366px) {
+  .main {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .contacts {
+    gap: 30px;
+  }
+
+  .buttonListMessenger {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .blockLeft {
+    text-align: center;
+  }
+
+  .blockLeftName {
+    text-align: center;
+    margin-block-end: 4px;
+  }
+
+  .blockLeftOldName {
+    text-align: center;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-inline: 0;
+    flex: 1 1 auto;
+  }
+
+  .contacts a {
+    font-size: 14px;
+    padding: 2px 0;
+    justify-content: center;
+  }
+
+  .buttonListMessenger {
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-inline-start: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 12px;
+  }
+
+  .contacts a {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .contacts {
+    gap: 8px;
+  }
 }

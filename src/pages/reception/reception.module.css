@@ -1,11 +1,11 @@
-.container {
+/* .container {
   padding: 30px 60px 70px;
   display: flex;
   flex-direction: column;
 }
 
 .sound {
-  position: absolute;
+  position: fixed;
   top: 120px;
   right: 20px;
   z-index: 2;
@@ -298,20 +298,6 @@
   }
 }
 
-/* .briefContent {
-  transition: all 0.4s ease-in-out;
-  opacity: 1;
-  max-height: 5000px;
-  overflow: hidden;
-}
-
-.briefContent[data-hidden='true'] {
-  opacity: 0;
-  max-height: 0;
-  padding: 0;
-  margin: 0;
-} */
-
 .hide {
   border: none;
   color: var(--color-primary);
@@ -517,4 +503,832 @@ h2 {
   font-weight: 400;
   text-transform: uppercase;
   line-height: 140%;
+} */
+
+.container {
+  padding: 30px 60px 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+}
+
+.title {
+  margin-bottom: 54px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.cardList {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.cardListItem:nth-of-type(2n + 1) {
+  margin-block-start: 30px;
+}
+
+.cardTextBlock {
+  block-size: 210px;
+  inline-size: 421px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  padding-block-end: 40px;
+  background-image: url('/assets/images/reception/border.png');
+  background-position: start;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-block-end: 50px;
+}
+
+.cardTextBlock .number {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.cardTextBlock .text {
+  max-inline-size: 368px;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.formBlock {
+  margin: 104px 150px 101px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.formBlock button {
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  display: block;
+}
+
+.form {
+  border: 1px solid var(--color-primary);
+  padding: 50px 90px 30px;
+}
+
+.form .formTitle {
+  margin-block-end: 39px;
+}
+
+.subTitleBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 47px;
+  margin-block-end: 40px;
+}
+
+.subTitleBlock .subTitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.048em;
+  text-transform: uppercase;
+}
+
+.subTitleBlock .buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.subTitleBlock .buttons .buttonIcon {
+  border: 1px solid var(--color-primary);
+  padding: 9px;
+}
+
+.inputList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 40px;
+  margin-block-end: 10px;
+  align-items: flex-start;
+}
+
+.input,
+.select,
+.textarea {
+  border: 2px solid var(--color-primary);
+  padding: 20px 30px;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+.input:required {
+  border-color: #fd8d04;
+}
+
+.input[type='number']::-webkit-inner-spin-button,
+.input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.labelFirst {
+  position: relative;
+  inline-size: 405px;
+  height: 65px;
+  margin: 0;
+  padding: 0;
+}
+
+.labelFirst .labelTextFirst {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  color: var(--color-text);
+  z-index: 2;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.select {
+  inline-size: 100%;
+  height: 65px;
+  box-sizing: border-box;
+  border: 2px solid var(--color-primary);
+  padding: 20px 30px;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--color-text);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 25px;
+  text-indent: 0.01px;
+  text-overflow: '';
+}
+
+.option {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.textarea {
+  inline-size: 100%;
+  block-size: 167px;
+  resize: none;
+  overflow: hidden;
+}
+
+.addText {
+  color: #bababa;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.footerForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 12px;
+}
+
+.footerForm .brifButton {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding: 21px 18px;
+  border: 3px solid #fd8d04;
+}
+
+.linkBrifList {
+  display: flex;
+  gap: 20px 51px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.linkBrifList .fileInput {
+  display: none;
+}
+
+.linkBrifList .linkBrif:nth-child(2) {
+  position: relative;
+}
+
+.linkBrifList .linkBrif {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.linkBrifList .linkBrif .linkIcon {
+  inline-size: 18px;
+}
+
+.linkBrifList .linkBrif .linkText {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.linkBrifList .fileName {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  color: #a09e9e;
+}
+
+.linkBrifList .removeFileBtn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  position: absolute;
+  top: 25px;
+  left: auto;
+  right: 0;
+}
+
+.footerForm .formButton {
+  padding: 21px 71px;
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.agreement {
+  font-size: 10px;
+  max-inline-size: 321px;
+  color: #bababa;
+  justify-self: end;
+  letter-spacing: 0;
+  line-height: 140%;
+  margin-block-start: 5px;
+  display: block;
+}
+
+.hide {
+  border: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 24px;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.hide:hover {
+  opacity: 0.7;
+}
+
+.formSecond {
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  max-height: 5000px;
+  overflow: hidden;
+}
+
+.formSecond[data-hidden='true'] {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.formSecond .subTitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.048em;
+  text-transform: uppercase;
+  margin-block-end: 46px;
+}
+
+.inputListSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-block-end: 50px;
+}
+
+.inputListSecond .inputListSecondStart {
+  display: flex;
+  gap: 20px 80px;
+  margin-block-end: 30px;
+}
+
+.inputListSecond .inputListSecondStart .labelStart {
+  display: flex;
+  gap: 10px 36px;
+}
+
+.inputListSecond .inputListSecondStart .labelStart .input {
+  inline-size: 350px;
+}
+
+.inputListSecond .label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputListSecond .label span {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.formFooterSecond {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 20px;
+}
+
+.formFooterSecond .formText {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.agreeAndButton {
+  display: flex;
+  align-items: center;
+  gap: 10px 40px;
+}
+
+.agreeAndButton .agreement {
+  font-size: 10px;
+  max-inline-size: 250px;
+  color: #bababa;
+  justify-self: end;
+  letter-spacing: 0;
+  line-height: 140%;
+  margin-block-start: 5px;
+}
+
+.agreeAndButton .formButton {
+  padding: 21px 71px;
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.formSecond .hide {
+  border: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.formFirst .inputList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 40px;
+  margin-block-end: 10px;
+  align-items: flex-start;
+}
+
+.formFirst .inputList .input {
+  inline-size: 405px;
+  height: 65px;
+  flex: 1 1 405px;
+  min-width: 200px;
+}
+
+.formFirst .inputList .labelFirst {
+  inline-size: 405px;
+  height: 65px;
+  flex: 1 1 405px;
+  min-width: 200px;
+}
+
+.formFirst .inputList .textarea {
+  inline-size: 100%;
+  block-size: 167px;
+  flex: 0 0 100%;
+}
+
+/* --- КОНЕЦ ПЕРВОЙ ФОРМЫ --- */
+
+.documentsBlock {
+  margin-block-end: 60px;
+}
+
+.documentsBlock .documentTitle {
+  margin-block-end: 45px;
+}
+
+.documentList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.documentList .card {
+  max-inline-size: 260px;
+  flex: 0 0 267px;
+}
+
+.documentList .card .cardImage {
+  inline-size: 100%;
+  block-size: 380px;
+  border: 3px solid var(--color-primary);
+  margin-block-end: 24px;
+  overflow-y: hidden;
+}
+
+.documentList .card .cardImage .image {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.documentList .card .cardDescription {
+  text-transform: uppercase;
+}
+
+.documentList .card:hover {
+  cursor: pointer;
+}
+
+.documentList .card:hover .cardImage {
+  border: 4px solid #fd8d04;
+}
+
+.documentList .card:hover .cardDescription {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+
+.details {
+  margin: 0 auto;
+  padding: 34px 45px;
+  border: 1px solid var(--color-primary);
+  inline-size: 706px;
+  background-color: #282828;
+}
+
+.details .title {
+  margin-block-end: 29px;
+  font-size: 30px;
+}
+
+.detailsPart {
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.detailsPart .detailsTitle {
+  font-weight: 600;
+}
+
+.detailsPart:last-child {
+  margin-block-start: 20px;
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 140%;
+}
+
+/* --- АДАПТИВ --- */
+
+@media (max-width: 1366px) {
+  .cardList {
+    flex-direction: column;
+    align-items: center;
+  }
+  .formBlock {
+    margin: 60px 40px 60px;
+  }
+  .form {
+    padding: 30px 40px;
+  }
+  .details {
+    inline-size: 100%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .documentList .card {
+    flex: 0 0 240px;
+    max-inline-size: 240px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardList {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardListItem:nth-of-type(2n + 1) {
+    margin-block-start: 0;
+  }
+  .formBlock {
+    margin: 40px 20px 40px;
+  }
+  .form {
+    padding: 20px 24px;
+  }
+  .subTitleBlock {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footerForm {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .linkBrifList {
+    justify-content: center;
+  }
+  .formFooterSecond {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .agreeAndButton {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .inputListSecondStart {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .details {
+    padding: 24px 20px;
+  }
+  .documentList .card {
+    flex: 0 0 220px;
+    max-inline-size: 220px;
+  }
+  .cardImage {
+    block-size: 280px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px 30px;
+  }
+  .cardTextBlock {
+    block-size: auto;
+    min-height: 180px;
+    inline-size: 100%;
+    max-width: 421px;
+  }
+  .cardTextBlock .number {
+    font-size: 24px;
+  }
+  .cardTextBlock .text {
+    font-size: 14px;
+    max-width: 320px;
+  }
+  .formBlock {
+    margin: 30px 0;
+  }
+  .form {
+    padding: 16px;
+  }
+  .formTitle {
+    font-size: 28px;
+  }
+  .subTitle {
+    font-size: 16px;
+  }
+  .buttons {
+    gap: 16px;
+  }
+  .input {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+  .labelFirst {
+    inline-size: 100%;
+    height: 56px;
+  }
+  .labelTextFirst {
+    font-size: 12px;
+    top: -24px;
+  }
+  .select {
+    height: 56px;
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+  .textarea {
+    font-size: 16px;
+    padding: 16px 20px;
+    block-size: 120px;
+  }
+  .brifButton {
+    font-size: 20px;
+    padding: 16px;
+  }
+  .linkBrifList {
+    gap: 16px 30px;
+  }
+  .linkText {
+    font-size: 14px;
+  }
+  .formButton {
+    padding: 16px 40px;
+    font-size: 20px;
+  }
+  .inputListSecond .label span {
+    font-size: 16px;
+  }
+  .formSecond .subTitle {
+    font-size: 16px;
+  }
+  .formFooterSecond {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .formText {
+    font-size: 20px;
+  }
+  .agreeAndButton {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .agreeAndButton .agreement {
+    max-inline-size: 100%;
+  }
+  .agreeAndButton .formButton {
+    padding: 14px 30px;
+    font-size: 18px;
+  }
+  .formSecond .hide {
+    font-size: 20px;
+  }
+  .documentTitle {
+    font-size: 28px;
+    margin-block-end: 30px;
+  }
+  .documentList .card {
+    max-inline-size: 280px;
+    flex: 0 0 100%;
+  }
+  .cardImage {
+    block-size: 260px;
+  }
+  .details {
+    padding: 20px 16px;
+  }
+  .details .title {
+    font-size: 24px;
+  }
+  .detailsPart {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px 20px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .cardTextBlock {
+    min-height: 150px;
+    padding: 12px;
+  }
+  .cardTextBlock .number {
+    font-size: 20px;
+  }
+  .cardTextBlock .text {
+    font-size: 12px;
+    max-width: 280px;
+  }
+  .form {
+    padding: 12px;
+  }
+  .formTitle {
+    font-size: 22px;
+  }
+  .subTitleBlock {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .subTitle {
+    font-size: 14px;
+  }
+  .input {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  .labelFirst {
+    height: 48px;
+  }
+  .labelTextFirst {
+    font-size: 11px;
+    top: -20px;
+  }
+  .select {
+    height: 48px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .textarea {
+    font-size: 14px;
+    padding: 12px 16px;
+    block-size: 100px;
+  }
+  .brifButton {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .linkBrifList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .formButton {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+  .labelStart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .labelStart .input {
+    inline-size: 100%;
+  }
+  .inputListSecondStart {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .details {
+    padding: 16px 12px;
+  }
+  .details .title {
+    font-size: 20px;
+  }
+  .detailsPart {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 24px;
+  }
 }
