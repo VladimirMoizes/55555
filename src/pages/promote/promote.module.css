@@ -234,7 +234,7 @@
   }
 
   .mainBlock {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 40px;
   }

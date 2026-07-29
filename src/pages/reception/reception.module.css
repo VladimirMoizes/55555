@@ -639,6 +639,10 @@ h2 {
   border-color: #fd8d04;
 }
 
+.input:required::placeholder {
+  color: var(--color-text);
+}
+
 .input[type='number']::-webkit-inner-spin-button,
 .input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1044,79 +1048,168 @@ h2 {
 
 @media (max-width: 1366px) {
   .cardList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .cardListItem {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .cardListItem:nth-of-type(2n + 1) {
+    margin-block-start: 0;
+  }
+
+  .card {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    object-fit: contain;
+  }
+
+  .cardTextBlock {
+    width: 100%;
+    max-width: 350px;
+    block-size: auto;
+    min-height: 160px;
+    padding: 30px;
+    margin-block-end: 20px;
+    background-size: 100% 100%;
+  }
+
+  .cardTextBlock .number {
+    font-size: 20px;
+  }
+
+  .cardTextBlock .text {
+    font-size: 14px;
+    max-width: 280px;
+    line-height: 120%;
+  }
+
   .formBlock {
-    margin: 60px 40px 60px;
+    margin: 60px 20px 60px;
   }
+
   .form {
     padding: 30px 40px;
   }
+
   .details {
     inline-size: 100%;
     padding: 30px;
   }
 }
 
-@media (max-width: 1200px) {
-  .documentList .card {
-    flex: 0 0 240px;
-    max-inline-size: 240px;
+@media (max-width: 1100px) {
+  .cardList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardListItem:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 350px;
   }
 }
 
 @media (max-width: 1024px) {
   .cardList {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
-  .cardListItem:nth-of-type(2n + 1) {
-    margin-block-start: 0;
+
+  .cardListItem:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 320px;
   }
+
+  .card img {
+    max-width: 320px;
+  }
+
+  .cardTextBlock {
+    max-width: 320px;
+    min-height: 140px;
+    padding: 25px;
+  }
+
+  .cardTextBlock .text {
+    font-size: 14px;
+  }
+
   .formBlock {
-    margin: 40px 20px 40px;
+    margin: 40px 16px;
   }
+
   .form {
-    padding: 20px 24px;
+    padding: 24px 20px;
   }
+
   .subTitleBlock {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
   }
+
   .footerForm {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
   }
+
   .linkBrifList {
     justify-content: center;
   }
+
   .formFooterSecond {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
   }
+
   .agreeAndButton {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .inputListSecondStart {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .details {
     padding: 24px 20px;
   }
+
   .documentList .card {
     flex: 0 0 220px;
     max-inline-size: 220px;
   }
+
   .cardImage {
     block-size: 280px;
   }
+
   h2 {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .card img {
+    aspect-ratio: auto;
+    height: auto;
   }
 }
 
@@ -1124,211 +1217,306 @@ h2 {
   .container {
     padding: 20px 16px 30px;
   }
-  .cardTextBlock {
-    block-size: auto;
-    min-height: 180px;
-    inline-size: 100%;
-    max-width: 421px;
-  }
-  .cardTextBlock .number {
-    font-size: 24px;
-  }
-  .cardTextBlock .text {
-    font-size: 14px;
-    max-width: 320px;
-  }
-  .formBlock {
-    margin: 30px 0;
-  }
-  .form {
-    padding: 16px;
-  }
-  .formTitle {
-    font-size: 28px;
-  }
-  .subTitle {
-    font-size: 16px;
-  }
-  .buttons {
-    gap: 16px;
-  }
-  .input {
-    font-size: 16px;
-    padding: 16px 20px;
-  }
-  .labelFirst {
-    inline-size: 100%;
-    height: 56px;
-  }
-  .labelTextFirst {
-    font-size: 12px;
-    top: -24px;
-  }
-  .select {
-    height: 56px;
-    padding: 16px 20px;
-    font-size: 16px;
-  }
-  .textarea {
-    font-size: 16px;
-    padding: 16px 20px;
-    block-size: 120px;
-  }
-  .brifButton {
-    font-size: 20px;
-    padding: 16px;
-  }
-  .linkBrifList {
-    gap: 16px 30px;
-  }
-  .linkText {
-    font-size: 14px;
-  }
-  .formButton {
-    padding: 16px 40px;
-    font-size: 20px;
-  }
-  .inputListSecond .label span {
-    font-size: 16px;
-  }
-  .formSecond .subTitle {
-    font-size: 16px;
-  }
-  .formFooterSecond {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .formText {
-    font-size: 20px;
-  }
-  .agreeAndButton {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  .agreeAndButton .agreement {
-    max-inline-size: 100%;
-  }
-  .agreeAndButton .formButton {
-    padding: 14px 30px;
-    font-size: 18px;
-  }
-  .formSecond .hide {
-    font-size: 20px;
-  }
-  .documentTitle {
-    font-size: 28px;
-    margin-block-end: 30px;
-  }
-  .documentList .card {
-    max-inline-size: 280px;
-    flex: 0 0 100%;
-  }
-  .cardImage {
-    block-size: 260px;
-  }
-  .details {
-    padding: 20px 16px;
-  }
-  .details .title {
-    font-size: 24px;
-  }
-  .detailsPart {
-    font-size: 14px;
-  }
-  h2 {
-    font-size: 28px;
-  }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 16px 12px 20px;
-  }
-  .title {
-    font-size: 24px;
-  }
   .cardTextBlock {
-    min-height: 150px;
-    padding: 12px;
+    display: none;
   }
-  .cardTextBlock .number {
-    font-size: 20px;
+
+  .cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
-  .cardTextBlock .text {
-    font-size: 12px;
-    max-width: 280px;
+
+  .cardListItem {
+    flex: 0 1 180px;
+    min-width: 140px;
+    max-width: 200px;
   }
+
+  .cardListItem:nth-child(1),
+  .cardListItem:nth-child(3) {
+    display: none;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .formBlock {
+    margin: 24px 0;
+  }
+
   .form {
-    padding: 12px;
+    padding: 16px;
   }
+
   .formTitle {
-    font-size: 22px;
+    font-size: 24px;
+    text-align: center;
   }
-  .subTitleBlock {
-    flex-direction: column;
-    gap: 12px;
-  }
+
   .subTitle {
     font-size: 14px;
+    text-align: center;
   }
+
+  .buttons {
+    gap: 12px;
+    justify-content: center;
+  }
+
   .input {
     font-size: 14px;
     padding: 12px 16px;
   }
+
   .labelFirst {
+    inline-size: 100%;
     height: 48px;
   }
+
   .labelTextFirst {
     font-size: 11px;
     top: -20px;
   }
+
   .select {
     height: 48px;
     padding: 12px 16px;
     font-size: 14px;
   }
+
   .textarea {
     font-size: 14px;
     padding: 12px 16px;
     block-size: 100px;
   }
+
   .brifButton {
     font-size: 16px;
-    padding: 12px;
+    padding: 12px 16px;
   }
+
   .linkBrifList {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
   }
+
   .formButton {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 12px 24px;
   }
-  .labelStart {
+
+  .footerForm {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .labelStart .input {
-    inline-size: 100%;
-  }
-  .inputListSecondStart {
-    flex-direction: column;
+    align-items: stretch;
     gap: 16px;
   }
-  .details {
-    padding: 16px 12px;
+
+  .footerForm .brifButton {
+    width: 100%;
   }
+
+  .footerForm .formButton {
+    width: 100%;
+  }
+
+  .inputListSecond .label span {
+    font-size: 14px;
+  }
+
+  .formSecond .subTitle {
+    font-size: 14px;
+  }
+
+  .formFooterSecond {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .formText {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .agreeAndButton {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .agreeAndButton .agreement {
+    max-inline-size: 100%;
+    text-align: center;
+  }
+
+  .agreeAndButton .formButton {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .formSecond .hide {
+    font-size: 18px;
+    display: block;
+    margin: 16px auto 0;
+  }
+
+  .documentTitle {
+    font-size: 24px;
+    margin-block-end: 24px;
+    text-align: center;
+  }
+
+  .documentList {
+    gap: 20px;
+  }
+
+  .documentList .card {
+    max-inline-size: 200px;
+    flex: 0 0 100%;
+  }
+
+  .cardImage {
+    block-size: 220px;
+  }
+
+  .details {
+    padding: 16px;
+  }
+
   .details .title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .detailsPart {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .sound {
+    top: 80px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px 8px 16px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .cardListItem {
+    flex: 0 1 140px;
+    min-width: 120px;
+    max-width: 160px;
+  }
+
+  .card img {
+    max-height: 220px;
+  }
+
+  .form {
+    padding: 12px;
+  }
+
+  .formTitle {
     font-size: 20px;
   }
-  .detailsPart {
+
+  .subTitle {
     font-size: 12px;
   }
+
+  .input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .select {
+    height: 42px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+    block-size: 80px;
+  }
+
+  .brifButton {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .linkText {
+    font-size: 12px;
+  }
+
+  .formButton {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .formText {
+    font-size: 16px;
+  }
+
+  .agreeAndButton .formButton {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .documentTitle {
+    font-size: 20px;
+  }
+
+  .cardImage {
+    block-size: 180px;
+  }
+
+  .details .title {
+    font-size: 18px;
+  }
+
+  .detailsPart {
+    font-size: 11px;
+  }
+
   h2 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .sound {
+    top: 60px;
+    right: 8px;
   }
 }
