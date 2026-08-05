@@ -1,85 +1,3 @@
-/* .container {
-  padding: 30px 60px 70px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sound {
-  position: fixed;
-  top: 120px;
-  right: 20px;
-  z-index: 2;
-}
-
-.title {
-  margin-bottom: 45px;
-  text-align: center;
-}
-
-.mainBlock {
-  margin-block-end: 80px;
-}
-
-.table {
-  border: 1px solid var(--color-primary);
-  font-family: var(--font-secondary);
-  border-spacing: 0;
-  background-color: var(--color-table);
-  font-size: 24px;
-  line-height: 140%;
-}
-
-.tableRow {
-  display: grid;
-  grid-template-columns: 87px 1fr 450px;
-  align-items: center;
-}
-
-.tableRowTitle {
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  text-align: center;
-
-  td {
-    padding: 30px;
-  }
-}
-
-.tableRowTitle:not(:first-child) .mainTitle {
-  padding: 48px;
-}
-
-.tableRow:nth-child(2n) {
-  background-color: var(--color-menu);
-}
-
-.number {
-  font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 140%;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.mainCell {
-  border-inline: 1px solid var(--color-primary);
-  padding: 30px;
-  line-height: 1.4em;
-
-  span {
-    letter-spacing: 0.009em;
-  }
-}
-
-.price {
-  font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: 28px;
-  text-align: center;
-} */
-
 .container {
   padding: 30px 60px 70px;
   display: flex;
@@ -299,30 +217,40 @@
 
   .table {
     font-size: 12px;
-    min-width: 320px;
+    min-width: 280px; /* Уменьшаем минимальную ширину, чтобы влезть в 320px */
   }
 
   .tableRow {
-    grid-template-columns: 30px 1fr 140px;
+    /* 15px (номер) + 1fr (текст, который перенесется) + 100px (цена) = 320px с учетом отступов */
+    grid-template-columns: 15px 1fr 100px; 
+    gap: 4px; /* Небольшой зазор между колонками */
   }
 
   .number {
-    font-size: 16px;
+    padding-inline: 2px; 
+    font-size: 14px; /* Чуть уменьшаем цифру */
   }
 
   .mainCell {
-    padding: 8px 6px;
+    /* Убираем горизонтальные паддинги (оставляем только вертикальные) */
+    padding: 6px 10px; 
+    line-height: 1.3; /* Чуть уменьшаем межстрочный интервал для экономии места */
+  }
+
+  .mainCell span {
+    letter-spacing: 0; /* Убираем разрядку букв, чтобы текст не распирало */
+    word-break: break-word; /* Разрешаем переносить длинные слова */
   }
 
   .price {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .tableRowTitle td {
-    padding: 8px 6px;
+    padding: 6px 0; /* Убираем горизонтальные паддинги и у заголовков */
   }
 
   .tableRowTitle:not(:first-child) .mainTitle {
-    padding: 12px 6px;
+    padding: 10px 0; /* Убираем горизонтальные паддинги и у заголовков */
   }
 }
