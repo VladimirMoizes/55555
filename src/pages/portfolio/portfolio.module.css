@@ -11,11 +11,13 @@
 }
 
 .title {
-  margin-block-end: 12px;
+  margin-block-end: clamp(8px, 2vw, 12px);
+  font-size: clamp(24px, 4.5vw, 44px);
 }
 
 .subTitle {
-  margin-block-end: 11px;
+  margin-block-end: clamp(6px, 1.8vw, 11px);
+  font-size: clamp(18px, 3vw, 36px);
 }
 
 .roadMap {
@@ -30,7 +32,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 110px 42px;
-  /* position: relative; */
 }
 
 .card {
@@ -125,4 +126,29 @@
   position: absolute;
   bottom: -88px;
   left: 0;
+}
+
+@media (max-width: 1440px) {
+  .container {
+    padding-inline: 40px;
+  }
+
+  .roadMap {
+    scale: 0.75;
+    transform-origin: top left;
+    margin-block-end: -500px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .roadMap {
+    scale: 0.7;
+    margin-block-end: -600px;
+  }
+}
+@media (max-width: 1024px) {
+  .roadMap {
+    scale: 0.53;
+    margin-block-end: -1050px;
+  }
 }

@@ -32,6 +32,8 @@
   flex-direction: column;
   gap: 140px;
   margin-block-end: 160px;
+  scale: clamp(0.5, calc(100vw / 1920px), 1);
+  transform-origin: top center;
 }
 
 .sites {
@@ -74,3 +76,10 @@
   bottom: -83px;
   right: 0;
 }
+
+/* @media (width <= 1440px) {
+  .mainBlock {
+    scale: 0.75;
+    transform-origin: center;
+  }
+} */

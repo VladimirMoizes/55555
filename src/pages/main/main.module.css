@@ -96,3 +96,130 @@
   letter-spacing: -0.05em;
   font-size: 14px;
 }
+
+@media (max-width: 1440px) {
+  .container {
+    min-height: 1280px !important;
+  }
+
+  .mapWrapper {
+    transform: scale(0.75) !important;
+    transform-origin: top left;
+  }
+
+  .slash {
+    display: none;
+  }
+
+  .buildingWrapper .building[data-building-id='workshop'] {
+    top: -20px !important;
+    left: 1480px !important;
+  }
+  .buildingWrapper .building[data-building-id='tv-studio'] {
+    top: 340px !important;
+    left: 680px !important;
+  }
+  .buildingWrapper .building[data-building-id='bank'] {
+    top: 610px !important;
+    left: 240px !important;
+  }
+  .buildingWrapper .building[data-building-id='exhibition'] {
+    top: 560px !important;
+    left: 900px !important;
+  }
+  .buildingWrapper .building[data-building-id='park'] {
+    top: 520px !important;
+    left: 1550px !important;
+  }
+  .buildingWrapper .building[data-building-id='kotoTilda'] {
+    top: 930px !important;
+    left: 163px !important;
+  }
+  .buildingWrapper .building[data-building-id='university'] {
+    top: 975px !important;
+    left: 725px !important;
+  }
+  .buildingWrapper .building[data-building-id='museum'] {
+    top: 780px !important;
+    left: 1380px !important;
+  }
+  .buildingWrapper .building[data-building-id='garage'] {
+    top: 1400px !important;
+    left: 65px !important;
+  }
+  .buildingWrapper .building[data-building-id='board'] {
+    top: 1110px !important;
+    left: 1390px !important;
+  }
+  .buildingWrapper .building[data-building-id='reception'] {
+    top: 1390px !important;
+    left: 770px !important;
+  }
+  .buildingWrapper .building[data-building-id='cosmoport'] {
+    top: 1290px !important;
+    left: 1580px !important;
+  }
+}
+
+@media (max-width: 1366px) {
+  .container {
+    min-height: 1200px !important;
+  }
+
+  .mapWrapper {
+    transform: scale(0.7) !important;
+    transform-origin: top left;
+  }
+
+  .buildingWrapper .building[data-building-id='workshop'] {
+    top: -20px !important;
+    left: 1470px !important;
+  }
+  .buildingWrapper .building[data-building-id='tv-studio'] {
+    top: 335px !important;
+    left: 680px !important;
+  }
+  .buildingWrapper .building[data-building-id='bank'] {
+    top: 600px !important;
+    left: 240px !important;
+  }
+  .buildingWrapper .building[data-building-id='exhibition'] {
+    top: 560px !important;
+    left: 900px !important;
+  }
+  .buildingWrapper .building[data-building-id='park'] {
+    top: 520px !important;
+    left: 1555px !important;
+  }
+  .buildingWrapper .building[data-building-id='kotoTilda'] {
+    top: 940px !important;
+    left: 163px !important;
+  }
+  .buildingWrapper .building[data-building-id='university'] {
+    top: 970px !important;
+    left: 730px !important;
+  }
+  .buildingWrapper .building[data-building-id='museum'] {
+    top: 780px !important;
+    left: 1390px !important;
+  }
+  .buildingWrapper .building[data-building-id='garage'] {
+    top: 1395px !important;
+    left: 65px !important;
+  }
+  .buildingWrapper .building[data-building-id='board'] {
+    top: 1110px !important;
+    left: 1400px !important;
+  }
+  .buildingWrapper .building[data-building-id='reception'] {
+    top: 1390px !important;
+    left: 770px !important;
+  }
+  .buildingWrapper .building[data-building-id='cosmoport'] {
+    top: 1290px !important;
+    left: 1575px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+}

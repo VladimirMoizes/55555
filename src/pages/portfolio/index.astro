@@ -14,7 +14,7 @@ import styles from './portfolio.module.css';
     <div class={styles.roadMap}>
       <div class={styles.grid}>
         {
-          roadMapItems.map((item, index, array) => (
+          roadMapItems.map((item, index) => (
             <div class={styles.card}>
               <a href={`/portfolio/${item.id}`}>
                 <img class={styles.image} src={item.image} alt={item.name} />

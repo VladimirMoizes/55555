@@ -39,7 +39,7 @@ function animateHeaderOnGo() {
 if (typeof window !== 'undefined') {
   if (!window.__audioManager) {
     window.__audioManager = {
-      audio: null as HTMLAudioElement | null,
+      audio: null,
       isSoundOn: true,
       isInitialized: false,
 
@@ -79,7 +79,8 @@ if (typeof window !== 'undefined') {
           this.audio.currentTime = savedTime;
         }
 
-        if (this.isSoundOn) {
+        const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
+        if (shouldPlay) {
           this.audio.play().catch(() => {});
         }
 
@@ -88,6 +89,16 @@ if (typeof window !== 'undefined') {
             this.setAudioTimeToStorage(this.audio.currentTime);
           }
         }, 1000);
+
+        window.addEventListener('resize', () => {
+          if (!this.audio) return;
+          const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
+          if (shouldPlay && this.audio.paused) {
+            this.audio.play().catch(() => {});
+          } else if (!shouldPlay && !this.audio.paused) {
+            this.audio.pause();
+          }
+        });
 
         this.isInitialized = true;
       },
@@ -98,7 +109,8 @@ if (typeof window !== 'undefined') {
         this.isSoundOn = !this.isSoundOn;
         this.setSoundStateToStorage(this.isSoundOn);
 
-        if (this.isSoundOn) {
+        const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
+        if (shouldPlay) {
           this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
         } else {
@@ -114,11 +126,12 @@ if (typeof window !== 'undefined') {
         if (!this.audio) return;
 
         this.isSoundOn = this.getSoundStateFromStorage();
+        const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
 
-        if (this.isSoundOn && this.audio.paused) {
+        if (shouldPlay && this.audio.paused) {
           this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
-        } else if (!this.isSoundOn && !this.audio.paused) {
+        } else if (!shouldPlay && !this.audio.paused) {
           this.audio.pause();
         }
       },
@@ -128,7 +141,8 @@ if (typeof window !== 'undefined') {
 
         this.isSoundOn = this.getSoundStateFromStorage();
 
-        if (this.isSoundOn && this.audio.paused) {
+        const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
+        if (shouldPlay && this.audio.paused) {
           this.audio.volume = 0.2;
           this.audio.play().catch(() => {});
         }
@@ -139,11 +153,14 @@ if (typeof window !== 'undefined') {
 
         this.isSoundOn = this.getSoundStateFromStorage();
 
-        if (this.isSoundOn) {
+        const shouldPlay = this.isSoundOn && window.innerWidth > 1024;
+        if (shouldPlay) {
           if (this.audio.paused || this.audio.currentTime === 0) {
             this.audio.volume = 0.01;
             this.audio.play().catch(() => {});
           }
+        } else if (!shouldPlay && !this.audio.paused) {
+          this.audio.pause();
         }
       },
     };

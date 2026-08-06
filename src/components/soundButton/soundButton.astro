@@ -46,6 +46,12 @@ const isSoundOn = getSoundState();
   .sound-button:hover .textSoundButton {
     color: var(--color-text);
   }
+
+  @media (max-width: 1024px) {
+    .sound-button {
+      display: none;
+    }
+  }
 </style>
 
 <script>

@@ -15,43 +15,51 @@ const lowestPoint = Math.max(
   <div class={styles.container} style={`min-height: ${lowestPoint}px`}>
     <SoundButton class={styles.sound} />
 
-    <img class={styles.car} data-car src="/assets/images/main/car_small.png" />
-    <img class={styles.map} src="/assets/images/main/map.svg" />
-    <div class={styles.containerMapHouses}>
-      {
-        housesMap.map((item) => (
-          <img
-            class={styles.houseMap}
-            src={item.image}
-            style={`top: ${item.position.top}px; left: ${item.position.left}px; width: ${item.width}px; height: ${item.height}px`}
-            alt="decorate"
-          />
-        ))
-      }
-    </div>
-    <div class={styles.containerBuildings}>
-      {
-        buildings.map((item) => {
-          return (
-            <div
-              class={styles.building}
-              style={`top: ${item.position.top}px; left: ${item.position.left}px;`}
-              data-building-id={item.id}
-            >
-              <img
-                class={styles.imageBuilding}
-                src={item.image}
-                alt={item.title}
-                style={`width: ${item.width}px; height: ${item.height}px;`}
-              />
-              <div class={styles.textBlock}>
-                <span class={styles.textBuilding}>{item.title}</span>
-                <span class={styles.textBuilding}>{item.subtitle}</span>
+    <div class={styles.mapWrapper}>
+      <img
+        class={styles.car}
+        data-car
+        src="/assets/images/main/car_small.png"
+      />
+      <img class={styles.map} src="/assets/images/main/map.svg" />
+      <div class={styles.containerMapHouses}>
+        {
+          housesMap.map((item) => (
+            <img
+              class={styles.houseMap}
+              src={item.image}
+              style={`top: ${item.position.top}px; left: ${item.position.left}px; width: ${item.width}px; height: ${item.height}px`}
+              alt="decorate"
+            />
+          ))
+        }
+      </div>
+      <div class={styles.containerBuildings}>
+        {
+          buildings.map((item) => {
+            return (
+              <div class={styles.buildingWrapper}>
+                <div
+                  class={styles.building}
+                  style={`top: ${item.position.top}px; left: ${item.position.left}px;`}
+                  data-building-id={item.id}
+                >
+                  <img
+                    class={styles.imageBuilding}
+                    src={item.image}
+                    alt={item.title}
+                    style={`width: ${item.width}px; height: ${item.height}px;`}
+                  />
+                  <div class={styles.textBlock}>
+                    <span class={styles.textBuilding}>{item.title}</span>
+                    <span class={styles.textBuilding}>{item.subtitle}</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          );
-        })
-      }
+            );
+          })
+        }
+      </div>
     </div>
     <img
       class={styles.slash}
