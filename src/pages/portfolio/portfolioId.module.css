@@ -1,4 +1,4 @@
-.pageContainer {
+/* .pageContainer {
   display: flex;
   flex-direction: column;
   padding-block-end: 52px;
@@ -63,4 +63,92 @@
   object-fit: cover;
   object-position: top center;
   margin-block-end: 62px;
+} */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: clamp(20px, calc((100vw * 52) / 1920), 52px);
+  width: 100%;
+}
+
+.sound {
+  position: fixed;
+  top: clamp(60px, calc((100vw * 120) / 1920), 120px);
+  right: clamp(8px, calc((100vw * 15) / 1920), 15px);
+  z-index: 2;
+}
+
+.description {
+  display: flex;
+  justify-content: space-around;
+  gap: clamp(30px, calc((100vw * 89) / 1920), 89px);
+  margin: clamp(16px, calc((100vw * 31) / 1920), 31px) 
+          clamp(12px, calc((100vw * 120) / 1920), 120px) 
+          clamp(30px, calc((100vw * 97) / 1920), 97px) 
+          clamp(12px, calc((100vw * 80) / 1920), 80px);
+}
+
+.pageTitle {
+  font-size: clamp(22px, calc((100vw * 44) / 1920), 44px);
+  margin-block-end: clamp(10px, calc((100vw * 24) / 1920), 24px);
+}
+
+.description .text {
+  max-inline-size: 833px;
+  font-weight: 400;
+  font-size: clamp(14px, calc((100vw * 18) / 1920), 18px);
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+
+.description .info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, calc((100vw * 14) / 1920), 14px);
+}
+
+.description .info .infoTextBlock {
+  display: flex;
+  gap: clamp(8px, calc((100vw * 23) / 1920), 23px);
+}
+
+.description .info .infoTextBlock .infoText {
+  inline-size: clamp(80px, calc((100vw * 139) / 1920), 139px);
+  background-color: #2b2b2b;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.description .info .infoButton {
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: clamp(14px, calc((100vw * 18) / 1920), 18px);
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.pageImage {
+  inline-size: 100%;
+  max-block-size: 849px;
+  object-fit: cover;
+  object-position: top center;
+  margin-block-end: clamp(16px, calc((100vw * 62) / 1920), 62px);
+}
+
+@media (max-width: 1366px) {
+  .text {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    flex-wrap: wrap;
+  }
 }

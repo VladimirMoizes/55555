@@ -23,7 +23,7 @@ const redirectUrl = `/building/${buildingData.id}`;
 const directRedirectUrl = buildingData.link;
 ---
 
-<MainLayout>
+<MainLayout fullHeight={false}>
   <div class="wrapper">
     <div class="sound-wrapper">
       <SoundButton />
@@ -74,7 +74,7 @@ const directRedirectUrl = buildingData.link;
   .content-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 150px;
+    /* padding-bottom: 150px; */
     display: block;
   }
 
@@ -107,9 +107,9 @@ const directRedirectUrl = buildingData.link;
   }
 
   @media (max-width: 1366px) {
-    .content-wrapper {
+    /* .content-wrapper {
       padding-bottom: 100px;
-    }
+    } */
     .mask {
       height: calc(100% + 100px);
     }
@@ -120,9 +120,9 @@ const directRedirectUrl = buildingData.link;
       right: 16px;
       top: 20px;
     }
-    .content-wrapper {
+    /* .content-wrapper {
       padding-bottom: 80px;
-    }
+    } */
     .mask {
       height: calc(100% + 80px);
     }
@@ -133,9 +133,9 @@ const directRedirectUrl = buildingData.link;
       right: 12px;
       top: 16px;
     }
-    .content-wrapper {
+    /* .content-wrapper {
       padding-bottom: 60px;
-    }
+    } */
     .mask {
       height: calc(100% + 60px);
     }
@@ -146,9 +146,9 @@ const directRedirectUrl = buildingData.link;
       right: 8px;
       top: 12px;
     }
-    .content-wrapper {
+    /* .content-wrapper {
       padding-bottom: 40px;
-    }
+    } */
     .mask {
       height: calc(100% + 40px);
     }

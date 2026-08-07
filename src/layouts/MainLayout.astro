@@ -16,7 +16,11 @@ import Footer from '../components/footer/Footer.astro';
   </head>
   <body>
     <Header />
-    <main>
+    <main
+      style={Astro.props.fullHeight === false
+        ? 'flex: 0 0 auto;'
+        : 'flex: 1 0 auto;'}
+    >
       <slot />
     </main>
     <Footer />
@@ -28,4 +32,3 @@ import Footer from '../components/footer/Footer.astro';
     navigation: auto;
   }
 </style>
-
