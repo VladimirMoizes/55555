@@ -141,11 +141,11 @@
   margin-block-end: clamp(16px, calc((100vw * 62) / 1920), 62px);
 }
 
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
   .text {
     display: none;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .description {

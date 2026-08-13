@@ -4,6 +4,14 @@
   display: flex;
 }
 
+.desktopContent {
+  display: block;
+}
+
+.mobileContent {
+  display: none;
+}
+
 .slash {
   position: absolute;
   bottom: -300px;
@@ -222,4 +230,103 @@
 }
 
 @media (max-width: 1024px) {
+  .desktopContent {
+    display: none;
+  }
+
+  .tags {
+    display: none;
+  }
+
+  .mobileContent {
+    inline-size: 100%;
+    display: flex;
+    justify-content: start;
+    padding: 20px 16px;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .mapLayer {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .mobileRoadBlock {
+    inline-size: 32px;
+    block-size: auto;
+    border-left: 1px solid var(--color-road);
+    border-right: 1px solid var(--color-road);
+    display: flex;
+    position: relative;
+    top: 20px;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .roadMobile {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .carMobile {
+    position: absolute;
+    left: -1.5px;
+    inline-size: 32px;
+    z-index: 5;
+    object-fit: contain;
+    transition: top 2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobileContainerBuildings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(12px, 5vw, 30px);
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .mobileBuilding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .mobileBuilding:hover {
+    transform: scale(1.02);
+  }
+
+  .mobileImageBuilding {
+    width: 70% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .mobiletextBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .mobileTextBuilding {
+    font-size: clamp(12px, 2vw, 20px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-text);
+  }
 }
