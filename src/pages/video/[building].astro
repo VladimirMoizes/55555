@@ -30,6 +30,7 @@ const directRedirectUrl = buildingData.link;
     </div>
 
     <div class="content-wrapper">
+      <h2 class="mobileTitle">Разработка NEтривиальных сайтов</h2>
       <div class="video-container">
         <video
           id="buildingVideo"
@@ -74,8 +75,11 @@ const directRedirectUrl = buildingData.link;
   .content-wrapper {
     position: relative;
     width: 100%;
-    /* padding-bottom: 150px; */
     display: block;
+  }
+
+  .mobileTitle {
+    display: none;
   }
 
   .video-container {
@@ -106,55 +110,42 @@ const directRedirectUrl = buildingData.link;
     z-index: 1;
   }
 
-  @media (max-width: 1366px) {
-    /* .content-wrapper {
-      padding-bottom: 100px;
-    } */
+  @media (max-width: 1367px) {
     .mask {
-      height: calc(100% + 100px);
+      height: calc(100% + 125px);
     }
   }
 
   @media (max-width: 1024px) {
-    .sound-wrapper {
-      right: 16px;
-      top: 20px;
-    }
-    .content-wrapper {
-      margin-block: 60px;
-    }
     .mask {
-      height: calc(100% + 80px);
+      height: calc(100% + 45px);
     }
   }
 
   @media (max-width: 768px) {
-    .sound-wrapper {
-      right: 12px;
-      top: 16px;
-    }
     .content-wrapper {
-      margin-block: 40px;
+      margin-block-end: clamp(15px, calc(100vw * 0.05), 40px);
     }
+
+    .mobileTitle {
+      display: block;
+      font-family: var(--font-primary);
+      font-size: clamp(12px, calc(100vw * 0.03), 24px);
+      margin-block: clamp(30px, calc(100vw * 0.1), 60px);
+    }
+
     .mask {
-      height: calc(100% + 60px);
+      height: calc(100% - 50px);
     }
   }
 
   @media (max-width: 480px) {
-    .sound-wrapper {
-      right: 8px;
-      top: 12px;
-    }
-    .content-wrapper {
-      margin-block: 30px;
-    }
     .mask {
-      height: calc(100% + 40px);
+      height: calc(100% - 45px);
     }
   }
 </style>
-
+<!-- 
 <script define:vars={{ redirectUrl, directRedirectUrl, buildingData }}>
   const video = document.getElementById('buildingVideo');
   let redirected = false;
@@ -189,4 +180,4 @@ const directRedirectUrl = buildingData.link;
       }
     });
   }
-</script>
+</script> -->

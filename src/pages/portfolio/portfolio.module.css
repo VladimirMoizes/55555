@@ -10,6 +10,14 @@
   z-index: 4;
 }
 
+.dekstopContent {
+  display: block;
+}
+
+.mobileContent {
+  display: none;
+}
+
 .title {
   margin-block-end: clamp(8px, 2vw, 12px);
   font-size: clamp(24px, 4.5vw, 44px);
@@ -146,9 +154,89 @@
     margin-block-end: -600px;
   }
 }
-@media (max-width: 1024px) {
+
+/* @media (max-width: 1024px) {
   .roadMap {
     scale: 0.53;
     margin-block-end: -1050px;
+  }
+} */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 35px clamp(10px, -3.64px + 4.26vw, 40px) 49px;
+  }
+
+  .dekstopContent {
+    display: none;
+  }
+
+  .mobileContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+    margin-block-end: clamp(20px, 10.91px + 2.84vw, 40px);
+  }
+
+  .roadMobile {
+    inline-size: clamp(26px, calc(100vw * 0.05), 40px);
+    align-self: stretch;
+    background-image: url('/assets/images/portfolio/vertical_road.png');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+  }
+
+  .cardListMobile {
+    inline-size: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 13.18px + 2.13vw, 35px);
+  }
+
+  .cardMobile {
+    inline-size: 100%;
+    position: relative;
+    block-size: clamp(142px, -1.64px + 44.89vw, 458px);
+  }
+
+  .imageMobile {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .cardTitleMobile {
+    border: 2px solid #9c9c9c;
+    background-color: #232323;
+    font-size: clamp(8px, 0.73px + 2.27vw, 24px);
+    border-radius: 1px;
+    padding: clamp(4px, 0.36px + 1.14vw, 12px)
+      clamp(6px, -7.18px + 4.12vw, 35px);
+    inline-size: fit-content;
+    max-width: 100%;
+    position: absolute;
+    bottom: clamp(25px, 4.55px + 6.39vw, 70px);
+    right: clamp(0px, -22.73px + 7.1vw, 50px);
+  }
+
+  .peopleMobile {
+    position: absolute;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+    scale: 1.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .peopleMobile {
+    scale: 1.3;
+  }
+}
+
+@media (max-width: 426px) {
+  .peopleMobile {
+    scale: 1;
   }
 }

@@ -1,7 +1,7 @@
 ---
 import Buttons from '../../components/buttons/Buttons.astro';
 import SoundButton from '../../components/soundButton/soundButton.astro';
-import { roadMapItems } from '../../data/portfolioData';
+import { roadMapItems, mobilePeople } from '../../data/portfolioData';
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './portfolio.module.css';
 ---
@@ -9,101 +9,225 @@ import styles from './portfolio.module.css';
 <MainLayout>
   <section class={styles.container}>
     <SoundButton class={styles.sound} />
-    <h1 class={styles.title}>Портфолио</h1>
-    <h3 class={styles.subTitle}>20 избранных работ</h3>
-    <div class={styles.roadMap}>
-      <div class={styles.grid}>
-        {
-          roadMapItems.map((item, index) => (
-            <div class={styles.card}>
-              <a href={`/portfolio/${item.id}`}>
-                <img class={styles.image} src={item.image} alt={item.name} />
-              </a>
+    <div class={styles.dekstopContent}>
+      <h1 class={styles.title}>Портфолио</h1>
+      <h3 class={styles.subTitle}>20 избранных работ</h3>
+      <div class={styles.roadMap}>
+        <div class={styles.grid}>
+          {
+            roadMapItems.map((item, index) => (
+              <div class={styles.card}>
+                <a href={`/portfolio/${item.id}`}>
+                  <img class={styles.image} src={item.image} alt={item.name} />
+                </a>
 
-              <h3 class={styles.cardTitle}>{item.name}</h3>
-              <div class={styles.blockFencing}>
-                {[...Array(7)].map((_, i) => (
+                <h3 class={styles.cardTitle}>{item.name}</h3>
+                <div class={styles.blockFencing}>
+                  {[...Array(7)].map((_, i) => (
+                    <img
+                      class={styles.fencing}
+                      src="/assets/images/portfolio/fencing.png"
+                      alt=""
+                    />
+                  ))}
+                </div>
+                {Object.entries(item.people || {}).map(([src, position]) => (
                   <img
-                    class={styles.fencing}
-                    src="/assets/images/portfolio/fencing.png"
-                    alt=""
+                    src={src}
+                    alt="people"
+                    class={styles.people}
+                    style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
                   />
                 ))}
-              </div>
-              {Object.entries(item.people || {}).map(([src, position]) => (
                 <img
-                  src={src}
-                  alt="people"
-                  class={styles.people}
-                  style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
-                />
-              ))}
-              <img
-                class={styles.horizontalRoad}
-                alt=""
-                src="/assets/images/portfolio/horizontal_road.png"
-                data-index={index}
-              />
-              {index === 0 && (
-                <img
-                  class={styles.verticalRoad}
+                  class={styles.horizontalRoad}
                   alt=""
-                  src="/assets/images/portfolio/vertical_road.png"
+                  src="/assets/images/portfolio/horizontal_road.png"
+                  data-index={index}
                 />
-              )}
-            </div>
-          ))
-        }
+                {index === 0 && (
+                  <img
+                    class={styles.verticalRoad}
+                    alt=""
+                    src="/assets/images/portfolio/vertical_road.png"
+                  />
+                )}
+              </div>
+            ))
+          }
 
-        <!-- <div class={styles.roadHorizontalCenter}></div>
+          <!-- <div class={styles.roadHorizontalCenter}></div>
         <div class={styles.roadHorizontalBottom}></div>
 
 
         <div class={styles.roadVertical}></div> -->
-      </div>
-      <div class={styles.grid}>
-        {
-          roadMapItems.map((item, index) => (
-            <div class={styles.card}>
-              <a href={`/portfolio/${item.id}`}>
-                <img class={styles.image} src={item.image} alt={item.name} />
-              </a>
+        </div>
+        <div class={styles.grid}>
+          {
+            roadMapItems.map((item, index) => (
+              <div class={styles.card}>
+                <a href={`/portfolio/${item.id}`}>
+                  <img class={styles.image} src={item.image} alt={item.name} />
+                </a>
 
-              <h3 class={styles.cardTitle}>{item.name}</h3>
-              <div class={styles.blockFencing}>
-                {[...Array(7)].map((_, i) => (
+                <h3 class={styles.cardTitle}>{item.name}</h3>
+                <div class={styles.blockFencing}>
+                  {[...Array(7)].map((_, i) => (
+                    <img
+                      class={styles.fencing}
+                      src="/assets/images/portfolio/fencing.png"
+                      alt=""
+                    />
+                  ))}
+                </div>
+                {Object.entries(item.people || {}).map(([src, position]) => (
                   <img
-                    class={styles.fencing}
-                    src="/assets/images/portfolio/fencing.png"
-                    alt=""
+                    src={src}
+                    alt="people"
+                    class={styles.people}
+                    style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
                   />
                 ))}
-              </div>
-              {Object.entries(item.people || {}).map(([src, position]) => (
                 <img
-                  src={src}
-                  alt="people"
-                  class={styles.people}
-                  style={`left: ${position[0]}px; bottom: ${position[1]}px;`}
-                />
-              ))}
-              <img
-                class={styles.horizontalRoad}
-                alt=""
-                src="/assets/images/portfolio/horizontal_road.png"
-                data-index={index}
-              />
-              {index === 0 && (
-                <img
-                  class={styles.verticalRoad}
+                  class={styles.horizontalRoad}
                   alt=""
-                  src="/assets/images/portfolio/vertical_road.png"
+                  src="/assets/images/portfolio/horizontal_road.png"
+                  data-index={index}
+                />
+                {index === 0 && (
+                  <img
+                    class={styles.verticalRoad}
+                    alt=""
+                    src="/assets/images/portfolio/vertical_road.png"
+                  />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.mobileContent}>
+      <div class={styles.roadMobile}></div>
+      <!-- <img class={styles.roadMobile} src="/assets/images/portfolio/vertical_road.png" /> -->
+      <ul class={styles.cardListMobile}>
+        {
+          roadMapItems.map((item, index) => (
+            <li class={styles.cardMobile}>
+              <a href={`/portfolio/${item.id}`}>
+                <img
+                  class={styles.imageMobile}
+                  src={item.image}
+                  alt={item.name}
+                />
+              </a>
+
+              <h3 class={styles.cardTitleMobile}>{item.name}</h3>
+
+              {mobilePeople[index] && (
+                <img
+                  class={styles.peopleMobile}
+                  src={mobilePeople[index].image}
+                  alt=""
+                  style={`
+                top: ${mobilePeople[index].position.top}px;
+                left: ${mobilePeople[index].position.left};
+                width: ${mobilePeople[index].width}px;
+                height: ${mobilePeople[index].height}px;
+                transform: ${index === 0 || index === 1 ? 'scaleX(-1)' : 'none'};
+              `}
                 />
               )}
-            </div>
+            </li>
           ))
         }
-      </div>
+
+        {
+          roadMapItems.map((item, index) => (
+            <li class={styles.cardMobile}>
+              <a href={`/portfolio/${item.id}`}>
+                <img
+                  class={styles.imageMobile}
+                  src={item.image}
+                  alt={item.name}
+                />
+              </a>
+
+              <h3 class={styles.cardTitleMobile}>{item.name}</h3>
+
+              {mobilePeople[index + roadMapItems.length] && (
+                <img
+                  class={styles.peopleMobile}
+                  src={mobilePeople[index + roadMapItems.length].image}
+                  alt=""
+                  style={`
+                top: ${mobilePeople[index + roadMapItems.length].position.top}px;
+                left: ${mobilePeople[index + roadMapItems.length].position.left};
+                width: ${mobilePeople[index + roadMapItems.length].width}px;
+                height: ${mobilePeople[index + roadMapItems.length].height}px;
+                transform: ${index + roadMapItems.length === 5 ? 'scaleX(-1)' : 'none'};
+    `}
+                />
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <!-- <ul class={styles.cardListMobile}>
+        {
+          roadMapItems.map((item, index) => (
+            <li class={styles.cardMobile}>
+              <a href={`/portfolio/${item.id}`}>
+                <img
+                  class={styles.imageMobile}
+                  src={item.image}
+                  alt={item.name}
+                />
+              </a>
+
+              <h3 class={styles.cardTitleMobile}>{item.name}</h3>
+              {mobilePeople[index] && (
+                <img
+                  class={styles.peopleMobile}
+                  src={mobilePeople[index].image}
+                  alt=""
+                  style={`
+              top: ${mobilePeople[index].position.top}px;
+              left: ${mobilePeople[index].position.left}px;
+            `}
+                />
+              )}
+            </li>
+          ))
+        }
+        {
+          roadMapItems.map((item, index) => (
+            <li class={styles.cardMobile}>
+              <a href={`/portfolio/${item.id}`}>
+                <img
+                  class={styles.imageMobile}
+                  src={item.image}
+                  alt={item.name}
+                />
+              </a>
+
+              <h3 class={styles.cardTitleMobile}>{item.name}</h3>
+              {mobilePeople[index] && (
+                <img
+                  class={styles.peopleMobile}
+                  src={mobilePeople[index].image}
+                  alt=""
+                  style={`
+              top: ${mobilePeople[index].position.top}px;
+              left: ${mobilePeople[index].position.left}px;
+            `}
+                />
+              )}
+            </li>
+          ))
+        }
+      </ul> -->
     </div>
     <Buttons />
   </section>

@@ -1,5 +1,6 @@
 .container {
-  padding: 47px 50px 42px;
+  padding: clamp(15px, calc(100vw * 0.04), 47px)
+    clamp(15px, calc(100vw * 0.05), 50px) clamp(15px, calc(100vw * 0.04), 42px);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
