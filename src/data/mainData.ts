@@ -196,8 +196,8 @@ export const buildings = [
     width: 151,
     height: 125,
     separatePage: {
-      width: 865,
-      height: 700,
+      width: 'clamp(250px, 106.82px + 44.74vw, 565px)',
+      height: 'clamp(180px, 57.27px + 38.35vw, 450px)',
     },
     videoMp4: '/assets/videos/go6 mp4.mp4',
     videoWebm: '/assets/videos/go6 webm.webm',
@@ -246,8 +246,8 @@ export const buildings = [
     width: 120,
     height: 100,
     separatePage: {
-      width: 780,
-      height: 650,
+      width: 'clamp(260px, 156.00px + 32.50vw, 780px)',
+      height: 'clamp(200px, 110.00px + 28.13vw, 650px)',
     },
     videoMp4: '/assets/videos/go5 mp4.mp4',
     videoWebm: '/assets/videos/go5 webm.webm',
@@ -264,8 +264,8 @@ export const buildings = [
     width: 150,
     height: 105,
     separatePage: {
-      width: 870,
-      height: 550,
+      width: 'clamp(270px, 150.00px + 37.50vw, 870px)',
+      height: 'clamp(200px, 130.00px + 21.88vw, 550px)',
     },
     videoMp4: '/assets/videos/go3 mp4.mp4',
     videoWebm: '/assets/videos/go3 webm.webm',

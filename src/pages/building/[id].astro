@@ -63,7 +63,7 @@ if (!building) {
     id === 'bank' || id === 'kotoTilda' || id === 'university' ? (
       <section class={styles.containerSimple}>
         <div class={styles.titleListSimple}>
-          <h1>{building.title}</h1>
+          <h1 class={styles.title}>{building.title}</h1>
           <h2 class={styles.subTitle}>{building.subtitle}</h2>
         </div>
         <a
@@ -76,7 +76,7 @@ if (!building) {
           }
         >
           <img
-            style={`width: ${building.separatePage?.width}px; height: ${building.separatePage?.height}px;`}
+            style={`width: ${building.separatePage?.width}; height: ${building.separatePage?.height};`}
             class={styles.mainBuildingSimple}
             src={building.image}
             alt={building.title}
@@ -87,7 +87,7 @@ if (!building) {
     ) : (
       <section class={styles.container}>
         <div class={styles.titleList}>
-          <h1>{building.title}</h1>
+          <h1 class={styles.title}>{building.title}</h1>
           <h2 class={styles.subTitle}>{building.subtitle}</h2>
         </div>
         {id !== 'museum' && (
