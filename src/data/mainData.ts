@@ -196,8 +196,8 @@ export const buildings = [
     width: 151,
     height: 125,
     separatePage: {
-      width: 'clamp(250px, 106.82px + 44.74vw, 565px)',
-      height: 'clamp(180px, 57.27px + 38.35vw, 450px)',
+      width: 'clamp(250px, 127.00px + 38.44vw, 865px)',
+      height: 'clamp(180px, 76.00px + 32.50vw, 700px)',
     },
     videoMp4: '/assets/videos/go6 mp4.mp4',
     videoWebm: '/assets/videos/go6 webm.webm',
