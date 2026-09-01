@@ -76,11 +76,19 @@
 }
 
 .container {
-  min-height: 700px;
+  /* min-height: clamp(480px, 228.57px + 24.55vw, 700px); */
   flex-direction: column;
   display: grid;
-  grid-template-columns: 568px 667px 1fr;
-  grid-template-rows: 360px 285px 115px;
+  /* grid-template-columns: 568px 667px 1fr; */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 360px 285px 115px; */
+  grid-template-rows:
+    clamp(200px, 17.14px + 17.86vw, 360px) clamp(
+      200px,
+      102.86px + 9.49vw,
+      285px
+    )
+    clamp(50px, -24.29px + 7.25vw, 115px);
   grid-template-areas:
     'titleList . mainBuilding'
     '. description mainBuilding'
@@ -89,7 +97,8 @@
 }
 
 .titleList {
-  padding: 126px 0 0 164px;
+  padding: clamp(50px, -36.86px + 8.48vw, 126px) 0 0
+    clamp(80px, -16px + 9.38vw, 164px);
   grid-area: titleList;
 }
 
@@ -97,7 +106,7 @@
   grid-area: description;
   display: flex;
   align-items: center;
-  gap: 128px;
+  gap: clamp(80px, -16px + 9.38vw, 164px);
   justify-self: start;
   align-self: start;
 }
@@ -107,7 +116,7 @@
   font-family: var(--font-secondary);
   font-weight: 500;
   font-style: italic;
-  font-size: 20px;
+  font-size: clamp(14px, 7.14px + 0.67vw, 20px);
   line-height: 140%;
   letter-spacing: 0%;
   text-transform: uppercase;
@@ -115,14 +124,14 @@
   text-align: center;
   position: relative;
   display: inline-block;
-  margin-inline-start: 60px;
+  margin-inline-start: clamp(14px, 7.14px + 0.67vw, 20px);
 }
 
 .hooks::before {
   content: '“';
   font-family: var(--font-primary);
   font-weight: 400;
-  font-size: 48px;
+  font-size: clamp(28px, 5.14px + 2.23vw, 48px);
   position: absolute;
   left: -40px;
   top: -5px;
@@ -132,14 +141,14 @@
   content: '“';
   font-family: var(--font-primary);
   font-weight: 400;
-  font-size: 48px;
+  font-size: clamp(28px, 5.14px + 2.23vw, 48px);
   position: absolute;
   right: -25px;
   bottom: -5px;
 }
 
 .icon {
-  max-height: 40px;
+  max-height: clamp(25px, 7.86px + 1.67vw, 40px);
   margin-block-start: 30px;
 }
 
@@ -172,6 +181,8 @@
   grid-area: mapLayer;
   display: inline-block;
   position: relative;
+  scale: clamp(0.57, calc(100vw / 1920px), 1);
+  transform-origin: top left;
   /* overflow: visible; */
 }
 
@@ -181,6 +192,7 @@
   pointer-events: auto;
   cursor: pointer;
   transition: transform 2s ease-in-out;
+  position: relative;
   z-index: 20;
   margin-inline-start: 10px;
   transition: transform 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -213,11 +225,13 @@
 }
 
 .road {
-  top: 666px;
-  left: 166px;
-  inline-size: 1024px;
+  /* top: 666px; */
+  /* left: 166px; */
+  /* inline-size: 1024px; */
+  top: 18px;
+  position: absolute;
   block-size: auto;
-  z-index: 5;
+  z-index: 2;
 }
 
 .roadExhibition {
@@ -239,10 +253,11 @@
   top: 10px;
 }
 
-.mainBuilding {
+/* .mainBuilding {
   width: 586px;
+  width: clamp(320px, 16px + 29.69vw, 586px);
   height: auto;
-}
+} */
 
 .pointerWrapper {
   position: relative;
@@ -282,12 +297,25 @@
   color: var(--color-text);
 }
 
-[data-rocket='true'] {
+[data-cosmoport-building] {
+  position: relative;
+  bottom: 10px;
+}
+
+.takeoffPad {
+  position: relative;
+  top: 600px;
+}
+
+[data-rocket] {
   height: auto;
   z-index: 20;
   pointer-events: none;
   opacity: 1;
   transition: transform 3s ease-in;
+  position: relative;
+  left: 252px;
+  top: -40px;
 }
 
 [data-rocket-launch='true'] {

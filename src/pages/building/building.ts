@@ -3,11 +3,8 @@ function handleCarMoveAndRedirect() {
 
   const car = document.querySelector('[data-car]') as HTMLElement;
   const link = document.querySelector('[data-link]') as HTMLAnchorElement;
-  console.log(link);
-
   const pointer = document.querySelector('[data-pointer]') as HTMLElement;
   const buildingImg = link.querySelector('[data-building]') as HTMLImageElement;
-  console.log(buildingImg);
 
   if (!car || !link) return;
 
@@ -20,45 +17,8 @@ function handleCarMoveAndRedirect() {
   link.style.cursor = 'pointer';
 
   const pathname = window.location.pathname || '';
+  const rocketImg = document.querySelector('[data-rocket') as HTMLElement;
 
-  // if (pathname.includes('cosmoport')) {
-  //   setTimeout(() => {
-  //     car.setAttribute('data-moving-second', 'true');
-  //   }, 100);
-
-  //   link.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     if (isAnimating) return;
-  //     isAnimating = true;
-
-  //     if (buildingImg) {
-  //       buildingImg.src = '/assets/images/main/buildings/космопорт_здание.png';
-  //       buildingImg.style.position = 'relative';
-  //       buildingImg.style.width = '630px';
-  //       buildingImg.style.height = '375px';
-  //       buildingImg.style.top = '630px';
-  //       buildingImg.style.left = '-25px';
-
-  //       const rocketImg = document.createElement('img');
-  //       rocketImg.src = '/assets/images/main/buildings/космопорт_ракета.png';
-  //       rocketImg.style.position = 'relative';
-  //       rocketImg.style.width = '310px';
-  //       rocketImg.style.height = '610px';
-  //       rocketImg.style.top = '-55px';
-  //       rocketImg.style.left = '225px';
-  //       rocketImg.setAttribute('data-rocket', 'true');
-  //       link.appendChild(rocketImg);
-
-  //       requestAnimationFrame(() => {
-  //         rocketImg.setAttribute('data-rocket-launch', 'true');
-  //       });
-  //     }
-
-  //     setTimeout(() => {
-  //       window.location.href = originalHref;
-  //     }, 3000);
-  //   });
-  // }
   if (pathname.includes('cosmoport')) {
     setTimeout(() => {
       car.setAttribute('data-moving', 'true');
@@ -72,28 +32,12 @@ function handleCarMoveAndRedirect() {
       car.setAttribute('data-moving-second', 'true');
 
       setTimeout(() => {
-        if (buildingImg) {
-          buildingImg.src =
-            '/assets/images/main/buildings/космопорт_здание.png';
-          buildingImg.style.position = 'relative';
-          buildingImg.style.width = '630px';
-          buildingImg.style.height = '375px';
-          buildingImg.style.top = '630px';
-          buildingImg.style.left = '-25px';
-        }
-
-        const rocketImg = document.createElement('img');
-        rocketImg.src = '/assets/images/main/buildings/космопорт_ракета.png';
-        rocketImg.style.position = 'relative';
-        rocketImg.style.width = '310px';
-        rocketImg.style.height = '610px';
-        rocketImg.style.top = '-55px';
-        rocketImg.style.left = '225px';
-        rocketImg.setAttribute('data-rocket', 'true');
-        link.appendChild(rocketImg);
-
         setTimeout(() => {
           rocketImg.setAttribute('data-rocket-launch', 'true');
+          rocketImg.setAttribute(
+            'src',
+            '/assets/images/main/buildings/rocket_with_fire.png'
+          );
         }, 100);
       }, 2500);
 
@@ -151,23 +95,34 @@ function handleCarMoveAndRedirect() {
     }
   }
 
-  if (buildingImg && window.location.pathname.includes('exhibition')) {
-    buildingImg.style.position = 'relative';
-    buildingImg.style.top = '-30px';
-    buildingImg.style.left = '-30px';
+  if (buildingImg && window.location.pathname.includes('workshop')) {
+    buildingImg.style.width = 'clamp(320px, 16px + 29.69vw, 586px)';
   }
 
   if (buildingImg && window.location.pathname.includes('tv-studio')) {
     buildingImg.style.position = 'relative';
-    buildingImg.style.width = '700px';
+    buildingImg.style.width = 'clamp(320px, -114.29px + 42.41vw, 700px)';
     buildingImg.style.top = '-25px';
-    buildingImg.style.left = '-160px';
+    buildingImg.style.left = 'clamp(-160px, 54.29px + -11.16vw, -60px)';
   }
+
   if (buildingImg && window.location.pathname.includes('exhibition')) {
     buildingImg.style.position = 'relative';
-    buildingImg.style.width = '620px';
-    buildingImg.style.top = '-40px';
-    buildingImg.style.left = '-80px';
+    buildingImg.style.width = 'clamp(320px, -22.86px + 33.48vw, 620px)';
+    buildingImg.style.top = 'clamp(-40px, 2.86px + -2.23vw, -20px)';
+    buildingImg.style.left = 'clamp(-80px, 80.71px + -8.37vw, -5px)';
+  }
+
+  if (buildingImg && window.location.pathname.includes('cosmoport')) {
+    link.style.scale = 'clamp(0.5, calc(90vw / 1920px), 1)';
+    link.style.transformOrigin = 'bottom center';
+    link.style.left = 'clamp(0px, 372.34px + -26.60vw, 100px)';
+  }
+
+  if (buildingImg && window.location.pathname.includes('museum')) {
+    buildingImg.style.position = 'relative';
+    buildingImg.style.left = 'clamp(20px, 148.57px + -6.70vw, 80px)';
+    buildingImg.style.width = 'clamp(250px, -122.57px + 36.38vw, 576px)';
   }
 }
 

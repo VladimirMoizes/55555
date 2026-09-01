@@ -85,85 +85,104 @@ if (!building) {
         <p class={styles.descriptionSimple}>{building.description}</p>
       </section>
     ) : (
-      <section class={styles.container}>
-        <div class={styles.titleList}>
-          <h1 class={styles.title}>{building.title}</h1>
-          <h2 class={styles.subTitle}>{building.subtitle}</h2>
-        </div>
-        {id !== 'museum' && (
-          <div class={styles.description}>
-            <blockquote
-              class={`${styles.quote} ${id !== 'cosmoport' ? styles.hooks : ''}`}
-            >
-              {building.description}
-            </blockquote>
-            {id !== 'tv-studio' &&
-              id !== 'exhibition' &&
-              id !== 'cosmoport' && (
-                <Icon
-                  name="decorativeArrow"
-                  color="var(--color-primary)"
-                  size={155}
-                  className={styles.icon}
-                />
-              )}
+      <div class={styles.desktopContent}>
+        <section class={styles.container}>
+          <div class={styles.titleList}>
+            <h1 class={styles.title}>{building.title}</h1>
+            <h2 class={styles.subTitle}>{building.subtitle}</h2>
           </div>
-        )}
-        <div class={styles.mapLayer}>
-          <img
-            class={styles.car}
-            src="/assets/images/main/car_small.png"
-            alt="car"
-            data-car
-          />
-          <img
-            class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`}
-            src="/assets/images/road.svg"
-            alt=""
-          />
-          {currentHouses.map((house) => (
-            <img
-              class={styles.houseImage}
-              src={house.src}
-              aria-hidden="true"
-              alt=""
-              style={{
-                top: house.position.top + 'px',
-                left: house.position.left + 'px',
-                width: house.width + 'px',
-                height: house.height + 'px',
-              }}
-            />
-          ))}
-
-          {id === 'museum' && (
-            <div class={styles.pointerWrapper} data-pointer>
-              <img
-                src="/assets/images/go/pointer.png"
-                class={styles.pointerImage}
-                alt="pointer"
-              />
-              <p class={styles.pointerText}>Мало ярославец</p>
+          {id !== 'museum' && (
+            <div class={styles.description}>
+              <blockquote
+                class={`${styles.quote} ${id !== 'cosmoport' ? styles.hooks : ''}`}
+              >
+                {building.description}
+              </blockquote>
+              {id !== 'tv-studio' &&
+                id !== 'exhibition' &&
+                id !== 'cosmoport' && (
+                  <Icon
+                    name="decorativeArrow"
+                    color="var(--color-primary)"
+                    size={155}
+                    className={styles.icon}
+                  />
+                )}
             </div>
           )}
-        </div>
-        <a
-          class={styles.linkBuilding}
-          href={building.link}
-          data-link
-          target={building.link.startsWith('http') ? '_blank' : undefined}
-          rel={
-            building.link.startsWith('http') ? 'noopener noreferrer' : undefined
-          }
-        >
-          <img
-            class={styles.mainBuilding}
-            src={building.image}
-            alt={building.title}
-            data-building
-          />
-        </a>
-      </section>
+          <div class={styles.mapLayer}>
+            <img
+              class={styles.car}
+              src="/assets/images/main/car_small.png"
+              alt="car"
+              data-car
+            />
+            <img
+              class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`}
+              src="/assets/images/road.svg"
+              alt=""
+            />
+            {currentHouses.map((house) => (
+              <img
+                class={styles.houseImage}
+                src={house.src}
+                aria-hidden="true"
+                alt=""
+                style={{
+                  top: house.position.top + 'px',
+                  left: house.position.left + 'px',
+                  width: house.width + 'px',
+                  height: house.height + 'px',
+                }}
+              />
+            ))}
+
+            {id === 'museum' && (
+              <div class={styles.pointerWrapper} data-pointer>
+                <img
+                  src="/assets/images/go/pointer.png"
+                  class={styles.pointerImage}
+                  alt="pointer"
+                />
+                <p class={styles.pointerText}>Мало ярославец</p>
+              </div>
+            )}
+          </div>
+          <a
+            class={styles.linkBuilding}
+            href={building.link}
+            data-link
+            target={building.link.startsWith('http') ? '_blank' : undefined}
+            rel={
+              building.link.startsWith('http')
+                ? 'noopener noreferrer'
+                : undefined
+            }
+          >
+            {id === 'cosmoport' ? (
+              <div class={styles.buildingCosmoport} data-cosmoport-building>
+                <img
+                  class={styles.takeoffPad}
+                  src="/assets/images/main/buildings/космопорт_здание.png"
+                  data-building
+                />
+                <img
+                  class={styles.rocket}
+                  src="/assets/images/main/buildings/rocket.png"
+                  data-rocket
+                />
+              </div>
+            ) : (
+              <img
+                class={styles.mainBuilding}
+                src={building.image}
+                alt={building.title}
+                data-building
+              />
+            )}
+          </a>
+        </section>
+      </div>
     )
   }
   <SoundButton class={styles.sound} />
