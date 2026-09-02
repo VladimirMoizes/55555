@@ -92,7 +92,10 @@ const lowestPoint = Math.max(
           />
         </div>
       </div>
-      <div class={styles.mobileContainerBuildings} data-mobile-buildings-container >
+      <div
+        class={styles.mobileContainerBuildings}
+        data-mobile-buildings-container
+      >
         {
           buildings.map((item) => {
             return (
@@ -100,7 +103,7 @@ const lowestPoint = Math.max(
                 class={styles.mobileBuilding}
                 style={`top: ${item.position.top}px; left: ${item.position.left}px;`}
                 data-mobile-building-id={item.id}
-                data-top={item.position.top} 
+                data-top={item.position.top}
               >
                 <img
                   class={styles.mobileImageBuilding}

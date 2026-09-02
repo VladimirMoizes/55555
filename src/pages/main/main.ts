@@ -81,13 +81,14 @@ function initMobileCarAnimation() {
   const carMobile = document.querySelector('[data-car-mobile]') as HTMLElement;
 
   if (!container || !carMobile) {
-    console.warn('Мобильная анимация: не найден контейнер или машинка');
     return;
   }
 
-  carMobile.style.top = '0px';
-
-  let redirectTimer: ReturnType<typeof setTimeout> | null = null;
+  if (carMobile) {
+    setTimeout(() => {
+      carMobile.setAttribute('data-mobile-moving', 'true');
+    }, 50);
+  }
 
   container.addEventListener('click', (e: Event) => {
     const target = (e.target as HTMLElement).closest(
@@ -101,25 +102,7 @@ function initMobileCarAnimation() {
     const buildingData = buildings.find((b) => b.id === buildingId);
     if (!buildingData) return;
 
-    if (redirectTimer) {
-      clearTimeout(redirectTimer);
-      redirectTimer = null;
-    }
-
-    const targetRect = target.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
-    const relativeTop = targetRect.top - containerRect.top;
-    const finalTop = Math.max(0, relativeTop);
-
-    carMobile.style.top = `${finalTop}px`;
-
     let redirectUrl = '';
-    const link = buildingData.link;
-
-    if (link && (link.startsWith('http://') || link.startsWith('https://'))) {
-      window.open(link, '_blank');
-      return;
-    }
 
     if (buildingData.id === 'board') {
       redirectUrl = '/board';
@@ -127,10 +110,7 @@ function initMobileCarAnimation() {
       redirectUrl = `/video/${buildingData.id}`;
     }
 
-    redirectTimer = setTimeout(() => {
-      window.location.href = redirectUrl;
-      redirectTimer = null;
-    }, 2200);
+    window.location.href = redirectUrl;
   });
 }
 

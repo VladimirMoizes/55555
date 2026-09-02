@@ -103,6 +103,20 @@
   transform: rotate(0deg);
 }
 
+.buttonNumber {
+  display: none;
+}
+
+.buttonNumber {
+  inline-size: auto !important;
+  padding: 0 15px;
+  color: var(--color-primary);
+}
+
+.buttonNumberLink {
+  font-size: 16px;
+}
+
 /* --- АДАПТИВ МЕНЮ --- */
 
 @media (max-width: 768px) and (min-width: 481px) {
@@ -138,6 +152,10 @@
   .button {
     inline-size: 36px;
     block-size: 36px;
+  }
+
+  .buttonNumber {
+    display: block;
   }
 }
 
@@ -175,5 +193,9 @@
   .button {
     inline-size: 32px;
     block-size: 32px;
+  }
+
+  .buttonNumber {
+    display: block;
   }
 }

@@ -79,12 +79,18 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <div class={styles.buttonListMessenger}>
-    <button
+    <!-- <button
       class={styles.button}
       aria-label="Открыть whatsapp"
       data-link-icon="https://wa.me/79691969595?text=Здравствуйте!%20Хочу%20заказать%20сайт"
     >
       <Icon name="whatsapp" color="var(--color-primary)" />
+    </button> -->
+    <button
+      class={`${styles.button} ${styles.buttonNumber}`}
+      aria-label="Позвонить"
+    >
+      <a class={styles.buttonNumberLink} href="tel:+79265210268"> +7 926 521 02 68 </a>
     </button>
     <button
       class={styles.button}
