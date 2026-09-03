@@ -13,6 +13,11 @@ function setupMenu() {
     e.stopPropagation();
     const isOpen = menu.style.transform === 'translateX(0px)';
     menu.style.transform = isOpen ? 'translateX(100%)' : 'translateX(0px)';
+     if (!isOpen) {
+      document.body.setAttribute('data-menu-open', 'true');
+    } else {
+      document.body.setAttribute('data-menu-open', 'false');
+    }
   });
 
   document.addEventListener('click', function onClick(e) {
@@ -23,6 +28,7 @@ function setupMenu() {
       e.target !== newButton
     ) {
       menu.style.transform = 'translateX(100%)';
+       document.body.setAttribute('data-menu-open', 'false');
     }
   });
 }

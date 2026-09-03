@@ -26,12 +26,29 @@ body {
   letter-spacing: 0%;
   background-color: var(--color-dark);
   overflow-x: hidden;
-  overflow-y: overlay;
+  /* overflow-y: overlay; */
   min-height: 100vh;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-block-start: clamp(76px, 64.57px + 1.49vw, 86px);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-block-start: clamp(46px, 41.71px + 1.34vw, 52px);
+  }
+}
+
+body[data-menu-open='true'] {
+  overflow-y: hidden;
+}
+
+body[data-menu-open='true'] header,
+body[data-menu-open='true'] main,
+body[data-menu-open='true'] footer {
+  filter: blur(5px);
 }
 
 h1 {

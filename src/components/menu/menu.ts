@@ -7,6 +7,7 @@ function initCloseButton() {
       e.preventDefault();
       e.stopPropagation();
       menu.style.transform = 'translateX(100%)';
+      document.body.setAttribute('data-menu-open', 'false');
     });
   }
 }
