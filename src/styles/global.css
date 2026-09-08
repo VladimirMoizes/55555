@@ -32,7 +32,13 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-block-start: clamp(76px, 64.57px + 1.49vw, 86px);
+  /* padding-block-start: clamp(76px, 64.57px + 1.49vw, 86px); */
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding-block-start: clamp(52px, -8.00px + 7.81vw, 72px);
+  }
 }
 
 @media (max-width: 768px) {
