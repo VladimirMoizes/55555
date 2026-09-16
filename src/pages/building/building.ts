@@ -126,7 +126,123 @@ function handleCarMoveAndRedirect() {
   }
 }
 
+// function handleMobileCarMoveAndRedirect() {
+//   if (typeof window === 'undefined') return;
+
+//   const carMobile = document.querySelector('[data-car-mobile]') as HTMLElement;
+//   const mobileContainer = document.querySelector(
+//     '[data-mobile-buildings-container-mobile]'
+//   ) as HTMLElement;
+
+//   if (!carMobile || !mobileContainer) return;
+
+//   carMobile.style.top = '120px';
+//   setTimeout(() => {
+//     carMobile.setAttribute('data-mobile-moving-start', 'true');
+//   }, 100);
+
+//   let isAnimatingMobile = false;
+
+//   mobileContainer.addEventListener('click', (e: Event) => {
+//     const target = (e.target as HTMLElement).closest(
+//       '[data-mobile-building-id]'
+//     ) as HTMLAnchorElement;
+//     if (!target) return;
+
+//     if (isAnimatingMobile) return;
+//     isAnimatingMobile = true;
+
+//     const originalHref = target.getAttribute('href');
+//     if (!originalHref) return;
+
+//     target.removeAttribute('href');
+//     target.style.cursor = 'pointer';
+
+//     const targetRect = target.getBoundingClientRect();
+//     const containerRect = mobileContainer.getBoundingClientRect();
+
+//     const relativeTop =
+//       targetRect.top - containerRect.top + targetRect.height / 2 + 80;
+
+//     carMobile.setAttribute('data-mobile-moving-start', 'false');
+//     carMobile.style.top = `${relativeTop}px`;
+
+//     setTimeout(() => {
+//       window.location.href = originalHref;
+//     }, 2500);
+//   });
+// }
+
+function handleMobileCarMoveAndRedirect() {
+  if (typeof window === 'undefined') return;
+
+  const carMobile = document.querySelector('[data-car-mobile]') as HTMLElement;
+  const mobileContainer = document.querySelector(
+    '[data-mobile-buildings-container-mobile]'
+  ) as HTMLElement;
+
+  if (!carMobile || !mobileContainer) return;
+
+  carMobile.style.top = '120px';
+  setTimeout(() => {
+    carMobile.setAttribute('data-mobile-moving-start', 'true');
+  }, 100);
+
+  let isAnimatingMobile = false;
+
+  mobileContainer.addEventListener('click', (e: Event) => {
+    const target = (e.target as HTMLElement).closest(
+      '[data-mobile-building-id]'
+    ) as HTMLAnchorElement;
+    if (!target) return;
+
+    if (isAnimatingMobile) return;
+    isAnimatingMobile = true;
+
+    const originalHref = target.getAttribute('href');
+    if (!originalHref) return;
+
+    target.removeAttribute('href');
+    target.style.cursor = 'pointer';
+
+    const targetRect = target.getBoundingClientRect();
+    const containerRect = mobileContainer.getBoundingClientRect();
+
+    const relativeTop =
+      targetRect.top - containerRect.top + targetRect.height / 2 + 80;
+
+    const pathname = window.location.pathname || '';
+
+    carMobile.setAttribute('data-mobile-moving-start', 'false');
+    carMobile.style.top = `${relativeTop}px`;
+
+    if (pathname.includes('cosmoport')) {
+      const rocketMobile = document.querySelector(
+        '[data-rocket-mobile]'
+      ) as HTMLElement;
+
+      setTimeout(() => {
+        if (rocketMobile) {
+          rocketMobile.setAttribute('data-rocket-launch-mobile', 'true');
+        }
+      }, 2500);
+
+      setTimeout(() => {
+        window.location.href = originalHref;
+      }, 4500);
+    } else {
+      setTimeout(() => {
+        window.location.href = originalHref;
+      }, 2500);
+    }
+  });
+}
+
 if (typeof window !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', handleCarMoveAndRedirect);
-  document.addEventListener('astro:page-load', handleCarMoveAndRedirect);
+  document.addEventListener('DOMContentLoaded', () => {
+    (handleCarMoveAndRedirect(), handleMobileCarMoveAndRedirect());
+  });
+  document.addEventListener('astro:page-load', () => {
+    (handleCarMoveAndRedirect(), handleMobileCarMoveAndRedirect());
+  });
 }

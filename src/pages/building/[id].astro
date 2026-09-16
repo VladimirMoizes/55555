@@ -1,25 +1,4 @@
 ---
-// import MainLayout from '../../layouts/MainLayout.astro';
-// import styles from './building.module.css';
-// import Icon from '../../components/icons/Icon.astro';
-// import { buildings } from '../../data/mainData';
-// import SoundButton from '../../components/soundButton/soundButton.astro';
-// import Tags from '../../components/tags/Tags.astro';
-
-// export async function getStaticPaths() {
-//   return buildings.map((b) => ({
-//     params: { id: b.id },
-//   }));
-// }
-
-// const { id } = Astro.params;
-
-// const building = buildings.find((b) => b.id === id);
-
-// if (!building) {
-//   throw new Error('Building not found');
-// }
-
 import MainLayout from '../../layouts/MainLayout.astro';
 import styles from './building.module.css';
 import Icon from '../../components/icons/Icon.astro';
@@ -85,104 +64,181 @@ if (!building) {
         <p class={styles.descriptionSimple}>{building.description}</p>
       </section>
     ) : (
-      <div class={styles.desktopContent}>
-        <section class={styles.container}>
-          <div class={styles.titleList}>
-            <h1 class={styles.title}>{building.title}</h1>
-            <h2 class={styles.subTitle}>{building.subtitle}</h2>
-          </div>
-          {id !== 'museum' && (
-            <div class={styles.description}>
-              <blockquote
-                class={`${styles.quote} ${id !== 'cosmoport' ? styles.hooks : ''}`}
-              >
-                {building.description}
-              </blockquote>
-              {id !== 'tv-studio' &&
-                id !== 'exhibition' &&
-                id !== 'cosmoport' && (
-                  <Icon
-                    name="decorativeArrow"
-                    color="var(--color-primary)"
-                    size={155}
-                    className={styles.icon}
-                  />
-                )}
+      <>
+        <div class={styles.desktopContent}>
+          <section class={styles.container}>
+            <div class={styles.titleList}>
+              <h1 class={styles.title}>{building.title}</h1>
+              <h2 class={styles.subTitle}>{building.subtitle}</h2>
             </div>
-          )}
-          <div class={styles.mapLayer}>
-            <img
-              class={styles.car}
-              src="/assets/images/main/car_small.png"
-              alt="car"
-              data-car
-            />
-            <img
-              class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`}
-              src="/assets/images/road.svg"
-              alt=""
-            />
-            {currentHouses.map((house) => (
-              <img
-                class={styles.houseImage}
-                src={house.src}
-                aria-hidden="true"
-                alt=""
-                style={{
-                  top: house.position.top + 'px',
-                  left: house.position.left + 'px',
-                  width: house.width + 'px',
-                  height: house.height + 'px',
-                }}
-              />
-            ))}
-
-            {id === 'museum' && (
-              <div class={styles.pointerWrapper} data-pointer>
-                <img
-                  src="/assets/images/go/pointer.png"
-                  class={styles.pointerImage}
-                  alt="pointer"
-                />
-                <p class={styles.pointerText}>Мало ярославец</p>
+            {id !== 'museum' && (
+              <div class={styles.description}>
+                <blockquote
+                  class={`${styles.quote} ${id !== 'cosmoport' ? styles.hooks : ''}`}
+                >
+                  {building.description}
+                </blockquote>
+                {id !== 'tv-studio' &&
+                  id !== 'exhibition' &&
+                  id !== 'cosmoport' && (
+                    <Icon
+                      name="decorativeArrow"
+                      color="var(--color-primary)"
+                      size={155}
+                      className={styles.icon}
+                    />
+                  )}
               </div>
             )}
-          </div>
-          <a
-            class={styles.linkBuilding}
-            href={building.link}
-            data-link
-            target={building.link.startsWith('http') ? '_blank' : undefined}
-            rel={
-              building.link.startsWith('http')
-                ? 'noopener noreferrer'
-                : undefined
-            }
-          >
-            {id === 'cosmoport' ? (
-              <div class={styles.buildingCosmoport} data-cosmoport-building>
+            <div class={styles.mapLayer}>
+              <img
+                class={styles.car}
+                src="/assets/images/main/car_small.png"
+                alt="car"
+                data-car
+              />
+              <img
+                class={`${styles.road} ${(id === 'exhibition' || id === 'tv-studio') && styles.roadExhibition}`}
+                src="/assets/images/road.svg"
+                alt=""
+              />
+              {currentHouses.map((house) => (
                 <img
-                  class={styles.takeoffPad}
-                  src="/assets/images/main/buildings/космопорт_здание.png"
+                  class={styles.houseImage}
+                  src={house.src}
+                  aria-hidden="true"
+                  alt=""
+                  style={{
+                    top: house.position.top + 'px',
+                    left: house.position.left + 'px',
+                    width: house.width + 'px',
+                    height: house.height + 'px',
+                  }}
+                />
+              ))}
+
+              {id === 'museum' && (
+                <div class={styles.pointerWrapper} data-pointer>
+                  <img
+                    src="/assets/images/go/pointer.png"
+                    class={styles.pointerImage}
+                    alt="pointer"
+                  />
+                  <p class={styles.pointerText}>Мало ярославец</p>
+                </div>
+              )}
+            </div>
+            <a
+              class={styles.linkBuilding}
+              href={building.link}
+              data-link
+              target={building.link.startsWith('http') ? '_blank' : undefined}
+              rel={
+                building.link.startsWith('http')
+                  ? 'noopener noreferrer'
+                  : undefined
+              }
+            >
+              {id === 'cosmoport' ? (
+                <div class={styles.buildingCosmoport} data-cosmoport-building>
+                  <img
+                    class={styles.takeoffPad}
+                    src="/assets/images/main/buildings/космопорт_здание.png"
+                    data-building
+                  />
+                  <img
+                    class={styles.rocket}
+                    src="/assets/images/main/buildings/rocket.png"
+                    data-rocket
+                  />
+                </div>
+              ) : (
+                <img
+                  class={styles.mainBuilding}
+                  src={building.image}
+                  alt={building.title}
                   data-building
                 />
+              )}
+            </a>
+          </section>
+        </div>
+        <div class={styles.mobileContent}>
+          <section class={styles.mobileContainer}>
+            <div class={styles.mapLayerMobile}>
+              <div class={styles.mobileRoadBlock}>
+                {/* <img
+                  class={styles.roadMobile}
+                  src="/assets/images/main/mobile/road_mobile.svg"
+                  alt=""
+                /> */}
+                <div class={styles.roadMobile} />
                 <img
-                  class={styles.rocket}
-                  src="/assets/images/main/buildings/rocket.png"
-                  data-rocket
+                  class={styles.carMobile}
+                  src="/assets/images/main/mobile/car_mobile.png"
+                  alt="car"
+                  data-car-mobile
                 />
               </div>
-            ) : (
-              <img
-                class={styles.mainBuilding}
-                src={building.image}
-                alt={building.title}
-                data-building
-              />
-            )}
-          </a>
-        </section>
-      </div>
+            </div>
+            <div
+              class={styles.mainContentMobile}
+              data-mobile-buildings-container-mobile
+            >
+              <div class={styles.titleListMobile}>
+                <h1 class={styles.titleMobile}>{building.title}</h1>
+                <h2 class={styles.subTitleMobile}>{building.subtitle}</h2>
+              </div>
+              {id !== 'museum' && (
+                <div class={styles.descriptionMobile}>
+                  <blockquote
+                    class={`${styles.quoteMobile} ${id !== 'cosmoport' ? styles.hooksMobile : ''}`}
+                  >
+                    {building.description}
+                  </blockquote>
+                </div>
+              )}
+              <a
+                class={styles.linkBuildingMobile}
+                href={building.link}
+                data-link
+                data-mobile-building-id={building.id}
+                target={building.link.startsWith('http') ? '_blank' : undefined}
+                rel={
+                  building.link.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
+              >
+                {id === 'cosmoport' ? (
+                  <div
+                    class={styles.buildingCosmoportMobile}
+                    data-cosmoport-building-mobile
+                  >
+                    <img
+                      class={styles.takeoffPadMobile}
+                      src="/assets/images/main/buildings/космопорт_здание.png"
+                      data-building-mobile
+                    />
+                    <img
+                      class={styles.rocketMobile}
+                      src="/assets/images/main/buildings/rocket.png"
+                      data-rocket-mobile
+                    />
+                  </div>
+                ) : (
+                  <img
+                    class={styles.mainBuildingMobile}
+                    src={building.image}
+                    alt={building.title}
+                    data-building-mobile
+                  />
+                )}
+              </a>
+            </div>
+          </section>
+        </div>
+      </>
     )
   }
   <SoundButton class={styles.sound} />

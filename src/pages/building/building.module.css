@@ -41,47 +41,14 @@
   max-width: 360px;
 }
 
-@media (max-width: 1024px) {
-  .containerSimple {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100px;
-    margin-block-end: 60px;
-    gap: clamp(24px, 16.73px + 2.27vw, 40px);
-    padding: clamp(24px, 16.73px + 2.27vw, 40px) 0 0 0;
-    margin-inline: 30px;
-  }
-
-  .title {
-    text-align: center;
-    font-size: clamp(28px, 24.36px + 1.14vw, 36px);
-  }
-
-  .subTitle {
-    text-align: center;
-    font-size: clamp(24px, 20.36px + 1.14vw, 32px);
-  }
-
-  .linkBuildingSimple {
-    margin-inline-end: 0;
-  }
-
-  .descriptionSimple {
-    text-align: center;
-    align-self: center;
-    margin-block-end: 0;
-    font-size: clamp(12px, 10.18px + 0.57vw, 16px);
-  }
+.mobileContent {
+  display: none;
 }
 
 .container {
-  /* min-height: clamp(480px, 228.57px + 24.55vw, 700px); */
   flex-direction: column;
   display: grid;
-  /* grid-template-columns: 568px 667px 1fr; */
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 360px 285px 115px; */
   grid-template-rows:
     clamp(200px, 17.14px + 17.86vw, 360px) clamp(
       200px,
@@ -183,7 +150,6 @@
   position: relative;
   scale: clamp(0.57, calc(100vw / 1920px), 1);
   transform-origin: top left;
-  /* overflow: visible; */
 }
 
 .car {
@@ -225,9 +191,6 @@
 }
 
 .road {
-  /* top: 666px; */
-  /* left: 166px; */
-  /* inline-size: 1024px; */
   top: 18px;
   position: absolute;
   block-size: auto;
@@ -252,12 +215,6 @@
   position: relative;
   top: 10px;
 }
-
-/* .mainBuilding {
-  width: 586px;
-  width: clamp(320px, 16px + 29.69vw, 586px);
-  height: auto;
-} */
 
 .pointerWrapper {
   position: relative;
@@ -320,4 +277,164 @@
 
 [data-rocket-launch='true'] {
   transform: translateY(-200vh);
+}
+
+@media (max-width: 1024px) {
+  .containerSimple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
+    margin-block-end: 60px;
+    gap: clamp(24px, 16.73px + 2.27vw, 40px);
+    padding: clamp(24px, 16.73px + 2.27vw, 40px) 0 0 0;
+    margin-inline: 30px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: clamp(28px, 24.36px + 1.14vw, 36px);
+  }
+
+  .subTitle {
+    text-align: center;
+    font-size: clamp(24px, 20.36px + 1.14vw, 32px);
+  }
+
+  .linkBuildingSimple {
+    margin-inline-end: 0;
+  }
+
+  .descriptionSimple {
+    text-align: center;
+    align-self: center;
+    margin-block-end: 0;
+    font-size: clamp(12px, 10.18px + 0.57vw, 16px);
+  }
+
+  .desktopContent {
+    display: none;
+  }
+
+  .mobileContent {
+    display: block;
+  }
+
+  .mobileContainer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-block: 40px;
+  }
+
+  .mapLayerMobile {
+    display: flex;
+    max-inline-size: 300px;
+    inline-size: 40px;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .mobileRoadBlock {
+    inline-size: clamp(32px, 28.36px + 1.14vw, 40px);
+    block-size: auto;
+    border-left: 1px solid var(--color-road);
+    border-right: 1px solid var(--color-road);
+    display: flex;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .roadMobile {
+    height: 100%;
+    inline-size: 0.1px;
+    border-left: 2px dashed var(--color-road);
+  }
+
+  .carMobile {
+    inline-size: clamp(32px, 28.36px + 1.14vw, 40px);
+    object-fit: contain;
+    position: absolute;
+    top: -100px;
+    transition: top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: top;
+  }
+
+  .mainContentMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(40px, 21.82px + 5.68vw, 80px);
+  }
+
+  .titleMobile {
+    font-size: clamp(24px, 14.91px + 2.84vw, 44px);
+  }
+
+  .subTitleMobile {
+    font-size: clamp(20px, 12.73px + 2.27vw, 36px);
+  }
+
+  .quoteMobile {
+    font-size: clamp(12px, 9.27px + 0.85vw, 18px);
+    text-transform: uppercase;
+    max-inline-size: clamp(140px, 112.73px + 8.52vw, 200px);
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+  }
+
+  .hooksMobile::before {
+    content: '“';
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: clamp(20px, 16.36px + 1.14vw, 28px);
+    position: absolute;
+    left: -20px;
+    top: -5px;
+  }
+
+  .hooksMobile::after {
+    content: '“';
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: clamp(20px, 16.36px + 1.14vw, 28px);
+    position: absolute;
+    right: -15px;
+    bottom: -5px;
+  }
+
+  .mainBuildingMobile {
+    inline-size: clamp(220px, 47.27px + 53.98vw, 600px);
+  }
+
+  .buildingCosmoportMobile {
+    position: relative;
+    display: inline-block;
+    width: clamp(220px, 47.27px + 53.98vw, 600px);
+    margin-block-start: clamp(80px, 25.45px + 17.05vw, 200px);
+  }
+
+  .takeoffPadMobile {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .rocketMobile {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    bottom: 20%;
+    left: 45%;
+    z-index: 2;
+    transition: transform 2s ease-in;
+  }
+
+  .rocketMobile[data-rocket-launch-mobile='true'] {
+    transform: translateY(-200vh);
+  }
 }
