@@ -78,6 +78,22 @@ export const roadSites = [
         height: 74,
       },
     ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/2/human2.png',
+        top: 10,
+        left: -47,
+        width: 40,
+        height: 44,
+      },
+      {
+        src: '/assets/images/park/decorations/streetlight.png',
+        top: 70,
+        left: -35,
+        width: 20,
+        height: 55,
+      },
+    ],
   },
   {
     id: 2,
@@ -198,6 +214,15 @@ export const roadSites = [
         left: 515,
         width: 34,
         height: 29,
+      },
+    ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/1/human3.png',
+        top: 0,
+        left: -20,
+        width: 31,
+        height: 74,
       },
     ],
   },
@@ -350,6 +375,15 @@ export const roadSites = [
         height: 33,
       },
     ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/1/human3.png',
+        top: 0,
+        left: -20,
+        width: 31,
+        height: 74,
+      },
+    ],
   },
   {
     id: 4,
@@ -407,6 +441,15 @@ export const roadSites = [
         left: 293,
         width: 115,
         height: 67,
+      },
+    ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/1/human3.png',
+        top: 0,
+        left: -20,
+        width: 31,
+        height: 74,
       },
     ],
   },
@@ -468,6 +511,15 @@ export const roadSites = [
         height: 74,
       },
     ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/1/human3.png',
+        top: 0,
+        left: -20,
+        width: 31,
+        height: 74,
+      },
+    ],
   },
   {
     id: 6,
@@ -523,6 +575,15 @@ export const roadSites = [
         src: '/assets/images/park/decorations/streetlight.png',
         bottom: -48,
         left: 478,
+        width: 31,
+        height: 74,
+      },
+    ],
+    mobileDecorations: [
+      {
+        src: '/assets/images/park/decorations/1/human3.png',
+        top: 0,
+        left: -20,
         width: 31,
         height: 74,
       },

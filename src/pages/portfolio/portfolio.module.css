@@ -155,16 +155,10 @@
   }
 }
 
-/* @media (max-width: 1024px) {
-  .roadMap {
-    scale: 0.53;
-    margin-block-end: -1050px;
-  }
-} */
-
 @media (max-width: 1024px) {
   .container {
     padding: 35px clamp(10px, -3.64px + 4.26vw, 40px) 49px;
+    padding-block: clamp(20px, 12.73px + 2.27vw, 36px);
   }
 
   .dekstopContent {
@@ -172,14 +166,27 @@
   }
 
   .mobileContent {
+    display: block;
+  }
+
+  .mobileContainer {
     display: flex;
     justify-content: space-between;
     gap: 11px;
     margin-block-end: clamp(20px, 10.91px + 2.84vw, 40px);
   }
 
+  .titleMobile {
+    font-size: clamp(24px, 18.55px + 1.7vw, 36px);
+  }
+
+  .subtitleMobile {
+    font-size: clamp(20px, 15.45px + 1.42vw, 30px);
+  }
+
   .roadMobile {
     inline-size: clamp(26px, calc(100vw * 0.05), 40px);
+    margin-block-start: clamp(25px, 9.09px + 4.97vw, 60px);
     align-self: stretch;
     background-image: url('/assets/images/portfolio/vertical_road.png');
     background-size: 100% auto;
@@ -191,13 +198,36 @@
     inline-size: 90%;
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 13.18px + 2.13vw, 35px);
+    gap: clamp(25px, 9.09px + 4.97vw, 60px);
+    margin-block-end: clamp(25px, 9.09px + 4.97vw, 60px);
   }
 
   .cardMobile {
     inline-size: 100%;
     position: relative;
     block-size: clamp(142px, -1.64px + 44.89vw, 458px);
+    background-image: url('/assets/images/portfolio/spotlights.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+
+  .imageWrapperMobile {
+    inline-size: 100%;
+    block-size: 100%;
+    margin-top: clamp(25px, 9.09px + 4.97vw, 60px);
+    box-sizing: border-box;
+  }
+
+  .imageWrapperMobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(25px, 9.09px + 4.97vw, 60px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 
   .imageMobile {
