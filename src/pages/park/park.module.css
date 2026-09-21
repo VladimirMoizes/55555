@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.mobileContent {
+  display: none;
+}
+
 .sound {
   position: fixed;
   top: 120px;
@@ -168,5 +172,18 @@
   .mobDecorImage {
     position: absolute;
     z-index: 2;
+    scale: 1.4;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobDecorImage {
+    scale: 1.2;
+  }
+}
+
+@media (max-width: 426px) {
+  .mobDecorImage {
+    scale: 1;
   }
 }
