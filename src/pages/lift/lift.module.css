@@ -12,6 +12,7 @@
 
 .title {
   margin-block-end: 53px;
+  font-size: clamp(20px, 15.2px + 1.5vw, 44px);
 }
 
 .blockLift {
@@ -20,6 +21,7 @@
   block-size: 697px;
   background-image: url('/assets/images/lift/лифт.png');
   position: relative;
+  transform-origin: top left;
 }
 
 .tableLift {
@@ -114,4 +116,81 @@
   position: absolute;
   top: 520px;
   right: 455px;
+}
+
+@media (max-width: 1440px) {
+  .container {
+    block-size: 630px;
+  }
+
+  .blockLift {
+    scale: 0.75;
+    margin-inline-start: 250px;
+  }
+}
+
+@media (max-width: 1367px) {
+  .container {
+    block-size: 580px;
+  }
+
+  .blockLift {
+    scale: 0.7;
+    margin-inline-start: 230px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    block-size: 440px;
+  }
+
+  .blockLift {
+    scale: 0.53;
+    margin-inline-start: 175px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    block-size: 380px;
+  }
+
+  .blockLift {
+    scale: 0.46;
+    margin-inline-start: 100px;
+  }
+}
+
+@media (max-width: 426px) {
+  .container {
+    block-size: 0px;
+  }
+
+  .blockLift {
+    scale: 0.3;
+    margin-inline-start: 28px;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    block-size: 0px;
+  }
+
+  .blockLift {
+    scale: 0.25;
+    margin-inline-start: 31px;
+  }
+}
+
+@media (max-width: 321px) {
+  .container {
+    block-size: 0px;
+  }
+
+  .blockLift {
+    scale: 0.22;
+    margin-inline-start: 22px;
+  }
 }

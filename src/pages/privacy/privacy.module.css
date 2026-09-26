@@ -1,0 +1,43 @@
+.container {
+  padding: clamp(20px, 16px + 1.25vw, 40px) clamp(25px, 14px + 3.44vw, 80px);
+}
+
+.sound {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 4;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(16px, 10.4px + 1.75vw, 44px);
+  margin-block-end: clamp(20px, 16px + 1.25vw, 40px);
+}
+
+.textStart,
+.textEnd {
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  font-size: clamp(14px, 12.8px + 0.38vw, 20px);
+}
+
+.list {
+  margin: clamp(10px, 7px + 0.94vw, 25px) 0 clamp(10px, 7px + 0.94vw, 25px)
+    clamp(30px, 26px + 1.25vw, 50px);
+  font-size: clamp(14px, 12.8px + 0.38vw, 20px);
+  line-height: 140%;
+}
+
+.listItem {
+  list-style-type: disc;
+}
+
+.link {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--color-decorative-second);
+}
