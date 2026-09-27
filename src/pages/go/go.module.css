@@ -1,6 +1,7 @@
 .imageContainer {
   position: relative;
-  width: 100%;
+  inline-size: 100%;
+  /* min-block-size: clamp(200px, 140.00px + 18.75vw, 500px); */
   min-height: 500px;
   height: 100%;
   overflow: hidden;
@@ -17,8 +18,9 @@
   position: absolute;
   bottom: 128px;
   left: 0;
-  width: 678px;
-  height: auto;
+  /* inline-size: clamp(105px, -9.6px + 35.81vw, 678px); */
+  inline-size: 678px;
+  block-size: auto;
   z-index: 3;
   cursor: pointer;
   transition: transform 2s ease-in-out;
@@ -31,20 +33,30 @@
 .houses {
   position: absolute;
   bottom: 183px;
+  /* bottom: 230px; */
+  /* inline-size: clamp(144px, -0.20px + 45.06vw, 865px); */
+  /* width: 144px; */
+  width: 865px;
 }
 
 .bush {
+  /* inline-size: clamp(50px, 2.60px + 14.81vw, 287px);
+  block-size: clamp(23px, 0.20px + 7.12vw, 137px); */
+  /* width: 50px; */
   width: 287px;
   height: 137px;
+  /* height: 23px; */
   position: absolute;
   bottom: 240px;
 }
 
 .bush:nth-of-type(3) {
+  /* left: 138px; */
   left: 831px;
 }
 
 .bush:nth-of-type(4) {
+  /* left: 183px; */
   left: 1100px;
 }
 
@@ -61,8 +73,9 @@
 
 .lineImage {
   position: absolute;
+  bottom: 185px;
   bottom: 131px;
-  right: 20px;
+  right: clamp(0px, -4px + 1.25vw, 20px);
   width: 100%;
   height: auto;
   z-index: 2;
@@ -70,8 +83,12 @@
 
 .pointerWrapper {
   position: absolute;
+  /* width: 57px;
+  height: 58px; */
   width: 222px;
   height: 228px;
+
+  /* right: 320px; */
   left: 1375px;
   bottom: 228px;
   cursor: pointer;
@@ -92,7 +109,10 @@
 
 .tree {
   position: absolute;
+  /* width: 38px; */
+  width: 227px;
   bottom: 197px;
+  /* right: 0; */
   left: 1693px;
 }
 
@@ -100,11 +120,60 @@
   position: absolute;
   top: 52px;
   left: 60px;
+  /* top: 5px;
+  left: 15px; */
   font-family: var(--font-primary);
   font-weight: 400;
+  /* font-size: 6px; */
   font-size: 20px;
   animation: elegantPulse 3s 2.5s ease-in-out infinite;
   cursor: pointer;
+}
+
+@media (max-width: 1440px) {
+  .carImage {
+    inline-size: 509px;
+  }
+
+  .houses {
+    bottom: 200px;
+    inline-size: 649px;
+  }
+
+  .bush {
+    inline-size: 215px;
+    block-size: 102px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 623px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 825px;
+  }
+
+  .pointerWrapper {
+    inline-size: 166px;
+    block-size: 171px;
+    left: 1070px;
+    bottom: 231px;
+    cursor: pointer;
+  }
+
+  .pointerText {
+    top: 37px;
+    left: 44px;
+    font-size: 18px;
+  }
+
+  .tree {
+    position: absolute;
+    inline-size: 170px;
+    bottom: 205px;
+    left: 1270px;
+  }
 }
 
 @keyframes elegantPulse {
@@ -130,35 +199,3 @@
     text-shadow: 0 0 20px rgba(85, 239, 196, 0.2);
   }
 }
-
-/* .pointerText {
-  position: absolute;
-  top: 52px;
-  left: 60px;
-  font-family: var(--font-primary);
-  font-weight: 400;
-  font-size: 20px;
-  animation: colorPulse 3s ease-in-out infinite;
-  cursor: pointer;
-}
-
-@keyframes colorPulse {
-  0% {
-    color: var(--color-text);
-  }
-  20% {
-    color: var(--color-primary);
-  }
-  40% {
-    color: var(--color-text);
-  }
-  60% {
-    color: var(--color-primary);
-  }
-  80% {
-    color: var(--color-text);
-  }
-  100% {
-    color: var(--color-text);
-  }
-} */
