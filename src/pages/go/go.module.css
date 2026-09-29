@@ -73,7 +73,6 @@
 
 .lineImage {
   position: absolute;
-  bottom: 185px;
   bottom: 131px;
   right: clamp(0px, -4px + 1.25vw, 20px);
   width: 100%;
@@ -169,10 +168,335 @@
   }
 
   .tree {
-    position: absolute;
     inline-size: 170px;
     bottom: 205px;
     left: 1270px;
+  }
+}
+
+@media (max-width: 1367px) {
+  .carImage {
+    inline-size: 482px;
+    bottom: 142px;
+  }
+
+  .houses {
+    bottom: 200px;
+    inline-size: 616px;
+  }
+
+  .bush {
+    inline-size: 204px;
+    block-size: 97px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 590px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 782px;
+  }
+
+  .pointerWrapper {
+    inline-size: 157px;
+    block-size: 162px;
+    left: 1000px;
+    bottom: 231px;
+    cursor: pointer;
+  }
+
+  .pointerText {
+    top: 35px;
+    left: 42px;
+    font-size: 16px;
+  }
+
+  .tree {
+    inline-size: 161px;
+    bottom: 205px;
+    left: 1204px;
+  }
+
+  .lineImage {
+    bottom: 142px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carImage {
+    inline-size: 261px;
+    bottom: 185px;
+  }
+
+  .solidLine {
+    bottom: 240px;
+    height: 2px;
+  }
+
+  .houses {
+    bottom: 210px;
+    inline-size: 462px;
+  }
+
+  .bush {
+    inline-size: 145px;
+    block-size: 73px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 442px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 586px;
+  }
+
+  .pointerWrapper {
+    inline-size: 117px;
+    block-size: 122px;
+    left: 750px;
+    bottom: 232px;
+    cursor: pointer;
+  }
+
+  .pointerText {
+    top: 23px;
+    left: 32px;
+    font-size: 12px;
+  }
+
+  .tree {
+    inline-size: 120px;
+    bottom: 220px;
+    left: 902px;
+  }
+
+  .lineImage {
+    bottom: 182px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carImage {
+    inline-size: 196px;
+    bottom: 200px;
+  }
+
+  .solidLine {
+    bottom: 240px;
+    height: 2px;
+  }
+
+  .houses {
+    bottom: 220px;
+    inline-size: 347px;
+  }
+
+  .bush {
+    inline-size: 109px;
+    block-size: 60px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 335px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 443px;
+  }
+
+  .pointerWrapper {
+    inline-size: 88px;
+    block-size: 92px;
+    left: 562px;
+    bottom: 234px;
+  }
+
+  .pointerText {
+    top: 15px;
+    left: 22px;
+    font-size: 10px;
+  }
+
+  .tree {
+    inline-size: 90px;
+    bottom: 220px;
+    left: 676px;
+  }
+
+  .lineImage {
+    bottom: 192px;
+  }
+}
+
+@media (max-width: 426px) {
+  .carImage {
+    inline-size: 115px;
+    bottom: 213px;
+  }
+
+  .solidLine {
+    bottom: 240px;
+    height: 1px;
+  }
+
+  .houses {
+    bottom: 228px;
+    inline-size: 193px;
+  }
+
+  .bush {
+    inline-size: 61px;
+    block-size: 34px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 185px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 245px;
+  }
+
+  .pointerWrapper {
+    inline-size: 55px;
+    block-size: 57px;
+    left: 311px;
+    bottom: 237px;
+  }
+
+  .pointerText {
+    top: 5px;
+    left: 14px;
+    font-size: 6px;
+  }
+
+  .tree {
+    inline-size: 50px;
+    bottom: 230px;
+    left: 374px;
+  }
+
+  .lineImage {
+    bottom: 205px;
+  }
+}
+
+@media (max-width: 376px) {
+  .carImage {
+    inline-size: 110px;
+    bottom: 216px;
+  }
+
+  .solidLine {
+    bottom: 240px;
+    height: 1px;
+  }
+
+  .houses {
+    bottom: 230px;
+    inline-size: 170px;
+  }
+
+  .bush {
+    inline-size: 54px;
+    block-size: 30px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 162px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 216px;
+  }
+
+  .pointerWrapper {
+    inline-size: 53px;
+    block-size: 55px;
+    left: 275px;
+    bottom: 237px;
+  }
+
+  .pointerText {
+    top: 4px;
+    left: 14px;
+    font-size: 5.5px;
+  }
+
+  .tree {
+    inline-size: 45px;
+    bottom: 232px;
+    left: 330px;
+  }
+
+  .lineImage {
+    bottom: 210px;
+  }
+}
+
+@media (max-width: 321px) {
+  .imageContainer {
+    position: relative;
+    min-height: 450px;
+  }
+
+  .carImage {
+    inline-size: 100px;
+    bottom: 218px;
+  }
+
+  .solidLine {
+    bottom: 240px;
+    height: 1px;
+  }
+
+  .houses {
+    bottom: 230px;
+    inline-size: 145px;
+  }
+
+  .bush {
+    inline-size: 46px;
+    block-size: 25px;
+    bottom: 240px;
+  }
+
+  .bush:nth-of-type(3) {
+    left: 139px;
+  }
+
+  .bush:nth-of-type(4) {
+    left: 184px;
+  }
+
+  .pointerWrapper {
+    inline-size: 53px;
+    block-size: 55px;
+    left: 233px;
+    bottom: 237px;
+  }
+
+  .pointerText {
+    top: 4px;
+    left: 14px;
+    font-size: 5.5px;
+  }
+
+  .tree {
+    inline-size: 39px;
+    bottom: 232px;
+    left: 280px;
+  }
+
+  .lineImage {
+    bottom: 215px;
   }
 }
 
