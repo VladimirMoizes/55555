@@ -14,6 +14,10 @@
   z-index: 2;
 } */
 
+.mobileTitle {
+  display: none;
+}
+
 .carImage {
   position: absolute;
   bottom: 128px;
@@ -91,6 +95,10 @@
   left: 1375px;
   bottom: 228px;
   cursor: pointer;
+}
+
+.pointerImageMobile {
+  display: none;
 }
 
 .pointerImage {
@@ -280,6 +288,19 @@
 }
 
 @media (max-width: 768px) {
+  .imageContainer {
+    display: flex;
+  }
+
+  .mobileTitle {
+    display: block;
+    margin: 0 auto;
+    font-size: clamp(14px, 9.71px + 1.34vw, 20px);
+    padding: 20px;
+    text-align: center;
+    max-block-size: 40px;
+  }
+
   .carImage {
     inline-size: 196px;
     bottom: 200px;
@@ -334,71 +355,97 @@
 }
 
 @media (max-width: 426px) {
+  main {
+    flex: 0 0 auto !important;
+  }
+
+  .imageContainer {
+    min-height: 350px;
+    height: 350px;
+  }
+
   .carImage {
-    inline-size: 115px;
-    bottom: 213px;
+    inline-size: 150px;
+    bottom: 104px;
   }
 
   .solidLine {
-    bottom: 240px;
+    bottom: 140px;
     height: 1px;
   }
 
   .houses {
-    bottom: 228px;
-    inline-size: 193px;
+    /* bottom: 228px;
+    inline-size: 193px; */
+    display: none;
   }
 
   .bush {
-    inline-size: 61px;
+    /* inline-size: 61px;
     block-size: 34px;
-    bottom: 240px;
+    bottom: 240px; */
+    display: none;
   }
 
-  .bush:nth-of-type(3) {
+  /* .bush:nth-of-type(3) {
     left: 185px;
   }
 
   .bush:nth-of-type(4) {
     left: 245px;
-  }
+  } */
 
   .pointerWrapper {
-    inline-size: 55px;
-    block-size: 57px;
-    left: 311px;
-    bottom: 237px;
+    inline-size: 70px;
+    /* block-size: 60px; */
+    left: clamp(225px, -64.52px + 90.48vw, 320px);
+    bottom: 100px;
+  }
+
+  .pointerImage {
+    display: none;
+  }
+
+  .pointerImageMobile {
+    display: block;
+    inline-size: 100%;
   }
 
   .pointerText {
-    top: 5px;
-    left: 14px;
-    font-size: 6px;
+    top: 0;
+    left: 15px;
+    font-size: 9px;
   }
 
   .tree {
-    inline-size: 50px;
+    /* inline-size: 50px;
     bottom: 230px;
-    left: 374px;
+    left: 374px; */
+    display: none;
   }
 
   .lineImage {
-    bottom: 205px;
+    bottom: 100px;
   }
 }
 
 @media (max-width: 376px) {
+  .imageContainer {
+    min-height: 350px;
+    height: 350px;
+  }
+
   .carImage {
-    inline-size: 110px;
-    bottom: 216px;
+    inline-size: 145px;
+    bottom: 104px;
   }
 
   .solidLine {
-    bottom: 240px;
+    bottom: 140px;
     height: 1px;
   }
 
-  .houses {
+  /* .houses {
     bottom: 230px;
     inline-size: 170px;
   }
@@ -415,49 +462,49 @@
 
   .bush:nth-of-type(4) {
     left: 216px;
-  }
+  } */
 
   .pointerWrapper {
-    inline-size: 53px;
-    block-size: 55px;
-    left: 275px;
-    bottom: 237px;
+    inline-size: 65px;
+    /* block-size: 60px; */
+    /* left: 280px; */
+    bottom: 100px;
   }
 
   .pointerText {
-    top: 4px;
-    left: 14px;
-    font-size: 5.5px;
+    top: 0;
+    left: 13px;
+    font-size: 8.5px;
   }
 
-  .tree {
+  /* .tree {
     inline-size: 45px;
     bottom: 232px;
     left: 330px;
-  }
+  } */
 
   .lineImage {
-    bottom: 210px;
+    bottom: 100px;
   }
 }
 
 @media (max-width: 321px) {
   .imageContainer {
-    position: relative;
-    min-height: 450px;
+    min-height: 350px;
+    height: 350px;
   }
 
   .carImage {
-    inline-size: 100px;
-    bottom: 218px;
+    inline-size: 140px;
+    bottom: 105px;
   }
 
   .solidLine {
-    bottom: 240px;
+    bottom: 140px;
     height: 1px;
   }
 
-  .houses {
+  /* .houses {
     bottom: 230px;
     inline-size: 145px;
   }
@@ -474,29 +521,29 @@
 
   .bush:nth-of-type(4) {
     left: 184px;
-  }
+  } */
 
   .pointerWrapper {
-    inline-size: 53px;
-    block-size: 55px;
-    left: 233px;
-    bottom: 237px;
+    inline-size: 65px;
+    /* block-size: 60px; */
+    /* left: 225px; */
+    bottom: 100px;
   }
 
   .pointerText {
-    top: 4px;
-    left: 14px;
-    font-size: 5.5px;
+    top: 0;
+    left: 13px;
+    font-size: 8.5px;
   }
 
-  .tree {
+  /* .tree {
     inline-size: 39px;
     bottom: 232px;
     left: 280px;
-  }
+  } */
 
   .lineImage {
-    bottom: 215px;
+    bottom: 100px;
   }
 }
 

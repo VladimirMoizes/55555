@@ -27,7 +27,10 @@ function setupGoAnimation() {
   car.addEventListener('click', startAnimation);
   if (pointer) pointer.addEventListener('click', startAnimation);
 
-  autoTimer = window.setTimeout(startAnimation, 10000);
+  autoTimer = window.setTimeout(
+    startAnimation,
+    window.innerWidth < 426 ? 3000 : 10000
+  );
 
   window.addEventListener('beforeunload', () => {
     if (autoTimer) clearTimeout(autoTimer);
