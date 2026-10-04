@@ -13,6 +13,7 @@
 .mainTitle {
   margin-block: 14px 20px;
   margin-inline: auto;
+  font-size: clamp(16px, 10.4px + 1.75vw, 44px);
 }
 
 .textBold {
@@ -195,43 +196,51 @@
 
 .dev {
   background-color: #fff;
-  padding: 136px 46px 85px 55px;
+  padding: clamp(30px, 8.8px + 6.63vw, 136px) clamp(20px, 14.8px + 1.63vw, 46px)
+    clamp(30px, 19px + 3.44vw, 85px) clamp(20px, 13px + 2.19vw, 55px);
   display: flex;
   flex-direction: column;
-  gap: 47px;
+  gap: clamp(20px, 14.6px + 1.69vw, 47px);
 
   .secondTitle {
-    max-inline-size: 1174px;
+    max-inline-size: clamp(250px, 65.2px + 57.75vw, 1174px);
     margin: 0 auto;
     text-align: center;
+    font-size: clamp(16px, 10.4px + 1.75vw, 44px);
   }
 
   .cardList {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
   }
 
   .card {
     background-color: var(--color-card);
-    padding: 40px 45px 46px 41px;
+    padding: clamp(20px, 13.14px + 2.14vw, 44px);
     color: var(--color-dark);
     max-inline-size: 550px;
-    min-block-size: 440px;
+    block-size: 440px;
     border-radius: 10px;
+    overflow-y: scroll;
 
     .cardHeader {
       display: flex;
       align-items: center;
       gap: 30px;
-      margin-block-end: 30px;
+      margin-block-end: clamp(15px, 10.71px + 1.34vw, 30px);
+    }
+
+    .cardHeaderTitle {
+      font-size: clamp(16px, 13.71px + 0.71vw, 24px);
     }
 
     .cardIcon {
-      inline-size: 80px;
+      inline-size: clamp(30px, 15.71px + 4.46vw, 80px);
     }
 
     .cardText {
-      font-size: 22px;
+      font-size: clamp(16px, 14.29px + 0.54vw, 22px);
       line-height: 140%;
       letter-spacing: -0.035em;
     }

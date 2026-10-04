@@ -29,8 +29,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
   <section class={styles.container}>
     <SoundButton class={styles.sound} />
     <h1 class={styles.mainTitle} id="mainTitle">{currentTitle}</h1>
-    <div class={styles.mainBlock} id="mainBlock">
-      <!-- Видео контейнер (кликабельный) -->
+    <!-- <div class={styles.mainBlock} id="mainBlock">
       <div class={styles.videoContainer} id="videoContainer">
         <video id="introVideo" muted playsinline>
           <source src="/assets/videos/website_intro.mp4" type="video/mp4" />
@@ -38,7 +37,6 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         </video>
       </div>
 
-      <!-- Девушка -->
       <img
         class={styles.imageGirl}
         id="imageGirl"
@@ -46,7 +44,6 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         alt="girl"
       />
 
-      <!-- Текстовые блоки -->
       <div class={styles.mainBlockTextStart}>
         <div class={styles.overlay}></div>
         <p class={styles.text}>
@@ -80,7 +77,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           <Icon name="arrow-down" size={50} color="var(--color-text)" />
         </button>
       </div>
-    </div>
+    </div> -->
 
     <div class={styles.dev} id="dev">
       <h2 class={styles.secondTitle}>
@@ -137,7 +134,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
       </ul>
     </div>
 
-    <div class={styles.design}>
+    <!-- <div class={styles.design}>
       <div class={styles.buttons}>
         <button class={styles.button} data-button-design>
           <Icon name="arrow-left" />
@@ -462,7 +459,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
               На небольшой сайт с эксклюзивным дизайном на <span
                 class={styles.textBold}
                 >Битрикс
-              </span>или <span class={styles.textBold}>Вордпресс </span>
+              </span> или <span class={styles.textBold}>Вордпресс </span>
               (отрисовывается 5-7 базовых страниц) цена стартует от 250 т.р., срок
               от 2 месяцев
             </p>
@@ -519,9 +516,9 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         class={styles.lineImage}
         aria-hidden="true"
       />
-    </div>
+    </div> -->
     <!-- ====== СЛАЙДЕР ДЛЯ ДИЗАЙНА (sites) ====== -->
-    <div class={styles.sliderOverlay} id="sliderDesign">
+    <!-- <div class={styles.sliderOverlay} id="sliderDesign">
       <div class={styles.sliderContainer}>
         <button class={styles.sliderClose} data-close="design">✕</button>
         <div class={styles.sliderContent}>
@@ -539,10 +536,10 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- ====== СЛАЙДЕР ДЛЯ ЮЗАБИЛИТИ (usability) ====== -->
-    <div class={styles.sliderOverlay} id="sliderUsability">
+    <!-- <div class={styles.sliderOverlay} id="sliderUsability">
       <div class={styles.sliderContainer}>
         <button class={styles.sliderClose} data-close="usability">✕</button>
         <div class={styles.sliderContent}>
@@ -560,7 +557,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </MainLayout>
 

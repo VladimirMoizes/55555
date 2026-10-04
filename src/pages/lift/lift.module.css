@@ -167,10 +167,14 @@
     block-size: 350px;
   }
 
+  .title {
+    margin-block-end: 25px;
+  }
+
   .blockLift {
-    scale: 0.4;
-    margin-inline-start: -110px;
-    clip-path: inset(0 0 0 30%);
+    scale: 0.5;
+    margin-inline-start: -271px;
+    clip-path: inset(0 0 0 55%);
   }
 }
 
@@ -180,8 +184,8 @@
   }
 
   .blockLift {
-    scale: 0.35;
-    margin-inline-start: -95px;
+    scale: 0.4;
+    margin-inline-start: -200px;
   }
 }
 
@@ -191,7 +195,7 @@
   }
 
   .blockLift {
-    scale: 0.3;
-    margin-inline-start: -83px;
+    scale: 0.4;
+    margin-inline-start: -225px;
   }
 }
