@@ -164,12 +164,13 @@
 
 @media (max-width: 426px) {
   .container {
-    block-size: 0px;
+    block-size: 350px;
   }
 
   .blockLift {
-    scale: 0.3;
-    margin-inline-start: 28px;
+    scale: 0.4;
+    margin-inline-start: -110px;
+    clip-path: inset(0 0 0 30%);
   }
 }
 
@@ -179,8 +180,8 @@
   }
 
   .blockLift {
-    scale: 0.25;
-    margin-inline-start: 31px;
+    scale: 0.35;
+    margin-inline-start: -95px;
   }
 }
 
@@ -190,7 +191,7 @@
   }
 
   .blockLift {
-    scale: 0.22;
-    margin-inline-start: 22px;
+    scale: 0.3;
+    margin-inline-start: -83px;
   }
 }
