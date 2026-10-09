@@ -86,7 +86,7 @@ function initModalSlider(): void {
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       } else {
-        console.log('❌ Слайд ' + type + ' ' + index + ' не имеет изображения');
+        console.log('Слайд ' + type + ' ' + index + ' не имеет изображения');
       }
     }
 
@@ -256,16 +256,22 @@ function initSlider(): void {
 
   const leftBtn = buttons[0] as HTMLButtonElement;
   const rightBtn = buttons[1] as HTMLButtonElement;
-  const scrollAmount: number = 593;
+
+  function getScrollAmount(): number {
+    const width = window.innerWidth;
+    if (width >= 1440) return 593;
+    if (width <= 426) return Math.round(593 * (width / 710));
+    return Math.round(593 * (width / 1440));
+  }
 
   leftBtn.addEventListener('click', (e: MouseEvent): void => {
     e.preventDefault();
-    cardList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    cardList.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 
   rightBtn.addEventListener('click', (e: MouseEvent): void => {
     e.preventDefault();
-    cardList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    cardList.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 
   const usabilityList = document.querySelector(

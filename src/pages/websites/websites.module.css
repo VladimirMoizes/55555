@@ -222,7 +222,9 @@
     max-inline-size: 550px;
     block-size: 440px;
     border-radius: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     .cardHeader {
       display: flex;
@@ -250,16 +252,44 @@
     }
   }
 
+  .card::-webkit-scrollbar {
+    display: none;
+  }
+
   .cardListItem:last-of-type .card {
     background-image: url('/assets/images/sites/sphere.svg');
     background-repeat: no-repeat;
     background-position: bottom;
-    padding: 65px 59px 0 65px;
+    padding: 60px 60px 0 60px;
   }
 
   .cardListItem:last-of-type .cardText {
     font-size: 18px;
     letter-spacing: -0.038em;
+  }
+
+  @media (max-width: 1440px) {
+    .cardList {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .card {
+      block-size: auto;
+    }
+
+    .cardListItem:last-of-type .card {
+      block-size: 400px;
+      padding: clamp(30px, 21.43px + 2.68vw, 60px)
+        clamp(30px, 21.43px + 2.68vw, 60px) 0
+        clamp(30px, 21.43px + 2.68vw, 60px);
+    }
+
+    .cardListItem:last-of-type .cardText {
+      font-size: clamp(16px, 15.09px + 0.28vw, 18px);
+    }
   }
 }
 
@@ -267,41 +297,51 @@
   display: flex;
   flex-direction: column;
   background-color: #282828;
-  padding: 75px 0 58px 59px;
+  padding: clamp(18px, 16.8px + 0.38vw, 24px) 0
+    clamp(30px, 24.4px + 1.75vw, 58px) clamp(30px, 24.4px + 1.75vw, 58px);
   align-items: center;
   position: relative;
 
   .buttons {
     position: absolute;
-    right: 36px;
-    top: 175px;
+    right: clamp(12px, 7.2px + 1.5vw, 36px);
+    top: clamp(115px, 111px + 1.25vw, 135px);
     display: flex;
-    gap: 20px;
+    gap: clamp(10px, 8px + 0.63vw, 20px);
   }
 
   .button {
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
-    padding: 12px;
+    padding: 8px;
+  }
+
+  .button svg {
+    width: clamp(12px, 9.6px + 0.75vw, 24px) !important;
+    height: clamp(12px, 9.6px + 0.75vw, 24px) !important;
   }
 
   .secondTitle {
+    margin-inline-end: 10px;
     color: var(--color-text);
-    margin-block-end: 15px;
+    margin-block-end: clamp(12px, 9.6px + 0.75vw, 24px);
+    font-size: clamp(18px, 12.8px + 1.63vw, 44px);
   }
 
   .subTitle {
-    font-size: 24px;
+    margin-inline-end: 10px;
+    font-size: clamp(12px, 9.6px + 0.75vw, 24px);
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: -0.04em;
-    margin-block-end: 98px;
+    margin-block-end: clamp(56px, 48px + 2.5vw, 96px);
   }
 
   .cardList {
     display: flex;
     align-self: start;
-    gap: 45px;
-    margin-block-end: 57px;
+    gap: clamp(20px, 15px + 1.56vw, 45px);
+    margin-block-end: clamp(25px, 18.6px + 2vw, 57px);
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
@@ -311,8 +351,8 @@
     -ms-overflow-style: none;
 
     .cardListItem {
-      inline-size: 548px;
-      block-size: 436px;
+      inline-size: clamp(250px, 190.4px + 18.63vw, 548px);
+      block-size: clamp(190px, 140.8px + 15.38vw, 436px);
       flex-shrink: 0;
 
       .card {
@@ -334,12 +374,12 @@
         }
 
         .cardTitle {
-          inline-size: 326px;
-          font-size: 20px;
+          max-inline-size: clamp(220px, 198.8px + 6.63vw, 326px);
+          font-size: clamp(12px, 9.6px + 0.75vw, 24px);
           text-align: start;
           position: absolute;
-          bottom: 30px;
-          left: 30px;
+          bottom: clamp(20px, 18px + 0.63vw, 30px);
+          left: clamp(15px, 12px + 0.94vw, 30px);
           z-index: 1;
         }
       }
@@ -352,9 +392,15 @@
 
   .text {
     text-align: center;
-    font-size: 18px;
+    font-size: clamp(12px, 10.8px + 0.38vw, 18px);
     letter-spacing: -0.04em;
     line-height: 140%;
+  }
+
+  @media (max-width: 343px) {
+    .buttons {
+      top: 150px;
+    }
   }
 }
 
