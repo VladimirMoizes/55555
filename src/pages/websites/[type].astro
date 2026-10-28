@@ -379,12 +379,20 @@ const currentTitle = titles[type] || 'Разработка сайтов';
     </div>
 
     <div class={styles.functional}>
+      <div class={styles.buttons}>
+        <button class={styles.button} data-button-functional>
+          <Icon name="arrow-left" />
+        </button>
+        <button class={styles.button} data-button-functional>
+          <Icon name="arrow-right" />
+        </button>
+      </div>
       <h2 class={styles.functionalTitle}>Функционал сайтов</h2>
       <p class={styles.functionalSubTitle}>
         Функционал сайтов постоянно развивается. Ниже мы представляем наиболее
         частые его варианты:
       </p>
-      <ul class={styles.functionalList}>
+      <ul class={styles.functionalList} data-functional-list>
         {
           functional.map((item) => {
             return (

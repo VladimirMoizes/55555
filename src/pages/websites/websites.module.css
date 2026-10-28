@@ -632,7 +632,6 @@
     bottom right,
     center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  /* background-size: 900px, 1500px, cover; */
   color: var(--color-dark);
   text-align: start;
 
@@ -672,19 +671,42 @@
 }
 
 .functional {
-  padding: 82px 28px 102px 60px;
+  padding: clamp(22px, 4.86px + 5.36vw, 82px) 28px
+    clamp(30px, 9.43px + 6.43vw, 102px) clamp(30px, 9.43px + 6.43vw, 102px);
   text-align: start;
   background-color: var(--color-text);
   color: var(--color-dark);
+  position: relative;
+
+  .buttons {
+    display: none;
+    position: absolute;
+    right: clamp(12px, 7.2px + 1.5vw, 36px);
+    top: 160px;
+    gap: clamp(10px, 8px + 0.63vw, 20px);
+  }
+
+  .button {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 8px;
+  }
+
+  .button svg {
+    width: clamp(12px, 9.6px + 0.75vw, 24px) !important;
+    height: clamp(12px, 9.6px + 0.75vw, 24px) !important;
+  }
 
   .functionalTitle {
     text-align: start;
     margin-block-end: 15px;
+    font-size: clamp(20px, 13.14px + 2.14vw, 44px);
   }
 
   .functionalSubTitle {
-    margin-block-end: 50px;
+    margin-block-end: clamp(70px, 61.43px + 2.68vw, 100px);
     letter-spacing: 0.021em;
+    font-size: clamp(14px, 12.86px + 0.36vw, 18px);
   }
 
   .functionalList {
@@ -692,26 +714,24 @@
     justify-content: space-between;
     gap: 15px;
 
-    .listItem {
-      max-inline-size: 289px;
-    }
-
     .card {
       background-color: var(--color-card);
       border-radius: 5px;
       display: flex;
       flex-direction: column;
-      padding: 20px 24px;
-      min-block-size: 410px;
+      padding: clamp(8px, 4.57px + 1.07vw, 20px)
+        clamp(12px, 8.57px + 1.07vw, 24px);
+      inline-size: clamp(250px, 238.86px + 3.48vw, 289px);
+      min-block-size: clamp(310px, 281.43px + 8.93vw, 410px);
       height: 100%;
 
       .cardButtonIcon {
-        inline-size: 52px;
-        block-size: 50px;
+        inline-size: clamp(42px, 39.14px + 0.89vw, 52px);
+        block-size: clamp(40px, 37.14px + 0.89vw, 50px);
         border-radius: 50%;
         background-color: #ababab;
         padding: 11px;
-        margin-block-end: 20px;
+        margin-block-end: clamp(5px, 0.71px + 1.34vw, 20px);
 
         .cardButtonImage {
           inline-size: 100%;
@@ -725,7 +745,7 @@
 
         .cardTitle {
           font-weight: 600;
-          font-size: 20px;
+          font-size: clamp(16px, 14.86px + 0.36vw, 20px);
           line-height: 140%;
           letter-spacing: -0.05em;
           text-transform: uppercase;
@@ -733,12 +753,12 @@
           font-family: var(--font-secondary);
           max-inline-size: 150px;
           margin-bottom: 12px;
-          block-size: 56px;
+          block-size: clamp(36px, 30.29px + 1.79vw, 56px);
         }
 
         .cardText {
           font-weight: 400;
-          font-size: 16px;
+          font-size: clamp(14px, 13.43px + 0.18vw, 16px);
           line-height: 140%;
           letter-spacing: -0.02em;
           flex: 1;
@@ -752,10 +772,11 @@
         margin-top: auto;
         display: flex;
         inline-size: auto;
+        margin-block-start: 10px;
 
         .cardButtonLookText {
           font-weight: 600;
-          font-size: 16px;
+          font-size: clamp(12px, 10.86px + 0.36vw, 16px);
           line-height: 120%;
           letter-spacing: 0%;
           text-align: center;
@@ -776,6 +797,34 @@
         outline: 2px solid var(--color-primary);
       }
     }
+  }
+
+  @media (max-width: 1440px) {
+    .buttons {
+      display: flex;
+    }
+
+    .functionalList {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      gap: 15px;
+      padding-block-end: 10px;
+      max-inline-size: 100%;
+      inline-size: 100%;
+      justify-content: flex-start;
+
+      .cardText {
+        font-size: 1px;
+      }
+    }
+  }
+
+  .functionalList::-webkit-scrollbar {
+    display: none;
   }
 }
 

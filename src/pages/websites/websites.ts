@@ -296,6 +296,50 @@ function initSlider(): void {
       usabilityList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
+
+  const functionalList = document.querySelector(
+    '[data-functional-list]'
+  ) as HTMLElement | null;
+  const functionalButtons = document.querySelectorAll(
+    '[data-button-functional]'
+  ) as NodeListOf<HTMLButtonElement>;
+
+  if (functionalList && functionalButtons.length >= 2) {
+    const leftBtn = functionalButtons[0] as HTMLButtonElement;
+    const rightBtn = functionalButtons[1] as HTMLButtonElement;
+
+    function getFunctionalScrollAmount(): number {
+      const width = window.innerWidth;
+      const cardWidth = 289 + 15;
+      if (width >= 1440) return cardWidth;
+      if (width <= 1024 && width > 768)
+        return Math.round(cardWidth * (width / 1084));
+      if (width <= 768 && width > 425)
+        return Math.round(cardWidth * (width / 828));
+      if (width <= 425 && width >= 320)
+        return Math.round(cardWidth * (width / 370));
+      return Math.round(cardWidth * (width / 1440));
+    }
+
+    leftBtn.addEventListener('click', (e: MouseEvent): void => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log(functionalButtons);
+      functionalList.scrollBy({
+        left: -getFunctionalScrollAmount(),
+        behavior: 'smooth',
+      });
+    });
+
+    rightBtn.addEventListener('click', (e: MouseEvent): void => {
+      e.preventDefault();
+      e.stopPropagation();
+      functionalList.scrollBy({
+        left: getFunctionalScrollAmount(),
+        behavior: 'smooth',
+      });
+    });
+  }
 }
 
 function initStages(): void {
