@@ -620,7 +620,9 @@
 
 .projects {
   background-color: var(--color-text);
-  padding: 95px 0 95px 56px;
+  padding: clamp(35px, 17.86px + 5.36vw, 95px)
+    clamp(0px, 12.86px + -0.89vw, 10px) clamp(35px, 17.86px + 5.36vw, 95px)
+    clamp(20px, 9.71px + 3.21vw, 56px);
   background:
     url('/assets/images/sites/projects_background_2.png'),
     url('/assets/images/sites/projects_background.png'),
@@ -630,19 +632,42 @@
     bottom right,
     center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 900px, 1500px, cover;
+  /* background-size: 900px, 1500px, cover; */
   color: var(--color-dark);
   text-align: start;
 
   .projectsTitle {
     text-align: start;
-    margin-block-end: 33px;
+    margin-block-end: clamp(0px, 12.86px + -0.89vw, 10px);
+    font-size: clamp(20px, 13.14px + 2.14vw, 44px);
   }
 
   .projectText {
-    max-inline-size: 1012px;
+    max-inline-size: clamp(300px, 96.57px + 63.57vw, 1012px);
     letter-spacing: 0.02em;
     line-height: 1.55em;
+    font-size: clamp(14px, 12.86px + 0.36vw, 18px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .projects {
+    background:
+      url('/assets/images/sites/projects_background.png'),
+      url('/assets/images/sites/projects_background_1.png');
+    background-position:
+      bottom right,
+      center center;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    background: url('/assets/images/sites/projects_background_1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -755,21 +780,19 @@
 }
 
 .stages {
-  padding: 92px 45px;
+  padding: clamp(50px, 41.6px + 2.63vw, 92px) clamp(30px, 27px + 0.94vw, 45px);
 
   .stagesList {
     display: flex;
-    margin-block-end: 57px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 30px;
+    margin-block-end: clamp(30px, 24.6px + 1.69vw, 57px);
   }
 
   .stagesTitle {
-    margin-block-end: 59px;
-  }
-
-  .stagesListItem:not(:last-child) .card {
-    clip-path: polygon(0% 0%, 80.5% 0%, 100% 50%, 80.5% 100%, 0% 100%);
-    margin-inline-end: -15px;
-    inline-size: 473px;
+    margin-block-end: clamp(20px, 13.14px + 2.14vw, 44px);
+    font-size: clamp(20px, 13.14px + 2.14vw, 44px);
   }
 
   .card {
@@ -797,6 +820,24 @@
       max-inline-size: 280px;
       line-height: 140%;
     }
+  }
+
+  .stagesText {
+    max-inline-size: clamp(300px, 124.57px + 54.82vw, 914px);
+    margin: 0 auto;
+    text-align: center;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    font-size: clamp(14px, 12.86px + 0.36vw, 18px);
+  }
+
+  @media (min-width: 1024px) {
+    .stagesListItem:not(:last-child) .card {
+      clip-path: polygon(0% 0%, 80.5% 0%, 100% 50%, 80.5% 100%, 0% 100%);
+      margin-inline-end: -15px;
+      inline-size: 473px;
+      /* rotate: 90deg; */
+    }
 
     .rightBorder {
       position: absolute;
@@ -805,52 +846,76 @@
     }
   }
 
-  .stagesText {
-    max-inline-size: 914px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 140%;
-    letter-spacing: 0.02em;
+  @media (max-width: 1023.5px) {
+    .stagesList {
+      gap: 20px;
+    }
+
+    .rightBorder {
+      display: none;
+    }
+
+    .card {
+      block-size: clamp(160px, 119.09px + 12.78vw, 250px);
+      inline-size: clamp(250px, 181.82px + 21.31vw, 400px);
+      padding: 10px 5px;
+    }
+
+    .cardText {
+      font-size: clamp(14px, 12.18px + 0.57vw, 18px);
+    }
+
+    .card .cardNumber {
+      inline-size: clamp(45px, 33.64px + 3.55vw, 70px);
+      block-size: clamp(45px, 33.64px + 3.55vw, 70px);
+      border-radius: 50%;
+      padding-block-start: clamp(3px, 1.64px + 0.43vw, 6px);
+      font-size: clamp(25px, 19.09px + 1.85vw, 38px);
+      line-height: 140%;
+      margin-block-end: clamp(15px, 8.18px + 2.13vw, 30px);
+    }
   }
 }
 
 .cost {
   background-color: #f8f8f8;
-  padding: 90px 60px 50px;
+  padding: clamp(30px, 18px + 3.75vw, 90px) clamp(30px, 18px + 3.75vw, 90px)
+    clamp(20px, 14px + 1.88vw, 50px);
   color: var(--color-dark);
 
   .costTitle {
-    margin-block-end: 40px;
+    margin-block-end: clamp(20px, 16px + 1.25vw, 40px);
+    font-size: clamp(20px, 13.14px + 2.14vw, 44px);
   }
 
   .costList {
-    margin-block-end: 253px;
+    margin-block-end: clamp(53px, 13px + 12.5vw, 253px);
   }
 
   .costListItem:nth-child(2) {
-    margin-inline-start: 181px;
+    margin-inline-start: clamp(0px, -36.2px + 11.31vw, 181px);
   }
   .costListItem:nth-child(3) {
-    margin-inline-start: 602px;
+    margin-inline-start: clamp(0px, -120.4px + 37.63vw, 602px);
   }
   .costListItem:nth-child(4) {
-    margin-inline-start: 902px;
+    margin-inline-start: clamp(0px, -180.4px + 56.38vw, 902px);
   }
 
   .card {
     max-inline-size: 898px;
     min-block-size: 110px;
-    margin-block-end: 20px;
+    margin-block-end: clamp(20px, 17.6px + 0.75vw, 32px);
     background-color: var(--color-card);
     border-radius: 5px;
     display: flex;
-    padding-inline: 32px;
+    padding: 5px clamp(20px, 17.6px + 0.75vw, 32px);
 
     .cardText {
       margin: auto 0;
       font-family: var(--font-secondary);
       font-weight: 400;
-      font-size: 20px;
+      font-size: clamp(14px, 12.29px + 0.54vw, 20px);
       line-height: 140%;
       letter-spacing: -0.05em;
     }
@@ -860,7 +925,7 @@
     letter-spacing: -0.05em;
     font-family: var(--font-primary);
     font-weight: 400;
-    font-size: 44px;
+    font-size: clamp(20px, 13.14px + 2.14vw, 44px);
     line-height: 140%;
     text-align: center;
     text-transform: uppercase;
