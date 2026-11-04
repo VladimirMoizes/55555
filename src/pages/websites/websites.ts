@@ -281,19 +281,32 @@ function initSlider(): void {
     '[data-button-usability]'
   ) as NodeListOf<HTMLButtonElement>;
 
+  function getScrollAmountUsability(): number {
+    const width = window.innerWidth;
+    if (width > 1440) return 610;
+    if (width <= 1440 && width >= 1024) return Math.round(610 * (width / 1000));
+    if (width < 1024 && width >= 768) return Math.round(610 * (width / 1270));
+    return Math.round(610 * (width / 880));
+  }
+
   if (usabilityList && usabilityButtons.length >= 2) {
     const leftBtn = usabilityButtons[0];
     const rightBtn = usabilityButtons[1];
-    const scrollAmount: number = 610;
 
     leftBtn.addEventListener('click', (e: MouseEvent): void => {
       e.preventDefault();
-      usabilityList.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      usabilityList.scrollBy({
+        left: -getScrollAmountUsability(),
+        behavior: 'smooth',
+      });
     });
 
     rightBtn.addEventListener('click', (e: MouseEvent): void => {
       e.preventDefault();
-      usabilityList.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      usabilityList.scrollBy({
+        left: getScrollAmountUsability(),
+        behavior: 'smooth',
+      });
     });
   }
 

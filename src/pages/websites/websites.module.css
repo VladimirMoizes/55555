@@ -499,18 +499,19 @@
   color: var(--color-dark);
 
   .usability {
-    padding: 106px 0 114px 55px;
+    padding: clamp(30px, 14.8px + 4.75vw, 106px)
+      clamp(20px, 10px + 3.13vw, 70px) clamp(35px, 19.2px + 4.94vw, 114px)
+      clamp(25px, 19px + 1.88vw, 55px);
 
     .start {
-      display: grid;
-      grid-template-columns: 811px 1fr;
-      gap: 66px;
-      margin-block-end: 30px;
-      margin-inline-end: 70px;
+      grid-template-columns: 0.85fr 1fr;
+      gap: clamp(10px, -1.2px + 3.5vw, 66px);
+      margin-block-end: clamp(10px, 6px + 1.25vw, 30px);
 
       .title {
         letter-spacing: 0.002em;
         text-align: start;
+        font-size: clamp(20px, 15.2px + 1.5vw, 44px);
       }
 
       .text {
@@ -518,8 +519,9 @@
         letter-spacing: -0.035em;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: clamp(15px, 12px + 0.94vw, 30px);
         line-height: 130%;
+        font-size: clamp(14px, 13.2px + 0.25vw, 18px);
       }
     }
 
@@ -527,22 +529,27 @@
       right: 36px;
       top: 175px;
       display: flex;
-      gap: 20px;
+      gap: clamp(10px, 8px + 0.63vw, 20px);
       justify-content: end;
-      margin-block-end: 40px;
-      margin-inline-end: 70px;
+      margin-block-end: clamp(15px, 10px + 1.56vw, 40px);
+      margin-inline-end: clamp(25px, 16px + 2.81vw, 70px);
     }
 
     .button {
       border: 1px solid var(--color-primary);
       color: var(--color-primary);
-      padding: 12px;
+      padding: clamp(8px, 7.2px + 0.25vw, 12px);
+    }
+
+    .button svg {
+      width: clamp(12px, 9.6px + 0.75vw, 24px) !important;
+      height: clamp(12px, 9.6px + 0.75vw, 24px) !important;
     }
 
     .list {
       display: flex;
-      gap: 24px;
-      margin-inline-start: -20px;
+      gap: clamp(16px, 14.4px + 0.5vw, 24px);
+      margin-inline-start: clamp(-20px, 4px + -1.25vw, 0px);
       overflow-x: auto;
       scroll-behavior: smooth;
       width: 100%;
@@ -552,6 +559,21 @@
 
       .item {
         cursor: pointer;
+
+        .image {
+          inline-size: clamp(260px, 193.6px + 20.75vw, 592px);
+        }
+      }
+    }
+
+    @media (width <= 1024px) {
+      .start {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .text {
+        margin-block-start: 0;
       }
     }
   }
@@ -559,40 +581,43 @@
   .plan {
     display: flex;
     justify-content: space-between;
-    padding-inline-end: 40px;
+    padding-inline-end: clamp(0px, -8px + 2.5vw, 40px);
+    gap: clamp(20px, 14px + 1.88vw, 50px);
 
     .image {
-      inline-size: 717px;
-      block-size: 692px;
+      inline-size: clamp(380px, 14.29px + 35.71vw, 700px);
+      block-size: clamp(375px, 12.71px + 35.38vw, 692px);
+      margin-block-start: clamp(0px, 246.43px + -12.83vw, 115px);
     }
 
     .planTitle {
       letter-spacing: 0.002em;
+      font-size: clamp(20px, 15.2px + 1.5vw, 44px);
     }
 
     .textBlock {
       display: flex;
       flex-direction: column;
-      /* gap: 85px; */
     }
 
     .textBlockPart {
       display: flex;
       justify-content: space-between;
       font-family: var(--font-secondary);
-      font-size: 20px;
       line-height: 140%;
-      gap: 70px;
-      padding: 44px 0;
+      gap: clamp(20px, 10px + 3.13vw, 70px);
+      padding: clamp(18px, 12.8px + 1.63vw, 44px) 0;
 
       .subTitle {
         max-inline-size: 380px;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.03em;
+        font-size: clamp(14px, 12.8px + 0.38vw, 20px);
       }
 
       .text {
-        max-inline-size: 632px;
+        max-inline-size: clamp(411px, 158.43px + 24.67vw, 632px);
         letter-spacing: 0.02em;
+        font-size: clamp(14px, 12.8px + 0.38vw, 20px);
       }
     }
 
@@ -602,13 +627,46 @@
     }
   }
 
+  @media (width <= 1024px) {
+    .plan {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-inline: clamp(20px, 13.18px + 2.13vw, 35px);
+
+      .image {
+        inline-size: clamp(250px, 145.45px + 32.67vw, 480px);
+        block-size: clamp(247px, 143.36px + 32.39vw, 475px);
+        margin-block-start: 0;
+      }
+    }
+  }
+
+  @media (width <= 768px) {
+    .plan {
+      .textBlockPart {
+        flex-direction: column;
+
+        .subTitle {
+          max-inline-size: 760px;
+          letter-spacing: 0.03em;
+          font-size: clamp(14px, 12.8px + 0.38vw, 20px);
+        }
+
+        .text {
+          max-inline-size: 760px;
+        }
+      }
+    }
+  }
+
   .specialization {
-    padding: 100px 50px;
+    padding: clamp(35px, 22px + 4.06vw, 100px) clamp(20px, 14px + 1.88vw, 50px);
     display: flex;
     flex-direction: column;
 
     .specializationTitle {
-      margin-block-end: 36px;
+      margin-block-end: clamp(16px, 12px + 1.25vw, 36px);
+      font-size: clamp(20px, 15.2px + 1.5vw, 44px);
     }
 
     .specializationSubTitle {
@@ -616,7 +674,7 @@
       max-inline-size: 939px;
       margin: 0 auto 24px;
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: clamp(14px, 12px + 0.63vw, 24px);
       line-height: 140%;
       letter-spacing: -0.035em;
     }
@@ -684,10 +742,40 @@
       }
     }
 
+    @media (width <= 1440px) {
+      .diagram {
+        scale: 0.75;
+        transform-origin: center top;
+        margin-block-end: -140px;
+      }
+    }
+
+    @media (width <= 1024px) {
+      .diagram {
+        scale: 0.5;
+        margin-block-end: -390px;
+        right: 150px;
+      }
+    }
+
+    @media (width <= 768px) {
+      .diagram {
+        scale: 0.4;
+        margin-block-end: -480px;
+        right: 270px;
+      }
+    }
+
+    @media (width <= 426px) {
+      .diagram {
+        display: none;
+      }
+    }
+
     .cardList {
       display: flex;
       justify-content: space-between;
-      gap: 30px;
+      gap: clamp(15px, 12px + 0.94vw, 30px);
 
       .listItem {
         flex: 1;
@@ -698,8 +786,20 @@
       .card {
         background-color: var(--color-card);
         border-radius: 5px;
-        padding: 34px 37px;
+        padding: clamp(14px, 10px + 1.25vw, 34px)
+          clamp(17px, 13px + 1.25vw, 37px);
         line-height: 1.5em;
+
+        .cardText {
+          font-size: clamp(12px, 10.8px + 0.38vw, 18px);
+        }
+      }
+    }
+
+    @media (width <= 768px) {
+      .cardList {
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
@@ -1070,18 +1170,19 @@
 
 .carBlock {
   overflow: hidden;
-  margin-block: 77px 110px;
+  margin-block: clamp(15px, 2.6px + 3.88vw, 77px)
+    clamp(40px, 26px + 4.38vw, 110px);
   display: flex;
   flex-direction: column;
   position: relative;
 
   .carImage {
-    inline-size: 678px;
+    inline-size: clamp(170px, 68.4px + 31.75vw, 678px);
     z-index: 2;
     transition: transform 2s ease-in-out;
     transform: translateX(0);
     cursor: pointer;
-    margin-block-start: 124px;
+    margin-block-start: 54px;
   }
 
   .carImage[data-moving='true'] {
@@ -1090,13 +1191,18 @@
 
   .solidLine {
     position: absolute;
-    bottom: 96px;
+    bottom: clamp(30px, 16.8px + 4.13vw, 96px);
     left: 0;
     width: 100%;
     height: 3px;
     background-color: var(--color-primary);
     border: none;
     z-index: 1;
+  }
+  @media (width <= 768px) {
+    .solidLine {
+      block-size: 2px;
+    }
   }
 }
 

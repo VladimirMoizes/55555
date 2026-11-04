@@ -285,7 +285,7 @@
   }
 
   .carMobile[data-mobile-moving='true'] {
-    transform: translateY(150px);
+    transform: translateY(120px);
   }
 
   .mobileContainerBuildings {

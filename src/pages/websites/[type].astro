@@ -29,7 +29,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
   <section class={styles.container}>
     <SoundButton class={styles.sound} />
     <h1 class={styles.mainTitle} id="mainTitle">{currentTitle}</h1>
-    <!-- <div class={styles.mainBlock} id="mainBlock">
+    <div class={styles.mainBlock} id="mainBlock">
       <div class={styles.videoContainer} id="videoContainer">
         <video id="introVideo" muted playsinline>
           <source src="/assets/videos/website_intro.mp4" type="video/mp4" />
@@ -172,12 +172,12 @@ const currentTitle = titles[type] || 'Разработка сайтов';
       <p class={styles.text}>
         Вы можете выбрать и <a href="/reception"
           ><span class={styles.textLink}> заказать</span>
-        </a>понравившийся Вам дизайн-макет. Мы перерисуем его под Вас и натянем
-        на нужный движок. <br /><br />Если у вас уже есть свои программисты,
+        </a> понравившийся Вам дизайн-макет. Мы перерисуем его под Вас и натянем на
+        нужный движок. <br /><br />Если у вас уже есть свои программисты,
         сделаем только дизайн-макет и/или верстку, что сохранит Вам
         соответствующую часть бюджета
       </p>
-    </div> -->
+    </div>
 
     <div class={styles.bigBlock}>
       <div class={styles.usability}>
@@ -266,12 +266,13 @@ const currentTitle = titles[type] || 'Разработка сайтов';
                 это ряд маркетинговых вопросов, которые нуждаются в ответах. <br
                 /><br />Замысел нашей студии СитиЛав - делать сайты, которые не
                 делают другие студии вэбдизайна, или делают это очень и очень
-                дорого. Подробнее в разделе Гараж (О нас)
+                дорого. Подробнее в разделе Гараж (о нас).
               </p>
             </div>
           </div>
         </div>
       </div>
+
       <div class={styles.specialization}>
         <h2 class={styles.specializationTitle}>Рынок и наша специализация</h2>
         <p class={styles.specializationSubTitle}>
@@ -356,7 +357,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
       </div>
     </div>
 
-    <!-- <div class={styles.projects}>
+    <div class={styles.projects}>
       <h2 class={styles.projectsTitle}>Нетривиальные проекты</h2>
       <p class={styles.projectText}>
         Бывает, стоит задача сделать нечто совсем уникальное, реализовать такое,
@@ -523,10 +524,10 @@ const currentTitle = titles[type] || 'Разработка сайтов';
         class={styles.lineImage}
         aria-hidden="true"
       />
-    </div> -->
+    </div>
 
     <!-- ====== СЛАЙДЕР ДЛЯ ДИЗАЙНА (sites) ====== -->
-    <!-- <div class={styles.sliderOverlay} id="sliderDesign">
+    <div class={styles.sliderOverlay} id="sliderDesign">
       <div class={styles.sliderContainer}>
         <button class={styles.sliderClose} data-close="design">✕</button>
         <div class={styles.sliderContent}>
@@ -544,10 +545,10 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           </button>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <!-- ====== СЛАЙДЕР ДЛЯ ЮЗАБИЛИТИ (usability) ====== -->
-    <!-- <div class={styles.sliderOverlay} id="sliderUsability">
+    <div class={styles.sliderOverlay} id="sliderUsability">
       <div class={styles.sliderContainer}>
         <button class={styles.sliderClose} data-close="usability">✕</button>
         <div class={styles.sliderContent}>
@@ -565,7 +566,7 @@ const currentTitle = titles[type] || 'Разработка сайтов';
           </button>
         </div>
       </div>
-    </div> -->
+    </div>
   </section>
 </MainLayout>
 
