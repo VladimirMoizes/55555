@@ -28,7 +28,7 @@
 
 .mainBlock {
   block-size: clamp(600px, 531px + 21.56vw, 945px);
-  background-image: url('/assets/images/sites/фон_без_девушки.png');
+  background-image: url('/assets/images/sites/empty background.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

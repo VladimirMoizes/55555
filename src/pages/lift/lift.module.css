@@ -19,7 +19,7 @@
   margin: 0 auto;
   inline-size: 1249px;
   block-size: 697px;
-  background-image: url('/assets/images/lift/лифт.png');
+  background-image: url('/assets/images/lift/elevator.png');
   position: relative;
   transform-origin: top left;
 }
