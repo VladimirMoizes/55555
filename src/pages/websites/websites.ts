@@ -177,6 +177,8 @@ function initSlider(): void {
     if (isVideoPlaying) return;
     if (!video) return;
 
+    if (window.innerWidth < 1024) return;
+
     isVideoPlaying = true;
 
     if (videoContainer) {

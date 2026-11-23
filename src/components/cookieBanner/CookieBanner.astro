@@ -1,0 +1,61 @@
+---
+import styles from './CookieBanner.module.css';
+---
+
+<div class={styles.banner} id="cookieBanner" hidden>
+  <div class={styles.inner}>
+    <p class={styles.text}>
+      Мы используем файлы cookie, чтобы сайт работал стабильно и был удобнее. Вы
+      можете принять все cookie или отказаться от необязательных. Подробнее — в
+      <a class={styles.link} href="/cookie-policy">
+        Политике использования cookie</a
+      >.
+    </p>
+    <div class={styles.actions}>
+      <button class={styles.btnPrimary} type="button" data-cookie-accept="all">
+        Принять все
+      </button>
+      <button
+        class={styles.btnSecondary}
+        type="button"
+        data-cookie-accept="essential"
+      >
+        Только необходимые
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'cookie-consent-shown';
+
+  function initBanner() {
+    const banner = document.getElementById(
+      'cookieBanner'
+    ) as HTMLElement | null;
+    if (!banner) return;
+
+    const hasSeenBanner = localStorage.getItem(STORAGE_KEY);
+
+    if (!hasSeenBanner) {
+      banner.removeAttribute('hidden');
+
+      banner
+        .querySelectorAll<HTMLButtonElement>('[data-cookie-accept]')
+        .forEach((btn) => {
+          btn.addEventListener('click', () => {
+            banner.setAttribute('hidden', 'true');
+            localStorage.setItem(STORAGE_KEY, 'true');
+          });
+        });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBanner);
+  } else {
+    initBanner();
+  }
+
+  document.addEventListener('astro:page-load', initBanner);
+</script>

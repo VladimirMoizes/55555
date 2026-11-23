@@ -185,6 +185,10 @@
   }
 
   @media (width < 1024px) {
+    .mainBlock {
+      cursor: default;
+    }
+
     .videoContainer[data-active='true'] {
       display: none;
     }
@@ -194,8 +198,17 @@
     }
 
     .imageGirl {
-      display: none;
+      position: absolute;
+      bottom: 0;
+      left: clamp(500px, -12.67px + 66.67vw, 670px);
+      block-size: clamp(600px, 298.43px + 39.22vw, 700px);
+      /* left: clamp(670px, 224.29px + 43.53vw, 1060px);
+      block-size: clamp(700px, 463.43px + 23.1vw, 907px); */
     }
+
+    /* .imageGirl {
+      display: none;
+    } */
 
     .buttonArrow {
       display: none;
@@ -206,9 +219,11 @@
     .mainBlockTextStart {
       border: 5px solid var(--color-table);
       border-radius: 15px;
-      inline-size: 70%;
+      inline-size: 90%;
       block-size: auto;
-      margin-block-end: clamp(25px, -28.57px + 16.74vw, 100px);
+      /* margin-block-end: clamp(25px, -28.57px + 16.74vw, 100px); */
+      /* margin-block-start: clamp(230px, 180.00px + 15.63vw, 300px); */
+      margin-block-start: clamp(230px, 133.57px + 30.13vw, 365px);
       background-image: none;
       align-self: center;
     }
@@ -225,6 +240,22 @@
     }
 
     .mainBlockTextEnd {
+      display: none;
+    }
+
+    .imageGirl {
+      position: absolute;
+      bottom: 0;
+      /* left: 250px;
+      block-size: 700px; */
+      left: clamp(25px, -135.71px + 50.22vw, 250px);
+      block-size: clamp(600px, 528.57px + 22.32vw, 700px);
+      block-size: clamp(580px, 494.29px + 26.79vw, 700px);
+      /* left: clamp(500px, -12.67px + 66.67vw, 670px);
+      block-size: clamp(600px, 298.43px + 39.22vw, 700px); */
+    }
+
+    /* .mainBlockTextEnd {
       border: 5px solid var(--color-table);
       border-radius: 15px;
       inline-size: 65%;
@@ -243,28 +274,28 @@
       inline-size: 100%;
       block-size: 100%;
       opacity: 0.9;
-    }
+    } */
   }
 
   @media (width < 426px) {
     .mainBlockTextStart {
-      inline-size: 95%;
+      inline-size: 100%;
       border-width: 4px;
       border-radius: 12px;
     }
 
-    .mainBlockTextEnd {
+    /* .mainBlockTextEnd {
       inline-size: 90%;
       border-width: 4px;
       border-radius: 12px;
-    }
+    } */
   }
 }
 
 @media (width < 768px) {
   .mainBlock {
-    block-size: 600px;
-    padding-inline-end: 40px;
+    /* block-size: 600px; */
+    padding-inline-end: 30px;
   }
 }
 
